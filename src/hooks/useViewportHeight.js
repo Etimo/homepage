@@ -1,21 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 function useViewportHeight() {
-  const [height, setHeight] = useState(5000);
+	const [height, setHeight] = useState(5000);
 
-  const handleResize = () => {
-    setHeight(window.innerHeight);
-  };
+	const handleResize = () => {
+		setHeight(window.innerHeight);
+	};
 
-  useEffect(() => {
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+	useEffect(() => {
+		handleResize();
+		window.addEventListener('resize', handleResize);
+		return () => {
+			window.removeEventListener('resize', handleResize);
+		};
+	}, []);
 
-  return height;
+	return height;
 }
 
 export default useViewportHeight;

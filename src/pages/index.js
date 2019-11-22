@@ -1,16 +1,24 @@
-import React from "react";
+import React from 'react';
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Splash from "../components/splash";
-import Content from "../components/content";
+import Layout from '../components/layout';
+import Seo from '../components/seo';
+import Splash from '../components/Splash';
+import Content from '../components/content';
+import Scroller from '../components/Scroller/Scroller';
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <Splash />
-    <Content />
-  </Layout>
-);
+const IndexPage = () => {
+	return (
+		<Layout>
+			<Seo title="Home" />
+			<Scroller />
+
+			<Splash />
+
+			{/* <SplashOld /> */}
+
+			<Content />
+		</Layout>
+	);
+};
 
 export default IndexPage;
