@@ -6,7 +6,7 @@ import Nav from './nav';
 export default () => {
 	const Header = styled.header`
 		width: 100%;
-		position: sticky;
+		position: fixed;
 		top: 0;
 		height: ${props => props.theme.toolbar.height}px;
 		background-color: ${props => props.theme.colors.background};

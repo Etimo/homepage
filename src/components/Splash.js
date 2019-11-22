@@ -9,7 +9,6 @@ const Divider = styled.div`
 	height: ${props => (props.height ? props.height : 10)}px;
 	background-color: ${props =>
 		props.color ? props.color : props.theme.secondary};
-	margin-bottom: 1rem;
 `;
 
 const Hero = styled.div`
@@ -41,7 +40,6 @@ const HeroContent = styled.div`
 `;
 
 export default props => {
-	const toolbarHeight = useTheme().toolbar.height;
 	const sectionHeight = useTheme().section.height;
 
 	return (
@@ -65,9 +63,14 @@ export default props => {
 					</Row>
 				</Hero>
 			</Container>
+			<Divider height={10} />
 			<Container height={sectionHeight}></Container>
+			<Divider height={10} />
+
 			<Container height={sectionHeight}></Container>
+			<Divider height={10} />
 			<Container height={sectionHeight}></Container>
+			<Divider height={10} />
 			<Container height={sectionHeight}></Container>
 
 			<Divider height={10} />

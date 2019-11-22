@@ -5,12 +5,14 @@ import Seo from '../components/seo';
 import Splash from '../components/Splash';
 import Content from '../components/content';
 import Scroller from '../components/Scroller/Scroller';
+import FloatingActionButton from '../elements/FloatingActionButton';
 
 const IndexPage = () => {
 	return (
 		<Layout>
 			<Seo title="Home" />
 			<Scroller />
+			<FloatingActionButton></FloatingActionButton>
 
 			<Splash />
 

@@ -28,7 +28,12 @@ const Layout = ({ children }) => {
 			background: '#f9f9f9'
 		},
 		typography: {
-			font: 'Overpass'
+			font: 'Overpass',
+			button: {
+				small: '24px',
+				medium: '28px',
+				large: '32px'
+			}
 		},
 		sizes: {
 			small: '30rem',
@@ -36,7 +41,7 @@ const Layout = ({ children }) => {
 			large: '60rem'
 		},
 		section: {
-			height: viewportHeight - 60 - 10
+			height: viewportHeight - 10
 		},
 		toolbar: {
 			height: 60
