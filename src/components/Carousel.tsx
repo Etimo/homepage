@@ -8,26 +8,30 @@ const variants = {
 	initial: {
 		x: -200,
 		opacity: 0,
-		zIndex: 0
+		zIndex: 0,
 	},
 	active: {
 		x: 0,
 		opacity: 1,
-		zIndex: 1
+		zIndex: 1,
 	},
 	exit: {
 		x: 200,
 		opacity: 0,
 		zIndex: 0,
-		duration: 0.5
-	}
+		duration: 0.5,
+	},
 };
 
 const Item = styled(motion.p)`
 	position: relative;
 `;
 
-const Carousel = ({ items }) => {
+type Props = {
+	items: string[];
+};
+
+const Carousel = ({ items }: Props) => {
 	const [page, setPage] = useState(0);
 
 	useInterval(() => setPage((page + 1) % items.length), 8000);
@@ -45,10 +49,6 @@ const Carousel = ({ items }) => {
 			</Item>
 		</AnimatePresence>
 	);
-};
-
-Carousel.propTypes = {
-	items: PropTypes.arrayOf(PropTypes.string).isRequired
 };
 
 export default Carousel;

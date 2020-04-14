@@ -1,13 +1,11 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import styled, { useTheme } from 'styled-components';
-import { Container, Column, Row } from '../elements';
-import { useViewportHeight } from '../hooks';
+import { Column, Container, Row } from '../elements';
 import Carousel from './Carousel';
 
 const Divider = styled.div`
-	height: ${props => (props.height ? props.height : 10)}px;
-	background-color: ${props =>
+	height: ${(props) => (props.height ? props.height : 10)}px;
+	background-color: ${(props) =>
 		props.color ? props.color : props.theme.secondary};
 	margin-bottom: 1rem;
 `;
@@ -16,7 +14,7 @@ const Hero = styled.div`
 	max-width: 76rem;
 	width: 100%;
 	align-self: center;
-	font-family: ${props => props.theme.typography.font};
+	font-family: ${(props) => props.theme.typography.font};
 	margin-left: 6rem;
 	margin-right: 6rem;
 
@@ -29,7 +27,7 @@ const Hero = styled.div`
 const HeroTitle = styled.div`
 	font-weight: 600;
 	font-size: 4rem;
-	color: ${props => props.theme.primary};
+	color: ${(props) => props.theme.primary};
 	padding: auto 2rem;
 	vertical-align: middle;
 	overflow-y: hidden;
@@ -37,11 +35,10 @@ const HeroTitle = styled.div`
 
 const HeroContent = styled.div`
 	font-size: 1.2rem;
-	color: ${props => props.theme.primary};
+	color: ${(props) => props.theme.primary};
 `;
 
-export default props => {
-	const toolbarHeight = useTheme().toolbar.height;
+const Splash = () => {
 	const sectionHeight = useTheme().section.height;
 
 	return (
@@ -57,7 +54,7 @@ export default props => {
 								<Carousel
 									items={[
 										'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
-										'Etimo är ett snabbväxande it-konsultbolag som utvecklar skräddarsydda digitala lösningar. Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.'
+										'Etimo är ett snabbväxande it-konsultbolag som utvecklar skräddarsydda digitala lösningar. Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
 									]}
 								/>
 							</HeroContent>
@@ -74,3 +71,5 @@ export default props => {
 		</>
 	);
 };
+
+export default Splash;

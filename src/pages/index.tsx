@@ -1,15 +1,14 @@
 import React from 'react';
-
-import Layout from '../components/layout';
-import Seo from '../components/seo';
+import Layout from '../components/Layout';
+import SEO from '../components/Seo';
 import Splash from '../components/Splash';
-import Content from '../components/content';
+import Content from '../components/Content';
 import Scroller from '../components/Scroller/Scroller';
 
 const IndexPage = () => {
 	return (
 		<Layout>
-			<Seo title="Home" />
+			{/* <SEO title="Home" /> */}
 			<Scroller />
 
 			<Splash />

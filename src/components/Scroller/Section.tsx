@@ -1,11 +1,15 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { motion, useCycle } from 'framer-motion';
+import { motion, useCycle, Variant } from 'framer-motion';
+import React, { useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
+import styled, { DefaultTheme } from 'styled-components';
 import { useViewportHeight } from '../../hooks';
 
-const Section = styled(motion.div)`
+type SectionProps = {
+	isActive: boolean;
+	theme: DefaultTheme;
+};
+
+const Section = styled(motion.div)<SectionProps>`
 	text-decoration: none;
 	border: none;
 	margin: 1rem 0;
@@ -15,23 +19,30 @@ const Section = styled(motion.div)`
 	padding: 0;
 	cursor: pointer;
 	z-index: 100;
-	color: ${props =>
+	height: 20px;
+	color: ${(props) =>
 		props.isActive ? props.theme.secondary : props.theme.primary};
-	font-family: ${props => props.theme.typography.font};
+	font-family: ${(props) => props.theme.typography.font};
 `;
 
 const variants = [
 	{
-		// paddingLeft: 0,
-		fontSize: 12
+		fontSize: 12,
+		transition: { type: 'tween' },
 	},
 	{
-		// paddingLeft: 10,
-		fontSize: 16
-	}
+		fontSize: 16,
+		transition: { type: 'tween' },
+	},
 ];
 
-const SectionComponent = ({ index, isActive, children }) => {
+type Props = {
+	index: number;
+	isActive: boolean;
+	children: React.ReactNode;
+};
+
+const SectionComponent = ({ index, isActive, children }: Props) => {
 	const viewportHeight = useViewportHeight();
 	const [variant, cycleVariant] = useCycle(...variants);
 
@@ -52,12 +63,6 @@ const SectionComponent = ({ index, isActive, children }) => {
 			{children}
 		</Section>
 	);
-};
-
-SectionComponent.propTypes = {
-	index: PropTypes.number.isRequired,
-	isActive: PropTypes.bool.isRequired,
-	children: PropTypes.node.isRequired
 };
 
 export default SectionComponent;

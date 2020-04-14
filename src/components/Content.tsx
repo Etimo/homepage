@@ -1,8 +1,8 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled, { useTheme } from 'styled-components';
-import { useStaticQuery, graphql } from 'gatsby';
-import CardImg from '../elements/CardImg';
 import { Container } from '../elements';
+import CardMedia from '../elements/CardMedia';
 
 const ContentContainer = styled.div`
 	width: 95%;
@@ -33,8 +33,8 @@ const ContentTitle = styled.h2`
 	margin: 1.5rem 0 1rem;
 `;
 
-const ContentSeperator = styled.hr`
-	border: 1px solid ${props => props.theme.secondary};
+const ContentSeparator = styled.hr`
+	border: 1px solid ${(props) => props.theme.secondary};
 	width: 40%;
 	margin: 0 0 0 1rem;
 	max-width: 400px;
@@ -63,10 +63,10 @@ export default () => {
 	return (
 		<Container height={sectionHeight}>
 			<ContentContainer>
-				<CardImg fade fluid={data.image.childImageSharp.fluid} />
+				<CardMedia fade fluid={data.image.childImageSharp.fluid} />
 				<ContentBox>
 					<ContentTitle>Vår Vision</ContentTitle>
-					<ContentSeperator />
+					<ContentSeparator />
 					<ContentText>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -76,7 +76,7 @@ export default () => {
 				</ContentBox>
 				<ContentBox>
 					<ContentTitle>Vår Vision</ContentTitle>
-					<ContentSeperator />
+					<ContentSeparator />
 					<ContentText>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
 						eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
