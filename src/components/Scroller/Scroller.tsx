@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import Section from './Section';
-import { useViewportHeight } from '../../hooks';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useViewportHeight } from '../../hooks';
+import Section from './Section';
 
 const Holder = styled.div`
 	position: fixed;
@@ -16,7 +16,7 @@ const Holder = styled.div`
 	z-index: 10;
 	width: 90px;
 
-	@media print, screen and (max-width: ${(props) => props.theme.sizes.medium}) {
+	@media print, screen and (max-width: ${(props) => props.theme.sizes.small}) {
 		display: none;
 	}
 `;
@@ -64,7 +64,7 @@ export default () => {
 			}
 		},
 		[viewportHeight, activeSection],
-		null,
+		undefined,
 		false,
 		50
 	);

@@ -1,4 +1,5 @@
 import 'styled-components';
+import { DefaultTheme } from 'styled-components';
 
 declare module 'styled-components' {
 	export interface DefaultTheme {
@@ -11,9 +12,11 @@ declare module 'styled-components' {
 			font: string;
 		};
 		sizes: {
+			extraSmall: string;
 			small: string;
 			medium: string;
 			large: string;
+			extraLarge: string;
 		};
 		section: {
 			height: number;

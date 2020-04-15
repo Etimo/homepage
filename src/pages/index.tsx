@@ -1,9 +1,10 @@
 import React from 'react';
-import Layout from '../components/Layout';
-import SEO from '../components/Seo';
-import Splash from '../components/Splash';
+import { useTheme } from 'styled-components';
 import Content from '../components/Content';
+import Hero from '../components/Hero';
+import Layout from '../components/Layout';
 import Scroller from '../components/Scroller/Scroller';
+import { Container } from '../elements';
 
 const IndexPage = () => {
 	return (
@@ -11,7 +12,7 @@ const IndexPage = () => {
 			{/* <SEO title="Home" /> */}
 			<Scroller />
 
-			<Splash />
+			<Hero />
 
 			{/* <SplashOld /> */}
 

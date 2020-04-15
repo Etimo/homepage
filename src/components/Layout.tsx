@@ -35,12 +35,14 @@ const Layout = ({ children }: Props) => {
 			font: 'Overpass',
 		},
 		sizes: {
-			small: '30rem',
-			medium: '45rem',
-			large: '60rem',
+			extraSmall: '0px',
+			small: '600px',
+			medium: '960px',
+			large: '1280px',
+			extraLarge: '1920px',
 		},
 		section: {
-			height: viewportHeight - 60 - 10,
+			height: viewportHeight - 60,
 		},
 		toolbar: {
 			height: 60,

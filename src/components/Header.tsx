@@ -21,9 +21,9 @@ const Header = (props: Props) => {
 		z-index: 100;
 	`;
 
-	const Section = styled.section`
+	const Section = styled.section<HeaderProps>`
 		height: 100%;
-		max-width: 1300px;
+		max-width: ${(props) => props.theme.sizes.large};
 		margin: 0 auto;
 		padding: 0 5px;
 		display: flex;
