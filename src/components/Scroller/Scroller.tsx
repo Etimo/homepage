@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
-import Section from './Section';
-import { useViewportHeight } from '../../hooks';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { useViewportHeight } from '../../hooks';
+import Section from './Section';
 
 const Holder = styled.div`
 	position: fixed;
@@ -11,12 +11,12 @@ const Holder = styled.div`
 	justify-content: space-between;
 	top: 50%;
 	left: 0%;
-	margin-left: 1rem;
+	margin-left: 2rem;
 	transform: translateY(-50%);
 	z-index: 10;
 	width: 90px;
 
-	@media print, screen and (max-width: ${props => props.theme.sizes.medium}) {
+	@media print, screen and (max-width: ${(props) => props.theme.sizes.small}) {
 		display: none;
 	}
 `;
@@ -24,28 +24,28 @@ const Holder = styled.div`
 const sections = [
 	{
 		index: 0,
-		name: 'Start'
+		name: 'Start',
 	},
 	{
 		index: 1,
-		name: 'Jobba Här'
+		name: 'Jobba Här',
 	},
 	{
 		index: 2,
-		name: 'Om Oss'
+		name: 'Om Oss',
 	},
 	{
 		index: 3,
-		name: 'Värderingar'
+		name: 'Värderingar',
 	},
 	{
 		index: 4,
-		name: 'Förmåner'
+		name: 'Förmåner',
 	},
 	{
 		index: 5,
-		name: 'Kontakt'
-	}
+		name: 'Kontakt',
+	},
 ];
 
 export default () => {
@@ -64,16 +64,16 @@ export default () => {
 			}
 		},
 		[viewportHeight, activeSection],
-		null,
+		undefined,
 		false,
 		50
 	);
 
 	return (
 		<Holder>
-			{sections.map(section => (
+			{sections.map((section) => (
 				<Section
-					key={section.index}
+					key={section.name}
 					index={section.index}
 					isActive={section.index === activeSection}
 				>

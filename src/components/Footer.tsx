@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-const Footer = styled.footer`
+const FooterComponent = styled.footer`
 	width: 100%;
 	height: 200px;
 	display: flex;
@@ -20,11 +20,11 @@ const Footer = styled.footer`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-	color: ${props => props.theme.primary};
+	color: ${(props) => props.theme.primary};
 	transition: color 0.1s ease-out;
 
 	:hover {
-		color: ${props => props.theme.secondary};
+		color: ${(props) => props.theme.secondary};
 	}
 `;
 
@@ -32,13 +32,13 @@ const Triangle = styled.div`
 	width: 0;
 	height: 0;
 	position: absolute;
-	border-bottom: 200px solid ${props => props.theme.primary};
+	border-bottom: 200px solid ${(props) => props.theme.primary};
 	border-left: 200px solid transparent;
 `;
 
-export default () => {
+const Footer = () => {
 	return (
-		<Footer>
+		<FooterComponent>
 			<ul>
 				<li>
 					<a
@@ -59,6 +59,8 @@ export default () => {
 					</a>
 				</li>
 			</ul>
-		</Footer>
+		</FooterComponent>
 	);
 };
+
+export default Footer;

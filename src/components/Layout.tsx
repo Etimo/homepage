@@ -4,11 +4,15 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
 
 import { useViewportHeight } from '../hooks';
-import Header from './header';
-import Footer from './footer';
+import Header from './Header';
+import Footer from './Footer';
 import './layout.css';
 
-const Layout = ({ children }) => {
+type Props = {
+	children: React.ReactNode;
+};
+
+const Layout = ({ children }: Props) => {
 	const viewportHeight = useViewportHeight();
 
 	const data = useStaticQuery(graphql`
@@ -25,31 +29,30 @@ const Layout = ({ children }) => {
 		primary: '#2c3e50',
 		secondary: '#42c8ad',
 		colors: {
-			background: '#f9f9f9'
+			background: '#f9f9f9',
 		},
 		typography: {
-			font: 'Overpass'
+			font: 'Overpass',
 		},
 		sizes: {
-			small: '30rem',
-			medium: '45rem',
-			large: '60rem'
+			extraSmall: '0px',
+			small: '600px',
+			medium: '960px',
+			large: '1280px',
+			extraLarge: '1920px',
 		},
 		section: {
-			height: viewportHeight - 60 - 10
+			height: viewportHeight - 60,
 		},
 		toolbar: {
-			height: 60
-		}
+			height: 60,
+		},
 	};
 
 	return (
 		<ThemeProvider theme={theme}>
 			<>
-				<Header
-					siteTitle={data.site.siteMetadata.title}
-					style={{ backgroundColor: theme.colors.background }}
-				/>
+				<Header style={{ backgroundColor: theme.colors.background }} />
 				<main style={{ backgroundColor: theme.colors.background }}>
 					{children}
 				</main>
@@ -60,7 +63,7 @@ const Layout = ({ children }) => {
 };
 
 Layout.propTypes = {
-	children: PropTypes.node.isRequired
+	children: PropTypes.node.isRequired,
 };
 
 export default Layout;

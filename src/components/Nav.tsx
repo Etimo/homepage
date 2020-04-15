@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 
 const NavLink = styled(Link)`
 	line-height: 60px;
-	color: ${props => props.theme.primary};
+	color: ${(props) => props.theme.primary};
 	transition: color 0.1s ease-out;
 	font-size: 1.1rem;
 	font-family: 'Quicksand';
@@ -12,7 +12,7 @@ const NavLink = styled(Link)`
 	position: relative;
 
 	:hover {
-		color: ${props => props.theme.secondary};
+		color: ${(props) => props.theme.secondary};
 	}
 `;
 
@@ -25,7 +25,7 @@ const Ul = styled.ul`
 	justify-content: space-evenly;
 `;
 
-export default () => {
+const Nav = () => {
 	return (
 		<nav>
 			<Ul>
@@ -43,3 +43,5 @@ export default () => {
 		</nav>
 	);
 };
+
+export default Nav;
