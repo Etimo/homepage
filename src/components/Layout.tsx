@@ -42,7 +42,7 @@ const Layout = ({ children }: Props) => {
 			extraLarge: '1920px',
 		},
 		section: {
-			height: viewportHeight - 60,
+			height: viewportHeight,
 		},
 		toolbar: {
 			height: 60,
