@@ -33,6 +33,11 @@ const Layout = ({ children }: Props) => {
 		},
 		typography: {
 			font: 'Overpass',
+
+			caption: {
+				spacing: '3px',
+				size: 14,
+			},
 		},
 		sizes: {
 			extraSmall: '0px',

@@ -14,7 +14,7 @@ export type BoxProps = {
 	flexDirection?: FlexDirection;
 	justifyContent?: JustifyContent;
 
-	ma?: number;
+	ma?: string;
 	mb?: number;
 	mt?: number;
 	mr?: number;
@@ -26,7 +26,7 @@ export default styled.div<BoxProps>`
 	flex-direction: ${({ flexDirection }) => flexDirection};
 	justify-content: ${({ justifyContent }) => justifyContent};
 
-	margin: ${({ ma }) => ma && `${ma}px`};
+	margin: ${({ ma }) => ma && `${ma}`};
 	margin-bottom: ${({ mb }) => mb && `${mb}px`};
 	margin-top: ${({ mt }) => mt && `${mt}px`};
 	margin-right: ${({ ml }) => ml && `${ml}px`};

@@ -17,6 +17,6 @@ export default styled(Button)<ThemeProps<DefaultTheme>>`
 
 	&:hover {
 		background-position: 0 100%;
-		border: 1px transparent;
+		border-bottom: 1px transparent;
 	}
 `;
