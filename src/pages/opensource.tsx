@@ -7,7 +7,7 @@ import SEO from '../components/Seo';
 
 const IndexPage = () => (
 	<Layout>
-		<SEO title="Open Source" />
+		{/* <SEO title="Open Source" /> */}
 		<h1>Hi people</h1>
 		<p>Welcome to your new Gatsby site.</p>
 		<p>Now go build something great.</p>
