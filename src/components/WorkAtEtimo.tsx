@@ -44,7 +44,6 @@ const WorkAtEtimo = () => {
 		}
 	`);
 
-	// reurn <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 	return (
 		<Section>
 			<Container>
