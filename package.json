@@ -31,6 +31,7 @@
 		"react-animations": "^1.0.0",
 		"react-dom": "^16.13.1",
 		"react-helmet": "^6.0.0",
+		"react-intersection-observer": "^8.26.1",
 		"react-pose": "^4.0.8",
 		"react-pose-text": "^3.1.0",
 		"react-reveal": "^1.2.2",

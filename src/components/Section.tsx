@@ -9,20 +9,24 @@ const Section = styled.section<StyleProps>`
 	display: flex;
 	height: ${(props) => (props.height ? props.height + 'px' : 'inherit')};
 	justify-content: center;
-	max-width: ${(props) => props.theme.sizes.large};
-	margin: 0 auto;
+	align-items: center;
+	width: 100%;
+	padding: 150px 0;
 `;
 
 type Props = {
-	children: React.ReactNode;
+	children?: React.ReactNode;
 	style?: React.CSSProperties;
+	headerSpace?: boolean;
 };
 
-export default ({ children, ...props }: Props) => {
+export default ({ children, headerSpace, ...props }: Props) => {
 	const height = useTheme().section.height;
 
+	const finalHeight = headerSpace ? height - 60 : height;
+
 	return (
-		<Section height={height} {...props}>
+		<Section height={finalHeight} {...props}>
 			{children}
 		</Section>
 	);

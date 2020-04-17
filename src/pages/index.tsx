@@ -1,10 +1,9 @@
 import React from 'react';
-import { useTheme } from 'styled-components';
+import About from '../components/About';
 import Content from '../components/Content';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller/Scroller';
-import { Container } from '../elements';
 
 const IndexPage = () => {
 	return (
@@ -13,6 +12,8 @@ const IndexPage = () => {
 			<Scroller />
 
 			<Hero />
+
+			<About />
 
 			{/* <SplashOld /> */}
 

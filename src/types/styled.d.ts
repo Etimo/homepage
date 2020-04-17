@@ -25,4 +25,8 @@ declare module 'styled-components' {
 			height: number;
 		};
 	}
+
+	export interface ThemeProps<T> {
+		theme?: T;
+	}
 }

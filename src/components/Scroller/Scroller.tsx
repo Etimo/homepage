@@ -16,7 +16,7 @@ const Holder = styled.div`
 	z-index: 10;
 	width: 90px;
 
-	@media print, screen and (max-width: ${(props) => props.theme.sizes.small}) {
+	@media print, screen and (max-width: ${(props) => props.theme.sizes.large}) {
 		display: none;
 	}
 `;

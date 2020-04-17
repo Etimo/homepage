@@ -1,7 +1,6 @@
 import React from 'react';
-import styled, { ThemeProps, DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Carousel from './Carousel';
-import { HighlightButton } from './Scroller/Button';
 import Section from './Section';
 
 const Hero = styled.div<ThemeProps<DefaultTheme>>`
@@ -32,7 +31,7 @@ const HeroContent = styled.div`
 
 const Splash = () => {
 	return (
-		<Section style={{ backgroundColor: '#F9F9F9' }}>
+		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
 				<HeroTitle>Etimo</HeroTitle>
 				<HeroContent>
@@ -43,7 +42,6 @@ const Splash = () => {
 						]}
 					/>
 				</HeroContent>
-				<HighlightButton>Läs gärna vår blogg</HighlightButton>
 			</Hero>
 		</Section>
 	);
