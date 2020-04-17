@@ -9,6 +9,7 @@ import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import { HighlightButton } from './Button';
 import P from '../elements/P';
+import Caption from '../elements/Caption';
 
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
@@ -23,8 +24,14 @@ const About = () => {
 			<Container>
 				<Row justifyContent="center" mb={-30}>
 					<Col sm mb={30}>
-						<FadeIn direction="left">
-							<Span style={{ letterSpacing: 1 }}>Välkommen till Etimo!</Span>
+						<FadeIn
+							direction="left"
+							full
+							flex
+							flexDirection="column"
+							justifyContent="space-between"
+						>
+							<Caption textAlign="left">Välkommen till Etimo!</Caption>
 							<EmphasizedH2>
 								<Span secondary>Passion</Span> for teknik, <br />
 								kundvärde och <br />

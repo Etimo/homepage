@@ -1,5 +1,4 @@
 import 'styled-components';
-import { DefaultTheme } from 'styled-components';
 
 declare module 'styled-components' {
 	export interface DefaultTheme {
@@ -10,6 +9,10 @@ declare module 'styled-components' {
 		};
 		typography: {
 			font: string;
+			caption: {
+				spacing: string;
+				size: number;
+			};
 		};
 		sizes: {
 			extraSmall: string;
