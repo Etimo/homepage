@@ -6,6 +6,9 @@ module.exports = {
 	},
 	plugins: [
 		{
+			resolve: `gatsby-plugin-postcss`,
+		},
+		{
 			resolve: `gatsby-plugin-typescript`,
 			options: {
 				isTSX: true,

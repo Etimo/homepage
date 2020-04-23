@@ -8,7 +8,7 @@ type Props = {
 	textAlign?: TextAlign;
 } & ThemeProps<DefaultTheme>;
 
-export default styled.caption<Props>`
+export default styled.div<Props>`
 	font-family: ${({ theme }) => theme.typography.font};
 	letter-spacing: ${({ theme }) => theme.typography.caption.spacing};
 	font-size: ${({ theme }) => theme.typography.caption.size}px;
