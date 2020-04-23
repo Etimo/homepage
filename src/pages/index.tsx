@@ -5,6 +5,7 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller/Scroller';
 import WorkAtEtimo from '../components/WorkAtEtimo';
+import ThePeople from '../components/ThePeople';
 
 const IndexPage = () => {
 	return (
@@ -17,6 +18,8 @@ const IndexPage = () => {
 			<About />
 
 			<WorkAtEtimo />
+
+			<ThePeople />
 
 			{/* <SplashOld /> */}
 

@@ -7,6 +7,7 @@ import { useViewportHeight } from '../hooks';
 import Header from './Header';
 import Footer from './Footer';
 import './layout.css';
+import '../css/global.css';
 
 type Props = {
 	children: React.ReactNode;

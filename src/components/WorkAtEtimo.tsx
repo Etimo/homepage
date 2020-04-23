@@ -10,6 +10,7 @@ import H2 from '../elements/H2';
 import P from '../elements/P';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Span from '../elements/Span';
 
 const CustomBackground = styled.div`
 	left: calc(50% + 250px);
@@ -44,7 +45,6 @@ const WorkAtEtimo = () => {
 		}
 	`);
 
-	// reurn <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
 	return (
 		<Section>
 			<Container>
@@ -57,7 +57,10 @@ const WorkAtEtimo = () => {
 							justifyContent="space-between"
 						>
 							<Caption textAlign="left">Att jobba på Etimo</Caption>
-							<EmphasizedH2>Hur är det att jobba på Etimo?</EmphasizedH2>
+							<EmphasizedH2>
+								Hur är det att <Span secondary>jobba </Span>
+								på Etimo?
+							</EmphasizedH2>
 							<P style={{ lineHeight: 1.7 }}>
 								- Du väljer själv dina uppdrag <br />
 								- 10% av din tid är kompetensutveckling <br />

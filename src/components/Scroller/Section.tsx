@@ -19,6 +19,7 @@ const Section = styled(motion.div)<SectionProps>`
 	padding: 0;
 	cursor: pointer;
 	z-index: 100;
+	overflow: hidden;
 	height: 20px;
 	color: ${(props) =>
 		props.isActive ? props.theme.secondary : props.theme.primary};
