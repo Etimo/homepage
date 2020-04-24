@@ -27,6 +27,9 @@ export default (props: Props) => {
 	const container = {
 		hidden: {
 			backgroundColor: 'rgba(0, 0, 0, 0)',
+			transition: {
+				type: 'tween',
+			},
 		},
 		show: {
 			backgroundColor: 'rgba(60, 200, 173, 0.8)',

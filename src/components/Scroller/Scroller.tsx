@@ -40,7 +40,7 @@ const sections = [
 	},
 	{
 		index: 4,
-		name: 'Förmåner',
+		name: 'Kunder',
 	},
 	{
 		index: 5,
