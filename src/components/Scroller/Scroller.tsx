@@ -14,7 +14,7 @@ const Holder = styled.div`
 	margin-left: 2rem;
 	transform: translateY(-50%);
 	z-index: 10;
-	width: 90px;
+	width: 100px;
 
 	@media print, screen and (max-width: ${(props) => props.theme.sizes.large}) {
 		display: none;
@@ -36,7 +36,7 @@ const sections = [
 	},
 	{
 		index: 3,
-		name: 'Värderingar',
+		name: 'Människorna',
 	},
 	{
 		index: 4,

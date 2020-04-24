@@ -23,7 +23,9 @@ const HeaderLogo = () => {
 		}
 	`);
 
-	return <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} />;
+	return (
+		<StyledImg fadeIn fluid={data.placeholderImage.childImageSharp.fluid} />
+	);
 };
 
 export default HeaderLogo;

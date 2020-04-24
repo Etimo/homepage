@@ -22,8 +22,6 @@ const IndexPage = () => {
 			<ThePeople />
 
 			{/* <SplashOld /> */}
-
-			<Content />
 		</Layout>
 	);
 };
