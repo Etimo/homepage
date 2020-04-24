@@ -44,7 +44,7 @@ const sections = [
 	},
 	{
 		index: 5,
-		name: 'Kontakt',
+		name: 'Skillnad',
 	},
 ];
 
