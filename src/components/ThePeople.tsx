@@ -97,7 +97,7 @@ const ThePeople = () => {
 	];
 
 	return (
-		<Section>
+		<Section style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8">
 					<h4 className="mx-auto uppercase font-sans tracking-widest">
