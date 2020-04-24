@@ -7,6 +7,7 @@ import Scroller from '../components/Scroller/Scroller';
 import WorkAtEtimo from '../components/WorkAtEtimo';
 import ThePeople from '../components/ThePeople';
 import Customers from '../components/Customers';
+import MakingDifference from '../components/MakingDifference';
 
 const IndexPage = () => {
 	return (
@@ -23,6 +24,8 @@ const IndexPage = () => {
 			<ThePeople />
 
 			<Customers />
+
+			<MakingDifference />
 
 			{/* <SplashOld /> */}
 		</Layout>
