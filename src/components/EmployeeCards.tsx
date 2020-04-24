@@ -20,7 +20,7 @@ export default (props: Props) => {
 	const { employees } = props;
 
 	return (
-		<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 pt-6 mx-4">
+		<div className="grid grid-flow-col grid-cols-2 md:grid-cols-3 lg:grid-cols-3 grid-rows-3 md:grid-rows-2 xl:grid-cols-3 gap-4 pt-6 mx-4">
 			{employees.map((employee) => (
 				<EmployeeCard {...employee} key={employee.name} />
 			))}

@@ -54,11 +54,11 @@ const ThePeople = () => {
 
 	const people = [
 		{
-			name: 'Jassyr Bravo',
+			name: 'Philip Forsberg',
 			title: 'Konsult',
-			image: <Img fluid={data.jassyr.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/jassyromar/',
-			github: 'https://github.com/JassyrBravo',
+			image: <Img fluid={data.philip.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
+			github: 'https://github.com/ForsbergPhilip',
 		},
 		{
 			name: 'Joakim Olesen',
@@ -68,10 +68,11 @@ const ThePeople = () => {
 			github: 'https://github.com/joakim-olesen',
 		},
 		{
-			name: 'Johan Ahrens',
-			title: 'Konsult',
-			image: <Img fluid={data.johan.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/johan-ahrens-b76647a/',
+			name: 'Daniel Winther',
+			title: 'Partner',
+			image: <Img fluid={data.daniel.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
+			github: 'https://github.com/indrif',
 		},
 		{
 			name: 'Niclas Lindstedt',
@@ -81,18 +82,17 @@ const ThePeople = () => {
 			github: 'https://github.com/niclaslindstedt',
 		},
 		{
-			name: 'Daniel Winther',
-			title: 'Partner',
-			image: <Img fluid={data.daniel.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
-			github: 'https://github.com/indrif',
+			name: 'Johan Ahrens',
+			title: 'Konsult',
+			image: <Img fluid={data.johan.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/johan-ahrens-b76647a/',
 		},
 		{
-			name: 'Philip Forsberg',
+			name: 'Jassyr Bravo',
 			title: 'Konsult',
-			image: <Img fluid={data.philip.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
-			github: 'https://github.com/ForsbergPhilip',
+			image: <Img fluid={data.jassyr.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/jassyromar/',
+			github: 'https://github.com/JassyrBravo',
 		},
 	];
 
