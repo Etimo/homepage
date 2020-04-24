@@ -28,6 +28,27 @@ const ThePeople = () => {
 					}
 				}
 			}
+			niclas: file(relativePath: { eq: "niclas.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			daniel: file(relativePath: { eq: "daniel.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			philip: file(relativePath: { eq: "philip.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
@@ -36,16 +57,42 @@ const ThePeople = () => {
 			name: 'Jassyr Bravo',
 			title: 'Konsult',
 			image: <Img fluid={data.jassyr.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/jassyromar/',
+			github: 'https://github.com/JassyrBravo',
 		},
 		{
 			name: 'Joakim Olesen',
 			title: 'Grundare',
 			image: <Img fluid={data.joakim.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
+			github: 'https://github.com/joakim-olesen',
 		},
 		{
 			name: 'Johan Ahrens',
 			title: 'Konsult',
 			image: <Img fluid={data.johan.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/johan-ahrens-b76647a/',
+		},
+		{
+			name: 'Niclas Lindstedt',
+			title: 'Konsult',
+			image: <Img fluid={data.niclas.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/niclaslindstedt/',
+			github: 'https://github.com/niclaslindstedt',
+		},
+		{
+			name: 'Daniel Winther',
+			title: 'Partner',
+			image: <Img fluid={data.daniel.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
+			github: 'https://github.com/indrif',
+		},
+		{
+			name: 'Philip Forsberg',
+			title: 'Konsult',
+			image: <Img fluid={data.philip.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
+			github: 'https://github.com/ForsbergPhilip',
 		},
 	];
 
@@ -59,18 +106,6 @@ const ThePeople = () => {
 					<h2 className="mx-auto font-sans text-5xl">
 						Några av <span className="text-cyan">oss</span>
 					</h2>
-					{/* <Row alignItems="center" justifyContent="center" flexDirection="column">
-					<Col>
-					<Caption textAlign="center" style={{ width: '100%' }}>
-					Människorna
-					</Caption>
-					</Col>
-					<Col>
-					<EmphasizedH2 style={{ textAlign: 'center' }}>
-					Några av <Span secondary>oss</Span>
-					</EmphasizedH2>
-					</Col>
-				</Row> */}
 					<EmployeeCards employees={people} />
 				</div>
 			</div>

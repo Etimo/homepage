@@ -22,7 +22,7 @@ export default (props: Props) => {
 	return (
 		<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-4 pt-6 mx-4">
 			{employees.map((employee) => (
-				<EmployeeCard {...employee} />
+				<EmployeeCard {...employee} key={employee.name} />
 			))}
 		</div>
 	);
