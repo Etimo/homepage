@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { DefaultTheme } from 'styled-components';
 import HeaderLogo from './HeaderLogo';
-import Nav from './Nav';
 
 type HeaderProps = {
 	theme: DefaultTheme;
@@ -25,7 +24,7 @@ const Header = (props: Props) => {
 		height: 100%;
 		max-width: ${(props) => props.theme.sizes.large};
 		margin: 0 auto;
-		padding: 0 5px;
+		padding: 0 25px;
 		display: flex;
 		justify-content: space-between;
 	`;
@@ -34,7 +33,6 @@ const Header = (props: Props) => {
 		<HeaderComponent>
 			<Section>
 				<HeaderLogo />
-				<Nav />
 			</Section>
 		</HeaderComponent>
 	);

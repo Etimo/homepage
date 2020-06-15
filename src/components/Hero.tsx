@@ -2,31 +2,26 @@ import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Carousel from './Carousel';
 import Section from './Section';
+import tw from 'twin.macro';
 
 const Hero = styled.div<ThemeProps<DefaultTheme>>`
 	max-width: 76rem;
 	align-self: center;
 	font-family: ${(props) => props.theme.typography.font};
-	margin-right: auto;
-	display: flex;
-	flex-direction: column;
+	${tw`flex flex-col mx-auto`};
 	align-items: flex-start;
-	margin-left: 10rem;
 `;
 
-const HeroTitle = styled.div<ThemeProps<DefaultTheme>>`
-	font-weight: 600;
-	font-size: 4rem;
+const HeroTitle = styled.h1`
 	color: ${(props) => props.theme.primary};
-	padding: auto 2rem;
-	vertical-align: middle;
-	overflow-y: hidden;
+	${tw`font-etimo mb-8 uppercase text-4xl mx-auto lg:text-8xl lg:mb-4`};
 `;
 
 const HeroContent = styled.div`
 	font-size: 1.2rem;
 	color: ${(props) => props.theme.primary};
-	max-width: 400px;
+	max-width: 300px;
+	${tw`text-center md:max-w-md`};
 `;
 
 const Splash = () => {

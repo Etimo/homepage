@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useViewportHeight } from '../../hooks';
 import Section from './Section';
+import tw from 'twin.macro';
 
 const Holder = styled.div`
 	position: fixed;
@@ -15,10 +16,7 @@ const Holder = styled.div`
 	transform: translateY(-50%);
 	z-index: 10;
 	width: 100px;
-
-	@media print, screen and (max-width: ${(props) => props.theme.sizes.large}) {
-		display: none;
-	}
+	${tw`hidden xl:flex`};
 `;
 
 const sections = [
