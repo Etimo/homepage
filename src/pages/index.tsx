@@ -8,12 +8,16 @@ import WorkAtEtimo from '../components/WorkAtEtimo';
 import ThePeople from '../components/ThePeople';
 import Customers from '../components/Customers';
 import MakingDifference from '../components/MakingDifference';
+import { useViewportSize } from '../hooks';
 
 const IndexPage = () => {
+	const [height, width] = useViewportSize();
+	const scrollbarEnabled = width >= 1280; // Laptop++
+
 	return (
 		<Layout>
 			{/* <SEO title="Home" /> */}
-			<Scroller />
+			{scrollbarEnabled && <Scroller />}
 
 			<Hero />
 

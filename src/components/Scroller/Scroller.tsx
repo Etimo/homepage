@@ -1,7 +1,7 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useViewportHeight } from '../../hooks';
+import { useViewportSize } from '../../hooks';
 import Section from './Section';
 import tw from 'twin.macro';
 
@@ -16,7 +16,6 @@ const Holder = styled.div`
 	transform: translateY(-50%);
 	z-index: 10;
 	width: 100px;
-	${tw`hidden xl:flex`};
 `;
 
 const sections = [
@@ -47,7 +46,7 @@ const sections = [
 ];
 
 export default () => {
-	const viewportHeight = useViewportHeight();
+	const [viewportHeight] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
 
 	useScrollPosition(

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled, { useTheme, ThemeProps, DefaultTheme } from 'styled-components';
+import tw from 'twin.macro';
+import { useViewportSize } from '../hooks';
 
 type StyleProps = {
 	height?: number;
@@ -11,7 +13,7 @@ const Section = styled.section<StyleProps>`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	padding: 150px 0;
+	padding: 50px 0;
 `;
 
 type Props = {
@@ -21,9 +23,10 @@ type Props = {
 };
 
 export default ({ children, headerSpace, ...props }: Props) => {
-	const height = useTheme().section.height;
+	const [height, width] = useViewportSize();
 
-	const finalHeight = headerSpace ? height - 60 : height;
+	const finalHeight =
+		width < 768 ? undefined : headerSpace ? height - 60 : height;
 
 	return (
 		<Section height={finalHeight} {...props}>

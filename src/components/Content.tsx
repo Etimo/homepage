@@ -3,6 +3,7 @@ import React from 'react';
 import styled, { useTheme } from 'styled-components';
 import { Container } from '../elements';
 import CardMedia from '../elements/CardMedia';
+import { useViewportSize } from '../hooks';
 
 const ContentContainer = styled.div`
 	width: 95%;
@@ -47,7 +48,7 @@ const ContentText = styled.p`
 `;
 
 export default () => {
-	const sectionHeight = useTheme().section.height;
+	const [sectionHeight] = useViewportSize();
 	const data = useStaticQuery(graphql`
 		query {
 			image: file(relativePath: { eq: "bike.jpg" }) {

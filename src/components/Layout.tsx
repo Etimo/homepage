@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { ThemeProvider } from 'styled-components';
-
-import { useViewportHeight } from '../hooks';
 import Header from './Header';
 import Footer from './Footer';
 import './layout.css';
@@ -14,8 +12,6 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-	const viewportHeight = useViewportHeight();
-
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {
@@ -43,12 +39,9 @@ const Layout = ({ children }: Props) => {
 		sizes: {
 			extraSmall: '0px',
 			small: '600px',
-			medium: '960px',
+			medium: '1024px',
 			large: '1280px',
 			extraLarge: '1920px',
-		},
-		section: {
-			height: viewportHeight,
 		},
 		toolbar: {
 			height: 60,

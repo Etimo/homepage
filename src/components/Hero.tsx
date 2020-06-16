@@ -14,7 +14,7 @@ const Hero = styled.div<ThemeProps<DefaultTheme>>`
 
 const HeroTitle = styled.h1`
 	color: ${(props) => props.theme.primary};
-	${tw`font-etimo mb-8 uppercase text-4xl mx-auto lg:text-8xl lg:mb-4`};
+	${tw`font-etimo mb-8 uppercase text-4xl mx-auto md:text-8xl md:mb-4`};
 `;
 
 const HeroContent = styled.div`
