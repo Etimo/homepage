@@ -16,7 +16,7 @@ const HeaderLogo = () => {
 			placeholderImage: file(relativePath: { eq: "etimo-logo.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
