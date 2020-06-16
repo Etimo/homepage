@@ -4,11 +4,11 @@ export default styled.h2<ThemeProps<DefaultTheme>>`
 	font-size: 48px;
 	font-family: ${({ theme }) => theme.typography.font};
 
-	@media (max-width: 600px) {
+	@media (max-width: 640px) {
 		font-size: 26px;
 	}
 
-	@media (max-width: 960px) {
+	@media (max-width: 1024px) {
 		font-size: 30px;
 	}
 

@@ -21,41 +21,40 @@ const EmphasizedH2 = styled(H2)`
 const About = () => {
 	return (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
-			<Container>
-				<Row justifyContent="center" mb={-30}>
-					<Col sm mb={30}>
-						<FadeIn
-							direction="left"
-							full
-							flex
-							flexDirection="column"
-							justifyContent="space-between"
-						>
-							<Caption textAlign="left">Välkommen till Etimo!</Caption>
-							<EmphasizedH2>
-								<Span secondary>Passion</Span> for teknik, <br />
-								kundvärde och <br />
-								samhällsnytta
-							</EmphasizedH2>
-						</FadeIn>
-					</Col>
-					<Col sm mb={30}>
-						<FadeIn direction="right">
-							<P>
-								På Etimo förenas vi av en passion för att utveckla moderna
-								skräddarsydda lösningar som gör skillnad och ger stort värde för
-								kunden och samhället. Vi tackar nej till uppdrag vi inte gillar,
-								som tex. gambling.
-								<br /> <br />
-								Gemenskapen och trivseln är jätteviktig för oss. Trots att vi
-								har olika kunduppdrag jobbar vi tillsammans från kontoret på
-								fredagar, har interna koddagar m.m.
-							</P>
-							<HighlightButton>Läs gärna vår blogg</HighlightButton>
-						</FadeIn>
-					</Col>
-				</Row>
-			</Container>
+			<div className="flex container flex-col md:flex-row px-4 lg:px-24">
+				<div className="md:w-1/2">
+					<FadeIn
+						direction="left"
+						full
+						flex
+						flexDirection="column"
+						justifyContent="space-between"
+					>
+						<Caption textAlign="left">Välkommen till Etimo!</Caption>
+						<EmphasizedH2>
+							<Span secondary>Passion</Span> for teknik, <br />
+							kundvärde och <br />
+							samhällsnytta
+						</EmphasizedH2>
+					</FadeIn>
+				</div>
+
+				<div className="md:w-1/2">
+					<FadeIn direction="right">
+						<P>
+							På Etimo förenas vi av en passion för att utveckla moderna
+							skräddarsydda lösningar som gör skillnad och ger stort värde för
+							kunden och samhället. Vi tackar nej till uppdrag vi inte gillar,
+							som tex. gambling.
+							<br /> <br />
+							Gemenskapen och trivseln är jätteviktig för oss. Trots att vi har
+							olika kunduppdrag jobbar vi tillsammans från kontoret på fredagar,
+							har interna koddagar m.m.
+						</P>
+						<HighlightButton>Läs gärna vår blogg</HighlightButton>
+					</FadeIn>
+				</div>
+			</div>
 		</Section>
 	);
 };

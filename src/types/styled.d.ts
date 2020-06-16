@@ -21,9 +21,6 @@ declare module 'styled-components' {
 			large: string;
 			extraLarge: string;
 		};
-		section: {
-			height: number;
-		};
 		toolbar: {
 			height: number;
 		};
@@ -33,3 +30,5 @@ declare module 'styled-components' {
 		theme?: T;
 	}
 }
+
+declare module 'tailwindcss/resolveConfig' {}

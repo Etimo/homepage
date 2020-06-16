@@ -6,12 +6,12 @@ export default styled.div`
 	padding-right: 15px;
 	margin: 0 auto;
 
-	@media (min-width: 600px) {
-		max-width: 560px;
+	@media (min-width: 640px) {
+		max-width: 600px;
 	}
 
-	@media (min-width: 960px) {
-		max-width: 930px;
+	@media (min-width: 1024px) {
+		max-width: 990px;
 	}
 
 	/* @media (min-width: 1600px) {

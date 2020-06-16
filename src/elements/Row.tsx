@@ -14,7 +14,7 @@ export default styled(Box)<Props>`
 
 	flex-direction: ${({ direction }) => direction && direction};
 
-	@media (max-width: 960px) {
+	@media (max-width: 1024px) {
 		flex-direction: column;
 	}
 `;

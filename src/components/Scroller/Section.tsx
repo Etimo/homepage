@@ -2,7 +2,7 @@ import { motion, useCycle, Variant } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
 import styled, { DefaultTheme } from 'styled-components';
-import { useViewportHeight } from '../../hooks';
+import { useViewportSize } from '../../hooks';
 
 type SectionProps = {
 	isActive: boolean;
@@ -44,7 +44,7 @@ type Props = {
 };
 
 const SectionComponent = ({ index, isActive, children }: Props) => {
-	const viewportHeight = useViewportHeight();
+	const [viewportHeight] = useViewportSize();
 	const [variant, cycleVariant] = useCycle(...variants);
 
 	useEffect(() => {
