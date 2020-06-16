@@ -22,6 +22,7 @@ const HeroContent = styled.div`
 	color: ${(props) => props.theme.primary};
 	max-width: 300px;
 	${tw`text-center md:max-w-md`};
+	height: 200px;
 `;
 
 const Splash = () => {
