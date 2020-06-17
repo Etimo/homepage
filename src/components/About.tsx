@@ -52,7 +52,9 @@ const About = () => {
 							har interna koddagar m.m.
 						</P>
 						<HighlightButton>
-							<a href="https://blog.etimo.se/">Läs gärna vår blogg</a>
+							<a href="https://blog.etimo.se/" target="_blank">
+								Läs gärna vår blogg
+							</a>
 						</HighlightButton>
 					</FadeIn>
 				</div>
