@@ -21,8 +21,7 @@ const Section = styled(motion.div)<SectionProps>`
 	z-index: 100;
 	overflow: hidden;
 	height: 20px;
-	color: ${(props) =>
-		props.isActive ? props.theme.secondary : props.theme.primary};
+	color: ${(props) => (props.isActive ? props.theme.secondary : '#888888')};
 	font-family: ${(props) => props.theme.typography.font};
 `;
 

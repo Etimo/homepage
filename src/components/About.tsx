@@ -32,7 +32,7 @@ const About = () => {
 					>
 						<Caption textAlign="left">Välkommen till Etimo!</Caption>
 						<EmphasizedH2>
-							<Span secondary>Passion</Span> for teknik, <br />
+							<Span secondary>Passion</Span> för teknik, <br />
 							kundvärde och <br />
 							samhällsnytta
 						</EmphasizedH2>
@@ -51,7 +51,11 @@ const About = () => {
 							olika kunduppdrag jobbar vi tillsammans från kontoret på fredagar,
 							har interna koddagar m.m.
 						</P>
-						<HighlightButton>Läs gärna vår blogg</HighlightButton>
+						<HighlightButton>
+							<a href="https://blog.etimo.se/" target="_blank">
+								Läs gärna vår blogg
+							</a>
+						</HighlightButton>
 					</FadeIn>
 				</div>
 			</div>

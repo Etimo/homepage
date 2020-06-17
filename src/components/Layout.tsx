@@ -39,8 +39,8 @@ const Layout = ({ children }: Props) => {
 		sizes: {
 			extraSmall: '0px',
 			small: '600px',
-			medium: '1024px',
-			large: '1280px',
+			medium: '768px',
+			large: '1024px',
 			extraLarge: '1920px',
 		},
 		toolbar: {

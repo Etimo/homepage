@@ -42,7 +42,11 @@ const sections = [
 	{
 		index: 5,
 		name: 'Skillnad',
-	},
+	} /*,
+	{
+		index: 6,
+		name: 'Kontakt',
+	}*/,
 ];
 
 export default () => {

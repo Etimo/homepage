@@ -16,10 +16,10 @@ export default () => {
 						<div className="flex flex-col border p-10 rounded">
 							<h3 className="font-sans text-2xl mb-4">För kunden</h3>
 							<p className="text-gray-600 tracking-wider leading-loose">
-								- Ständigt fokus på att leverera kundvärd <br />
-								- Bidrar med teknisk kompetens samt sprider den <br />
-								- Påverkar och förbättrar proaktivt som ansvarstagande
-								lagspelare <br />
+								- Ständigt fokus på att leverera kundvärde <br />
+								- Bidrar med teknisk kompetens och sprider den <br />
+								- Påverkar och förbättrar proaktivt <br />
+								- Är en ansvarstagande lagspelare <br />
 							</p>
 						</div>
 
@@ -27,7 +27,7 @@ export default () => {
 							<h3 className="font-sans text-2xl mb-4">För samhället</h3>
 							<p className="text-gray-600 tracking-wider leading-loose">
 								- Jobbar pro-bono åt goda organisationer <br />
-								- Skänker en del av vinster till välgörenhet <br />
+								- Skänker en del av vinsten till välgörenhet <br />
 								- Open Source-projekt som gör samhällsnytta <br />
 								- Väljer bort uppdrag som inte gör samhällsnytta <br />
 							</p>

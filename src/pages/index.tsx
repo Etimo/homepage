@@ -9,10 +9,11 @@ import ThePeople from '../components/ThePeople';
 import Customers from '../components/Customers';
 import MakingDifference from '../components/MakingDifference';
 import { useViewportSize } from '../hooks';
+import { sizes } from '../helpers';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
-	const scrollbarEnabled = width >= 1280; // Laptop++
+	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
 
 	return (
 		<Layout>

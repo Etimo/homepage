@@ -28,14 +28,16 @@ const EmphasizedH2 = styled(H2)`
 	font-weight: 400;
 `;
 
-const ImageContainer = styled.div`
-	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+/* Shadow won't appear without margin */
+const StyledImg = styled(Img)`
+	box-shadow: 0px 0px 15px -2px rgba(120, 120, 120, 1);
+	margin: 30px;
 `;
 
 const WorkAtEtimo = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			image: file(relativePath: { eq: "bollhav.jpg" }) {
+			image: file(relativePath: { eq: "bollhav2.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -65,11 +67,11 @@ const WorkAtEtimo = () => {
 								- Du väljer själv dina uppdrag <br />
 								- 10% av din tid är kompetensutveckling <br />
 								- Du har en personlig mentor <br />
-								- Du har tydlig karriärväg i en origanisation med platt hierarki
+								- Du har tydlig karriärväg i en organisation med platt hierarki
 								och transparens <br />
-								- Du har möjlighet till ägareskap (bolaget ägs till 100% av
+								- Du har möjlighet till delägarskap (bolaget ägs till 100% av
 								seniora medarbetare) <br />
-								- Du jobbar ibland inhouse and ibland ute hos kund <br />-
+								- Du jobbar ibland inhouse och ibland ute hos kund <br />-
 								Fredagar jobbar vi alla från kontoret (och många av oss spelar
 								VR i vår VR-studio)
 							</P>
@@ -77,9 +79,7 @@ const WorkAtEtimo = () => {
 					</Col>
 					<Col sm mb={30}>
 						<FadeIn direction="right">
-							<ImageContainer>
-								<Img fluid={data.image.childImageSharp.fluid}></Img>
-							</ImageContainer>
+							<StyledImg fluid={data.image.childImageSharp.fluid} />
 						</FadeIn>
 					</Col>
 				</Row>

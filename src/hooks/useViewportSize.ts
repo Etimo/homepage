@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 function useViewportSize() {
 	const [height, setHeight] = useState(5000);
-	const [width, setWidth] = useState(5000);	
+	const [width, setWidth] = useState(100);
 
 	const handleResize = () => {
 		setHeight(window.innerHeight);
