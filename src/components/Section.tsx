@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { useTheme, ThemeProps, DefaultTheme } from 'styled-components';
 import tw from 'twin.macro';
 import { useViewportSize } from '../hooks';
+import { sizes } from '../helpers';
 
 type StyleProps = {
 	height?: number;
@@ -26,7 +27,7 @@ export default ({ children, headerSpace, ...props }: Props) => {
 	const [height, width] = useViewportSize();
 
 	const finalHeight =
-		width < 768 ? undefined : headerSpace ? height - 60 : height;
+		width < sizes().tablet ? undefined : headerSpace ? height - 60 : height;
 
 	return (
 		<Section height={finalHeight} {...props}>

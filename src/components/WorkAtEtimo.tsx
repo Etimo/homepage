@@ -67,11 +67,11 @@ const WorkAtEtimo = () => {
 								- Du väljer själv dina uppdrag <br />
 								- 10% av din tid är kompetensutveckling <br />
 								- Du har en personlig mentor <br />
-								- Du har tydlig karriärväg i en origanisation med platt hierarki
+								- Du har tydlig karriärväg i en organisation med platt hierarki
 								och transparens <br />
-								- Du har möjlighet till ägareskap (bolaget ägs till 100% av
+								- Du har möjlighet till delägarskap (bolaget ägs till 100% av
 								seniora medarbetare) <br />
-								- Du jobbar ibland inhouse and ibland ute hos kund <br />-
+								- Du jobbar ibland inhouse och ibland ute hos kund <br />-
 								Fredagar jobbar vi alla från kontoret (och många av oss spelar
 								VR i vår VR-studio)
 							</P>

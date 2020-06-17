@@ -8,15 +8,15 @@ export default styled.div<Props>`
 	margin: 0 auto;
 	max-width: ${(props) => props.theme.sizes.extraLarge};
 
-	@media print, screen and (min-width: 640px) {
+	@media print, screen and (min-width: 600px) {
 		max-width: ${(props) => props.theme.sizes.small};
 	}
 
-	@media print, screen and (min-width: 1024px) {
+	@media print, screen and (min-width: 768px) {
 		max-width: ${(props) => props.theme.sizes.medium};
 	}
 
-	@media print, screen and (min-width: 1280px) {
+	@media print, screen and (min-width: 1024px) {
 		max-width: ${(props) => props.theme.sizes.large};
 	}
 `;
