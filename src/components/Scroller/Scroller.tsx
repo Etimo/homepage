@@ -15,7 +15,7 @@ const Holder = styled.div`
 	margin-left: 2rem;
 	transform: translateY(-50%);
 	z-index: 10;
-	width: 100px;
+	width: 150px;
 `;
 
 const sections = [
@@ -25,15 +25,15 @@ const sections = [
 	},
 	{
 		index: 1,
-		name: 'Jobba Här',
+		name: 'Vår passion',
 	},
 	{
 		index: 2,
-		name: 'Om Oss',
+		name: 'Att jobba här',
 	},
 	{
 		index: 3,
-		name: 'Människorna',
+		name: 'Några av oss',
 	},
 	{
 		index: 4,
@@ -41,11 +41,10 @@ const sections = [
 	},
 	{
 		index: 5,
-		name: 'Skillnad',
+		name: 'Vi gör skillnad',
 	},
 	{
 		index: 6,
-		name: 'Kontakt',
 	},
 ];
 
@@ -58,6 +57,7 @@ export default () => {
 			const screenMid = Math.abs(currPos.y) + viewportHeight / 2;
 			const spanStart = activeSection * viewportHeight;
 			const spanEnd = (activeSection + 1) * viewportHeight;
+
 			if (screenMid < spanStart) {
 				setActiveSection(sections[activeSection].index - 1);
 			} else if (screenMid > spanEnd) {

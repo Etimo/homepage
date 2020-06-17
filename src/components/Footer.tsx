@@ -8,8 +8,7 @@ import H2 from '../elements/H2';
 import tw from 'twin.macro';
 
 const FooterComponent = styled.footer`
-	width: 100%;
-	height: 200px;
+	${tw`pt-6 md:pt-8 lg:pt-10`};
 	display: flex;
 	flex-direction: row-reverse;
 	> ul {
@@ -41,7 +40,7 @@ const Triangle = styled.div`
 	border-left: 200px solid transparent;
 `;
 
-const PNumber = styled.p`
+const InfoP = styled.p`
 	${tw`mx-auto text-sm tracking-wider ease-in duration-200`};
 
 	:hover {
@@ -61,7 +60,7 @@ const InfoCaption = styled(Caption)`
 	P(vit) - e-post
 	Caption(vit) - Adress
 	P(vit) - Adress
-	P(vit) - https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159
+	P(vit) - 
 	Ikoner
 
 */
@@ -73,46 +72,38 @@ const Footer = () => {
 					<Caption className="mx-auto">Kontakt</Caption>
 					<H2 className="mx-auto">Kontakta oss</H2>
 					<InfoCaption>Telefon:</InfoCaption>
-					<PNumber>076 - 213 85 97</PNumber>
+					<InfoP>
+						<a href="tel:0762138597">076 - 213 85 97</a>
+					</InfoP>
 					<InfoCaption>E-post:</InfoCaption>
-					<PNumber>kontakt@etimo.se</PNumber>
+					<InfoP>
+						<a href="mailto:kontakt@etimo.se">kontakt@etimo.se</a>
+					</InfoP>
 					<InfoCaption>Adress:</InfoCaption>
-					<PNumber>Kungsgatan 55, 111 22, Stockholm</PNumber>
-					{/*
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 mt-8 mx-6">
-						<div className="flex flex-col border p-10 rounded">
-							<h3 className="font-sans text-2xl mb-4">För kunden</h3>
-							<p className="text-gray-600 tracking-wider leading-loose">
-								- Ständigt fokus på att leverera kundvärde <br />
-								- Bidrar med teknisk kompetens och sprider den <br />
-								- Påverkar och förbättrar proaktivt <br />
-								- Är en ansvarstagande lagspelare <br />
-							</p>
-						</div>
-
-						<div className="flex flex-col border p-10 rounded">
-							<h3 className="font-sans text-2xl mb-4">För samhället</h3>
-							<p className="text-gray-600 tracking-wider leading-loose">
-								- Jobbar pro-bono åt goda organisationer <br />
-								- Skänker en del av vinsten till välgörenhet <br />
-								- Open Source-projekt som gör samhällsnytta <br />
-								- Väljer bort uppdrag som inte gör samhällsnytta <br />
-							</p>
-						</div>
-					</div>*/}
-					<FooterComponent>
-						<ul>
-							<li>
-								<a
-									href="https://github.com/Etimo/"
-									target="_blank"
-									title="Etimos Github"
-								>
-									<Icon icon={faGithubSquare} size="3x" />
-								</a>
-							</li>
-						</ul>
-					</FooterComponent>
+					<InfoP className="pointer-events-none">
+						Kungsgatan 55, 111 22, Stockholm
+					</InfoP>
+					<InfoP>
+						<a href="https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159">
+							Karta
+						</a>
+					</InfoP>
+					<div className="mx-auto flex flex-col">
+						<FooterComponent>
+							<ul>
+								<li>
+									<a
+										href="https://github.com/Etimo/"
+										target="_blank"
+										title="Etimos Github"
+									>
+										<Icon icon={faGithubSquare} size="3x" />
+									</a>
+								</li>
+							</ul>
+						</FooterComponent>
+						<InfoP style={{ color: '#888888' }}>© Etimo</InfoP>
+					</div>
 				</div>
 			</div>
 		</Section>
