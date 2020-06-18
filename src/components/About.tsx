@@ -21,7 +21,7 @@ const EmphasizedH2 = styled(H2)`
 const About = () => {
 	return (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
-			<div className="flex container flex-col md:flex-row px-4 lg:px-24">
+			<div className="flex container flex-col md:flex-row px-4 lg:px-32">
 				<div className="md:w-1/2">
 					<FadeIn
 						direction="left"

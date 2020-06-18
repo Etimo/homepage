@@ -3,10 +3,12 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Section from './Section';
+import Caption from '../elements/Caption';
+import H2 from '../elements/H2';
+import tw from 'twin.macro';
 
-const FooterComponent = styled.footer`
-	width: 100%;
-	height: 200px;
+const IconHolder = styled.footer`
+	${tw`pt-6 md:pt-8 lg:pt-10`};
 	display: flex;
 	flex-direction: row-reverse;
 	> ul {
@@ -21,8 +23,8 @@ const FooterComponent = styled.footer`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-	color: ${(props) => props.theme.primary};
 	transition: color 0.1s ease-out;
+	${tw`text-darkGray`};
 
 	:hover {
 		color: ${(props) => props.theme.secondary};
@@ -38,46 +40,83 @@ const Triangle = styled.div`
 	border-left: 200px solid transparent;
 `;
 
+const InfoP = styled.p`
+	${tw`text-center text-sm tracking-wider ease-in duration-200`};
+
+	:hover {
+		color: ${(props) => props.theme.secondary};
+	}
+`;
+
+const InfoCaption = styled(Caption)`
+	${tw`text-xs md:text-sm text-center pb-2 md:pb-3 pt-6 lg:pt-10`};
+`;
+
+const contactItems = [
+	{ title: 'Telefon', description: '076 - 213 85 97', link: 'tel:0762138597' },
+	{
+		title: 'E-post',
+		description: 'kontakt@etimo.se',
+		link: 'mailto:kontakt@etimo.se',
+	},
+	{
+		title: 'Adress',
+		description: 'Kungsgatan 55, 111 22, Stockholm',
+		class: 'pointer-events-none',
+	},
+	{
+		description: 'Karta',
+		link:
+			'https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159',
+	},
+];
+
 const Footer = () => {
 	return (
-		/*<Section style={{ backgroundColor: '#231f20' }}>*/
-		<FooterComponent>
-			<ul>
-				<li>
-					<a
-						href="https://github.com/Etimo/"
-						target="_blank"
-						title="Etimos Github"
-					>
-						<Icon icon={faGithubSquare} size="3x" />
-					</a>
-				</li>
-				<li>
-					<a
-						href="https://www.linkedin.com/company/etimo/"
-						target="_blank"
-						title="Etimos Linkedin"
-					>
-						<Icon icon={faLinkedin} size="3x" />
-					</a>
-				</li>
-			</ul>
-		</FooterComponent>
-		/*</Section>*/
+		<Section style={{ backgroundColor: '#231f20' }}>
+			<div className="container mx-auto xl:px-32">
+				<div className="flex flex-col mb-8 text-white">
+					<Caption className="mx-auto">Kontakt</Caption>
+					<H2 className="mx-auto">Kontakta oss</H2>
+					{/* TODO: Form here. */}
+
+					{contactItems.map((item) => {
+						return (
+							<div key={item.title} className="mx-auto">
+								{item.title && <InfoCaption>{item.title}</InfoCaption>}
+								<InfoP className={item.class && item.class}>
+									{item.link ? (
+										<a href={item.link} target="_blank">
+											{item.description}
+										</a>
+									) : (
+										item.description
+									)}
+								</InfoP>
+							</div>
+						);
+					})}
+				</div>
+				<div className="mx-auto flex flex-col pt-2 md:pt-4 lg:pt-6 xl:pt-8">
+					<IconHolder>
+						<ul>
+							<li>
+								<a
+									href="https://github.com/Etimo/"
+									target="_blank"
+									title="Etimos Github"
+								>
+									<Icon icon={faGithubSquare} size="2x" />
+								</a>
+							</li>
+							{/* Add more icons here */}
+						</ul>
+					</IconHolder>
+					<InfoP className="text-darkGray pointer-events-none">© Etimo</InfoP>
+				</div>
+			</div>
+		</Section>
 	);
 };
-
-/* Caption(vit) - Kontakt
-	H2/EmphasizedH2(vit) - Kontakta oss
-	Caption(vit) - Telefon
-	P(vit) - nummer
-	Caption(vit) - E-post
-	P(vit) - e-post
-	Caption(vit) - Adress
-	P(vit) - Adress
-	P(vit) - https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159
-	Ikoner
-
-*/
 
 export default Footer;
