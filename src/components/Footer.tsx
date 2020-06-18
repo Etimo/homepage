@@ -23,13 +23,12 @@ const IconHolder = styled.footer`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-	color: #888888;
 	transition: color 0.1s ease-out;
+	${tw`text-darkGray`};
 
 	:hover {
 		color: ${(props) => props.theme.secondary};
 	}
-	${tw`scale-50 md:scale-75 lg:scale-100`};
 `;
 
 /** UNUSED */
@@ -65,6 +64,11 @@ const contactItems = [
 		description: 'Kungsgatan 55, 111 22, Stockholm',
 		class: 'pointer-events-none',
 	},
+	{
+		description: 'Karta',
+		link:
+			'https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159',
+	},
 ];
 
 const Footer = () => {
@@ -79,7 +83,7 @@ const Footer = () => {
 					{contactItems.map((item) => {
 						return (
 							<div key={item.title} className="mx-auto">
-								<InfoCaption>{item.title}</InfoCaption>
+								{item.title && <InfoCaption>{item.title}</InfoCaption>}
 								<InfoP className={item.class && item.class}>
 									{item.link ? (
 										<a href={item.link} target="_blank">
@@ -92,15 +96,6 @@ const Footer = () => {
 							</div>
 						);
 					})}
-
-					<InfoP>
-						<a
-							href="https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159"
-							target="_blank"
-						>
-							Karta
-						</a>
-					</InfoP>
 				</div>
 				<div className="mx-auto flex flex-col pt-2 md:pt-4 lg:pt-6 xl:pt-8">
 					<IconHolder>
@@ -117,7 +112,7 @@ const Footer = () => {
 							{/* Add more icons here */}
 						</ul>
 					</IconHolder>
-					<InfoP style={{ color: '#888888' }}>© Etimo</InfoP>
+					<InfoP className="text-darkGray pointer-events-none">© Etimo</InfoP>
 				</div>
 			</div>
 		</Section>
