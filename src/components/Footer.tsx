@@ -71,6 +71,7 @@ const Footer = () => {
 				<div className="flex flex-col mb-8 text-white">
 					<Caption className="mx-auto">Kontakt</Caption>
 					<H2 className="mx-auto">Kontakta oss</H2>
+					{/* TODO: Form here. */}
 					<InfoCaption>Telefon:</InfoCaption>
 					<InfoP>
 						<a href="tel:0762138597">076 - 213 85 97</a>

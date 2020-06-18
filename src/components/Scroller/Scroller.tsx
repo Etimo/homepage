@@ -43,9 +43,6 @@ const sections = [
 		index: 5,
 		name: 'Vi gör skillnad',
 	},
-	{
-		index: 6,
-	},
 ];
 
 export default () => {
@@ -59,9 +56,9 @@ export default () => {
 			const spanEnd = (activeSection + 1) * viewportHeight;
 
 			if (screenMid < spanStart) {
-				setActiveSection(sections[activeSection].index - 1);
+				setActiveSection(activeSection - 1);
 			} else if (screenMid > spanEnd) {
-				setActiveSection(sections[activeSection].index + 1);
+				setActiveSection(activeSection + 1);
 			}
 		},
 		[viewportHeight, activeSection],
