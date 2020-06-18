@@ -7,7 +7,7 @@ import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import tw from 'twin.macro';
 
-const FooterComponent = styled.footer`
+const IconHolder = styled.footer`
 	${tw`pt-6 md:pt-8 lg:pt-10`};
 	display: flex;
 	flex-direction: row-reverse;
@@ -23,12 +23,13 @@ const FooterComponent = styled.footer`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-	color: ${(props) => props.theme.primary};
+	color: #888888;
 	transition: color 0.1s ease-out;
 
 	:hover {
 		color: ${(props) => props.theme.secondary};
 	}
+	${tw`scale-50 md:scale-75 lg:scale-100`};
 `;
 
 /** UNUSED */
@@ -41,7 +42,7 @@ const Triangle = styled.div`
 `;
 
 const InfoP = styled.p`
-	${tw`mx-auto text-sm tracking-wider ease-in duration-200`};
+	${tw`text-center text-sm tracking-wider ease-in duration-200`};
 
 	:hover {
 		color: ${(props) => props.theme.secondary};
@@ -49,21 +50,23 @@ const InfoP = styled.p`
 `;
 
 const InfoCaption = styled(Caption)`
-	${tw`text-xs md:text-sm mx-auto pb-2 md:pb-3 pt-6 lg:pt-10`};
+	${tw`text-xs md:text-sm text-center pb-2 md:pb-3 pt-6 lg:pt-10`};
 `;
 
-/* Caption(vit) - Kontakt
-	H2/EmphasizedH2(vit) - Kontakta oss
-	Caption(vit) - Telefon
-	P(vit) - nummer
-	Caption(vit) - E-post
-	P(vit) - e-post
-	Caption(vit) - Adress
-	P(vit) - Adress
-	P(vit) - 
-	Ikoner
+const contactItems = [
+	{ title: 'Telefon', description: '076 - 213 85 97', link: 'tel:0762138597' },
+	{
+		title: 'E-post',
+		description: 'kontakt@etimo.se',
+		link: 'mailto:kontakt@etimo.se',
+	},
+	{
+		title: 'Adress',
+		description: 'Kungsgatan 55, 111 22, Stockholm',
+		class: 'pointer-events-none',
+	},
+];
 
-*/
 const Footer = () => {
 	return (
 		<Section style={{ backgroundColor: '#231f20' }}>
@@ -72,39 +75,49 @@ const Footer = () => {
 					<Caption className="mx-auto">Kontakt</Caption>
 					<H2 className="mx-auto">Kontakta oss</H2>
 					{/* TODO: Form here. */}
-					<InfoCaption>Telefon:</InfoCaption>
+
+					{contactItems.map((item) => {
+						return (
+							<div key={item.title} className="mx-auto">
+								<InfoCaption>{item.title}</InfoCaption>
+								<InfoP className={item.class && item.class}>
+									{item.link ? (
+										<a href={item.link} target="_blank">
+											{item.description}
+										</a>
+									) : (
+										item.description
+									)}
+								</InfoP>
+							</div>
+						);
+					})}
+
 					<InfoP>
-						<a href="tel:0762138597">076 - 213 85 97</a>
-					</InfoP>
-					<InfoCaption>E-post:</InfoCaption>
-					<InfoP>
-						<a href="mailto:kontakt@etimo.se">kontakt@etimo.se</a>
-					</InfoP>
-					<InfoCaption>Adress:</InfoCaption>
-					<InfoP className="pointer-events-none">
-						Kungsgatan 55, 111 22, Stockholm
-					</InfoP>
-					<InfoP>
-						<a href="https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159">
+						<a
+							href="https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159"
+							target="_blank"
+						>
 							Karta
 						</a>
 					</InfoP>
-					<div className="mx-auto flex flex-col">
-						<FooterComponent>
-							<ul>
-								<li>
-									<a
-										href="https://github.com/Etimo/"
-										target="_blank"
-										title="Etimos Github"
-									>
-										<Icon icon={faGithubSquare} size="3x" />
-									</a>
-								</li>
-							</ul>
-						</FooterComponent>
-						<InfoP style={{ color: '#888888' }}>© Etimo</InfoP>
-					</div>
+				</div>
+				<div className="mx-auto flex flex-col pt-2 md:pt-4 lg:pt-6 xl:pt-8">
+					<IconHolder>
+						<ul>
+							<li>
+								<a
+									href="https://github.com/Etimo/"
+									target="_blank"
+									title="Etimos Github"
+								>
+									<Icon icon={faGithubSquare} size="2x" />
+								</a>
+							</li>
+							{/* Add more icons here */}
+						</ul>
+					</IconHolder>
+					<InfoP style={{ color: '#888888' }}>© Etimo</InfoP>
 				</div>
 			</div>
 		</Section>
