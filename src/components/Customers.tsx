@@ -1,8 +1,15 @@
-import React from 'react';
-import Section from './Section';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import Caption from '../elements/Caption';
+import Section from './Section';
+
+/* max-width: 150px; */
+const ImageDiv = styled.div`
+	${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs lg:max-w-xxxs`};
+`;
 
 export default () => {
 	const data = useStaticQuery(graphql`
@@ -143,24 +150,22 @@ export default () => {
 
 	return (
 		<Section>
-			<div className="container mx-auto xl:px-32">
+			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<Caption className="text-center">Kunder</Caption>
 					<h2 className="mx-auto font-sans text-5xl text-center">
 						Ett urval av våra <span className="text-cyan">kunder</span>
 					</h2>
-					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 md:mx-12">
+					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 mx-8 xl:mx-12">
 						{customers.map((customer) => {
-							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-auto`;
+							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-2 lg:py-4`;
 
 							return (
 								<div
 									style={{ filter: 'grayscale(100%) opacity(60%)' }}
 									className={classes}
 								>
-									<div style={{ maxWidth: 150 }} className="mx-auto w-full">
-										{customer.image}
-									</div>
+									<ImageDiv>{customer.image}</ImageDiv>
 								</div>
 							);
 						})}

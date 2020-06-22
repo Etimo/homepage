@@ -26,7 +26,7 @@ export default () => {
 					<h2 className="mx-auto font-sans text-5xl text-center">
 						Etimo gör <span className="text-cyan">skillnad</span>
 					</h2>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 mt-8 mx-6">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 mt-8 lg:mt-12 mx-6">
 						<div className="flex flex-col border p-10 rounded">
 							<h3 className="font-sans text-2xl mb-4">För kunden</h3>
 							<div className="text-gray-600 tracking-wider leading-loose">
