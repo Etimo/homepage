@@ -12,7 +12,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Span from '../elements/Span';
 import tw from 'twin.macro';
+import DashedP from '../elements/DashedP';
 
+/* Doesn't work. */
 const CustomBackground = styled.div`
 	left: calc(50% + 250px);
 	position: relative;
@@ -35,6 +37,16 @@ const StyledImg = styled(Img)`
 	box-shadow: 0px 0px 15px -2px rgba(120, 120, 120, 1);
 	margin: 30px;
 `;
+
+const workItems = [
+	'Du väljer själv dina uppdrag',
+	'10% av din tid är kompetensutveckling',
+	'Du har en personlig mentor',
+	'Du har tydlig karriärväg i en organisation med platt hierarki och transparens',
+	'Du har möjlighet till delägarskap (bolaget ägs till 100% av seniora medarbetare)',
+	'Du jobbar ibland inhouse och ibland ute hos kund',
+	'Fredagar jobbar vi alla från kontoret (och många av oss spelar VR i vår VR-studio)',
+];
 
 const WorkAtEtimo = () => {
 	const data = useStaticQuery(graphql`
@@ -67,18 +79,9 @@ const WorkAtEtimo = () => {
 								Hur är det att <Span secondary>jobba </Span>
 								på Etimo?
 							</EmphasizedH2>
-							<P>
-								- Du väljer själv dina uppdrag <br />
-								- 10% av din tid är kompetensutveckling <br />
-								- Du har en personlig mentor <br />
-								- Du har tydlig karriärväg i en organisation med platt hierarki
-								och transparens <br />
-								- Du har möjlighet till delägarskap (bolaget ägs till 100% av
-								seniora medarbetare) <br />
-								- Du jobbar ibland inhouse och ibland ute hos kund <br />-
-								Fredagar jobbar vi alla från kontoret (och många av oss spelar
-								VR i vår VR-studio)
-							</P>
+							{workItems.map((text) => {
+								return <DashedP>{text}</DashedP>;
+							})}
 						</FadeIn>
 					</Col>
 					<Col sm mb={30}>

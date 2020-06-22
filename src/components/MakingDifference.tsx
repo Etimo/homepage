@@ -2,16 +2,7 @@ import React from 'react';
 import Section from './Section';
 import P from '../elements/P';
 import Caption from '../elements/Caption';
-import styled from 'styled-components';
-
-const Dashedli = styled.li`
-	::before {
-		content: '-';
-		position: absolute;
-		margin-left: -10px;
-		margin-top: 1px;
-	}
-`;
+import DashedP from '../elements/DashedP';
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -39,28 +30,20 @@ export default () => {
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 mt-8 mx-6">
 						<div className="flex flex-col border p-10 rounded">
 							<h3 className="font-sans text-2xl mb-4">För kunden</h3>
-							<ul className="text-gray-600 tracking-wider leading-loose">
+							<div className="text-gray-600 tracking-wider leading-loose">
 								{customerTexts.map((cText) => {
-									return (
-										<Dashedli key={cText}>
-											<P>{cText}</P>
-										</Dashedli>
-									);
+									return <DashedP key={cText}>{cText}</DashedP>;
 								})}
-							</ul>
+							</div>
 						</div>
 
 						<div className="flex flex-col border p-10 rounded">
 							<h3 className="font-sans text-2xl mb-4">För samhället</h3>
-							<ul className="text-gray-600 tracking-wider leading-loose">
+							<div className="text-gray-600 tracking-wider leading-loose">
 								{societyTexts.map((sText) => {
-									return (
-										<Dashedli key={sText}>
-											<P>{sText}</P>
-										</Dashedli>
-									);
+									return <DashedP key={sText}>{sText}</DashedP>;
 								})}
-							</ul>
+							</div>
 						</div>
 					</div>
 				</div>
