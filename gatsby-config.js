@@ -48,6 +48,7 @@ module.exports = {
 						'Noto Sans JP',
 						'Quicksand',
 						'Overpass',
+						'Open Sans',
 					],
 				},
 			},

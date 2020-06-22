@@ -30,10 +30,13 @@ const Layout = ({ children }: Props) => {
 		},
 		typography: {
 			font: 'Overpass',
+			paragraph: {
+				font: 'Open Sans',
+			},
 
 			caption: {
 				spacing: '3px',
-				size: 14,
+				size: 12,
 			},
 		},
 		sizes: {

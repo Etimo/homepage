@@ -58,12 +58,14 @@ const WorkAtEtimo = () => {
 							flexDirection="column"
 							justifyContent="space-between"
 						>
-							<Caption textAlign="left">Att jobba på Etimo</Caption>
+							<Caption className="text-center lg:text-left">
+								Att jobba på Etimo
+							</Caption>
 							<EmphasizedH2>
 								Hur är det att <Span secondary>jobba </Span>
 								på Etimo?
 							</EmphasizedH2>
-							<P style={{ lineHeight: 1.7 }}>
+							<P>
 								- Du väljer själv dina uppdrag <br />
 								- 10% av din tid är kompetensutveckling <br />
 								- Du har en personlig mentor <br />

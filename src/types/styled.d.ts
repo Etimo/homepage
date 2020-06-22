@@ -9,6 +9,9 @@ declare module 'styled-components' {
 		};
 		typography: {
 			font: string;
+			paragraph: {
+				font: string;
+			};
 			caption: {
 				spacing: string;
 				size: number;

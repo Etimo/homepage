@@ -3,6 +3,7 @@ import Section from './Section';
 import EmployeeCards from './EmployeeCards';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import Caption from '../elements/Caption';
 
 const ThePeople = () => {
 	const data = useStaticQuery(graphql`
@@ -100,9 +101,7 @@ const ThePeople = () => {
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8">
-					<h4 className="mx-auto uppercase font-sans tracking-widest">
-						Människorna
-					</h4>
+					<Caption className="text-center">Människorna</Caption>
 					<h2 className="mx-auto font-sans text-5xl">
 						Några av <span className="text-cyan">oss</span>
 					</h2>

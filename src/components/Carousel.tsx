@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
 import { useInterval } from '../hooks';
+import tw from 'twin.macro';
 
 const variants = {
 	initial: {
@@ -25,6 +26,7 @@ const variants = {
 
 const Item = styled(motion.p)`
 	position: relative;
+	${tw`font-opensans`}
 `;
 
 type Props = {

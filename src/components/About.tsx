@@ -10,18 +10,20 @@ import Span from '../elements/Span';
 import { HighlightButton } from './Button';
 import P from '../elements/P';
 import Caption from '../elements/Caption';
+import tw from 'twin.macro';
 
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
 	font-weight: 400;
 	margin-bottom: 0;
 	margin-top: auto;
+	${tw`text-justify lg:text-left`}
 `;
 
 const About = () => {
 	return (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
-			<div className="flex container flex-col md:flex-row px-4 lg:px-32">
+			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
 					<FadeIn
 						direction="left"
@@ -30,7 +32,9 @@ const About = () => {
 						flexDirection="column"
 						justifyContent="space-between"
 					>
-						<Caption textAlign="left">Välkommen till Etimo!</Caption>
+						<Caption className="text-center lg:text-left">
+							Välkommen till Etimo!
+						</Caption>
 						<EmphasizedH2>
 							<Span secondary>Passion</Span> för teknik, <br />
 							kundvärde och <br />
@@ -51,6 +55,7 @@ const About = () => {
 							olika kunduppdrag jobbar vi tillsammans från kontoret på fredagar,
 							har interna koddagar m.m.
 						</P>
+						<br />
 						<HighlightButton>
 							<a href="https://blog.etimo.se/" target="_blank">
 								Läs gärna vår blogg

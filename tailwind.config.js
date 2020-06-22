@@ -6,6 +6,7 @@ module.exports = {
 			fontFamily: {
 				sans: ['Overpass', ...defaultTheme.fontFamily.sans],
 				etimo: ['Quattrocento Sans', 'sans-serif'],
+				opensans: ['Open Sans', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				cyan: '#42C8AD',

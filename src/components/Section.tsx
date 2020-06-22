@@ -27,7 +27,7 @@ export default ({ children, headerSpace, ...props }: Props) => {
 	const [height, width] = useViewportSize();
 
 	const finalHeight =
-		width < sizes().tablet ? undefined : headerSpace ? height - 60 : height;
+		width < sizes().laptop ? undefined : headerSpace ? height - 60 : height;
 
 	return (
 		<Section height={finalHeight} {...props}>

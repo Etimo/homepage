@@ -82,7 +82,7 @@ const Footer = () => {
 
 					{contactItems.map((item) => {
 						return (
-							<div key={item.title} className="mx-auto">
+							<div key={item.description} className="mx-auto">
 								{item.title && <InfoCaption>{item.title}</InfoCaption>}
 								<InfoP className={item.class && item.class}>
 									{item.link ? (

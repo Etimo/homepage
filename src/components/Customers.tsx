@@ -2,6 +2,7 @@ import React from 'react';
 import Section from './Section';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import Caption from '../elements/Caption';
 
 export default () => {
 	const data = useStaticQuery(graphql`
@@ -144,9 +145,7 @@ export default () => {
 		<Section>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8">
-					<h4 className="mx-auto uppercase font-sans tracking-widest">
-						Kunder
-					</h4>
+					<Caption className="text-center">Kunder</Caption>
 					<h2 className="mx-auto font-sans text-5xl text-center">
 						Ett urval av våra <span className="text-cyan">kunder</span>
 					</h2>
