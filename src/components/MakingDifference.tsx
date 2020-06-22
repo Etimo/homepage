@@ -1,8 +1,7 @@
 import React from 'react';
-import Section from './Section';
-import P from '../elements/P';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
+import Section from './Section';
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',

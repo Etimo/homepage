@@ -1,29 +1,30 @@
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import React from 'react';
-import Section from './Section';
-import Row from '../elements/Row';
-import Col from '../elements/Col';
-import Container from '../elements/Container';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 import FadeIn from '../animations/FadeIn';
 import Caption from '../elements/Caption';
-import H2 from '../elements/H2';
-import P from '../elements/P';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
-import Span from '../elements/Span';
-import tw from 'twin.macro';
+import Col from '../elements/Col';
+import Container from '../elements/Container';
 import DashedP from '../elements/DashedP';
+import H2 from '../elements/H2';
+import Row from '../elements/Row';
+import Span from '../elements/Span';
+import { sizes } from '../helpers';
+import { useViewportSize } from '../hooks';
+import Section from './Section';
 
-/* Doesn't work. */
-const CustomBackground = styled.div`
+const CustomBackground = styled.div<{ offset: number }>`
+	position: absolute;
+	height: 100%;
 	left: calc(50% + 250px);
-	position: relative;
-	top: 0;
+	top: ${(props) => props.offset + 'px'};
 	right: 0;
 	bottom: 0;
 	display: block;
-	z-index: -1;
-	background-color: #ffffff;
+	z-index: 0;
+	background-color: white;
 `;
 
 const EmphasizedH2 = styled(H2)`
@@ -61,8 +62,11 @@ const WorkAtEtimo = () => {
 		}
 	`);
 
+	const [height, width] = useViewportSize();
+
 	return (
 		<Section>
+			{width >= sizes().laptop && <CustomBackground offset={height * 2} />}
 			<Container>
 				<Row justifyContent="center" mb={-30}>
 					<Col sm mb={30} flex justifyContent="center" flexDirection="column">
@@ -91,7 +95,6 @@ const WorkAtEtimo = () => {
 					</Col>
 				</Row>
 			</Container>
-			<CustomBackground />
 		</Section>
 	);
 };
