@@ -2,6 +2,30 @@ import React from 'react';
 import Section from './Section';
 import P from '../elements/P';
 import Caption from '../elements/Caption';
+import styled from 'styled-components';
+
+const Dashedli = styled.li`
+	::before {
+		content: '-';
+		position: absolute;
+		margin-left: -10px;
+		margin-top: 1px;
+	}
+`;
+
+const customerTexts = [
+	'Ständigt fokus på att leverera kundvärde',
+	'Bidrar med teknisk kompetens och sprider den',
+	'Påverkar och förbättrar proaktivt',
+	'Är en ansvarstagande lagspelare',
+];
+
+const societyTexts = [
+	'Jobbar pro-bono åt goda organisationer',
+	'Skänker en del av vinsten till välgörenhet',
+	'Open Source-projekt som gör samhällsnytta',
+	'Väljer bort uppdrag som inte gör samhällsnytta',
+];
 
 export default () => {
 	return (
@@ -15,22 +39,28 @@ export default () => {
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 mt-8 mx-6">
 						<div className="flex flex-col border p-10 rounded">
 							<h3 className="font-sans text-2xl mb-4">För kunden</h3>
-							<P className="text-gray-600 tracking-wider leading-loose">
-								- Ständigt fokus på att leverera kundvärde <br />
-								- Bidrar med teknisk kompetens och sprider den <br />
-								- Påverkar och förbättrar proaktivt <br />
-								- Är en ansvarstagande lagspelare <br />
-							</P>
+							<ul className="text-gray-600 tracking-wider leading-loose">
+								{customerTexts.map((cText) => {
+									return (
+										<Dashedli key={cText}>
+											<P>{cText}</P>
+										</Dashedli>
+									);
+								})}
+							</ul>
 						</div>
 
 						<div className="flex flex-col border p-10 rounded">
 							<h3 className="font-sans text-2xl mb-4">För samhället</h3>
-							<P className="text-gray-600 tracking-wider leading-loose">
-								- Jobbar pro-bono åt goda organisationer <br />
-								- Skänker en del av vinsten till välgörenhet <br />
-								- Open Source-projekt som gör samhällsnytta <br />
-								- Väljer bort uppdrag som inte gör samhällsnytta <br />
-							</P>
+							<ul className="text-gray-600 tracking-wider leading-loose">
+								{societyTexts.map((sText) => {
+									return (
+										<Dashedli key={sText}>
+											<P>{sText}</P>
+										</Dashedli>
+									);
+								})}
+							</ul>
 						</div>
 					</div>
 				</div>

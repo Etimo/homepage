@@ -11,6 +11,7 @@ import P from '../elements/P';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import Span from '../elements/Span';
+import tw from 'twin.macro';
 
 const CustomBackground = styled.div`
 	left: calc(50% + 250px);
@@ -26,6 +27,7 @@ const CustomBackground = styled.div`
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
 	font-weight: 400;
+	${tw`lg:max-w-xxxs xl:max-w-xxs mb-2 lg:mb-4 xl:mb-6`}
 `;
 
 /* Shadow won't appear without margin */

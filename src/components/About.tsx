@@ -23,6 +23,7 @@ const EmphasizedH2 = styled(H2)`
 const About = () => {
 	return (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
+			{/* This needs to switch to row at lg(1024)*/}
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
 					<FadeIn
