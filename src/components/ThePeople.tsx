@@ -1,8 +1,10 @@
-import React from 'react';
-import Section from './Section';
-import EmployeeCards from './EmployeeCards';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
+import Caption from '../elements/Caption';
+import H2 from '../elements/H2';
+import EmployeeCards from './EmployeeCards';
+import Section from './Section';
 
 const ThePeople = () => {
 	const data = useStaticQuery(graphql`
@@ -100,12 +102,10 @@ const ThePeople = () => {
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8">
-					<h4 className="mx-auto uppercase font-sans tracking-widest">
-						Människorna
-					</h4>
-					<h2 className="mx-auto font-sans text-5xl">
+					<Caption className="text-center">Människorna</Caption>
+					<H2 className="text-center">
 						Några av <span className="text-cyan">oss</span>
-					</h2>
+					</H2>
 					<EmployeeCards employees={people} />
 				</div>
 			</div>

@@ -49,7 +49,7 @@ const InfoP = styled.p`
 `;
 
 const InfoCaption = styled(Caption)`
-	${tw`text-xs md:text-sm text-center pb-2 md:pb-3 pt-6 lg:pt-10`};
+	${tw`text-xs md:text-sm text-center mb-2 md:mb-3 pt-6 md:pt-10`};
 `;
 
 const contactItems = [
@@ -82,7 +82,7 @@ const Footer = () => {
 
 					{contactItems.map((item) => {
 						return (
-							<div key={item.title} className="mx-auto">
+							<div key={item.description} className="mx-auto">
 								{item.title && <InfoCaption>{item.title}</InfoCaption>}
 								<InfoP className={item.class && item.class}>
 									{item.link ? (

@@ -1,31 +1,36 @@
+import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
 import React from 'react';
-import Section from './Section';
-import Row from '../elements/Row';
-import Col from '../elements/Col';
-import Container from '../elements/Container';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 import FadeIn from '../animations/FadeIn';
 import Caption from '../elements/Caption';
+import Col from '../elements/Col';
+import Container from '../elements/Container';
+import DashedP from '../elements/DashedP';
 import H2 from '../elements/H2';
-import P from '../elements/P';
-import { useStaticQuery, graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import Row from '../elements/Row';
 import Span from '../elements/Span';
+import { sizes } from '../helpers';
+import { useViewportSize } from '../hooks';
+import Section from './Section';
 
-const CustomBackground = styled.div`
+const CustomBackground = styled.div<{ offset: number }>`
+	position: absolute;
+	height: 100%;
 	left: calc(50% + 250px);
-	position: relative;
-	top: 0;
+	top: ${(props) => props.offset + 'px'};
 	right: 0;
 	bottom: 0;
 	display: block;
-	z-index: -1;
-	background-color: #ffffff;
+	z-index: 0;
+	background-color: white;
 `;
 
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
 	font-weight: 400;
+	${tw`lg:max-w-xxxs xl:max-w-xxs mb-2 md:mb-3 lg:mb-4 xl:mb-6`}
 `;
 
 /* Shadow won't appear without margin */
@@ -33,6 +38,16 @@ const StyledImg = styled(Img)`
 	box-shadow: 0px 0px 15px -2px rgba(120, 120, 120, 1);
 	margin: 30px;
 `;
+
+const workItems = [
+	'Du väljer själv dina uppdrag',
+	'10% av din tid är kompetensutveckling',
+	'Du har en personlig mentor',
+	'Du har tydlig karriärväg i en organisation med platt hierarki och transparens',
+	'Du har möjlighet till delägarskap (bolaget ägs till 100% av seniora medarbetare)',
+	'Du jobbar ibland inhouse och ibland ute hos kund',
+	'Fredagar jobbar vi alla från kontoret (och många av oss spelar VR i vår VR-studio)',
+];
 
 const WorkAtEtimo = () => {
 	const data = useStaticQuery(graphql`
@@ -47,8 +62,11 @@ const WorkAtEtimo = () => {
 		}
 	`);
 
+	const [height, width] = useViewportSize();
+
 	return (
 		<Section>
+			{width >= sizes().laptop && <CustomBackground offset={height * 2} />}
 			<Container>
 				<Row justifyContent="center" mb={-30}>
 					<Col sm mb={30} flex justifyContent="center" flexDirection="column">
@@ -58,23 +76,18 @@ const WorkAtEtimo = () => {
 							flexDirection="column"
 							justifyContent="space-between"
 						>
-							<Caption textAlign="left">Att jobba på Etimo</Caption>
-							<EmphasizedH2>
+							<Caption className="text-center lg:text-left">
+								Att jobba på Etimo
+							</Caption>
+							<EmphasizedH2 className="text-center lg:text-left">
 								Hur är det att <Span secondary>jobba </Span>
 								på Etimo?
 							</EmphasizedH2>
-							<P style={{ lineHeight: 1.7 }}>
-								- Du väljer själv dina uppdrag <br />
-								- 10% av din tid är kompetensutveckling <br />
-								- Du har en personlig mentor <br />
-								- Du har tydlig karriärväg i en organisation med platt hierarki
-								och transparens <br />
-								- Du har möjlighet till delägarskap (bolaget ägs till 100% av
-								seniora medarbetare) <br />
-								- Du jobbar ibland inhouse och ibland ute hos kund <br />-
-								Fredagar jobbar vi alla från kontoret (och många av oss spelar
-								VR i vår VR-studio)
-							</P>
+							<div className="mx-4 lg:mx-0">
+								{workItems.map((text) => {
+									return <DashedP>{text}</DashedP>;
+								})}
+							</div>
 						</FadeIn>
 					</Col>
 					<Col sm mb={30}>
@@ -84,7 +97,6 @@ const WorkAtEtimo = () => {
 					</Col>
 				</Row>
 			</Container>
-			<CustomBackground />
 		</Section>
 	);
 };

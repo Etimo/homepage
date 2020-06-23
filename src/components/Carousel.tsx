@@ -1,7 +1,7 @@
+import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { motion, AnimatePresence } from 'framer-motion';
 import styled from 'styled-components';
+import tw from 'twin.macro';
 import { useInterval } from '../hooks';
 
 const variants = {
@@ -25,6 +25,7 @@ const variants = {
 
 const Item = styled(motion.p)`
 	position: relative;
+	${tw`font-mont`}
 `;
 
 type Props = {

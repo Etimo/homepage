@@ -109,12 +109,12 @@ export default (props: Props) => {
 			>
 				<motion.h3
 					variants={nameAnimation}
-					className="m-auto mb-1 text-3xl md:text-xl lg:text-3xl tracking-widest"
+					className="m-auto mb-1 text-sm md:text-xl lg:text-3xl tracking-widest"
 				>
 					{name}
 				</motion.h3>
 				<motion.span
-					className="m-auto mt-0 mb-0 text-lg tracking-wider"
+					className="m-auto mt-0 mb-0 text-sm md:text-xl tracking-wider"
 					variants={roleAnimation}
 				>
 					{title}

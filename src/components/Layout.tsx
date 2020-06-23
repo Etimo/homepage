@@ -1,11 +1,11 @@
-import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import Header from './Header';
-import Footer from './Footer';
-import './layout.css';
 import '../css/global.css';
+import Footer from './Footer';
+import Header from './Header';
+import './layout.css';
 
 type Props = {
 	children: React.ReactNode;
@@ -29,11 +29,18 @@ const Layout = ({ children }: Props) => {
 			background: '#f9f9f9',
 		},
 		typography: {
-			font: 'Overpass',
+			font: 'Overpass' /* Deprecated */,
+			paragraph: {
+				font: 'Montserrat',
+			},
+			headline: {
+				font: 'Questrial',
+			},
 
 			caption: {
-				spacing: '3px',
-				size: 14,
+				spacing: '0.4em',
+				size: 10,
+				font: 'Questrial',
 			},
 		},
 		sizes: {

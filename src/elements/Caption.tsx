@@ -1,19 +1,18 @@
-import styled, { ThemeProps, DefaultTheme } from 'styled-components';
-
-type TextAlign = 'left' | 'right' | 'center';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
+import tw from 'twin.macro';
 
 type Props = {
 	primary?: boolean;
 	secondary?: boolean;
-	textAlign?: TextAlign;
 } & ThemeProps<DefaultTheme>;
 
 export default styled.div<Props>`
-	font-family: ${({ theme }) => theme.typography.font};
+	font-family: ${({ theme }) => theme.typography.caption.font};
 	letter-spacing: ${({ theme }) => theme.typography.caption.spacing};
 	font-size: ${({ theme }) => theme.typography.caption.size}px;
-	text-align: ${({ textAlign }) => textAlign && textAlign};
+	line-height: 2;
 	text-transform: uppercase;
+	font-weight: 400;
 
 	color: ${({ theme, primary, secondary }) => {
 		if (primary) {
@@ -22,4 +21,6 @@ export default styled.div<Props>`
 			return theme.secondary;
 		}
 	}};
+
+	${tw`mb-2 md:mb-3 lg:mb-4 xl:mb-5 overflow-hidden`}
 `;
