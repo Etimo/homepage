@@ -17,12 +17,21 @@ module.exports = {
 			},
 			fontSize: {
 				'8xl': '4rem',
+				small: '13px',
 			},
 			maxWidth: {
 				xxs: '15rem',
 				xxxs: '11rem',
 				xxxxs: '9rem',
 				xxxxxs: '6rem',
+			},
+			lineHeight: {
+				small: '1.7',
+				large: '2.15',
+			},
+			padding: {
+				small: '40px',
+				large: '50px',
 			},
 		},
 	},

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import tw from 'twin.macro';
 import P from './P';
 
 export default styled(P)`
@@ -7,4 +8,5 @@ export default styled(P)`
 		position: absolute;
 		margin-left: -10px;
 	}
+	${tw`mb-2 lg:mb-1`};
 `;

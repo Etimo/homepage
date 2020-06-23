@@ -30,7 +30,7 @@ const CustomBackground = styled.div<{ offset: number }>`
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
 	font-weight: 400;
-	${tw`lg:max-w-xxxs xl:max-w-xxs mb-2 lg:mb-4 xl:mb-6`}
+	${tw`lg:max-w-xxxs xl:max-w-xxs mb-2 md:mb-3 lg:mb-4 xl:mb-6`}
 `;
 
 /* Shadow won't appear without margin */
@@ -79,13 +79,15 @@ const WorkAtEtimo = () => {
 							<Caption className="text-center lg:text-left">
 								Att jobba på Etimo
 							</Caption>
-							<EmphasizedH2>
+							<EmphasizedH2 className="text-center lg:text-left">
 								Hur är det att <Span secondary>jobba </Span>
 								på Etimo?
 							</EmphasizedH2>
-							{workItems.map((text) => {
-								return <DashedP>{text}</DashedP>;
-							})}
+							<div className="mx-4 lg:mx-0">
+								{workItems.map((text) => {
+									return <DashedP>{text}</DashedP>;
+								})}
+							</div>
 						</FadeIn>
 					</Col>
 					<Col sm mb={30}>

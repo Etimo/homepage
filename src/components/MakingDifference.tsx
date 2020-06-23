@@ -1,4 +1,6 @@
 import React from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import H2 from '../elements/H2';
@@ -18,6 +20,10 @@ const societyTexts = [
 	'Väljer bort uppdrag som inte gör samhällsnytta',
 ];
 
+const H3Title = styled.h3`
+	${tw`font-quest text-xl lg:text-2xl mb-4`};
+`;
+
 export default () => {
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
@@ -27,23 +33,19 @@ export default () => {
 					<H2 className="text-center">
 						Etimo gör <span className="text-cyan">skillnad</span>
 					</H2>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-10 mt-8 lg:mt-12 mx-6">
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-8 lg:mt-12 mx-6">
 						<div className="flex flex-col border p-10 rounded">
-							<h3 className="font-sans text-2xl mb-4">För kunden</h3>
-							<div className="text-gray-800 tracking-wider leading-loose">
-								{customerTexts.map((cText) => {
-									return <DashedP key={cText}>{cText}</DashedP>;
-								})}
-							</div>
+							<H3Title>För kunden</H3Title>
+							{customerTexts.map((cText) => {
+								return <DashedP key={cText}>{cText}</DashedP>;
+							})}
 						</div>
 
 						<div className="flex flex-col border p-10 rounded">
-							<h3 className="font-sans text-2xl mb-4">För samhället</h3>
-							<div className="text-gray-900 tracking-wider leading-loose">
-								{societyTexts.map((sText) => {
-									return <DashedP key={sText}>{sText}</DashedP>;
-								})}
-							</div>
+							<H3Title>För samhället</H3Title>
+							{societyTexts.map((sText) => {
+								return <DashedP key={sText}>{sText}</DashedP>;
+							})}
 						</div>
 					</div>
 				</div>

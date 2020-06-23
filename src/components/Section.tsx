@@ -1,13 +1,14 @@
 import React from 'react';
-import styled, { useTheme, ThemeProps, DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
-import { useViewportSize } from '../hooks';
 import { sizes } from '../helpers';
+import { useViewportSize } from '../hooks';
 
 type StyleProps = {
 	height?: number;
 } & ThemeProps<DefaultTheme>;
 
+/* Padding is 40px on mobile */
 const Section = styled.section<StyleProps>`
 	display: flex;
 	height: ${(props) => (props.height ? props.height + 'px' : 'inherit')};
@@ -15,6 +16,7 @@ const Section = styled.section<StyleProps>`
 	align-items: center;
 	width: 100%;
 	padding: 50px 0;
+	${tw`py-small md:py-large`};
 `;
 
 type Props = {

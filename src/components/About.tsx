@@ -34,9 +34,9 @@ const About = () => {
 					</FadeIn>
 				</div>
 
-				<div className="md:w-1/2">
+				<div className="md:w-1/2 text-center sm:text-left">
 					<FadeIn direction="right">
-						<P>
+						<P className="mt-6  md:mt-0">
 							På Etimo förenas vi av en passion för att utveckla moderna
 							skräddarsydda lösningar som gör skillnad och ger stort värde för
 							kunden och samhället. Vi tackar nej till uppdrag vi inte gillar,
