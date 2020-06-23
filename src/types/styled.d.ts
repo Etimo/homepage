@@ -12,6 +12,10 @@ declare module 'styled-components' {
 			paragraph: {
 				font: string;
 			};
+			headline: {
+				font: string;
+			};
+
 			caption: {
 				spacing: string;
 				size: number;

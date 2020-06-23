@@ -7,6 +7,8 @@ module.exports = {
 				sans: ['Overpass', ...defaultTheme.fontFamily.sans],
 				etimo: ['Quattrocento Sans', 'sans-serif'],
 				opensans: ['Open Sans', ...defaultTheme.fontFamily.sans],
+				mont: ['Montserrat', ...defaultTheme.fontFamily.sans],
+				quest: ['Questrial', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				cyan: '#42C8AD',

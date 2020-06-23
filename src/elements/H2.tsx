@@ -1,8 +1,8 @@
-import styled, { ThemeProps, DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 
 export default styled.h2<ThemeProps<DefaultTheme>>`
 	font-size: 48px;
-	font-family: ${({ theme }) => theme.typography.font};
+	font-family: ${({ theme }) => theme.typography.headline.font};
 
 	@media (max-width: 640px) {
 		font-size: 26px;
