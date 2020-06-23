@@ -13,6 +13,7 @@ module.exports = {
 			colors: {
 				cyan: '#42C8AD',
 				darkGray: '#888888',
+				blackGray: '#111111',
 			},
 			fontSize: {
 				'8xl': '4rem',

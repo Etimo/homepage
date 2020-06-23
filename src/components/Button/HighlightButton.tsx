@@ -1,6 +1,7 @@
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Button from './Button';
 
+/* Most of this styling is ignored since P encloses the text */
 export default styled(Button)<ThemeProps<DefaultTheme>>`
 	letter-spacing: 0.075em;
 	padding: 6px 0px;
@@ -17,6 +18,6 @@ export default styled(Button)<ThemeProps<DefaultTheme>>`
 
 	&:hover {
 		background-position: 0 100%;
-		border-bottom: 1px transparent;
+		border-bottom: 1px solid transparent;
 	}
 `;

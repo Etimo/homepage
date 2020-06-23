@@ -49,7 +49,7 @@ module.exports = {
 						'Quicksand',
 						'Overpass',
 						'Open Sans',
-						'Montserrat',
+						'Montserrat:300',
 						'Questrial',
 					],
 				},

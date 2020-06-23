@@ -19,6 +19,7 @@ declare module 'styled-components' {
 			caption: {
 				spacing: string;
 				size: number;
+				font: string;
 			};
 		};
 		sizes: {

@@ -1,13 +1,12 @@
 import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
+import tw from 'twin.macro';
 import Carousel from './Carousel';
 import Section from './Section';
-import tw from 'twin.macro';
 
 const Hero = styled.div<ThemeProps<DefaultTheme>>`
 	max-width: 76rem;
 	align-self: center;
-	font-family: ${(props) => props.theme.typography.font};
 	${tw`flex flex-col mx-auto`};
 	align-items: flex-start;
 `;

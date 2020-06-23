@@ -49,7 +49,7 @@ const About = () => {
 						<br />
 						<HighlightButton>
 							<a href="https://blog.etimo.se/" target="_blank">
-								Läs gärna vår blogg
+								<P>Läs gärna vår blogg</P>
 							</a>
 						</HighlightButton>
 					</FadeIn>

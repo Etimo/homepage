@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import Caption from '../elements/Caption';
+import H2 from '../elements/H2';
 import Section from './Section';
 
 /* max-width: 150px; */
@@ -153,9 +154,9 @@ export default () => {
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<Caption className="text-center">Kunder</Caption>
-					<h2 className="mx-auto font-sans text-5xl text-center">
+					<H2 className="text-center">
 						Ett urval av våra <span className="text-cyan">kunder</span>
-					</h2>
+					</H2>
 					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 mx-8 xl:mx-12">
 						{customers.map((customer) => {
 							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-2 lg:py-4`;

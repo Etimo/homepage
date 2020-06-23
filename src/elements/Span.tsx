@@ -1,4 +1,4 @@
-import styled, { ThemeProps, DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 
 type Props = {
 	primary?: boolean;
@@ -6,8 +6,6 @@ type Props = {
 } & ThemeProps<DefaultTheme>;
 
 export default styled.span<Props>`
-	font-family: ${({ theme }) => theme.typography.font};
-
 	color: ${({ theme, primary, secondary }) => {
 		if (primary) {
 			return theme.primary;

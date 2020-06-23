@@ -29,7 +29,7 @@ const Layout = ({ children }: Props) => {
 			background: '#f9f9f9',
 		},
 		typography: {
-			font: 'Overpass',
+			font: 'Overpass' /* Deprecated */,
 			paragraph: {
 				font: 'Montserrat',
 			},
@@ -38,8 +38,9 @@ const Layout = ({ children }: Props) => {
 			},
 
 			caption: {
-				spacing: '3px',
-				size: 12,
+				spacing: '0.4em',
+				size: 10,
+				font: 'Questrial',
 			},
 		},
 		sizes: {
