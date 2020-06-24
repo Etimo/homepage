@@ -1,4 +1,4 @@
-import styled, { ThemeProps, DefaultTheme } from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import Box from './Box';
 
 type FlexDirection = 'row' | 'column';
@@ -14,7 +14,7 @@ export default styled(Box)<Props>`
 
 	flex-direction: ${({ direction }) => direction && direction};
 
-	@media (max-width: 1024px) {
+	@media (max-width: 1023px) {
 		flex-direction: column;
 	}
 `;
