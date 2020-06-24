@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+/* UNUSED */
+
 const CardComponent = styled.div`
 	border-radius: 2px;
 	margin: auto;

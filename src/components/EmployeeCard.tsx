@@ -1,10 +1,10 @@
-import React from 'react';
-import { Employee } from './EmployeeCards';
-import { motion } from 'framer-motion';
-import { useHover } from 'react-use';
 import GithubIcon from '@material-ui/icons/GitHub';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedinIcon from '@material-ui/icons/LinkedIn';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import { motion } from 'framer-motion';
+import React from 'react';
+import { useHover } from 'react-use';
+import { Employee } from './EmployeeCards';
 
 type Link = {
 	url: string;
@@ -100,7 +100,7 @@ export default (props: Props) => {
 	if (twitter) links.push({ icon: <TwitterIcon />, url: twitter });
 
 	const element = (hovered: boolean) => (
-		<div className="relative rounded shadow overflow-hidden">
+		<div className="relative shadow overflow-hidden">
 			<motion.div
 				className="absolute flex flex-col content-center justify-center h-full w-full z-10 overflow-hidden"
 				initial="hidden"
