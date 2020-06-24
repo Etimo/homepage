@@ -26,7 +26,7 @@ const Layout = ({ children }: Props) => {
 		primary: '#2c3e50',
 		secondary: '#42c8ad',
 		colors: {
-			background: '#f9f9f9',
+			background: '#f8f8f8',
 		},
 		typography: {
 			font: 'Overpass' /* Deprecated */,

@@ -19,11 +19,18 @@ module.exports = {
 				'8xl': '4rem',
 				small: '13px',
 			},
+			spacing: {
+				'95': '95%',
+				'3/4': '75%',
+			},
 			maxWidth: {
 				xxs: '15rem',
 				xxxs: '11rem',
 				xxxxs: '9rem',
 				xxxxxs: '6rem',
+			},
+			maxHeight: {
+				'3/4': '75%',
 			},
 			lineHeight: {
 				small: '1.7',
