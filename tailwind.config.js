@@ -22,6 +22,7 @@ module.exports = {
 			spacing: {
 				'95': '95%',
 				'3/4': '75%',
+				'125': '125%',
 			},
 			maxWidth: {
 				xxs: '15rem',
@@ -39,6 +40,9 @@ module.exports = {
 			padding: {
 				small: '40px',
 				large: '50px',
+			},
+			gridTemplateColumns: {
+				fitting: 'min-content min-content min-content',
 			},
 		},
 	},
