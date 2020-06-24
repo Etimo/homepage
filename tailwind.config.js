@@ -19,11 +19,19 @@ module.exports = {
 				'8xl': '4rem',
 				small: '13px',
 			},
+			spacing: {
+				'95': '95%',
+				'3/4': '75%',
+				'125': '125%',
+			},
 			maxWidth: {
 				xxs: '15rem',
 				xxxs: '11rem',
 				xxxxs: '9rem',
 				xxxxxs: '6rem',
+			},
+			maxHeight: {
+				'3/4': '75%',
 			},
 			lineHeight: {
 				small: '1.7',
@@ -32,6 +40,9 @@ module.exports = {
 			padding: {
 				small: '40px',
 				large: '50px',
+			},
+			gridTemplateColumns: {
+				fitting: 'min-content min-content min-content',
 			},
 		},
 	},

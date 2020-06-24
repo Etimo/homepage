@@ -1,5 +1,6 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import EmployeeCard from './EmployeeCard';
 
 type Props = {
@@ -16,14 +17,19 @@ export type Employee = {
 	image: React.ReactNode;
 };
 
+const CardsGrid = styled.div`
+	${tw`grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 mt-6 mx-4`};
+	${tw`md:grid-cols-3 lg:grid-cols-fitting md:grid-rows-2 md:gap-6 lg:justify-center`};
+`;
+
 export default (props: Props) => {
 	const { employees } = props;
 
 	return (
-		<div className="grid grid-flow-col grid-cols-2 md:grid-cols-3 lg:grid-cols-3 grid-rows-3 md:grid-rows-2 xl:grid-cols-3 gap-4 pt-6 mx-4">
+		<CardsGrid>
 			{employees.map((employee) => (
 				<EmployeeCard {...employee} key={employee.name} />
 			))}
-		</div>
+		</CardsGrid>
 	);
 };

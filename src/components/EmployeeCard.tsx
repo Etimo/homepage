@@ -1,10 +1,14 @@
-import React from 'react';
-import { Employee } from './EmployeeCards';
-import { motion } from 'framer-motion';
-import { useHover } from 'react-use';
 import GithubIcon from '@material-ui/icons/GitHub';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import LinkedinIcon from '@material-ui/icons/LinkedIn';
+import TwitterIcon from '@material-ui/icons/Twitter';
+import { motion } from 'framer-motion';
+import React from 'react';
+import { useHover } from 'react-use';
+import styled from 'styled-components';
+import tw from 'twin.macro';
+import { sizes } from '../helpers';
+import { useViewportSize } from '../hooks';
+import { Employee } from './EmployeeCards';
 
 type Link = {
 	url: string;
@@ -12,6 +16,10 @@ type Link = {
 };
 
 type Props = Employee;
+
+const CardDiv = styled.div`
+	${tw`relative shadow overflow-hidden lg:mx-auto`};
+`;
 
 export default (props: Props) => {
 	const {
@@ -95,12 +103,24 @@ export default (props: Props) => {
 
 	const links: Link[] = [];
 
+	const [height, width] = useViewportSize();
+
 	if (linkedin) links.push({ icon: <LinkedinIcon />, url: linkedin });
 	if (github) links.push({ icon: <GithubIcon />, url: github });
 	if (twitter) links.push({ icon: <TwitterIcon />, url: twitter });
 
+	const imageHeight = height / 2 - 100;
+	const cardStyle =
+		width >= sizes().laptop
+			? width > height
+				? { maxHeight: imageHeight, width: imageHeight * 0.7 }
+				: {
+						width: width / 3 - 50,
+				  } /* If screen is big and taller than wide */
+			: {};
+
 	const element = (hovered: boolean) => (
-		<div className="relative rounded shadow overflow-hidden">
+		<CardDiv style={cardStyle}>
 			<motion.div
 				className="absolute flex flex-col content-center justify-center h-full w-full z-10 overflow-hidden"
 				initial="hidden"
@@ -109,12 +129,12 @@ export default (props: Props) => {
 			>
 				<motion.h3
 					variants={nameAnimation}
-					className="m-auto mb-1 text-sm md:text-xl lg:text-3xl tracking-widest"
+					className="m-auto mb-1 text-sm md:text-xl tracking-widest"
 				>
 					{name}
 				</motion.h3>
 				<motion.span
-					className="m-auto mt-0 mb-0 text-sm md:text-xl tracking-wider"
+					className="m-auto mt-0 mb-0 text-sm md:text-lg tracking-wider"
 					variants={roleAnimation}
 				>
 					{title}
@@ -137,8 +157,9 @@ export default (props: Props) => {
 						))}
 				</motion.div>
 			</motion.div>
+
 			{image}
-		</div>
+		</CardDiv>
 	);
 
 	const [hoverable] = useHover(element);

@@ -30,7 +30,7 @@ const CustomBackground = styled.div<{ offset: number }>`
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
 	font-weight: 400;
-	${tw`lg:max-w-xxxs xl:max-w-xxs mb-2 md:mb-3 lg:mb-4 xl:mb-6`}
+	${tw`lg:max-w-xxxs xl:max-w-xxs mb-2 md:mb-4 xl:mb-6`}
 `;
 
 /* Shadow won't appear without margin */

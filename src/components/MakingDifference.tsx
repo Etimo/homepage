@@ -34,14 +34,14 @@ export default () => {
 						Etimo gör <span className="text-cyan">skillnad</span>
 					</H2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-8 lg:mt-12 mx-6">
-						<div className="flex flex-col border p-10 rounded">
+						<div className="flex flex-col border p-10">
 							<H3Title>För kunden</H3Title>
 							{customerTexts.map((cText) => {
 								return <DashedP key={cText}>{cText}</DashedP>;
 							})}
 						</div>
 
-						<div className="flex flex-col border p-10 rounded">
+						<div className="flex flex-col border p-10">
 							<H3Title>För samhället</H3Title>
 							{societyTexts.map((sText) => {
 								return <DashedP key={sText}>{sText}</DashedP>;
