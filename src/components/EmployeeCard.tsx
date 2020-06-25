@@ -6,8 +6,6 @@ import React from 'react';
 import { useHover } from 'react-use';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { sizes } from '../helpers';
-import { useViewportSize } from '../hooks';
 import { Employee } from './EmployeeCards';
 
 type Link = {
@@ -18,7 +16,7 @@ type Link = {
 type Props = Employee;
 
 const CardDiv = styled.div`
-	${tw`relative shadow overflow-hidden lg:mx-auto`};
+	${tw`relative shadow overflow-hidden`};
 `;
 
 export default (props: Props) => {
@@ -103,24 +101,12 @@ export default (props: Props) => {
 
 	const links: Link[] = [];
 
-	const [height, width] = useViewportSize();
-
 	if (linkedin) links.push({ icon: <LinkedinIcon />, url: linkedin });
 	if (github) links.push({ icon: <GithubIcon />, url: github });
 	if (twitter) links.push({ icon: <TwitterIcon />, url: twitter });
 
-	const imageHeight = height / 2 - 100;
-	const cardStyle =
-		width >= sizes().laptop
-			? width > height
-				? { maxHeight: imageHeight, width: imageHeight * 0.7 }
-				: {
-						width: width / 3 - 50,
-				  } /* If screen is big and taller than wide */
-			: {};
-
 	const element = (hovered: boolean) => (
-		<CardDiv style={cardStyle}>
+		<CardDiv>
 			<motion.div
 				className="absolute flex flex-col content-center justify-center h-full w-full z-10 overflow-hidden"
 				initial="hidden"
