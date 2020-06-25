@@ -100,8 +100,8 @@ const ThePeople = () => {
 
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
-			<div className="container mx-auto xl:px-32 lg:h-full">
-				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95">
+			<div className="container mx-auto xl:px-32 lg:h-full lg:overflow-hidden">
+				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<Caption className="text-center">Människorna</Caption>
 					<H2 className="text-center lg:pb-2">
 						Några av <span className="text-cyan">oss</span>
