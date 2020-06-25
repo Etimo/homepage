@@ -1,15 +1,15 @@
 import React from 'react';
 import About from '../components/About';
-import Content from '../components/Content';
+import Customers from '../components/Customers';
+import FunAtWork from '../components/FunAtWork';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
-import Scroller from '../components/Scroller/Scroller';
-import WorkAtEtimo from '../components/WorkAtEtimo';
-import ThePeople from '../components/ThePeople';
-import Customers from '../components/Customers';
 import MakingDifference from '../components/MakingDifference';
-import { useViewportSize } from '../hooks';
+import Scroller from '../components/Scroller/Scroller';
+import ThePeople from '../components/ThePeople';
+import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
+import { useViewportSize } from '../hooks';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -29,6 +29,8 @@ const IndexPage = () => {
 			<ThePeople />
 
 			<Customers />
+
+			<FunAtWork />
 
 			<MakingDifference />
 
