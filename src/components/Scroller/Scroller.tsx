@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useViewportSize } from '../../hooks';
 import Section from './Section';
-import tw from 'twin.macro';
 
 const Holder = styled.div`
 	position: fixed;
@@ -41,6 +40,10 @@ const sections = [
 	},
 	{
 		index: 5,
+		name: 'Kul på jobbet',
+	},
+	{
+		index: 6,
 		name: 'Vi gör skillnad',
 	},
 ];

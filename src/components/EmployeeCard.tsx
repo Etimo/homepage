@@ -6,6 +6,7 @@ import React from 'react';
 import { useHover } from 'react-use';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import P from '../elements/P';
 import { Employee } from './EmployeeCards';
 
 type Link = {
@@ -115,15 +116,15 @@ export default (props: Props) => {
 			>
 				<motion.h3
 					variants={nameAnimation}
-					className="m-auto mb-1 text-sm md:text-xl tracking-widest"
+					className="m-auto mb-1 text-sm md:text-xl tracking-widest font-quest"
 				>
 					{name}
 				</motion.h3>
 				<motion.span
-					className="m-auto mt-0 mb-0 text-sm md:text-lg tracking-wider"
+					className="m-auto mt-0 mb-0 text-sm md:text-lg px-6"
 					variants={roleAnimation}
 				>
-					{title}
+					<P>{title}</P>
 				</motion.span>
 				<motion.div
 					initial="hidden"
