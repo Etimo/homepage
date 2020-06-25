@@ -17,14 +17,14 @@ export default () => {
 		query {
 			tele2: file(relativePath: { eq: "customers/tele2.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
+					fluid(maxWidth: 200, quality: 100) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			blocket: file(relativePath: { eq: "customers/blocket.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
+					fluid(maxWidth: 200, quality: 100) {
 						...GatsbyImageSharpFluid
 					}
 				}
