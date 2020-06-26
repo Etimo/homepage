@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import Box, { BoxProps } from '../elements/Box';
 import styled from 'styled-components';
+import Box, { BoxProps } from '../elements/Box';
 
 type FadeInDirection = 'left' | 'right';
 

@@ -1,11 +1,11 @@
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithubSquare, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import Section from './Section';
+import tw from 'twin.macro';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
-import tw from 'twin.macro';
+import Section from './Section';
 
 const IconHolder = styled.footer`
 	${tw`pt-6 md:pt-8 lg:pt-10`};
@@ -29,15 +29,6 @@ const Icon = styled(FontAwesomeIcon)`
 	:hover {
 		color: ${(props) => props.theme.secondary};
 	}
-`;
-
-/** UNUSED */
-const Triangle = styled.div`
-	width: 0;
-	height: 0;
-	position: absolute;
-	border-bottom: 200px solid ${(props) => props.theme.primary};
-	border-left: 200px solid transparent;
 `;
 
 const InfoP = styled.p`

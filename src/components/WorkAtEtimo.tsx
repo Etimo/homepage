@@ -5,11 +5,8 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import FadeIn from '../animations/FadeIn';
 import Caption from '../elements/Caption';
-import Col from '../elements/Col';
-import Container from '../elements/Container';
 import DashedP from '../elements/DashedP';
 import H2 from '../elements/H2';
-import Row from '../elements/Row';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
@@ -18,7 +15,7 @@ import Section from './Section';
 const CustomBackground = styled.div<{ offset: number }>`
 	position: absolute;
 	height: 100%;
-	left: calc(50% + 250px);
+	left: calc(50% + 275px);
 	top: ${(props) => props.offset + 'px'};
 	right: 0;
 	bottom: 0;
@@ -30,13 +27,13 @@ const CustomBackground = styled.div<{ offset: number }>`
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
 	font-weight: 400;
-	${tw`lg:max-w-xxxs xl:max-w-xxs mb-2 md:mb-4 xl:mb-6`}
+	${tw`lg:max-w-xxxs xl:max-w-xxs mb-3 md:mb-4 xl:mb-6 text-center lg:text-left`}
 `;
 
 /* Shadow won't appear without margin */
 const StyledImg = styled(Img)`
 	box-shadow: 0px 0px 15px -2px rgba(120, 120, 120, 1);
-	margin: 30px;
+	${tw`m-4 lg:m-6`};
 `;
 
 const workItems = [
@@ -67,19 +64,14 @@ const WorkAtEtimo = () => {
 	return (
 		<Section>
 			{width >= sizes().laptop && <CustomBackground offset={height * 2} />}
-			<Container>
-				<Row justifyContent="center" mb={-30}>
-					<Col sm mb={30} flex justifyContent="center" flexDirection="column">
-						<FadeIn
-							direction="left"
-							flex
-							flexDirection="column"
-							justifyContent="space-between"
-						>
+			<div className="container xl:px-12">
+				<div className="flex flex-col lg:flex-row items-center lg:justify-end">
+					<div className="w-4/5 sm:w-3/4 lg:w-2/5 lg:mr-2 xl:mr-4 mb-2 lg:mb-0">
+						<FadeIn direction="left">
 							<Caption className="text-center lg:text-left">
 								Att jobba på Etimo
 							</Caption>
-							<EmphasizedH2 className="text-center lg:text-left">
+							<EmphasizedH2>
 								Hur är det att <Span secondary>jobba </Span>
 								på Etimo?
 							</EmphasizedH2>
@@ -89,14 +81,14 @@ const WorkAtEtimo = () => {
 								})}
 							</div>
 						</FadeIn>
-					</Col>
-					<Col sm mb={30}>
+					</div>
+					<div className="w-4/5 sm:w-3/5 lg:w-1/2">
 						<FadeIn direction="right">
 							<StyledImg fluid={data.image.childImageSharp.fluid} />
 						</FadeIn>
-					</Col>
-				</Row>
-			</Container>
+					</div>
+				</div>
+			</div>
 		</Section>
 	);
 };
