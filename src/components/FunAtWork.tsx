@@ -5,13 +5,24 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
+import P from '../elements/P';
 import Span from '../elements/Span';
+import { sizes } from '../helpers';
+import { useViewportSize } from '../hooks';
 import EmployeeCard from './EmployeeCard';
 import { Employee } from './EmployeeCards';
 import Section from './Section';
 
 const StyledImg = styled(Img)`
-	${tw`max-w-sm mx-auto`};
+	${tw`max-w-sm`};
+`;
+
+const SmallerH2 = styled(H2)`
+	${tw`text-xl mt-1 tracking-widest`};
+`;
+
+const SpacedP = styled(P)`
+	${tw`tracking-widest pb-2`};
 `;
 
 export default () => {
@@ -105,6 +116,8 @@ export default () => {
 		},
 	];
 
+	const [h, width] = useViewportSize();
+
 	/* 6:1 until sm then 3x2 until md then 2x3*/
 	/* px: 15px, mb: 30px */
 	/* banners up until lg, lg+ uses hover */
@@ -116,10 +129,24 @@ export default () => {
 					<H2>
 						Kul <Span secondary>på jobbet</Span>
 					</H2>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-4 lg:mt-6 mx-8 xl:mx-20 gap-8">
-						{cards.map((card) => (
-							<EmployeeCard {...card} key={card.name} />
-						))}
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8">
+						{width >= sizes().laptop &&
+							/* Hover effect */
+							cards.map((card) => <EmployeeCard {...card} key={card.name} />)}
+
+						{width < sizes().laptop &&
+							/* Banners */
+							cards.map((card) => {
+								return (
+									<div className="flex flex-col">
+										{card.image}
+										<div className="bg-cyan px-3">
+											<SmallerH2>{card.name}</SmallerH2>
+											<SpacedP>{card.title}</SpacedP>
+										</div>
+									</div>
+								);
+							})}
 					</div>
 				</div>
 			</div>
