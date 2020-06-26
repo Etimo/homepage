@@ -129,7 +129,7 @@ export default () => {
 					<H2>
 						Kul <Span secondary>på jobbet</Span>
 					</H2>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto">
 						{width >= sizes().laptop &&
 							/* Hover effect */
 							cards.map((card) => <EmployeeCard {...card} key={card.name} />)}
@@ -138,7 +138,7 @@ export default () => {
 							/* Banners */
 							cards.map((card) => {
 								return (
-									<div className="flex flex-col">
+									<div className="flex flex-col max-w-sm">
 										{card.image}
 										<div className="bg-cyan px-3">
 											<SmallerH2>{card.name}</SmallerH2>
