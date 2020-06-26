@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -24,6 +25,14 @@ const H3Title = styled.h3`
 	${tw`font-quest text-xl lg:text-2xl mb-4`};
 `;
 
+const shadowVar = {
+	hover: {
+		backgroundColor: '#42c8ad',
+		boxShadow: '0px 5px 10px 1px rgba(0,0,0,0.2)',
+		border: '1px solid #42c8ad',
+	},
+};
+
 export default () => {
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
@@ -34,19 +43,29 @@ export default () => {
 						Etimo gör <span className="text-cyan">skillnad</span>
 					</H2>
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-8 lg:mt-12 mx-6">
-						<div className="flex flex-col border p-10">
+						<motion.div
+							className="flex flex-col border p-10 lg:m-4"
+							variants={shadowVar}
+							whileHover="hover"
+							transition={{ ease: 'easeOut', duration: 0.3 }}
+						>
 							<H3Title>För kunden</H3Title>
 							{customerTexts.map((cText) => {
 								return <DashedP key={cText}>{cText}</DashedP>;
 							})}
-						</div>
+						</motion.div>
 
-						<div className="flex flex-col border p-10">
+						<motion.div
+							className="flex flex-col border p-10 lg:m-4"
+							variants={shadowVar}
+							whileHover="hover"
+							transition={{ ease: 'easeOut', duration: 0.3 }}
+						>
 							<H3Title>För samhället</H3Title>
 							{societyTexts.map((sText) => {
 								return <DashedP key={sText}>{sText}</DashedP>;
 							})}
-						</div>
+						</motion.div>
 					</div>
 				</div>
 			</div>
