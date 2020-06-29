@@ -3,8 +3,10 @@ import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import FadeIn from '../animations/FadeIn';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
+import Span from '../elements/Span';
 import Section from './Section';
 
 /* max-width: 150px; */
@@ -155,7 +157,13 @@ export default () => {
 				<div className="flex flex-col mb-8">
 					<Caption className="text-center">Kunder</Caption>
 					<H2 className="text-center">
-						Ett urval av våra <span className="text-cyan">kunder</span>
+						<FadeIn direction="left" className="inline-block">
+							Ett urval av
+						</FadeIn>
+						<FadeIn direction="right" className="inline-block">
+							&nbsp;våra
+							<Span secondary> kunder</Span>
+						</FadeIn>
 					</H2>
 					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 mx-8 xl:mx-12">
 						{customers.map((customer) => {

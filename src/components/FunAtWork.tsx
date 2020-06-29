@@ -3,6 +3,7 @@ import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import FadeIn from '../animations/FadeIn';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import P from '../elements/P';
@@ -127,7 +128,12 @@ export default () => {
 				<div className="flex flex-col text-center">
 					<Caption>Kul</Caption>
 					<H2>
-						Kul <Span secondary>på jobbet</Span>
+						<FadeIn direction="left" className="inline-block">
+							Kul
+						</FadeIn>
+						<FadeIn direction="right" className="inline-block">
+							<Span secondary>&nbsp;på jobbet</Span>
+						</FadeIn>
 					</H2>
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto">
 						{width >= sizes().laptop &&

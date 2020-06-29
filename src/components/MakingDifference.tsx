@@ -4,10 +4,10 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import CyanHover from '../animations/CyanHover';
+import FadeIn from '../animations/FadeIn';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import H2 from '../elements/H2';
-import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 import Section from './Section';
 
@@ -49,24 +49,9 @@ const boxVar = {
 		opacity: 1,
 		scale: 1,
 		y: 0,
+		originX: 0,
 		transition: {
-			duration: 1,
-			ease: 'easeOut',
-			type: 'tween',
-		},
-	},
-};
-
-const phoneVar = {
-	init: {
-		opacity: 0,
-		rotate: 90,
-	},
-	anim: {
-		opacity: 1,
-		rotate: 0,
-		transition: {
-			duration: 1,
+			duration: 0.8,
 			ease: 'easeOut',
 			type: 'tween',
 		},
@@ -83,10 +68,15 @@ export default () => {
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<Caption className="text-center">Skillnad</Caption>
 					<H2 className="text-center">
-						Etimo gör <span className="text-cyan">skillnad</span>
+						<FadeIn direction="left" className="inline-block">
+							Etimo gör
+						</FadeIn>
+						<FadeIn direction="right" className="inline-block">
+							<span className="text-cyan">&nbsp;skillnad</span>
+						</FadeIn>
 					</H2>
 					<motion.div
-						className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-8 lg:mt-12 mx-6 overflow-hidden"
+						className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mt-8 lg:mt-12 mx-6 overflow-hidden"
 						ref={ref}
 						variants={gridVar}
 						initial="init"
@@ -94,7 +84,7 @@ export default () => {
 					>
 						<CyanHover
 							className="flex flex-col border p-10 lg:m-4"
-							variants={w < sizes().laptop ? phoneVar : boxVar}
+							variants={boxVar}
 						>
 							<H3Title>För kunden</H3Title>
 							{customerTexts.map((cText) => {
@@ -104,7 +94,7 @@ export default () => {
 
 						<CyanHover
 							className="flex flex-col border p-10 lg:m-4"
-							variants={w < sizes().laptop ? phoneVar : boxVar}
+							variants={boxVar}
 						>
 							<H3Title>För samhället</H3Title>
 							{societyTexts.map((sText) => {
