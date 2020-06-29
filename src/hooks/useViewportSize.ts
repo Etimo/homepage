@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function useViewportSize() {
-	const [height, setHeight] = useState(5000);
-	const [width, setWidth] = useState(100);
+	const [height, setHeight] = useState(window.innerHeight);
+	const [width, setWidth] = useState(window.innerWidth);
 
 	const handleResize = () => {
 		setHeight(window.innerHeight);
