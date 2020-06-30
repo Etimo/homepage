@@ -22,5 +22,5 @@ export default styled.div<Props>`
 		}
 	}};
 
-	${tw`mb-1 md:mb-3 lg:mb-4 xl:mb-5 overflow-hidden`}
+	${tw`mb-1 md:mb-3 lg:mb-4 overflow-hidden`}
 `;

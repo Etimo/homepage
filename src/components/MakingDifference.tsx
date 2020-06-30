@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import CyanHover from '../animations/CyanHover';
 import FloatUp from '../animations/FloatUp';
+import BlurIn from '../animations/variants/BlurIn';
 import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
@@ -40,25 +41,6 @@ const gridVar = {
 	},
 };
 
-const boxVar = {
-	init: {
-		opacity: 0,
-		scale: 1.2,
-		y: '25%',
-	},
-	anim: {
-		opacity: 1,
-		scale: 1,
-		y: 0,
-		originX: 0,
-		transition: {
-			duration: 0.8,
-			ease: 'easeOut',
-			type: 'tween',
-		},
-	},
-};
-
 export default () => {
 	const [ref, inView, entry] = useInView();
 	const [h, w] = useViewportSize();
@@ -85,7 +67,7 @@ export default () => {
 					>
 						<CyanHover
 							className="flex flex-col border p-10 lg:m-4"
-							variants={boxVar}
+							variants={BlurIn()}
 						>
 							<H3Title>För kunden</H3Title>
 							{customerTexts.map((cText) => {
@@ -95,7 +77,7 @@ export default () => {
 
 						<CyanHover
 							className="flex flex-col border p-10 lg:m-4"
-							variants={boxVar}
+							variants={BlurIn()}
 						>
 							<H3Title>För samhället</H3Title>
 							{societyTexts.map((sText) => {

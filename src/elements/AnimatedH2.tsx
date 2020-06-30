@@ -36,22 +36,3 @@ export default ({ children, className, direction, ...props }: Props) => {
 		</H2>
 	);
 };
-
-/* 
-   <motion.div
-			className={className}
-			{...props}
-			whileHover={{
-				backgroundColor: '#42c8ad',
-				boxShadow: '0px 5px 10px 1px rgba(0,0,0,0.2)',
-				borderColor: '#42c8ad',
-			}}
-			transition={{
-				ease: 'easeOut',
-				duration: 0.3,
-				type: 'tween',
-			}}
-		>
-			
-      </motion.div>
-      */

@@ -1,9 +1,12 @@
+import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import FloatUp from '../animations/FloatUp';
+import BlurIn from '../animations/variants/BlurIn';
 import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
@@ -88,7 +91,7 @@ export default () => {
 	const cards: Employee[] = [
 		{
 			name: 'ERIK',
-			title: 'Dricker kaffe',
+			title: 'Gillar java',
 			image: <StyledImg fluid={data.erikLogo.childImageSharp.fluid} />,
 		},
 		{
@@ -119,14 +122,14 @@ export default () => {
 	];
 
 	const [h, width] = useViewportSize();
+	const [ref, inView] = useInView();
 
 	/* 6:1 until sm then 3x2 until md then 2x3*/
-	/* px: 15px, mb: 30px */
 	/* banners up until lg, lg+ uses hover */
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="container xl:px-12">
-				<div className="flex flex-col text-center">
+				<div className="flex flex-col text-center overflow-hidden">
 					<FloatUp>
 						<Caption>Kul</Caption>
 					</FloatUp>
@@ -138,7 +141,13 @@ export default () => {
 							<Span secondary>&nbsp;jobbet</Span>
 						</AnimatedH2>
 					</div>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto">
+					<motion.div
+						className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto overflow-hidden"
+						ref={ref}
+						variants={width >= sizes().laptop ? BlurIn() : {}}
+						initial="init"
+						animate={inView ? 'anim' : ''}
+					>
 						{width >= sizes().laptop &&
 							/* Hover effect */
 							cards.map((card) => <EmployeeCard {...card} key={card.name} />)}
@@ -147,16 +156,18 @@ export default () => {
 							/* Banners */
 							cards.map((card) => {
 								return (
-									<div className="flex flex-col max-w-sm">
-										{card.image}
-										<div className="bg-cyan px-3">
-											<SmallerH2>{card.name}</SmallerH2>
-											<SpacedP>{card.title}</SpacedP>
+									<FloatUp>
+										<div className="flex flex-col max-w-sm">
+											{card.image}
+											<div className="bg-cyan px-3">
+												<SmallerH2>{card.name}</SmallerH2>
+												<SpacedP>{card.title}</SpacedP>
+											</div>
 										</div>
-									</div>
+									</FloatUp>
 								);
 							})}
-					</div>
+					</motion.div>
 				</div>
 			</div>
 		</Section>

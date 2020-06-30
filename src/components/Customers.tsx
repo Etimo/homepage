@@ -3,10 +3,8 @@ import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import FloatUp from '../animations/FloatUp';
-import AnimatedH2 from '../elements/AnimatedH2';
-import Caption from '../elements/Caption';
-import Span from '../elements/Span';
+import { FloatInDir, FloatUp } from '../animations';
+import { AnimatedH2, Caption, Span } from '../elements';
 import Section from './Section';
 
 /* max-width: 150px; */
@@ -85,6 +83,7 @@ export default () => {
 				xs: 'border-r border-b',
 				sm: '',
 			},
+			direction: 'right',
 		},
 		{
 			name: 'Blocket',
@@ -94,6 +93,7 @@ export default () => {
 				xs: 'border-b',
 				sm: 'lg:border-r',
 			},
+			direction: 'down',
 		},
 		{
 			name: 'Qliro',
@@ -103,6 +103,7 @@ export default () => {
 				xs: 'border-r border-b',
 				sm: '',
 			},
+			direction: 'down',
 		},
 		{
 			name: 'Karma',
@@ -112,6 +113,7 @@ export default () => {
 				xs: 'border-b',
 				sm: '',
 			},
+			direction: 'left',
 		},
 		{
 			name: 'Mira',
@@ -121,6 +123,7 @@ export default () => {
 				xs: 'border-r border-b',
 				sm: 'lg:border-b-0 ',
 			},
+			direction: 'right',
 		},
 		{
 			name: 'Nobina',
@@ -130,6 +133,7 @@ export default () => {
 				xs: 'border-b',
 				sm: 'lg:border-b-0 lg:border-r',
 			},
+			direction: 'up',
 		},
 		{
 			name: 'Quinyx',
@@ -139,6 +143,7 @@ export default () => {
 				xs: 'border-r',
 				sm: '',
 			},
+			direction: 'up',
 		},
 		{
 			name: 'SEB',
@@ -148,6 +153,7 @@ export default () => {
 				xs: '',
 				sm: '',
 			},
+			direction: 'left',
 		},
 	];
 
@@ -165,15 +171,20 @@ export default () => {
 						</AnimatedH2>
 					</div>
 					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 mx-8 xl:mx-12">
-						{customers.map((customer) => {
-							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-2 lg:py-4`;
+						{customers.map((customer, idx) => {
+							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-2 lg:py-4 overflow-hidden`;
 
 							return (
 								<div
 									style={{ filter: 'grayscale(100%) opacity(60%)' }}
 									className={classes}
 								>
-									<ImageDiv>{customer.image}</ImageDiv>
+									<FloatInDir
+										direction={customer.direction}
+										delay={idx * 0.075}
+									>
+										<ImageDiv>{customer.image}</ImageDiv>
+									</FloatInDir>
 								</div>
 							);
 						})}
