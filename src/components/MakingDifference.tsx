@@ -4,10 +4,11 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import CyanHover from '../animations/CyanHover';
-import FadeIn from '../animations/FadeIn';
+import FloatUp from '../animations/FloatUp';
+import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
-import H2 from '../elements/H2';
+import Span from '../elements/Span';
 import { useViewportSize } from '../hooks';
 import Section from './Section';
 
@@ -66,15 +67,15 @@ export default () => {
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
-					<Caption className="text-center">Skillnad</Caption>
-					<H2 className="text-center">
-						<FadeIn direction="left" className="inline-block">
-							Etimo gör
-						</FadeIn>
-						<FadeIn direction="right" className="inline-block">
-							<span className="text-cyan">&nbsp;skillnad</span>
-						</FadeIn>
-					</H2>
+					<FloatUp>
+						<Caption className="text-center">Skillnad</Caption>
+					</FloatUp>
+					<div className="flex flex-row justify-center">
+						<AnimatedH2 direction="left">Etimo gör</AnimatedH2>
+						<AnimatedH2 direction="right">
+							<Span secondary>&nbsp;skillnad</Span>
+						</AnimatedH2>
+					</div>
 					<motion.div
 						className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mt-8 lg:mt-12 mx-6 overflow-hidden"
 						ref={ref}

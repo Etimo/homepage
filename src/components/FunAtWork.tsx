@@ -3,7 +3,8 @@ import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import FadeIn from '../animations/FadeIn';
+import FloatUp from '../animations/FloatUp';
+import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import P from '../elements/P';
@@ -126,15 +127,17 @@ export default () => {
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="container xl:px-12">
 				<div className="flex flex-col text-center">
-					<Caption>Kul</Caption>
-					<H2>
-						<FadeIn direction="left" className="inline-block">
-							Kul
-						</FadeIn>
-						<FadeIn direction="right" className="inline-block">
-							<Span secondary>&nbsp;på jobbet</Span>
-						</FadeIn>
-					</H2>
+					<FloatUp>
+						<Caption>Kul</Caption>
+					</FloatUp>
+					<div className="flex flex-row justify-center">
+						<AnimatedH2 direction="left">
+							Kul <Span secondary>på</Span>
+						</AnimatedH2>
+						<AnimatedH2 direction="right">
+							<Span secondary>&nbsp;jobbet</Span>
+						</AnimatedH2>
+					</div>
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto">
 						{width >= sizes().laptop &&
 							/* Hover effect */

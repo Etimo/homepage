@@ -3,9 +3,9 @@ import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import FadeIn from '../animations/FadeIn';
+import FloatUp from '../animations/FloatUp';
+import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
-import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import Section from './Section';
 
@@ -155,16 +155,15 @@ export default () => {
 		<Section>
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
-					<Caption className="text-center">Kunder</Caption>
-					<H2 className="text-center">
-						<FadeIn direction="left" className="inline-block">
-							Ett urval av
-						</FadeIn>
-						<FadeIn direction="right" className="inline-block">
-							&nbsp;våra
-							<Span secondary> kunder</Span>
-						</FadeIn>
-					</H2>
+					<FloatUp>
+						<Caption className="text-center">Kunder</Caption>
+					</FloatUp>
+					<div className="flex flex-row justify-center">
+						<AnimatedH2 direction="left">Ett urval av</AnimatedH2>
+						<AnimatedH2 direction="right">
+							&nbsp;våra <Span secondary> kunder</Span>
+						</AnimatedH2>
+					</div>
 					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 mx-8 xl:mx-12">
 						{customers.map((customer) => {
 							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-2 lg:py-4`;
