@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import FloatUp from '../animations/FloatUp';
@@ -120,7 +119,6 @@ export default () => {
 	];
 
 	const [h, width] = useViewportSize();
-	const [ref, inView] = useInView();
 
 	/* 6:1 until sm then 3x2 until md then 2x3*/
 	/* banners up until lg, lg+ uses hover */

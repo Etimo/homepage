@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { useViewportSize } from '../hooks';
 
 type FloatDirection = 'left' | 'right' | 'up' | 'down';
 
@@ -13,7 +12,7 @@ type Props = {
 
 export default ({ children, direction, delay, ...props }: Props) => {
 	const [ref, inView] = useInView();
-	const [_, width] = useViewportSize();
+
 	let xDir = '0',
 		yDir = '0';
 	switch (direction) {

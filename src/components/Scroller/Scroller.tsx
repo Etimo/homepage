@@ -1,4 +1,5 @@
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
+import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useViewportSize } from '../../hooks';
@@ -16,6 +17,19 @@ const Holder = styled.div`
 	z-index: 10;
 	width: 150px;
 `;
+
+const opacVar = {
+	init: {
+		opacity: 0,
+	},
+	anim: {
+		opacity: 1,
+		transition: {
+			delay: 0.8,
+			duration: 0.5,
+		},
+	},
+};
 
 const sections = [
 	{
@@ -71,16 +85,18 @@ export default () => {
 	);
 
 	return (
-		<Holder>
-			{sections.map((section) => (
-				<Section
-					key={section.name}
-					index={section.index}
-					isActive={section.index === activeSection}
-				>
-					{section.name}
-				</Section>
-			))}
-		</Holder>
+		<motion.div variants={opacVar} initial="init" animate="anim">
+			<Holder>
+				{sections.map((section) => (
+					<Section
+						key={section.name}
+						index={section.index}
+						isActive={section.index === activeSection}
+					>
+						{section.name}
+					</Section>
+				))}
+			</Holder>
+		</motion.div>
 	);
 };

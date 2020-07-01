@@ -10,7 +10,6 @@ import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
-import { useViewportSize } from '../hooks';
 import Section from './Section';
 
 const customerTexts = [
@@ -42,8 +41,7 @@ const gridVar = {
 };
 
 export default () => {
-	const [ref, inView, entry] = useInView();
-	const [h, w] = useViewportSize();
+	const [ref, inView] = useInView();
 
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
