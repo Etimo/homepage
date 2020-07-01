@@ -77,34 +77,14 @@ export default () => {
 
 	const customers = [
 		{
-			name: 'Tele2',
-			url: 'https://www.tele2.se/',
-			image: <Img fluid={data.tele2.childImageSharp.fluid} />,
+			name: 'Blocket',
+			url: 'https://www.blocket.se/',
+			image: <Img fluid={data.blocket.childImageSharp.fluid} />,
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
 			},
 			direction: 'right',
-		},
-		{
-			name: 'Blocket',
-			url: 'https://www.blocket.se/',
-			image: <Img fluid={data.blocket.childImageSharp.fluid} />,
-			borders: {
-				xs: 'border-b',
-				sm: 'lg:border-r',
-			},
-			direction: 'down',
-		},
-		{
-			name: 'Qliro',
-			url: 'https://www.qliro.com/sv-se',
-			image: <Img fluid={data.qliro.childImageSharp.fluid} />,
-			borders: {
-				xs: 'border-r border-b',
-				sm: '',
-			},
-			direction: 'down',
 		},
 		{
 			name: 'Karma',
@@ -112,14 +92,34 @@ export default () => {
 			image: <Img fluid={data.karma.childImageSharp.fluid} />,
 			borders: {
 				xs: 'border-b',
+				sm: 'lg:border-r',
+			},
+			direction: 'down',
+		},
+		{
+			name: 'Tele2',
+			url: 'https://www.tele2.se/',
+			image: <Img fluid={data.tele2.childImageSharp.fluid} />,
+			borders: {
+				xs: 'border-r border-b',
 				sm: '',
 			},
-			direction: 'left',
+			direction: 'down',
 		},
 		{
 			name: 'Mira',
 			url: 'https://www.mira.se/',
 			image: <Img fluid={data.mira.childImageSharp.fluid} />,
+			borders: {
+				xs: 'border-b',
+				sm: '',
+			},
+			direction: 'left',
+		},
+		{
+			name: 'Qliro',
+			url: 'https://www.qliro.com/sv-se',
+			image: <Img fluid={data.qliro.childImageSharp.fluid} />,
 			borders: {
 				xs: 'border-r border-b',
 				sm: 'lg:border-b-0 ',
@@ -127,9 +127,9 @@ export default () => {
 			direction: 'right',
 		},
 		{
-			name: 'Nobina',
-			url: 'https://www.nobina.com/sv/Sverige/',
-			image: <Img fluid={data.nobina.childImageSharp.fluid} />,
+			name: 'SEB',
+			url: 'https://seb.se/',
+			image: <Img fluid={data.seb.childImageSharp.fluid} />,
 			borders: {
 				xs: 'border-b',
 				sm: 'lg:border-b-0 lg:border-r',
@@ -147,9 +147,9 @@ export default () => {
 			direction: 'up',
 		},
 		{
-			name: 'SEB',
-			url: 'https://seb.se/',
-			image: <Img fluid={data.seb.childImageSharp.fluid} />,
+			name: 'Nobina',
+			url: 'https://www.nobina.com/sv/Sverige/',
+			image: <Img fluid={data.nobina.childImageSharp.fluid} />,
 			borders: {
 				xs: '',
 				sm: '',
