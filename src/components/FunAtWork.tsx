@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
@@ -6,7 +5,6 @@ import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import FloatUp from '../animations/FloatUp';
-import BlurIn from '../animations/variants/BlurIn';
 import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
@@ -141,13 +139,7 @@ export default () => {
 							<Span secondary>&nbsp;jobbet</Span>
 						</AnimatedH2>
 					</div>
-					<motion.div
-						className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto overflow-hidden"
-						ref={ref}
-						variants={width >= sizes().laptop ? BlurIn() : {}}
-						initial="init"
-						animate={inView ? 'anim' : ''}
-					>
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto overflow-hidden">
 						{width >= sizes().laptop &&
 							/* Hover effect */
 							cards.map((card) => <EmployeeCard {...card} key={card.name} />)}
@@ -167,7 +159,7 @@ export default () => {
 									</FloatUp>
 								);
 							})}
-					</motion.div>
+					</div>
 				</div>
 			</div>
 		</Section>

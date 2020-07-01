@@ -3,9 +3,11 @@ import LinkedinIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import { motion } from 'framer-motion';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import { useHover } from 'react-use';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import BlurIn from '../animations/variants/BlurIn';
 import P from '../elements/P';
 import { Employee } from './EmployeeCards';
 
@@ -16,7 +18,7 @@ type Link = {
 
 type Props = Employee;
 
-const CardDiv = styled.div`
+const CardDiv = styled(motion.div)`
 	${tw`relative shadow overflow-hidden`};
 `;
 
@@ -106,8 +108,15 @@ export default (props: Props) => {
 	if (github) links.push({ icon: <GithubIcon />, url: github });
 	if (twitter) links.push({ icon: <TwitterIcon />, url: twitter });
 
+	const [ref, inView] = useInView();
+
 	const element = (hovered: boolean) => (
-		<CardDiv>
+		<CardDiv
+			variants={BlurIn()}
+			animate={inView ? 'anim' : ''}
+			initial="init"
+			ref={ref}
+		>
 			<motion.div
 				className="absolute flex flex-col content-center justify-center h-full w-full z-10 overflow-hidden"
 				initial="hidden"

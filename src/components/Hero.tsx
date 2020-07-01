@@ -1,19 +1,19 @@
 import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
+import { FloatInDir, FloatUp } from '../animations';
 import Carousel from './Carousel';
 import Section from './Section';
 
 const Hero = styled.div<ThemeProps<DefaultTheme>>`
 	max-width: 76rem;
 	align-self: center;
-	${tw`flex flex-col mx-auto`};
-	align-items: flex-start;
+	${tw`flex flex-col mx-auto overflow-hidden items-center`};
 `;
 
 const HeroTitle = styled.h1`
 	color: ${(props) => props.theme.primary};
-	${tw`font-etimo mb-8 uppercase text-4xl mx-auto md:text-8xl md:mb-4`};
+	${tw`font-etimo mb-8 uppercase text-4xl mx-auto md:text-8xl md:mb-4 tracking-tight`};
 `;
 
 const HeroContent = styled.div`
@@ -28,15 +28,19 @@ const Splash = () => {
 	return (
 		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
-				<HeroTitle>Etimo</HeroTitle>
-				<HeroContent>
-					<Carousel
-						items={[
-							'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
-							'Etimo är ett snabbväxande it-konsultbolag som utvecklar skräddarsydda digitala lösningar. Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
-						]}
-					/>
-				</HeroContent>
+				<FloatInDir direction="down">
+					<HeroTitle>Etimo</HeroTitle>
+				</FloatInDir>
+				<FloatUp>
+					<HeroContent>
+						<Carousel
+							items={[
+								'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
+								'Etimo är ett snabbväxande it-konsultbolag som utvecklar skräddarsydda digitala lösningar. Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
+							]}
+						/>
+					</HeroContent>
+				</FloatUp>
 			</Hero>
 		</Section>
 	);

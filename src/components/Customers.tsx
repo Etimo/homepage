@@ -9,65 +9,66 @@ import Section from './Section';
 
 /* max-width: 150px; */
 const ImageDiv = styled.div`
-	${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs lg:max-w-xxxs`};
+	${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs lg:max-w-xxxs opacity-50 hover:opacity-100`};
+	${tw`transition-opacity ease-in-out duration-200`};
 `;
 
 export default () => {
 	const data = useStaticQuery(graphql`
 		query {
-			tele2: file(relativePath: { eq: "customers/tele2.png" }) {
+			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200, quality: 100) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 100) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
-			blocket: file(relativePath: { eq: "customers/blocket.png" }) {
+			blocket: file(relativePath: { eq: "customers/modified/blocket.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200, quality: 100) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
-			qliro: file(relativePath: { eq: "customers/qliro.png" }) {
+			qliro: file(relativePath: { eq: "customers/modified/qliro.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 100) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
-			karma: file(relativePath: { eq: "customers/karma.png" }) {
+			karma: file(relativePath: { eq: "customers/modified/karma.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 100) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
-			mira: file(relativePath: { eq: "customers/mira.png" }) {
+			mira: file(relativePath: { eq: "customers/modified/mira.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 100) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
-			nobina: file(relativePath: { eq: "customers/nobina.png" }) {
+			nobina: file(relativePath: { eq: "customers/modified/nobina.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 100) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
-			quinyx: file(relativePath: { eq: "customers/quinyx.png" }) {
+			quinyx: file(relativePath: { eq: "customers/modified/quinyx.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 100) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
-			seb: file(relativePath: { eq: "customers/seb.png" }) {
+			seb: file(relativePath: { eq: "customers/modified/seb.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid
+					fluid(maxWidth: 500, quality: 100) {
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
@@ -175,15 +176,16 @@ export default () => {
 							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-2 lg:py-4 overflow-hidden`;
 
 							return (
-								<div
-									style={{ filter: 'grayscale(100%) opacity(60%)' }}
-									className={classes}
-								>
+								<div className={classes}>
 									<FloatInDir
 										direction={customer.direction}
 										delay={idx * 0.075}
 									>
-										<ImageDiv>{customer.image}</ImageDiv>
+										<ImageDiv>
+											<a href={customer.url} target="_blank">
+												{customer.image}
+											</a>
+										</ImageDiv>
 									</FloatInDir>
 								</div>
 							);

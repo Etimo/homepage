@@ -3,7 +3,7 @@ export default () => {
 		init: {
 			opacity: 0,
 			scale: 1.2,
-			y: '25%',
+			y: '15%',
 			filter: 'blur(5px)',
 		},
 		anim: {

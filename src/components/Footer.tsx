@@ -78,7 +78,7 @@ const parentVar = {
 		transition: {
 			delay: 0.5,
 			duration: 0.8,
-			staggerChildren: 0.5,
+			staggerChildren: 0.4,
 		},
 	},
 };
