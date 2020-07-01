@@ -1,9 +1,15 @@
+import { motion } from 'framer-motion';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import CyanHover from '../animations/CyanHover';
+import FloatUp from '../animations/FloatUp';
+import BlurIn from '../animations/variants/BlurIn';
+import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
-import H2 from '../elements/H2';
+import Span from '../elements/Span';
 import Section from './Section';
 
 const customerTexts = [
@@ -24,30 +30,59 @@ const H3Title = styled.h3`
 	${tw`font-quest text-xl lg:text-2xl mb-4`};
 `;
 
+const gridVar = {
+	init: {},
+	anim: {
+		transition: {
+			delay: 0.8,
+			staggerChildren: 0.5,
+		},
+	},
+};
+
 export default () => {
+	const [ref, inView] = useInView();
+
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-32">
-				<div className="flex flex-col mb-8">
-					<Caption className="text-center">Skillnad</Caption>
-					<H2 className="text-center">
-						Etimo gör <span className="text-cyan">skillnad</span>
-					</H2>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mt-8 lg:mt-12 mx-6">
-						<div className="flex flex-col border p-10">
+				<div className="flex flex-col mb-8 overflow-hidden">
+					<FloatUp>
+						<Caption className="text-center">Skillnad</Caption>
+					</FloatUp>
+					<div className="flex flex-row justify-center">
+						<AnimatedH2 direction="left">Etimo gör</AnimatedH2>
+						<AnimatedH2 direction="right">
+							<Span secondary>&nbsp;skillnad</Span>
+						</AnimatedH2>
+					</div>
+					<motion.div
+						className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mt-8 lg:mt-12 mx-6 overflow-hidden"
+						ref={ref}
+						variants={gridVar}
+						initial="init"
+						animate={inView ? 'anim' : ''}
+					>
+						<CyanHover
+							className="flex flex-col border p-10 lg:m-4"
+							variants={BlurIn()}
+						>
 							<H3Title>För kunden</H3Title>
 							{customerTexts.map((cText) => {
 								return <DashedP key={cText}>{cText}</DashedP>;
 							})}
-						</div>
+						</CyanHover>
 
-						<div className="flex flex-col border p-10">
+						<CyanHover
+							className="flex flex-col border p-10 lg:m-4"
+							variants={BlurIn()}
+						>
 							<H3Title>För samhället</H3Title>
 							{societyTexts.map((sText) => {
 								return <DashedP key={sText}>{sText}</DashedP>;
 							})}
-						</div>
-					</div>
+						</CyanHover>
+					</motion.div>
 				</div>
 			</div>
 		</Section>

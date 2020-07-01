@@ -1,10 +1,13 @@
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { motion } from 'framer-motion';
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 import styled from 'styled-components';
 import tw from 'twin.macro';
+import FloatUp from '../animations/FloatUp';
+import { AnimatedH2 } from '../elements';
 import Caption from '../elements/Caption';
-import H2 from '../elements/H2';
 import Section from './Section';
 
 const IconHolder = styled.footer`
@@ -40,7 +43,7 @@ const InfoP = styled.p`
 `;
 
 const InfoCaption = styled(Caption)`
-	${tw`text-xs md:text-sm text-center mb-2 md:mb-3 pt-6 md:pt-10`};
+	${tw`text-xs md:text-sm text-center mb-1 md:mb-2 pt-6 md:pt-10`};
 `;
 
 const contactItems = [
@@ -62,18 +65,66 @@ const contactItems = [
 	},
 ];
 
+const ContactsDiv = styled(motion.div)`
+	${tw`flex flex-col mb-8 text-white overflow-hidden`};
+`;
+
+const parentVar = {
+	init: {
+		opacity: 0,
+	},
+	anim: {
+		opacity: 1,
+		transition: {
+			delay: 0.5,
+			duration: 0.8,
+			staggerChildren: 0.4,
+		},
+	},
+};
+
+const itemVar = {
+	init: {
+		opacity: 0,
+		y: 25,
+	},
+	anim: {
+		opacity: 1,
+		y: 0,
+		transition: {
+			duration: 0.5,
+		},
+	},
+};
+
 const Footer = () => {
+	const [ref, inView] = useInView();
+
 	return (
 		<Section style={{ backgroundColor: '#231f20' }}>
 			<div className="container mx-auto xl:px-32">
-				<div className="flex flex-col mb-8 text-white">
-					<Caption className="mx-auto">Kontakt</Caption>
-					<H2 className="mx-auto">Kontakta oss</H2>
+				<ContactsDiv
+					variants={parentVar}
+					initial="init"
+					animate={inView ? 'anim' : ''}
+					ref={ref}
+				>
+					<FloatUp>
+						<Caption className="text-center">Kontakt</Caption>
+					</FloatUp>
+					<div className="flex flex-row justify-center">
+						<AnimatedH2 direction="left">Kontakta</AnimatedH2>
+						<AnimatedH2 direction="right">&nbsp;oss</AnimatedH2>
+					</div>
 					{/* TODO: Form here. */}
 
 					{contactItems.map((item) => {
 						return (
-							<div key={item.description} className="mx-auto">
+							<motion.div
+								key={item.description}
+								className="mx-auto"
+								variants={itemVar}
+							>
 								{item.title && <InfoCaption>{item.title}</InfoCaption>}
 								<InfoP className={item.class && item.class}>
 									{item.link ? (
@@ -84,26 +135,29 @@ const Footer = () => {
 										item.description
 									)}
 								</InfoP>
-							</div>
+							</motion.div>
 						);
 					})}
-				</div>
-				<div className="mx-auto flex flex-col pt-2 md:pt-4 lg:pt-6 xl:pt-8">
-					<IconHolder>
-						<ul>
-							<li>
-								<a
-									href="https://github.com/Etimo/"
-									target="_blank"
-									title="Etimos Github"
-								>
-									<Icon icon={faGithubSquare} size="2x" />
-								</a>
-							</li>
-							{/* Add more icons here */}
-						</ul>
-					</IconHolder>
-					<InfoP className="text-darkGray pointer-events-none">© Etimo</InfoP>
+				</ContactsDiv>
+
+				<div className="mx-auto flex flex-col pt-2 md:pt-4 lg:pt-6 xl:pt-8 overflow-hidden">
+					<FloatUp>
+						<IconHolder>
+							<ul>
+								<li>
+									<a
+										href="https://github.com/Etimo/"
+										target="_blank"
+										title="Etimos Github"
+									>
+										<Icon icon={faGithubSquare} size="2x" />
+									</a>
+								</li>
+								{/* Add more icons here */}
+							</ul>
+						</IconHolder>
+						<InfoP className="text-darkGray pointer-events-none">© Etimo</InfoP>
+					</FloatUp>
 				</div>
 			</div>
 		</Section>

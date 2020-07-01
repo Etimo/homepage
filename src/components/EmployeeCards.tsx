@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -19,8 +20,8 @@ export type Employee = {
 	image: React.ReactNode;
 };
 
-const CardsGrid = styled.div`
-	${tw`grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 mt-6 mx-4`};
+const CardsGrid = styled(motion.div)`
+	${tw`grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 mt-6 mx-4 overflow-hidden`};
 	${tw`md:grid-cols-3 md:grid-rows-2 md:gap-6`};
 `;
 
