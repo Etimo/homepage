@@ -16,6 +16,21 @@ const EmphasizedH2 = styled(H2)`
 	${tw`text-center lg:text-left md:mt-4 lg:mt-6 xl:mt-8`}
 `;
 
+const PLink = styled(P)`
+	border-bottom: 1px solid;
+	background: linear-gradient(
+		90deg,
+		${(props) => props.theme.primary} 49%,
+		${(props) => props.theme.secondary} 50%
+	);
+	background-size: 200% auto;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+
+	${tw`inline-flex border-blackGray ease-in duration-200 bg-right lg:bg-left hover:bg-right `};
+`;
+
 const About = () => {
 	return (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
@@ -44,9 +59,15 @@ const About = () => {
 							gambling.
 							<br /> <br />
 							Vi har visserligen olika kunduppdrag, men vi jobbar tillsammans
-							från kontoret på fredagar. Ibland har vi koddagar där vi utvecklar
-							open source för att det är kul, lärorikt och förhoppningsvis är
-							till nytta även för andra.
+							från kontoret på fredagar. Ibland har vi koddagar där vi
+							utvecklar&nbsp;
+							<PLink>
+								<a href="https://github.com/Etimo" target="_blank">
+									open source
+								</a>
+							</PLink>
+							&nbsp;för att det är kul, lärorikt och förhoppningsvis är till
+							nytta även för andra.
 						</P>
 						<br />
 						<HighlightButton>
