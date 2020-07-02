@@ -39,12 +39,14 @@ const About = () => {
 						<P className="mt-6  md:mt-0">
 							På Etimo förenas vi av en passion för att utveckla moderna
 							skräddarsydda lösningar som gör skillnad och ger stort värde för
-							kunden och samhället. Vi tackar nej till uppdrag vi inte gillar,
-							som tex. gambling.
+							kunden och samhället. Gemenskapen och trivseln är jätteviktig för
+							oss och vi tackar nej till uppdrag vi inte gillar, som tex.
+							gambling.
 							<br /> <br />
-							Gemenskapen och trivseln är jätteviktig för oss. Trots att vi har
-							olika kunduppdrag jobbar vi tillsammans från kontoret på fredagar,
-							har interna koddagar m.m.
+							Vi har visserligen olika kunduppdrag, men vi jobbar tillsammans
+							från kontoret på fredagar. Ibland har vi koddagar där vi utvecklar
+							open source för att det är kul, lärorikt och förhoppningsvis är
+							till nytta även för andra.
 						</P>
 						<br />
 						<HighlightButton>
