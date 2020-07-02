@@ -55,19 +55,19 @@ const About = () => {
 							På Etimo förenas vi av en passion för att utveckla moderna
 							skräddarsydda lösningar som gör skillnad och ger stort värde för
 							kunden och samhället. Gemenskapen och trivseln är jätteviktig för
-							oss och vi tackar nej till uppdrag vi inte gillar, som tex.
-							gambling.
-							<br /> <br />
-							Vi har visserligen olika kunduppdrag, men vi jobbar tillsammans
-							från kontoret på fredagar. Ibland har vi koddagar där vi
-							utvecklar&nbsp;
+							oss och vi avböjer uppdrag som inte går i linje med våra
+							värderingar som exempelvis gambling.
+							<br /> <br />I veckorna är vi ute på olika uppdrag hos våra kunder
+							men på fredagar samlas vi alla på kontoret då vi utbyter
+							erfarenheter och hjälper varandra med nya perspektiv. Varannan
+							månad har vi två koddagar där vi utvecklar&nbsp;
 							<PLink>
 								<a href="https://github.com/Etimo" target="_blank">
 									open source
 								</a>
 							</PLink>
-							&nbsp;för att det är kul, lärorikt och förhoppningsvis är till
-							nytta även för andra.
+							&nbsp;för att ha roligt och samtidigt skapa lösningar som kan
+							bidra till samhällsnyttan.
 						</P>
 						<br />
 						<HighlightButton>

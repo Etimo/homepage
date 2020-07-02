@@ -36,7 +36,7 @@ const Splash = () => {
 						<Carousel
 							items={[
 								'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
-								'Etimo är ett snabbväxande it-konsultbolag som utvecklar skräddarsydda digitala lösningar. Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
+								'Etimo är ett snabbväxande IT-konsultbolag som utvecklar skräddarsydda digitala lösningar. Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
 							]}
 						/>
 					</HeroContent>

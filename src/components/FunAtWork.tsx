@@ -39,9 +39,9 @@ export default () => {
 					}
 				}
 			}
-			streetOne: file(relativePath: { eq: "funatwork/gatan-1-370x262.png" }) {
+			innerYard: file(relativePath: { eq: "funatwork/innegard.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 100) {
+					fluid(maxWidth: 500, quality: 100) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -88,7 +88,7 @@ export default () => {
 	const cards: Employee[] = [
 		{
 			name: 'ERIK',
-			title: 'Gillar java',
+			title: 'Gillar Java',
 			image: <StyledImg fluid={data.erikLogo.childImageSharp.fluid} />,
 		},
 		{
@@ -103,13 +103,13 @@ export default () => {
 		},
 		{
 			name: 'LUKAS',
-			title: 'Fångar pengar på ett event',
+			title: 'Blir rik under tidspress',
 			image: <StyledImg fluid={data.lukasLindqvist.childImageSharp.fluid} />,
 		},
 		{
-			name: 'GATAN',
-			title: 'Här ligger kontoret. Det blir en del fika från Vete-Katten.',
-			image: <StyledImg fluid={data.streetOne.childImageSharp.fluid} />,
+			name: 'INNEGÅRDEN',
+			title: 'Här lunchar vi på soliga dagar',
+			image: <StyledImg fluid={data.innerYard.childImageSharp.fluid} />,
 		},
 		{
 			name: 'KOLLEGOR',
@@ -137,7 +137,7 @@ export default () => {
 							<Span secondary>&nbsp;jobbet</Span>
 						</AnimatedH2>
 					</div>
-					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 self-center lg:self-auto overflow-hidden">
+					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 lg:self-auto overflow-hidden">
 						{width >= sizes().laptop &&
 							/* Hover effect */
 							cards.map((card) => <EmployeeCard {...card} key={card.name} />)}
@@ -147,7 +147,7 @@ export default () => {
 							cards.map((card) => {
 								return (
 									<FloatUp>
-										<div className="flex flex-col max-w-sm">
+										<div className="flex flex-col max-w-sm mx-auto">
 											{card.image}
 											<div className="bg-cyan px-3">
 												<SmallerH2>{card.name}</SmallerH2>
