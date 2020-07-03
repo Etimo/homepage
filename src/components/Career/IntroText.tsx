@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -22,25 +21,6 @@ const H1 = styled(motion.h1)`
 `;
 
 const IntroText = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			alfred: file(relativePath: { eq: "djupaalfred.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			lukas: file(relativePath: { eq: "djupalukas4.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-		}
-	`);
-
 	const parent = {
 		init: { opacity: 0 },
 		anim: {
