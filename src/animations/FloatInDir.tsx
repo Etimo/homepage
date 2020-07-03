@@ -17,15 +17,15 @@ export default ({ children, direction, delay, ...props }: Props) => {
 		yDir = '0';
 	switch (direction) {
 		case 'up': {
-			yDir = '100%';
+			yDir = '99%';
 			break;
 		}
 		case 'down': {
-			yDir = '-100%';
+			yDir = '-99%';
 			break;
 		}
 		case 'left': {
-			xDir = '100%';
+			xDir = '99%';
 			break;
 		}
 		case 'right': {

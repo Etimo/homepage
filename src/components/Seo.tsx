@@ -7,9 +7,9 @@
 
 // TODO: Maybe remove the twitter stuff.
 
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import Helmet from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 // Same as react-helmet uses
 type MetaProps = JSX.IntrinsicElements['meta'];

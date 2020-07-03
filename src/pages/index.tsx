@@ -6,6 +6,7 @@ import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import MakingDifference from '../components/MakingDifference';
 import Scroller from '../components/Scroller/Scroller';
+import SEO from '../components/Seo';
 import ThePeople from '../components/ThePeople';
 import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
@@ -17,7 +18,7 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
-			{/* <SEO title="Home" /> */}
+			<SEO title="Home" />
 			{scrollbarEnabled && <Scroller />}
 
 			<Hero />

@@ -35,7 +35,7 @@ type Props = {
 const Carousel = ({ items }: Props) => {
 	const [page, setPage] = useState(0);
 
-	useInterval(() => setPage((page + 1) % items.length), 8000);
+	useInterval(() => setPage((page + 1) % items.length), 12000);
 
 	return (
 		<AnimatePresence exitBeforeEnter initial={false}>
