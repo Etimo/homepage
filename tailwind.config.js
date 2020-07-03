@@ -16,7 +16,8 @@ module.exports = {
 				blackGray: '#111111',
 			},
 			fontSize: {
-				'8xl': '4rem',
+				'8xl': '5rem',
+				'10xl': '6rem',
 				small: '13px',
 			},
 			spacing: {
