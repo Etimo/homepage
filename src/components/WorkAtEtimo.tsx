@@ -77,7 +77,7 @@ const WorkAtEtimo = () => {
 							</EmphasizedH2>
 							<div className="mx-4 lg:mx-0">
 								{workItems.map((text) => {
-									return <DashedP>{text}</DashedP>;
+									return <DashedP key={text}>{text}</DashedP>;
 								})}
 							</div>
 						</FadeIn>

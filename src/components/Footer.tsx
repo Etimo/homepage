@@ -55,13 +55,14 @@ const contactItems = [
 	},
 	{
 		title: 'Adress',
-		description: 'Kungsgatan 55, 111 22, Stockholm',
+		description: `Kungsgatan 55<br />111 22 Stockholm`,
 		class: 'pointer-events-none',
 	},
 	{
 		description: 'Karta',
 		link:
 			'https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159',
+		class: 'mt-1',
 	},
 ];
 
@@ -126,15 +127,19 @@ const Footer = () => {
 								variants={itemVar}
 							>
 								{item.title && <InfoCaption>{item.title}</InfoCaption>}
-								<InfoP className={item.class && item.class}>
-									{item.link ? (
-										<a href={item.link} target="_blank">
-											{item.description}
-										</a>
-									) : (
-										item.description
-									)}
-								</InfoP>
+								{item.link ? (
+									<a href={item.link} target="_blank">
+										<InfoP
+											className={item.class && item.class}
+											dangerouslySetInnerHTML={{ __html: item.description }}
+										/>
+									</a>
+								) : (
+									<InfoP
+										className={item.class && item.class}
+										dangerouslySetInnerHTML={{ __html: item.description }}
+									/>
+								)}
 							</motion.div>
 						);
 					})}

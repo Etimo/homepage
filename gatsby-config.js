@@ -15,7 +15,6 @@ module.exports = {
 				allExtensions: true,
 			},
 		},
-		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -38,6 +37,8 @@ module.exports = {
 				icon: `src/images/etimofavicon.png`, // This path is relative to the root of the site.
 			},
 		},
+		`gatsby-plugin-offline`,
+		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-styled-components`,
 		{
 			resolve: `gatsby-plugin-web-font-loader`,

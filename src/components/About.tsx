@@ -6,6 +6,8 @@ import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import P from '../elements/P';
 import Span from '../elements/Span';
+import { sizes } from '../helpers';
+import { useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
 
@@ -16,7 +18,7 @@ const EmphasizedH2 = styled(H2)`
 	${tw`text-center lg:text-left md:mt-4 lg:mt-6 xl:mt-8`}
 `;
 
-const PLink = styled(P)`
+const GradientSpan = styled.span`
 	border-bottom: 1px solid;
 	background: linear-gradient(
 		90deg,
@@ -28,13 +30,13 @@ const PLink = styled(P)`
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 
-	${tw`inline-flex border-blackGray ease-in duration-200 bg-right lg:bg-left hover:bg-right `};
+	${tw`border-blackGray ease-in duration-200 bg-right lg:bg-left hover:bg-right `};
 `;
 
 const About = () => {
+	const [h, width] = useViewportSize();
 	return (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
-			{/* This needs to switch to row at lg(1024)*/}
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
 					<FadeIn direction="left" flex flexDirection="column">
@@ -52,22 +54,21 @@ const About = () => {
 				<div className="md:w-1/2 text-center sm:text-left">
 					<FadeIn direction="right">
 						<P className="mt-6  md:mt-0">
-							På Etimo förenas vi av en passion för att utveckla moderna
-							skräddarsydda lösningar som gör skillnad och ger stort värde för
-							kunden och samhället. Gemenskapen och trivseln är jätteviktig för
-							oss och vi avböjer uppdrag som inte går i linje med våra
-							värderingar som exempelvis gambling.
-							<br /> <br />I veckorna är vi ute på olika uppdrag hos våra kunder
-							men på fredagar samlas vi alla på kontoret då vi utbyter
-							erfarenheter och hjälper varandra med nya perspektiv. Varannan
-							månad har vi två koddagar där vi utvecklar&nbsp;
-							<PLink>
+							För oss är gemenskap och trivsel viktig och vi avböjer uppdrag som
+							inte går i linje med våra värderingar som exempelvis gambling. I
+							veckorna är vi ute på olika uppdrag hos våra kunder men på
+							fredagar samlas vi alla på kontoret då vi utbyter erfarenheter och
+							hjälper varandra med nya perspektiv.
+							<br /> <br /> Varannan månad har vi två koddagar där vi utvecklar
+							{width < sizes().desktop ? ` ` : <br />}
+							<GradientSpan>
 								<a href="https://github.com/Etimo" target="_blank">
 									open source
 								</a>
-							</PLink>
-							&nbsp;för att ha roligt och samtidigt skapa lösningar som kan
-							bidra till samhällsnyttan.
+							</GradientSpan>
+							&nbsp;för att ha roligt och samtidigt skapa
+							{width < sizes().desktop ? ` ` : <br />}
+							lösningar som kan bidra till samhällsnyttan.
 						</P>
 						<br />
 						<HighlightButton>
