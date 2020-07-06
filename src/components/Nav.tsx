@@ -1,13 +1,13 @@
+import { Link } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 
 const NavLink = styled(Link)`
 	line-height: 60px;
 	color: ${(props) => props.theme.primary};
 	transition: color 0.1s ease-out;
 	font-size: 1.1rem;
-	font-family: 'Quicksand';
+	font-family: ${(props) => props.theme.typography.headline.font};
 	padding: 0 15px;
 	position: relative;
 

@@ -1,4 +1,4 @@
-import { motion, useCycle, Variant } from 'framer-motion';
+import { motion, useCycle } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
 import styled, { DefaultTheme } from 'styled-components';
@@ -22,7 +22,7 @@ const Section = styled(motion.div)<SectionProps>`
 	overflow: hidden;
 	height: 20px;
 	color: ${(props) => (props.isActive ? props.theme.secondary : '#888888')};
-	font-family: ${(props) => props.theme.typography.font};
+	font-family: ${(props) => props.theme.typography.headline.font};
 `;
 
 const variants = [
