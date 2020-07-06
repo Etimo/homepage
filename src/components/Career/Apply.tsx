@@ -4,7 +4,7 @@ import Section from '../Section';
 
 const Apply = () => {
 	return (
-		<Section headerSpace style={{ height: 'auto' }}>
+		<Section style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<H2>Ansök här</H2>
 				<P>Vill du jobba hos oss?</P>

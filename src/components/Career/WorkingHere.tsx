@@ -1,5 +1,5 @@
 import React from 'react';
-import { DashedP, H2, Span } from '../../elements';
+import { Caption, DashedP, H2, Span } from '../../elements';
 import Section from '../Section';
 
 const bulletPoints = [
@@ -15,19 +15,20 @@ const bulletPoints = [
 
 const WorkingHere = () => {
 	return (
-		<Section headerSpace style={{ backgroundColor: 'white', height: 'auto' }}>
-			<div className="flex container flex-col px-8 lg:px-32 text-center">
-				<H2 className="mb-4 md:mb-6">
-					Att jobba på <Span primary>Etimo</Span> -<br />
-					vi söker de allra <Span secondary>bästa</Span>
-				</H2>
-				{bulletPoints.map((bulletText) => {
-					return (
-						<DashedP className="text-left" key={bulletText}>
-							{bulletText}
-						</DashedP>
-					);
-				})}
+		<Section style={{ backgroundColor: 'white' }}>
+			<div className="flex container flex-col md:flex-row px-8 lg:px-32 text-left">
+				<div className="flex flex-col lg:w-1/2 my-auto lg:mt-0 text-center md:text-left">
+					<Caption>Jobbet</Caption>
+					<H2 className="mb-4 md:mb-6 mt-2 md:mt-4">
+						Att jobba på <br />
+						<Span secondary>Etimo</Span>
+					</H2>
+				</div>
+				<div className="w-4/5 md:w-2/3 mx-auto">
+					{bulletPoints.map((bulletText) => {
+						return <DashedP key={bulletText}>{bulletText}</DashedP>;
+					})}
+				</div>
 			</div>
 		</Section>
 	);

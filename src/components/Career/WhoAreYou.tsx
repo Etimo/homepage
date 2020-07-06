@@ -18,7 +18,7 @@ const whoTexts = [
 
 const WhoAreYou = () => {
 	return (
-		<Section headerSpace style={{ height: 'auto' }}>
+		<Section>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<H2>Är du vår nästa kollega? </H2>
 				<P>

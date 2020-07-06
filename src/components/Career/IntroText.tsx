@@ -14,6 +14,7 @@ const GradientSpan = styled.span`
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	${tw`uppercase`};
 `;
 
 const H1 = styled(motion.h1)`

@@ -31,7 +31,7 @@ const opacVar = {
 	},
 };
 
-const sections = [
+let sections = [
 	{
 		index: 0,
 		name: 'Start',
@@ -62,7 +62,11 @@ const sections = [
 	},
 ];
 
-export default () => {
+type Props = {
+	givenSections?: { index: number; name: string }[];
+};
+
+export default ({ givenSections, ...props }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
 
@@ -83,6 +87,10 @@ export default () => {
 		false,
 		50
 	);
+
+	if (givenSections) {
+		sections = givenSections;
+	}
 
 	return (
 		<motion.div variants={opacVar} initial="init" animate="anim">
