@@ -29,7 +29,6 @@ const Layout = ({ children }: Props) => {
 			background: '#f8f8f8',
 		},
 		typography: {
-			font: 'Overpass' /* Deprecated */,
 			paragraph: {
 				font: 'Montserrat',
 			},

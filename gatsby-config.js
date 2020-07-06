@@ -44,15 +44,7 @@ module.exports = {
 			resolve: `gatsby-plugin-web-font-loader`,
 			options: {
 				google: {
-					families: [
-						'DM Serif Display',
-						'Noto Sans JP',
-						'Quicksand',
-						'Overpass',
-						'Open Sans',
-						'Montserrat:300',
-						'Questrial',
-					],
+					families: ['Montserrat:300', 'Questrial'],
 				},
 			},
 		},

@@ -49,9 +49,9 @@ const workItems = [
 const WorkAtEtimo = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			image: file(relativePath: { eq: "bollhav2.png" }) {
+			image: file(relativePath: { eq: "bollhav2.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
+					fluid(maxWidth: 540, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
