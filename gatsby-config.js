@@ -37,22 +37,14 @@ module.exports = {
 				icon: `src/images/etimofavicon.png`, // This path is relative to the root of the site.
 			},
 		},
-		`gatsby-plugin-offline`,
+		`gatsby-plugin-remove-serviceworker`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-styled-components`,
 		{
 			resolve: `gatsby-plugin-web-font-loader`,
 			options: {
 				google: {
-					families: [
-						'DM Serif Display',
-						'Noto Sans JP',
-						'Quicksand',
-						'Overpass',
-						'Open Sans',
-						'Montserrat:300',
-						'Questrial',
-					],
+					families: ['Montserrat:300', 'Questrial'],
 				},
 			},
 		},

@@ -34,14 +34,14 @@ export default () => {
 				relativePath: { eq: "funatwork/erik-malm-1-logo-370x262.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 100) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			innerYard: file(relativePath: { eq: "funatwork/innegard.png" }) {
+			innerYard: file(relativePath: { eq: "funatwork/innegard.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -50,7 +50,7 @@ export default () => {
 				relativePath: { eq: "funatwork/johan-hazelius-1-370x262.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 100) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -59,7 +59,7 @@ export default () => {
 				relativePath: { eq: "funatwork/etimo-kockar-1-370x262.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 100) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -68,7 +68,7 @@ export default () => {
 				relativePath: { eq: "funatwork/kollegor-1-370x262.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 100) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
@@ -77,7 +77,7 @@ export default () => {
 				relativePath: { eq: "funatwork/lukas-lindqvist-1-pengar-370x262.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 100) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
