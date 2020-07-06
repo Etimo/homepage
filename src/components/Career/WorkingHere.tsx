@@ -24,7 +24,7 @@ const WorkingHere = () => {
 						<Span secondary>Etimo</Span>
 					</H2>
 				</div>
-				<div className="w-4/5 md:w-2/3 mx-auto">
+				<div className="md:w-2/3 mx-auto">
 					{bulletPoints.map((bulletText) => {
 						return <DashedP key={bulletText}>{bulletText}</DashedP>;
 					})}
