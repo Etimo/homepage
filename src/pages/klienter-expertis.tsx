@@ -41,7 +41,7 @@ const ClientsPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Career" />
+			<SEO title="Clients" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
 			<CreateValue />

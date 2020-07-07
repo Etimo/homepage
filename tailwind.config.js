@@ -25,7 +25,6 @@ module.exports = {
 				'125': '125%',
 				'60p': '60px',
 				'100': '25rem',
-				fc: 'fit-content',
 			},
 			maxWidth: {
 				xxs: '15rem',

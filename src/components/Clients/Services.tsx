@@ -47,7 +47,7 @@ const Services = () => {
 					animate={inView ? 'anim' : ''}
 				>
 					<CyanHover
-						className="flex flex-col border p-10 lg:m-4 w-fc"
+						className="flex flex-col border p-10 lg:m-4"
 						variants={BlurIn()}
 					>
 						<H4 className="mb-2 md:mb-4">Vår insats</H4>
@@ -57,7 +57,7 @@ const Services = () => {
 					</CyanHover>
 
 					<CyanHover
-						className="flex flex-col border p-10 lg:m-4 w-fc"
+						className="flex flex-col border p-10 lg:m-4"
 						variants={BlurIn()}
 					>
 						<H4 className="mb-2 md:mb-4">Kundernas utvärdering</H4>

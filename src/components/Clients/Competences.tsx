@@ -13,7 +13,7 @@ const Competences = () => {
 				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 mx-auto lg:mx-0 lg:w-full">
 					<div className="lg:w-1/3">
 						<H4>Innovation</H4>
-						<div className="text-left mt-2 mx-auto w-fc">
+						<div className="text-left mt-2 inline-block">
 							<DashedP>Analys</DashedP>
 							<DashedP>Produktstrategi</DashedP>
 							<DashedP>Produktdesign</DashedP>
@@ -21,15 +21,15 @@ const Competences = () => {
 					</div>
 					<div className="lg:w-1/3 mt-6 lg:mt-0">
 						<H4>Arkitektur</H4>
-						<div className="text-left mt-2 mx-auto w-fc">
+						<div className="text-left mt-2 inline-block">
 							<DashedP>Mikrotjänster</DashedP>
 							<DashedP>Molnlösningar</DashedP>
 							<DashedP>Skalbarhet</DashedP>
 						</div>
 					</div>
-					<div className="md:w-fc md:self-end lg:w-1/3 mt-6 lg:mt-0">
+					<div className="lg:w-1/3 mt-6 lg:mt-0">
 						<H4>Utveckling</H4>
-						<div className="text-left mt-2 mx-auto w-fc">
+						<div className="text-left mt-2 inline-block">
 							<DashedP>JavaScript, C#, Java, Python</DashedP>
 							<DashedP>React, Angular, Express, .NET</DashedP>
 							<DashedP>Agile, Azure, AWS, CI/CD, TDD</DashedP>
