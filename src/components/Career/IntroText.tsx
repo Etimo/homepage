@@ -9,7 +9,7 @@ const GradientSpan = styled.span`
 	background: linear-gradient(
 		90deg,
 		${(props) => props.theme.secondary} 0%,
-		${(props) => props.theme.primary} 100%
+		${(props) => props.theme.secondary} 100%
 	);
 	background-clip: text;
 	-webkit-background-clip: text;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FloatUp } from '../../animations';
 import { Caption, DashedP, H2, Span } from '../../elements';
 import Section from '../Section';
 
@@ -17,16 +18,22 @@ const WorkingHere = () => {
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32 text-left">
-				<div className="flex flex-col lg:w-1/2 my-auto lg:mt-0 text-center md:text-left">
-					<Caption>Jobbet</Caption>
-					<H2 className="mb-4 md:mb-6 mt-2 md:mt-4">
-						Att jobba på <br />
-						<Span secondary>Etimo</Span>
-					</H2>
+				<div className="flex flex-col lg:w-1/2 my-auto lg:mt-0 text-center md:text-left overflow-hidden">
+					<FloatUp>
+						<Caption>Jobbet</Caption>
+						<H2 className="mb-4 md:mb-6 mt-2 md:mt-4">
+							Att jobba på <br />
+							<Span secondary>Etimo</Span>
+						</H2>
+					</FloatUp>
 				</div>
-				<div className="md:w-2/3 mx-auto">
+				<div className="md:w-2/3 mx-auto overflow-hidden">
 					{bulletPoints.map((bulletText) => {
-						return <DashedP key={bulletText}>{bulletText}</DashedP>;
+						return (
+							<FloatUp>
+								<DashedP key={bulletText}>{bulletText}</DashedP>
+							</FloatUp>
+						);
 					})}
 				</div>
 			</div>

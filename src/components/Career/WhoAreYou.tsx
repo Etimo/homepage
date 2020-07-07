@@ -1,5 +1,6 @@
 import React from 'react';
-import { Caption, DashedP, H2, H3, P, Span } from '../../elements';
+import { FadeIn, FloatUp } from '../../animations';
+import { AnimatedH2, Caption, DashedP, H3, P, Span } from '../../elements';
 import Section from '../Section';
 
 const thriveTexts = [
@@ -17,37 +18,48 @@ const whoTexts = [
 
 const WhoAreYou = () => {
 	return (
-		<Section>
+		<Section style={{ overflow: 'hidden' }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
-				<Caption>Vi söker de allra bästa</Caption>
-				<H2>
-					Är <Span secondary>du</Span> vår nästa kollega?{' '}
-				</H2>
+				<FloatUp>
+					<Caption>Vi söker de allra bästa</Caption>
+				</FloatUp>
+				<div className="flex flex-col md:flex-row justify-center">
+					<AnimatedH2 direction="left">
+						Är <Span secondary>du</Span> vår&nbsp;
+					</AnimatedH2>
+					<AnimatedH2 direction="right">nästa kollega?</AnimatedH2>
+				</div>
 				<div className="md:w-3/4 mx-auto text-left mt-4 lg:mt-6">
-					<P>
-						Har du ett genuint intresse för utveckling och programmering?
-						<br /> Vill du vara med på resan att bygga upp Sveriges ledande
-						utvecklingsorganisation, så har du hittat rätt! Vi söker vår nästa
-						kollega som vill vara med och växa med oss och bidra till vår
-						organisation där din personlighet och drivkraft är viktiga
-						komponenter - resten kan man lära sig på vägen!
-					</P>
-					<H3 className="text-left mt-6"> Du trivs hos oss om:</H3>
-					{thriveTexts.map((tText) => {
-						return (
-							<DashedP className="text-left" key={tText}>
-								{tText}
-							</DashedP>
-						);
-					})}
-					<H3 className="text-left mt-6">Vem är du?</H3>
-					{whoTexts.map((wText) => {
-						return (
-							<DashedP className="text-left" key={wText}>
-								{wText}
-							</DashedP>
-						);
-					})}
+					<FadeIn direction="right">
+						<P>
+							Har du ett genuint intresse för utveckling och programmering?
+							<br /> Vill du vara med på resan att bygga upp Sveriges ledande
+							utvecklingsorganisation, så har du hittat rätt! Vi söker vår nästa
+							kollega som vill vara med och växa med oss och bidra till vår
+							organisation där din personlighet och drivkraft är viktiga
+							komponenter - resten kan man lära sig på vägen!
+						</P>
+					</FadeIn>
+					<FadeIn direction="left">
+						<H3 className="text-left mt-6"> Du trivs hos oss om:</H3>
+						{thriveTexts.map((tText) => {
+							return (
+								<DashedP className="text-left" key={tText}>
+									{tText}
+								</DashedP>
+							);
+						})}
+					</FadeIn>
+					<FadeIn direction="right">
+						<H3 className="text-left mt-6">Vem är du?</H3>
+						{whoTexts.map((wText) => {
+							return (
+								<DashedP className="text-left" key={wText}>
+									{wText}
+								</DashedP>
+							);
+						})}
+					</FadeIn>
 				</div>
 			</div>
 		</Section>
