@@ -12,7 +12,7 @@ const CreateValue = () => {
 				<H2>
 					Vi skapar <Span secondary>värde</Span>
 				</H2>
-				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 md:w-3/4 md:mx-auto lg:mx-0 lg:w-full">
+				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 mx-auto lg:mx-0 lg:w-full">
 					<div className="lg:w-1/3">
 						<SupervisorAccountIcon
 							className="text-cyan mb-2"
