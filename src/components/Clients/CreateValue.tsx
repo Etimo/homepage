@@ -20,9 +20,9 @@ const CreateValue = () => {
 						/>
 						<H4>Våra tjänster ...</H4>
 						<div className="text-left mt-2 mx-auto w-fc">
-							<DashedP>Innovation as a Service</DashedP>
 							<DashedP>Systemarkitektur</DashedP>
 							<DashedP>Skräddarsydd systemutveckling</DashedP>
+							<DashedP>Innovation as a Service</DashedP>
 						</div>
 					</div>
 					<div className="lg:w-1/3 mt-6 lg:mt-auto">
