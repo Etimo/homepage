@@ -10,6 +10,7 @@ module.exports = {
 			},
 			colors: {
 				cyan: '#42C8AD',
+				etimoBlue: '#2c3e50',
 				darkGray: '#888888',
 				blackGray: '#111111',
 			},
@@ -23,6 +24,8 @@ module.exports = {
 				'3/4': '75%',
 				'125': '125%',
 				'60p': '60px',
+				'100': '25rem',
+				fc: 'fit-content',
 			},
 			maxWidth: {
 				xxs: '15rem',
