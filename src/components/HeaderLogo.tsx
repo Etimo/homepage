@@ -1,9 +1,9 @@
-import React from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
+import React from 'react';
 import styled from 'styled-components';
 
-const StyledImg = styled(Img)`
+const StyledDiv = styled.div`
 	margin: auto 0;
 	width: 20%;
 	max-width: 180px;
@@ -24,7 +24,11 @@ const HeaderLogo = () => {
 	`);
 
 	return (
-		<StyledImg fadeIn fluid={data.placeholderImage.childImageSharp.fluid} />
+		<StyledDiv>
+			<Link to="/">
+				<Img fadeIn fluid={data.placeholderImage.childImageSharp.fluid} />
+			</Link>
+		</StyledDiv>
 	);
 };
 
