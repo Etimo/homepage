@@ -82,6 +82,7 @@ const WorkAtEtimo = () => {
 									return <DashedP key={text}>{text}</DashedP>;
 								})}
 							</div>
+							<br />
 							<div className="text-center lg:text-left">
 								<HighlightButton>
 									<Link to="/karriar">
