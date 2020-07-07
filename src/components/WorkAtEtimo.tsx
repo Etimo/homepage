@@ -1,15 +1,17 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import FadeIn from '../animations/FadeIn';
+import { P } from '../elements';
 import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import { HighlightButton } from './Button';
 import Section from './Section';
 
 const CustomBackground = styled.div<{ offset: number }>`
@@ -79,6 +81,13 @@ const WorkAtEtimo = () => {
 								{workItems.map((text) => {
 									return <DashedP key={text}>{text}</DashedP>;
 								})}
+							</div>
+							<div className="text-center lg:text-left">
+								<HighlightButton>
+									<Link to="/karriar">
+										<P>Läs mer om att jobba hos oss</P>
+									</Link>
+								</HighlightButton>
 							</div>
 						</FadeIn>
 					</div>

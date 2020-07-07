@@ -30,13 +30,8 @@ const Nav = () => {
 		<nav>
 			<Ul>
 				<li>
-					<NavLink to="/opensource/" title="Open Source">
-						Open Source
-					</NavLink>
-				</li>
-				<li>
-					<NavLink to="/" title="Kontakt">
-						Kontakt
+					<NavLink to="/karriar" title="Career">
+						Karriär
 					</NavLink>
 				</li>
 			</Ul>

@@ -31,37 +31,6 @@ const opacVar = {
 	},
 };
 
-let sections = [
-	{
-		index: 0,
-		name: 'Start',
-	},
-	{
-		index: 1,
-		name: 'Vår passion',
-	},
-	{
-		index: 2,
-		name: 'Att jobba här',
-	},
-	{
-		index: 3,
-		name: 'Några av oss',
-	},
-	{
-		index: 4,
-		name: 'Kunder',
-	},
-	{
-		index: 5,
-		name: 'Kul på jobbet',
-	},
-	{
-		index: 6,
-		name: 'Vi gör skillnad',
-	},
-];
-
 type Props = {
 	givenSections?: { index: number; name: string }[];
 };
@@ -88,9 +57,38 @@ export default ({ givenSections, ...props }: Props) => {
 		50
 	);
 
-	if (givenSections) {
-		sections = givenSections;
-	}
+	const sections = givenSections
+		? givenSections
+		: [
+				{
+					index: 0,
+					name: 'Start',
+				},
+				{
+					index: 1,
+					name: 'Vår passion',
+				},
+				{
+					index: 2,
+					name: 'Att jobba här',
+				},
+				{
+					index: 3,
+					name: 'Några av oss',
+				},
+				{
+					index: 4,
+					name: 'Kunder',
+				},
+				{
+					index: 5,
+					name: 'Kul på jobbet',
+				},
+				{
+					index: 6,
+					name: 'Vi gör skillnad',
+				},
+		  ];
 
 	return (
 		<motion.div variants={opacVar} initial="init" animate="anim">
