@@ -1,10 +1,11 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
-import { AnimatedH2, Caption, Span } from '../elements';
+import { AnimatedH2, Caption, P, Span } from '../elements';
+import { HighlightButton } from './Button';
 import Section from './Section';
 
 /* max-width: 150px; */
@@ -169,9 +170,10 @@ type Props = {
 		};
 		direction: string;
 	}[];
+	link?: boolean;
 };
 
-export default ({ givenCustomers, ...props }: Props) => {
+export default ({ givenCustomers, link, ...props }: Props) => {
 	const customers = givenCustomers ? givenCustomers : generateCustomers();
 
 	return (
@@ -207,6 +209,15 @@ export default ({ givenCustomers, ...props }: Props) => {
 							);
 						})}
 					</div>
+					{link && (
+						<div className="flex mx-auto mt-6 md:mt-8 xl:mt-12">
+							<HighlightButton>
+								<Link to="/klienter-och-expertis">
+									<P>Läs mer om våra kunder och tjänster</P>
+								</Link>
+							</HighlightButton>
+						</div>
+					)}
 				</div>
 			</div>
 		</Section>

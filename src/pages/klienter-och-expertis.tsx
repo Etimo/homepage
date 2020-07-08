@@ -5,7 +5,7 @@ import {
 	Hero,
 	Services,
 } from '../components/Clients';
-import ClientCustomers from '../components/Clients/ClientCustomers';
+import Customers from '../components/Customers';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
@@ -41,13 +41,13 @@ const ClientsPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Clients" />
+			<SEO title="Klienter och expertis" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
 			<CreateValue />
 			<Services />
 			<Competences />
-			<ClientCustomers />
+			<Customers />
 		</Layout>
 	);
 };

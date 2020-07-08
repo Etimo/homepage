@@ -31,7 +31,7 @@ const CareerPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Career" />
+			<SEO title="Karriär" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<IntroText />
 			<WorkingHere />
