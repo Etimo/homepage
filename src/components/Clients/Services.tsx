@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { CyanHover } from '../../animations';
+import { CyanHover, FloatUp } from '../../animations';
 import BlurIn from '../../animations/variants/BlurIn';
-import { Caption, DashedP, H2, H4, Span } from '../../elements';
+import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
 import Section from '../Section';
 
 const gridVar = {
@@ -35,10 +35,15 @@ const Services = () => {
 	return (
 		<Section>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
-				<Caption>Nöjda kunder</Caption>
-				<H2>
-					Våra tjänster får <Span secondary>toppbetyg</Span>
-				</H2>
+				<FloatUp>
+					<Caption>Nöjda kunder</Caption>
+				</FloatUp>
+				<div className="flex flex-col md:flex-row justify-center">
+					<AnimatedH2 direction="left">Våra tjänster&nbsp;</AnimatedH2>
+					<AnimatedH2 direction="right">
+						får <Span secondary>toppbetyg</Span>
+					</AnimatedH2>
+				</div>
 				<motion.div
 					className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mt-8 lg:mt-12 mx-0 lg:mx-6 overflow-hidden text-left self-center"
 					ref={ref}

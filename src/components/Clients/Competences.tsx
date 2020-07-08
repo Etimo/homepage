@@ -1,16 +1,21 @@
 import React from 'react';
-import { FloatInDir } from '../../animations';
-import { Caption, DashedP, H2, H4, Span } from '../../elements';
+import { FloatInDir, FloatUp } from '../../animations';
+import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
 import Section from '../Section';
 
 const Competences = () => {
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
-				<Caption>Områden</Caption>
-				<H2>
-					Exempel på våra <Span secondary>kompetenser</Span>
-				</H2>
+				<FloatUp>
+					<Caption>Områden</Caption>
+				</FloatUp>
+				<div className="flex flex-col md:flex-row justify-center">
+					<AnimatedH2 direction="left">Exempel på våra&nbsp;</AnimatedH2>
+					<AnimatedH2 direction="right">
+						<Span secondary>kompetenser</Span>
+					</AnimatedH2>
+				</div>
 				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 mx-auto lg:mx-0 lg:w-full">
 					<div className="lg:w-1/3">
 						<FloatInDir direction="right">
