@@ -51,7 +51,7 @@ const Services = () => {
 					animate={inView ? 'anim' : ''}
 				>
 					<FloatUp>
-						<CyanHover className="flex flex-col border p-10 lg:m-4">
+						<CyanHover className="flex flex-col border p-10 md:h-full lg:m-4 lg:h-auto">
 							<H4 className="mb-2 md:mb-4">Vår insats</H4>
 							{contributions.map((cText) => {
 								return <DashedP key={cText}>{cText}</DashedP>;
@@ -60,7 +60,7 @@ const Services = () => {
 					</FloatUp>
 
 					<FloatUp>
-						<CyanHover className="flex flex-col border p-10 lg:m-4">
+						<CyanHover className="flex flex-col border p-10 md:h-full lg:m-4 lg:h-auto">
 							<H4 className="mb-2 md:mb-4">Kundernas utvärdering</H4>
 							{evaluations.map((eText) => {
 								return <DashedP key={eText}>{eText}</DashedP>;
