@@ -2,7 +2,6 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { CyanHover, FloatUp } from '../../animations';
-import BlurIn from '../../animations/variants/BlurIn';
 import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
 import Section from '../Section';
 
@@ -51,25 +50,23 @@ const Services = () => {
 					initial="init"
 					animate={inView ? 'anim' : ''}
 				>
-					<CyanHover
-						className="flex flex-col border p-10 lg:m-4"
-						variants={BlurIn()}
-					>
-						<H4 className="mb-2 md:mb-4">Vår insats</H4>
-						{contributions.map((cText) => {
-							return <DashedP key={cText}>{cText}</DashedP>;
-						})}
-					</CyanHover>
+					<FloatUp>
+						<CyanHover className="flex flex-col border p-10 lg:m-4">
+							<H4 className="mb-2 md:mb-4">Vår insats</H4>
+							{contributions.map((cText) => {
+								return <DashedP key={cText}>{cText}</DashedP>;
+							})}
+						</CyanHover>
+					</FloatUp>
 
-					<CyanHover
-						className="flex flex-col border p-10 lg:m-4"
-						variants={BlurIn()}
-					>
-						<H4 className="mb-2 md:mb-4">Kundernas utvärdering</H4>
-						{evaluations.map((eText) => {
-							return <DashedP key={eText}>{eText}</DashedP>;
-						})}
-					</CyanHover>
+					<FloatUp>
+						<CyanHover className="flex flex-col border p-10 lg:m-4">
+							<H4 className="mb-2 md:mb-4">Kundernas utvärdering</H4>
+							{evaluations.map((eText) => {
+								return <DashedP key={eText}>{eText}</DashedP>;
+							})}
+						</CyanHover>
+					</FloatUp>
 				</motion.div>
 			</div>
 		</Section>

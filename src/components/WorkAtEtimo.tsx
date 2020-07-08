@@ -54,7 +54,7 @@ const WorkAtEtimo = () => {
 			image: file(relativePath: { eq: "bollhav2.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 540, quality: 90) {
-						...GatsbyImageSharpFluid
+						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}

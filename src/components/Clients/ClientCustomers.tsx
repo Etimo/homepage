@@ -76,7 +76,9 @@ const ClientCustomers = () => {
 					}
 				}
 			}
-			appva: file(relativePath: { eq: "customers/modified/appva.png" }) {
+			mittskolval: file(
+				relativePath: { eq: "customers/modified/mittskolval.png" }
+			) {
 				childImageSharp {
 					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
@@ -197,9 +199,9 @@ const ClientCustomers = () => {
 			direction: 'up',
 		},
 		{
-			name: 'Appva',
-			url: 'https://appva.com/sv/',
-			image: <Img fluid={data.appva.childImageSharp.fluid} />,
+			name: 'Mitt skolval',
+			url: 'https://www.mittskolval.se/',
+			image: <Img fluid={data.mittskolval.childImageSharp.fluid} />,
 			borders: {
 				xs: 'border-r',
 				sm: '',
