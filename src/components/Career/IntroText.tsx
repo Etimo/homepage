@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import { P } from '../../elements';
+import { H1, P } from '../../elements';
 import Section from '../Section';
 
 const GradientSpan = styled.span`
@@ -15,10 +15,6 @@ const GradientSpan = styled.span`
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	${tw`uppercase`};
-`;
-
-const H1 = styled(motion.h1)`
-	${tw`font-quest text-5xl md:text-6xl lg:text-8xl xl:text-10xl overflow-hidden self-center`};
 `;
 
 const IntroText = () => {

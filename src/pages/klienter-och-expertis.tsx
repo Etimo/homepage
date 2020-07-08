@@ -1,44 +1,55 @@
 import React from 'react';
-import { Apply, IntroText, WhoAreYou, WorkingHere } from '../components/Career';
+import {
+	Competences,
+	CreateValue,
+	Hero,
+	Services,
+} from '../components/Clients';
+import ClientCustomers from '../components/Clients/ClientCustomers';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 
-const CareerPage = () => {
+const ClientsPage = () => {
 	const [height, width] = useViewportSize();
 	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
 
 	const sections = [
 		{
 			index: 0,
-			name: 'Karriär',
+			name: 'Klienter',
 		},
 		{
 			index: 1,
-			name: 'Jobbet',
+			name: 'Värde för kund',
 		},
 		{
 			index: 2,
-			name: 'Du',
+			name: 'Tjänster',
 		},
 		{
 			index: 3,
-			name: 'Ansök',
+			name: 'Kompetenser',
+		},
+		{
+			index: 4,
+			name: 'Kunder',
 		},
 	];
 
 	return (
 		<Layout>
-			<SEO title="Karriär" />
+			<SEO title="Klienter och expertis" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
-			<IntroText />
-			<WorkingHere />
-			<WhoAreYou />
-			<Apply />
+			<Hero />
+			<CreateValue />
+			<Services />
+			<Competences />
+			<ClientCustomers />
 		</Layout>
 	);
 };
 
-export default CareerPage;
+export default ClientsPage;

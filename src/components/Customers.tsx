@@ -1,19 +1,14 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
-import { AnimatedH2, Caption, Span } from '../elements';
+import { AnimatedH2, Caption, P, Span } from '../elements';
+import { HighlightButton } from './Button';
 import Section from './Section';
 
-/* max-width: 150px; */
-const ImageDiv = styled.div`
-	${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs lg:max-w-xxxs opacity-50 hover:opacity-100`};
-	${tw`transition-opacity ease-in-out duration-200`};
-`;
-
-export default () => {
+const generateCustomers = () => {
 	const data = useStaticQuery(graphql`
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
@@ -74,8 +69,7 @@ export default () => {
 			}
 		}
 	`);
-
-	const customers = [
+	return [
 		{
 			name: 'Blocket',
 			url: 'https://www.blocket.se/',
@@ -157,9 +151,36 @@ export default () => {
 			direction: 'left',
 		},
 	];
+};
+
+type Props = {
+	givenCustomers?: {
+		name: string;
+		url: string;
+		image: JSX.Element;
+		borders: {
+			xs: string;
+			sm: string;
+		};
+		direction: string;
+	}[];
+	link?: boolean;
+	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
+};
+
+export default ({ givenCustomers, link, imgDiv, ...props }: Props) => {
+	const customers = givenCustomers ? givenCustomers : generateCustomers();
+
+	/* max-width: 150px; */
+	const ImageDiv = imgDiv
+		? imgDiv
+		: styled.div`
+				${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxs opacity-50 hover:opacity-100`};
+				${tw`transition-opacity ease-in-out duration-200`};
+		  `;
 
 	return (
-		<Section>
+		<Section style={{ overflow: 'hidden' }}>
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<FloatUp>
@@ -191,6 +212,15 @@ export default () => {
 							);
 						})}
 					</div>
+					{link && (
+						<div className="flex mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
+							<HighlightButton>
+								<Link to="/klienter-och-expertis">
+									<P>Läs mer om våra kunder och tjänster</P>
+								</Link>
+							</HighlightButton>
+						</div>
+					)}
 				</div>
 			</div>
 		</Section>

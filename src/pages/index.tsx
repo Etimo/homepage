@@ -18,7 +18,7 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Home" />
+			<SEO title="Hem" />
 			{scrollbarEnabled && <Scroller />}
 
 			<Hero />
@@ -29,7 +29,7 @@ const IndexPage = () => {
 
 			<ThePeople />
 
-			<Customers />
+			<Customers link />
 
 			<FunAtWork />
 
