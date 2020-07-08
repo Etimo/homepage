@@ -1,6 +1,8 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
+import styled from 'styled-components';
+import tw from 'twin.macro';
 import Customers from '../Customers';
 
 const ClientCustomers = () => {
@@ -62,7 +64,7 @@ const ClientCustomers = () => {
 					}
 				}
 			}
-			megger: file(relativePath: { eq: "customers/modified/megger.png" }) {
+			appva: file(relativePath: { eq: "customers/modified/appva.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
@@ -88,6 +90,34 @@ const ClientCustomers = () => {
 			expressen: file(
 				relativePath: { eq: "customers/modified/expressen.png" }
 			) {
+				childImageSharp {
+					fluid(maxWidth: 500, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
+				}
+			}
+			vklass: file(relativePath: { eq: "customers/modified/vklass.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 500, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
+				}
+			}
+			struqtur: file(relativePath: { eq: "customers/modified/struqtur.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 500, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
+				}
+			}
+			timewave: file(relativePath: { eq: "customers/modified/timewave.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 500, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
+				}
+			}
+			bytbil: file(relativePath: { eq: "customers/modified/bytbil.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
@@ -179,12 +209,12 @@ const ClientCustomers = () => {
 			direction: 'left',
 		},
 		{
-			name: 'Megger',
-			url: 'https://se.megger.com/',
-			image: <Img fluid={data.megger.childImageSharp.fluid} />,
+			name: 'Appva',
+			url: 'https://appva.com/sv/',
+			image: <Img fluid={data.appva.childImageSharp.fluid} />,
 			borders: {
 				xs: 'border-r border-b',
-				sm: 'lg:border-b-0',
+				sm: '',
 			},
 			direction: 'right',
 		},
@@ -194,7 +224,7 @@ const ClientCustomers = () => {
 			image: <Img fluid={data.comviq.childImageSharp.fluid} />,
 			borders: {
 				xs: 'border-b',
-				sm: 'lg:border-b-0 lg:border-r',
+				sm: 'lg:border-r',
 			},
 			direction: 'up',
 		},
@@ -203,7 +233,7 @@ const ClientCustomers = () => {
 			url: 'https://www.mittskolval.se/',
 			image: <Img fluid={data.mittskolval.childImageSharp.fluid} />,
 			borders: {
-				xs: 'border-r',
+				xs: 'border-r border-b',
 				sm: '',
 			},
 			direction: 'up',
@@ -213,6 +243,46 @@ const ClientCustomers = () => {
 			url: 'https://www.expressen.se/',
 			image: <Img fluid={data.expressen.childImageSharp.fluid} />,
 			borders: {
+				xs: 'border-b',
+				sm: '',
+			},
+			direction: 'left',
+		},
+		{
+			name: 'Vklass',
+			url: 'https://www.vklass.com/',
+			image: <Img fluid={data.vklass.childImageSharp.fluid} />,
+			borders: {
+				xs: 'border-b border-r',
+				sm: 'lg:border-b-0',
+			},
+			direction: 'right',
+		},
+		{
+			name: 'Struqtur',
+			url: 'https://www.struqtur.se/',
+			image: <Img fluid={data.struqtur.childImageSharp.fluid} />,
+			borders: {
+				xs: 'border-b',
+				sm: 'lg:border-r lg:border-b-0',
+			},
+			direction: 'up',
+		},
+		{
+			name: 'Timewave',
+			url: 'https://www.timewave.se/',
+			image: <Img fluid={data.timewave.childImageSharp.fluid} />,
+			borders: {
+				xs: 'border-r',
+				sm: '',
+			},
+			direction: 'up',
+		},
+		{
+			name: 'Bytbil',
+			url: 'https://www.bytbil.com/',
+			image: <Img fluid={data.bytbil.childImageSharp.fluid} />,
+			borders: {
 				xs: '',
 				sm: '',
 			},
@@ -220,9 +290,15 @@ const ClientCustomers = () => {
 		},
 	];
 
+	/* Send this to replace ImageDiv in Customers */
+	const ImageDiv = styled.div`
+		${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs lg:max-w-xxxxxs xl:max-w-xxxxs opacity-50 hover:opacity-100`};
+		${tw`transition-opacity ease-in-out duration-200`};
+	`;
+
 	return (
 		<>
-			<Customers givenCustomers={customers} />
+			<Customers imgDiv={ImageDiv} givenCustomers={customers} />
 		</>
 	);
 };

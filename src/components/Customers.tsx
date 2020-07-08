@@ -1,18 +1,12 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import Img from 'gatsby-image';
 import React from 'react';
-import styled from 'styled-components';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
 import { AnimatedH2, Caption, P, Span } from '../elements';
 import { HighlightButton } from './Button';
 import Section from './Section';
-
-/* max-width: 150px; */
-const ImageDiv = styled.div`
-	${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxs opacity-50 hover:opacity-100`};
-	${tw`transition-opacity ease-in-out duration-200`};
-`;
 
 const generateCustomers = () => {
 	const data = useStaticQuery(graphql`
@@ -171,10 +165,19 @@ type Props = {
 		direction: string;
 	}[];
 	link?: boolean;
+	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
 };
 
-export default ({ givenCustomers, link, ...props }: Props) => {
+export default ({ givenCustomers, link, imgDiv, ...props }: Props) => {
 	const customers = givenCustomers ? givenCustomers : generateCustomers();
+
+	/* max-width: 150px; */
+	const ImageDiv = imgDiv
+		? imgDiv
+		: styled.div`
+				${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxs opacity-50 hover:opacity-100`};
+				${tw`transition-opacity ease-in-out duration-200`};
+		  `;
 
 	return (
 		<Section style={{ overflow: 'hidden' }}>
@@ -210,7 +213,7 @@ export default ({ givenCustomers, link, ...props }: Props) => {
 						})}
 					</div>
 					{link && (
-						<div className="flex mx-auto mt-6 md:mt-8 xl:mt-12">
+						<div className="flex mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
 							<HighlightButton>
 								<Link to="/klienter-och-expertis">
 									<P>Läs mer om våra kunder och tjänster</P>

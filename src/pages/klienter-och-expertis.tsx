@@ -5,7 +5,7 @@ import {
 	Hero,
 	Services,
 } from '../components/Clients';
-import Customers from '../components/Customers';
+import ClientCustomers from '../components/Clients/ClientCustomers';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
@@ -47,7 +47,7 @@ const ClientsPage = () => {
 			<CreateValue />
 			<Services />
 			<Competences />
-			<Customers />
+			<ClientCustomers />
 		</Layout>
 	);
 };

@@ -30,6 +30,7 @@ module.exports = {
 				xxs: '15rem',
 				xxxs: '11rem',
 				xxxxs: '9rem',
+				'8rem': '8rem',
 				xxxxxs: '6rem',
 			},
 			maxHeight: {
