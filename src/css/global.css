@@ -2,8 +2,9 @@
 @tailwind components;
 
 @font-face {
-    font-family: 'Quattrocento Sans';
-    src: local('Quattrocento Sans'), url(../fonts/QuattrocentoSans-Regular.ttf) format('ttf');
+	font-family: 'Quattrocento Sans';
+	src: local('Quattrocento Sans'),
+		url(../fonts/QuattrocentoSans-Regular.ttf) format('ttf');
 }
 
 @tailwind utilities;

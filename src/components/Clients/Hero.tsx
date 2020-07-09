@@ -6,7 +6,7 @@ import Section from '../Section';
 const Hero = () => {
 	return (
 		<Section headerSpace>
-			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden h-100 lg:h-auto justify-center">
+			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden h-25r lg:h-auto justify-center">
 				<FloatUp>
 					<H1 className="uppercase text-cyan">Klienter</H1>
 					<P className="w-4/5 md:w-3/5 mx-auto">

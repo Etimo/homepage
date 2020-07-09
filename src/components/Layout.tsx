@@ -6,6 +6,7 @@ import '../css/global.css';
 import Footer from './Footer';
 import Header from './Header';
 import './layout.css';
+import RightMenu from './RightMenu';
 
 type Props = {
 	children: React.ReactNode;
@@ -59,6 +60,7 @@ const Layout = ({ children }: Props) => {
 			<>
 				<Header style={{ backgroundColor: theme.colors.background }} />
 				<main style={{ backgroundColor: theme.colors.background }}>
+					<RightMenu />
 					{children}
 				</main>
 				<Footer />

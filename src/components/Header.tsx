@@ -17,7 +17,7 @@ const Header = (props: Props) => {
 		top: 0;
 		height: ${(props: HeaderProps) => props.theme.toolbar.height}px;
 		background-color: ${(props: HeaderProps) => props.theme.colors.background};
-		z-index: 100;
+		z-index: 40;
 	`;
 
 	const Section = styled.section<HeaderProps>`

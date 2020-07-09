@@ -13,7 +13,7 @@ const generateCustomers = () => {
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
@@ -27,42 +27,42 @@ const generateCustomers = () => {
 			}
 			qliro: file(relativePath: { eq: "customers/modified/qliro.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
 			karma: file(relativePath: { eq: "customers/modified/karma.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
 			mira: file(relativePath: { eq: "customers/modified/mira.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
 			nobina: file(relativePath: { eq: "customers/modified/nobina.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
 			quinyx: file(relativePath: { eq: "customers/modified/quinyx.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
 			}
 			seb: file(relativePath: { eq: "customers/modified/seb.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 100) {
+					fluid(maxWidth: 500, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
 					}
 				}
@@ -153,7 +153,7 @@ const generateCustomers = () => {
 	];
 };
 
-type Props = {
+type CustomersProps = {
 	givenCustomers?: {
 		name: string;
 		url: string;
@@ -168,7 +168,7 @@ type Props = {
 	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
 };
 
-export default ({ givenCustomers, link, imgDiv, ...props }: Props) => {
+export default ({ givenCustomers, link, imgDiv, ...props }: CustomersProps) => {
 	const customers = givenCustomers ? givenCustomers : generateCustomers();
 
 	/* max-width: 150px; */
