@@ -13,6 +13,7 @@ module.exports = {
 				etimoBlue: '#2c3e50',
 				darkGray: '#888888',
 				blackGray: '#111111',
+				menuGray: '#231f20',
 			},
 			fontSize: {
 				'8xl': '5rem',
@@ -23,8 +24,15 @@ module.exports = {
 				'95': '95%',
 				'3/4': '75%',
 				'125': '125%',
+				'15p': '15px',
 				'60p': '60px',
-				'100': '25rem',
+				'50p': '50px',
+				'30p': '30px',
+				'270p': '270px',
+				'350p': '350px',
+				'25r': '25rem',
+				'450p': '450px',
+				7: '1.75rem',
 			},
 			maxWidth: {
 				xxs: '15rem',
@@ -32,6 +40,12 @@ module.exports = {
 				xxxxs: '9rem',
 				'8rem': '8rem',
 				xxxxxs: '6rem',
+			},
+			inset: {
+				'62px': '62px',
+				'40px': '40px',
+				'15px': '15px',
+				'20px': '20px',
 			},
 			maxHeight: {
 				'3/4': '75%',
