@@ -41,6 +41,13 @@ const ModifiedCapt = styled(Caption)`
 	${tw`mb-1 md:mb-1 xl:mb-1`};
 `;
 
+const HoverP = styled(P)`
+	${tw`text-white`};
+	:hover {
+		color: ${(props) => props.theme.secondary};
+	}
+`;
+
 const RightMenu = () => {
 	const [active, setActive] = useState(false);
 
@@ -91,13 +98,13 @@ const RightMenu = () => {
 								})}
 								<div className="mt-auto">
 									<ModifiedCapt>Telefon:</ModifiedCapt>
-									<P className="mb-7" style={{ color: 'white' }}>
-										076 - 213 85 97
-									</P>
+									<a href="tel:0762138597" target="_blank">
+										<HoverP className="mb-7">076 - 213 85 97</HoverP>
+									</a>
 									<ModifiedCapt>E-post:</ModifiedCapt>
-									<P className="mb-7" style={{ color: 'white' }}>
-										kontakt@etimo.se
-									</P>
+									<a href="mailto:kontakt@etimo.se" target="_blank">
+										<HoverP className="mb-7">kontakt@etimo.se</HoverP>
+									</a>
 									<Caption>Följ oss:</Caption>
 									<div className="ml-2 mb-2 mt-2">
 										<a
