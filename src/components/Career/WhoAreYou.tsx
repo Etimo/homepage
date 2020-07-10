@@ -10,10 +10,10 @@ const thriveTexts = [
 ];
 
 const whoTexts = [
-	'Du är utvecklare på antingen junior och senior nivå, frontend eller backend',
-	'Du kan visa på att du är duktig på programmering med ditt favoritspråk',
-	'Du är ambitiös och vill skapa kundvärde, användarnytta för kunder och samhällsnytta',
-	'Pratar flytande svenska och engelska',
+	'Du är utvecklare på junior eller senior nivå, frontend och/eller backend',
+	'Du kan visa att du är duktig på programmering med ditt favoritspråk',
+	'Du är ambitiös och vill skapa kundvärde, användarnytta och samhällsnytta',
+	'Du pratar flytande svenska och engelska',
 ];
 
 const WhoAreYou = () => {
@@ -29,7 +29,7 @@ const WhoAreYou = () => {
 					</AnimatedH2>
 					<AnimatedH2 direction="right">nästa kollega?</AnimatedH2>
 				</div>
-				<div className="md:w-3/4 mx-auto text-left mt-4 lg:mt-6">
+				<div className="w-11/12 md:w-3/4 mx-auto text-left mt-4 lg:mt-6">
 					<FadeIn direction="right">
 						<P>
 							Har du ett genuint intresse för utveckling och programmering?
@@ -41,7 +41,7 @@ const WhoAreYou = () => {
 						</P>
 					</FadeIn>
 					<FadeIn direction="left">
-						<H3 className="text-left mt-6"> Du trivs hos oss om:</H3>
+						<H3 className="text-left mt-12 mb-2"> Du trivs hos oss om:</H3>
 						{thriveTexts.map((tText) => {
 							return (
 								<DashedP className="text-left" key={tText}>
@@ -51,7 +51,7 @@ const WhoAreYou = () => {
 						})}
 					</FadeIn>
 					<FadeIn direction="right">
-						<H3 className="text-left mt-6">Vem är du?</H3>
+						<H3 className="text-left mt-12 mb-2">Vem är du?</H3>
 						{whoTexts.map((wText) => {
 							return (
 								<DashedP className="text-left" key={wText}>

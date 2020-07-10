@@ -55,7 +55,7 @@ const RightMenu = () => {
 		<>
 			<HamburgerButton>
 				<button
-					className="w-50p h-50p lg:w-60p lg:h-60p bg-cyan rounded-full"
+					className="w-50p h-50p lg:w-60p lg:h-60p bg-cyan rounded-full focus:outline-none focus:shadow"
 					onClick={() => setActive(!active)}
 				>
 					<svg className="mx-auto" viewBox="0 0 150 100" width="35" height="20">
