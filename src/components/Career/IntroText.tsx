@@ -3,6 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import { H1, P } from '../../elements';
+import { sizes } from '../../helpers';
+import { useViewportSize } from '../../hooks';
 import Section from '../Section';
 
 const GradientSpan = styled.span`
@@ -17,22 +19,24 @@ const GradientSpan = styled.span`
 	${tw`uppercase`};
 `;
 
-const IntroText = () => {
-	const parent = {
-		init: { opacity: 0 },
-		anim: {
-			opacity: 1,
-			transition: {
-				duration: 1,
-				delay: 0.8,
-			},
+const parent = {
+	init: { opacity: 0 },
+	anim: {
+		opacity: 1,
+		transition: {
+			duration: 1,
+			delay: 0.8,
 		},
-	};
+	},
+};
+
+const IntroText = () => {
+	const [h, width] = useViewportSize();
 
 	return (
 		<Section headerSpace>
 			<motion.div
-				className="flex container flex-col text-center w-4/5 md:w-3/5 xl:w-1/2"
+				className="flex container flex-col text-center w-4/5 md:w-450p lg:w-740p h-25r lg:h-auto justify-center"
 				variants={parent}
 				initial="init"
 				animate="anim"
@@ -40,11 +44,13 @@ const IntroText = () => {
 				<H1>
 					<GradientSpan>Karriär</GradientSpan>
 				</H1>
-				<P className="mt-4 md:mt-8 lg:mt-12 xl:mt-20">
+				<P>
 					Hos oss tillhör du ett gäng som förändrar framtiden och har vilja att
-					skapa samhällsnytta. <br /> Det är det som binder oss samman med den
-					ständiga nyfikenheten för innovation,
-					<br /> kunskap och möjlighet att skapa värde för våra kunder.
+					skapa samhällsnytta. <br />
+					{width < sizes().tablet && <br />}
+					Det är det som binder oss samman, tillsammans med den ständiga
+					nyfikenheten för innovation, {width >= sizes().tablet && <br />}
+					kunskap och möjlighet att skapa värde för våra kunder.
 				</P>
 			</motion.div>
 		</Section>

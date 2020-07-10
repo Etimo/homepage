@@ -18,7 +18,7 @@ const WorkingHere = () => {
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32 text-left">
-				<div className="flex flex-col lg:w-1/2 my-auto lg:mt-0 text-center md:text-left overflow-hidden">
+				<div className="flex flex-col lg:w-1/2 my-auto md:mt-60p lg:mt-0 text-center md:text-left overflow-hidden">
 					<FloatUp>
 						<Caption>Jobbet</Caption>
 						<H2 className="mb-4 md:mb-6 mt-2 md:mt-4">
@@ -27,11 +27,13 @@ const WorkingHere = () => {
 						</H2>
 					</FloatUp>
 				</div>
-				<div className="md:w-2/3 mx-auto overflow-hidden">
+				<div className="w-11/12 md:w-2/3 mx-auto overflow-hidden">
 					{bulletPoints.map((bulletText) => {
 						return (
 							<FloatUp>
-								<DashedP key={bulletText}>{bulletText}</DashedP>
+								<DashedP className="mt-2" key={bulletText}>
+									{bulletText}
+								</DashedP>
 							</FloatUp>
 						);
 					})}
