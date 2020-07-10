@@ -32,8 +32,8 @@ const WhoAreYou = () => {
 				<div className="w-11/12 md:w-3/4 mx-auto text-left mt-4 lg:mt-6">
 					<FadeIn direction="right">
 						<P>
-							Har du ett genuint intresse för utveckling och programmering?
-							<br /> Vill du vara med på resan att bygga upp Sveriges ledande
+							Har du ett genuint intresse för utveckling och programmering? Vill
+							du vara med på resan att bygga upp Sveriges ledande
 							utvecklingsorganisation, så har du hittat rätt! Vi söker vår nästa
 							kollega som vill vara med och växa med oss och bidra till vår
 							organisation där din personlighet och drivkraft är viktiga
