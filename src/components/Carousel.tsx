@@ -45,9 +45,8 @@ const Carousel = ({ items }: Props) => {
 				initial="initial"
 				animate="active"
 				exit="exit"
-			>
-				{items[page]}
-			</Item>
+				dangerouslySetInnerHTML={{ __html: items[page] }}
+			/>
 		</AnimatePresence>
 	);
 };
