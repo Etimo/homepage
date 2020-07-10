@@ -48,22 +48,72 @@ const HoverP = styled(P)`
 	}
 `;
 
+const parentVar = {
+	init: {},
+	anim: {
+		transition: {
+			delayChildren: 0.5,
+			staggerChildren: 0.2,
+		},
+	},
+};
+
+const lineVar = {
+	init: {
+		pathLength: 0,
+		opacity: 0,
+	},
+	anim: {
+		opacity: [0, 0.5, 1, 1, 1],
+		pathLength: [0, 0.2, 0.7, 0.9, 1],
+		transition: {
+			times: [0, 0.3, 0.5, 0.7, 1],
+			duration: 1,
+		},
+	},
+};
+
 const RightMenu = () => {
 	const [active, setActive] = useState(false);
 
 	return (
 		<>
 			<HamburgerButton>
-				<button
+				<motion.button
 					className="w-50p h-50p lg:w-60p lg:h-60p bg-cyan rounded-full focus:outline-none focus:shadow"
 					onClick={() => setActive(!active)}
+					initial={{ opacity: 0 }}
+					animate={{
+						opacity: 1,
+						transition: { duration: 0.7, ease: 'easeIn' },
+					}}
 				>
-					<svg className="mx-auto" viewBox="0 0 150 100" width="35" height="20">
-						<rect y="25" width="150" height="5" />
-						<rect y="50" width="150" height="5" />
-						<rect y="75" width="150" height="5" />
-					</svg>
-				</button>
+					<motion.svg
+						className="mx-auto"
+						width="30"
+						height="20"
+						stroke-width="1"
+						initial="init"
+						animate="anim"
+						stroke="black"
+						variants={parentVar}
+					>
+						<AnimatePresence>
+							{active ? (
+								<>
+									<motion.path key="1" d="M 5 0 L 25 20" variants={lineVar} />
+									<motion.path key="2" d="M 5 20 L 25 0" variants={lineVar} />
+								</>
+							) : (
+								<>
+									<motion.path key="3" d="M 0 5 L 30 5" variants={lineVar} />
+									<motion.path key="4" d="M 30 10 L 0 10" variants={lineVar} />
+									<motion.path key="5" d="M 0 15 L 30 15" variants={lineVar} />
+								</>
+							)}
+						</AnimatePresence>
+					</motion.svg>
+				</motion.button>
 			</HamburgerButton>
 			<AnimatePresence>
 				{active && (
