@@ -56,6 +56,13 @@ module.exports = {
 				},
 			},
 		},
+		{
+			resolve: 'gatsby-plugin-google-analytics',
+			options: {
+				trackingId: 'UA-47276360-1',
+				head: true,
+			},
+		},
 		// ! Add gatsby-plugin-google-analytics
 		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
 	],
