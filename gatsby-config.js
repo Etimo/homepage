@@ -3,6 +3,7 @@ module.exports = {
 		title: `Etimo`,
 		description: `Vår vision: Sveriges ledande utvecklingsorganisation.`,
 		author: `@etimo`,
+		siteUrl: 'https://etimo.se',
 	},
 	plugins: [
 		{
@@ -40,6 +41,7 @@ module.exports = {
 		`gatsby-plugin-remove-serviceworker`,
 		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-styled-components`,
+		`gatsby-plugin-sitemap`,
 		{
 			resolve: `gatsby-plugin-web-font-loader`,
 			options: {
