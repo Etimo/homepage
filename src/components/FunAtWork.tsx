@@ -107,7 +107,7 @@ export default () => {
 			image: <StyledImg fluid={data.lukasLindqvist.childImageSharp.fluid} />,
 		},
 		{
-			name: 'INNEGÅRDEN',
+			name: 'INNERGÅRDEN',
 			title: 'Här lunchar vi på soliga dagar',
 			image: <StyledImg fluid={data.innerYard.childImageSharp.fluid} />,
 		},
