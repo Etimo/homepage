@@ -24,8 +24,7 @@ const NotFoundPage = () => (
 							404
 						</Caption>
 						<EmphasizedH2>
-							<Span secondary>Sidan</Span> kunde inte<br />
-							hittas
+							Sidan kunde <Span secondary>inte hittas</Span>
 						</EmphasizedH2>
 					</FadeIn>
 				</div>
