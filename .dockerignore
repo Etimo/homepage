@@ -1,0 +1,10 @@
+.cache/
+.vscode/
+node_modules/
+public/
+*.log
+*.md
+.dockerignore
+.git*
+Dockerfile
+yarn.lock
