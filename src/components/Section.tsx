@@ -28,16 +28,15 @@ type Props = {
 export default ({ children, headerSpace, ...props }: Props) => {
 	const [height, width] = useViewportSize();
 
-	const headerMargin = 60;
 	const isMobile = () => width < sizes().laptop;
 	const getHeight = () => {
 		// Don't set a height if it's a mobile phone
 		// since we don't use a left menu on mobile.
 		if (isMobile()) { return undefined; }
 		if (height < sizes().minimumHeight) {
-			return sizes().minimumHeight - (headerSpace ? headerMargin : 0);
+			return sizes().minimumHeight - (headerSpace ? sizes().headerHeight : 0);
 		}
-		return headerSpace ? height - headerMargin : height;
+		return headerSpace ? height - sizes().headerHeight : height;
 	};
 
 	return (

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import '../css/global.css';
+import { sizes } from '../helpers';
 import Footer from './Footer';
 import Header from './Header';
 import './layout.css';
@@ -51,7 +52,7 @@ const Layout = ({ children }: Props) => {
 			extraLarge: '1920px',
 		},
 		toolbar: {
-			height: 60,
+			height: sizes().headerHeight,
 		},
 	};
 
