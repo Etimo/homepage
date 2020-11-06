@@ -28,11 +28,18 @@ type Props = {
 export default ({ children, headerSpace, ...props }: Props) => {
 	const [height, width] = useViewportSize();
 
-	const finalHeight =
-		width < sizes().laptop ? undefined : headerSpace ? height - 60 : height;
+	const isMobile = () => width < sizes().laptop;
+	const getHeight = () => {
+		// Don't set a height if it's a mobile phone
+		// since we don't use a left menu on mobile.
+		if (isMobile()) { return undefined; }
+		// Reserve space for header on desktop
+		if (headerSpace) { return height - 60; }
+		return height;
+	};
 
 	return (
-		<Section height={finalHeight} {...props}>
+		<Section height={getHeight()} {...props}>
 			{children}
 		</Section>
 	);
