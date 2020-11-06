@@ -23,7 +23,6 @@ const Header = (props: Props) => {
 	const Section = styled.section<HeaderProps>`
 		height: 100%;
 		max-width: ${(props) => props.theme.sizes.large};
-		margin: 0 auto;
 		padding: 0 25px;
 		display: flex;
 		justify-content: space-between;
