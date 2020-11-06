@@ -6,8 +6,10 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const StyledDiv = styled.div`
-	${tw`top-23px md:top-23px lg:top-47px z-50`}
 	margin: auto 0;
+	@media (max-width: 1023px) {
+		margin-top: 23px;
+	}
 	width: 20%;
 	max-width: 180px;
 	min-width: 125px;
