@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  homepage:
+    build:
+      context: .
+    container_name: "etimo-homepage"
+    ports:
+      - "8000:80"

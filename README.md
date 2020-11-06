@@ -31,11 +31,10 @@ yarn build
 If you want to serve this site (production build) using Docker, simply run:
 
 ```
-docker build -t etimo-homepage .
-docker run --rm -p 8000:80 --name etimo-homepage etimo-homepage
+docker-compose up -d
 ```
 
-Serves on http://localhost:8000 (or whatever public port you choose in the run command).
+Serves on http://localhost:8000
 
 ## Deployment
 
