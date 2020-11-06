@@ -2,6 +2,7 @@ import { motion, useCycle } from 'framer-motion';
 import React, { useEffect } from 'react';
 import { animateScroll } from 'react-scroll';
 import styled, { DefaultTheme } from 'styled-components';
+import { sizes } from '../../helpers';
 import { useViewportSize } from '../../hooks';
 
 type SectionProps = {
@@ -45,6 +46,7 @@ type Props = {
 const SectionComponent = ({ index, isActive, children }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [variant, cycleVariant] = useCycle(...variants);
+	const sectionHeight = viewportHeight < sizes().minimumHeight ? sizes().minimumHeight : viewportHeight;
 
 	useEffect(() => {
 		if (isActive) {
@@ -55,7 +57,7 @@ const SectionComponent = ({ index, isActive, children }: Props) => {
 	}, [isActive]);
 
 	const clickHandler = () => {
-		animateScroll.scrollTo(index * viewportHeight);
+		animateScroll.scrollTo(index * sectionHeight);
 	};
 
 	return (

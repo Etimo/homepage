@@ -2,6 +2,7 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { sizes } from '../../helpers';
 import { useViewportSize } from '../../hooks';
 import Section from './Section';
 
@@ -38,12 +39,13 @@ type Props = {
 export default ({ givenSections, ...props }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
+	const sectionHeight = viewportHeight < sizes().minimumHeight ? sizes().minimumHeight : viewportHeight;
 
 	useScrollPosition(
 		({ currPos }) => {
 			const screenMid = Math.abs(currPos.y) + viewportHeight / 2;
-			const spanStart = activeSection * viewportHeight;
-			const spanEnd = (activeSection + 1) * viewportHeight;
+			const spanStart = activeSection * sectionHeight;
+			const spanEnd = (activeSection + 1) * sectionHeight;
 
 			if (screenMid < spanStart) {
 				setActiveSection(activeSection - 1);
@@ -51,7 +53,7 @@ export default ({ givenSections, ...props }: Props) => {
 				setActiveSection(activeSection + 1);
 			}
 		},
-		[viewportHeight, activeSection],
+		[sectionHeight, activeSection],
 		undefined,
 		false,
 		50

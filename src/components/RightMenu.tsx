@@ -133,6 +133,7 @@ const RightMenu = () => {
 										<CyanHover
 											key={link.name}
 											className="mb-6 md:mb-8 mr-auto px-1"
+											style={{minHeight: 36}}
 										>
 											{link.local ? (
 												<Link to={link.url}>

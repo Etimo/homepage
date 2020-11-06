@@ -30,18 +30,14 @@ export default (props: Props) => {
 
 	let [height, width] = useViewportSize();
 
-	/** Takes caption, title, margins etc into consideration */
-	const availHeight =
-		height - (width >= sizes().desktop ? 252 /* Desktop */ : 242); /* Laptop */
-
-	/** Only applied if screen is larger than laptop */
-	const gridStyle =
-		width >= sizes().laptop
-			? { width: availHeight * 1.2, maxWidth: 1024 - 32 }
-			: {};
+	const isDesktop = () => width >= sizes().desktop;
+	const isLaptopOrGreater = () => width >= sizes().laptop;
+	const getMargins = () => isDesktop() ? 252 : 242;
+	const availableHeight = height < sizes().minimumHeight ? sizes().minimumHeight : height - getMargins();
+	const gridStyle = { width: availableHeight * 1.2, maxWidth: 1024 - 32 };
 
 	return (
-		<CardsGrid style={gridStyle}>
+		<CardsGrid style={isLaptopOrGreater() ? gridStyle : {}}>
 			{employees.map((employee) => (
 				<EmployeeCard {...employee} key={employee.name} />
 			))}
