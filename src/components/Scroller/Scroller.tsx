@@ -78,7 +78,7 @@ export default ({ givenSections, ...props }: Props) => {
 				},
 				{
 					index: 4,
-					name: 'Kunder',
+					name: 'Våra kunder',
 				},
 				{
 					index: 5,

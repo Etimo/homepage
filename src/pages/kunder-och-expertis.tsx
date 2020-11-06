@@ -3,7 +3,7 @@ import {
 	Competences,
 	CreateValue,
 	Hero,
-	Services,
+	Services
 } from '../components/Clients';
 import ClientCustomers from '../components/Clients/ClientCustomers';
 import Layout from '../components/Layout';
@@ -19,7 +19,7 @@ const ClientsPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Klienter',
+			name: 'Kunder',
 		},
 		{
 			index: 1,
@@ -35,13 +35,13 @@ const ClientsPage = () => {
 		},
 		{
 			index: 4,
-			name: 'Kunder',
+			name: 'Våra kunder',
 		},
 	];
 
 	return (
 		<Layout>
-			<SEO title="Klienter och expertis" />
+			<SEO title="Kunder och expertis" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
 			<CreateValue />

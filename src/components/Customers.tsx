@@ -184,7 +184,7 @@ export default ({ givenCustomers, link, imgDiv, ...props }: CustomersProps) => {
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<FloatUp>
-						<Caption className="text-center">Kunder</Caption>
+						<Caption className="text-center">Våra kunder</Caption>
 					</FloatUp>
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Ett urval av</AnimatedH2>
@@ -215,7 +215,7 @@ export default ({ givenCustomers, link, imgDiv, ...props }: CustomersProps) => {
 					{link && (
 						<div className="flex mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
 							<HighlightButton>
-								<Link to="/klienter-och-expertis">
+								<Link to="/kunder-och-expertis">
 									<P>Läs mer om våra kunder och tjänster</P>
 								</Link>
 							</HighlightButton>

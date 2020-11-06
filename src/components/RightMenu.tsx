@@ -11,7 +11,7 @@ import { Caption, H4, P } from '../elements';
 const links = [
 	{ name: 'Start', url: '/', local: true },
 	{ name: 'Karriär', url: '/karriar', local: true },
-	{ name: 'Klienter', url: '/klienter-och-expertis', local: true },
+	{ name: 'Kunder', url: '/kunder-och-expertis', local: true },
 	{ name: 'Blogg', url: 'https://blog.etimo.se/', local: false },
 ];
 
