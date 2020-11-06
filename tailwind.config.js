@@ -44,9 +44,11 @@ module.exports = {
 			},
 			inset: {
 				'62px': '62px',
+				'47px': '47px',
 				'40px': '40px',
-				'15px': '15px',
+				'23px': '23px',
 				'20px': '20px',
+				'15px': '15px',
 			},
 			maxHeight: {
 				'3/4': '75%',
