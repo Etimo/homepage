@@ -4,16 +4,16 @@ backend:
 
 media_folder: static/img
 public_folder: /img
+local_backend: true
 
 collections:
   - name: 'blog'
     label: 'Blog'
-    folder: 'content/blog'
+    folder: 'src/pages/blog'
     create: true
-    slug: 'index'
+    slug: '{{year}}-{{month}}-{{day}}_{{slug}}'
     media_folder: ''
     public_folder: ''
-    path: '{{title}}/index'
     editor:
       preview: true
     fields:
