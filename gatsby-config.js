@@ -65,6 +65,7 @@ module.exports = {
 				head: true,
 			},
 		},
+		`gatsby-plugin-netlify-cms`,
 		// ! Add gatsby-plugin-google-analytics
 		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
 	],
