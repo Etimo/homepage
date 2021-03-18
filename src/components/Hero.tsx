@@ -27,11 +27,13 @@ const HeroContent = styled.div`
 `;
 
 const smallItems = [
+	'Bättre mjukvara för en bättre värld',
 	'Etimo är ett snabbväxande IT-konsultbolag som utvecklar skräddarsydda digitala lösningar.<br/>Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
 	'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
 ];
 
 const bigItems = [
+	'Bättre mjukvara för en bättre värld',
 	'Etimo är ett snabbväxande IT-konsultbolag som utvecklar skräddarsydda digitala lösningar.<br /> Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
 	'På Etimo förenas vi av en passion för att utveckla digitala lösningar,<br/> använda modern teknik och en vilja att göra samhällsnytta.',
 ];
