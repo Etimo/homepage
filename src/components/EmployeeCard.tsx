@@ -141,8 +141,9 @@ export default (props: Props) => {
 					className="flex flex-column m-auto mt-2"
 				>
 					{links &&
-						links.map(({ icon, url }) => (
+						links.map(({ icon, url }, index) => (
 							<motion.a
+								key={index}
 								className="mx-auto px-2 hover:text-gray-800 cursor-pointer"
 								variants={linkAnimation}
 								href={url}
