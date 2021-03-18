@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
-import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 import Carousel from './Carousel';
 import Section from './Section';
@@ -26,16 +25,10 @@ const HeroContent = styled.div`
 	height: 200px;
 `;
 
-const smallItems = [
+const items = [
 	'Bättre mjukvara för en bättre värld',
 	'Etimo är ett snabbväxande IT-konsultbolag som utvecklar skräddarsydda digitala lösningar.<br/>Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
 	'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
-];
-
-const bigItems = [
-	'Bättre mjukvara för en bättre värld',
-	'Etimo är ett snabbväxande IT-konsultbolag som utvecklar skräddarsydda digitala lösningar.<br /> Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
-	'På Etimo förenas vi av en passion för att utveckla digitala lösningar,<br/> använda modern teknik och en vilja att göra samhällsnytta.',
 ];
 
 const Splash = () => {
@@ -53,7 +46,7 @@ const Splash = () => {
 				</FloatInDir>
 				<FloatUp>
 					<HeroContent>
-						<Carousel items={width < sizes().tablet ? smallItems : bigItems} />
+						<Carousel items={items} />
 					</HeroContent>
 				</FloatUp>
 			</Hero>
