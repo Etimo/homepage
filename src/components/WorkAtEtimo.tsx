@@ -46,6 +46,7 @@ const workItems = [
 	'Du har möjlighet till delägarskap (bolaget ägs till 100% av seniora medarbetare)',
 	'Du jobbar ibland inhouse och ibland ute hos kund',
 	'Fredagar jobbar vi alla från kontoret (och många av oss spelar VR i vår VR-studio)',
+	'Vi jobbar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
 ];
 
 const WorkAtEtimo = () => {

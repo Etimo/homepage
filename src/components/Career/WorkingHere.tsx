@@ -12,6 +12,7 @@ const bulletPoints = [
 	'Du har möjlighet till delägarskap och 100 % av verksamheten ägs av seniora medarbetare',
 	'Du har varierade arbetsytor och jobbar växlande inhouse och hos kund',
 	'Varje fredag ser vi till att hela teamet träffas och delar med sig av erfarenheter och kunskap. Vi ser också till att ha kul, bland annat genom VR-spel i vår VR-studio',
+	'Vi jobbar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
 ];
 
 const WorkingHere = () => {
