@@ -3,7 +3,8 @@ import {
 	Competences,
 	CreateValue,
 	Hero,
-	Services
+	Services,
+	ReferenceCase,
 } from '../components/Clients';
 import ClientCustomers from '../components/Clients/ClientCustomers';
 import Layout from '../components/Layout';
@@ -27,14 +28,18 @@ const ClientsPage = () => {
 		},
 		{
 			index: 2,
-			name: 'Tjänster',
-		},
-		{
-			index: 3,
 			name: 'Kompetenser',
 		},
 		{
+			index: 3,
+			name: 'Tjänster',
+		},
+		{
 			index: 4,
+			name: 'Referenscase',
+		},
+		{
+			index: 6,
 			name: 'Våra kunder',
 		},
 	];
@@ -45,8 +50,9 @@ const ClientsPage = () => {
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
 			<CreateValue />
-			<Services />
 			<Competences />
+			<Services />
+			<ReferenceCase />
 			<ClientCustomers />
 		</Layout>
 	);
