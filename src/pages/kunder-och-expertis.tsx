@@ -1,4 +1,5 @@
 import React from 'react';
+import { Apply } from '../components/Career';
 import {
 	Competences,
 	CreateValue,
@@ -37,6 +38,10 @@ const ClientsPage = () => {
 			index: 4,
 			name: 'Våra kunder',
 		},
+		{
+			index: 5,
+			name: 'Kontakt',
+		},
 	];
 
 	return (
@@ -48,6 +53,7 @@ const ClientsPage = () => {
 			<Services />
 			<Competences />
 			<ClientCustomers />
+			<Apply variantKey="customers" />
 		</Layout>
 	);
 };

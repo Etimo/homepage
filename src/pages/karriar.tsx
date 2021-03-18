@@ -36,7 +36,7 @@ const CareerPage = () => {
 			<IntroText />
 			<WorkingHere />
 			<WhoAreYou />
-			<Apply />
+			<Apply variantKey="default" />
 		</Layout>
 	);
 };
