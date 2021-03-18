@@ -14,42 +14,42 @@ const ThePeople = () => {
 			jassyr: file(relativePath: { eq: "jassyr.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid_tracedSVG
+						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			joakim: file(relativePath: { eq: "joakim.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid_tracedSVG
+						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			johan: file(relativePath: { eq: "johan.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid_tracedSVG
+						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			niclas: file(relativePath: { eq: "niclas.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid_tracedSVG
+						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			daniel: file(relativePath: { eq: "daniel.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid_tracedSVG
+						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			philip: file(relativePath: { eq: "philip.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid_tracedSVG
+						...GatsbyImageSharpFluid
 					}
 				}
 			}
