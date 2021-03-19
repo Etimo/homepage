@@ -180,7 +180,7 @@ export default ({ givenCustomers, link, imgDiv, ...props }: CustomersProps) => {
 		  `;
 
 	return (
-		<Section style={{ overflow: 'hidden' }}>
+		<Section>
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<FloatUp>
