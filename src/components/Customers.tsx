@@ -1,5 +1,5 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from 'react';
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
 import tw from 'twin.macro';
@@ -9,71 +9,94 @@ import { HighlightButton } from './Button';
 import Section from './Section';
 
 const generateCustomers = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-			blocket: file(relativePath: { eq: "customers/modified/blocket.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-			qliro: file(relativePath: { eq: "customers/modified/qliro.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-			karma: file(relativePath: { eq: "customers/modified/karma.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-			mira: file(relativePath: { eq: "customers/modified/mira.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-			nobina: file(relativePath: { eq: "customers/modified/nobina.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-			quinyx: file(relativePath: { eq: "customers/modified/quinyx.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-			seb: file(relativePath: { eq: "customers/modified/seb.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
-			}
-		}
-	`);
+	const data = useStaticQuery(graphql`{
+  tele2: file(relativePath: {eq: "customers/modified/tele2.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+  blocket: file(relativePath: {eq: "customers/modified/blocket.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+  qliro: file(relativePath: {eq: "customers/modified/qliro.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+  karma: file(relativePath: {eq: "customers/modified/karma.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+  mira: file(relativePath: {eq: "customers/modified/mira.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+  nobina: file(relativePath: {eq: "customers/modified/nobina.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+  quinyx: file(relativePath: {eq: "customers/modified/quinyx.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+  seb: file(relativePath: {eq: "customers/modified/seb.png"}) {
+    childImageSharp {
+      gatsbyImageData(
+        width: 500
+        quality: 90
+        placeholder: TRACED_SVG
+        layout: CONSTRAINED
+      )
+    }
+  }
+}
+`);
 	return [
 		{
 			name: 'Blocket',
 			url: 'https://www.blocket.se/',
-			image: <Img fluid={data.blocket.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.blocket.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -83,7 +106,7 @@ const generateCustomers = () => {
 		{
 			name: 'Karma',
 			url: 'https://karma.life/sv/',
-			image: <Img fluid={data.karma.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.karma.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: 'border-b',
 				sm: 'lg:border-r',
@@ -93,7 +116,7 @@ const generateCustomers = () => {
 		{
 			name: 'Tele2',
 			url: 'https://www.tele2.se/',
-			image: <Img fluid={data.tele2.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.tele2.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -103,7 +126,7 @@ const generateCustomers = () => {
 		{
 			name: 'Mira',
 			url: 'https://www.mira.se/',
-			image: <Img fluid={data.mira.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.mira.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: 'border-b',
 				sm: '',
@@ -113,7 +136,7 @@ const generateCustomers = () => {
 		{
 			name: 'Qliro',
 			url: 'https://www.qliro.com/sv-se',
-			image: <Img fluid={data.qliro.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.qliro.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: 'border-r border-b',
 				sm: 'lg:border-b-0 ',
@@ -123,7 +146,7 @@ const generateCustomers = () => {
 		{
 			name: 'SEB',
 			url: 'https://seb.se/',
-			image: <Img fluid={data.seb.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.seb.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: 'border-b',
 				sm: 'lg:border-b-0 lg:border-r',
@@ -133,7 +156,7 @@ const generateCustomers = () => {
 		{
 			name: 'Quinyx',
 			url: 'https://www.quinyx.com/sv/',
-			image: <Img fluid={data.quinyx.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.quinyx.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: 'border-r',
 				sm: '',
@@ -143,7 +166,7 @@ const generateCustomers = () => {
 		{
 			name: 'Nobina',
 			url: 'https://www.nobina.com/sv/Sverige/',
-			image: <Img fluid={data.nobina.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.nobina.childImageSharp.gatsbyImageData} />,
 			borders: {
 				xs: '',
 				sm: '',

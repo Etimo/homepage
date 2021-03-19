@@ -1,6 +1,6 @@
 import { motion, useAnimation } from 'framer-motion';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -17,16 +17,14 @@ const StyledDiv = styled.div`
 
 const HeaderLogo = () => {
 	const data = useStaticQuery(graphql`
-		query {
-			placeholderImage: file(relativePath: { eq: "etimo-logo.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
-				}
+	{
+		placeholderImage: file(relativePath: {eq: "etimo-logo.png"}) {
+			childImageSharp {
+				gatsbyImageData(width: 200, placeholder: TRACED_SVG, layout: CONSTRAINED)
 			}
 		}
-	`);
+	}
+`);
 
 	const controls = useAnimation()
 
@@ -37,14 +35,17 @@ const HeaderLogo = () => {
 	}
 
 	return (
-		<StyledDiv>
+        <StyledDiv>
 			<Link to="/">
 				<motion.div initial={{ opacity: 0 }} animate={controls}>
-					<Img fadeIn fluid={data.placeholderImage.childImageSharp.fluid} onLoad={useEffect} />
+					<GatsbyImage
+						image={data.placeholderImage.childImageSharp.gatsbyImageData}
+						fadeIn
+						onLoad={useEffect} />
 				</motion.div>
 			</Link>
 		</StyledDiv>
-	);
+    );
 };
 
 export default HeaderLogo;
