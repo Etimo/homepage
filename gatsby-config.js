@@ -68,7 +68,12 @@ module.exports = {
 				head: true,
 			},
 		},
-		`gatsby-plugin-netlify-cms`,
+		{
+			resolve: `gatsby-plugin-netlify-cms`,
+			options: {
+				modulePath: `${__dirname}/src/cms/cms.ts`,
+			},
+		},
 		// ! Add gatsby-plugin-google-analytics
 		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
 	],
