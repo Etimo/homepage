@@ -8,6 +8,7 @@ import Footer from './Footer';
 import Header from './Header';
 import './layout.css';
 import RightMenu from './RightMenu';
+import { ScrollToTopButton } from '../components/Button';
 
 type Props = {
 	children: React.ReactNode;
@@ -62,6 +63,7 @@ const Layout = ({ children }: Props) => {
 				<Header style={{ backgroundColor: theme.colors.background }} />
 				<main style={{ backgroundColor: theme.colors.background }}>
 					<RightMenu />
+					<ScrollToTopButton showBelow={300} />
 					{children}
 				</main>
 				<Footer />
