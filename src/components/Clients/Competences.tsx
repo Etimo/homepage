@@ -5,7 +5,7 @@ import Section from '../Section';
 
 const Competences = () => {
 	return (
-		<Section>
+		<Section style={{ background: 'white' }}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>Områden</Caption>
