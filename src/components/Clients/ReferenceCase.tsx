@@ -1,20 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
 import FadeIn from '../../animations/FadeIn';
 import Caption from '../../elements/Caption';
-import H2 from '../../elements/H2';
 import P from '../../elements/P';
 import Span from '../../elements/Span';
 import { useViewportSize } from '../../hooks';
 import Section from '../Section';
-
-const EmphasizedH2 = styled(H2)`
-	line-height: 1.25;
-	font-weight: 400;
-	margin-bottom: 0;
-	${tw`text-center lg:text-left md:mt-4 lg:mt-6 xl:mt-8`}
-`;
+import EmphasizedH2 from '../../elements/EmphasizedH2';
 
 const ReferenceCase = () => {
 	const [h, width] = useViewportSize();
