@@ -1,9 +1,12 @@
 module.exports = {
 	siteMetadata: {
-		title: `Etimo`,
-		description: `Vår vision: Sveriges ledande utvecklingsorganisation.`,
-		author: `@etimo`,
+		title: 'Etimo',
+		type: 'website',
+		author: '@etimo',
 		siteUrl: 'https://etimo.se',
+		description: 'Bättre mjukvara för en bättre värld.',
+		imageAlt: 'Etimo logo',
+		imageType: 'image/png'
 	},
 	plugins: [
 		{
@@ -38,8 +41,8 @@ module.exports = {
 				icon: `src/images/etimofavicon.png`, // This path is relative to the root of the site.
 			},
 		},
-		`gatsby-plugin-remove-serviceworker`,
 		`gatsby-plugin-react-helmet`,
+		`gatsby-plugin-remove-serviceworker`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-sitemap`,
 		{

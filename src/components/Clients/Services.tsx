@@ -32,7 +32,7 @@ const Services = () => {
 	const [ref, inView] = useInView();
 
 	return (
-		<Section>
+		<Section style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>Nöjda kunder</Caption>
