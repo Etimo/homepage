@@ -39,7 +39,7 @@ const ClientsPage = () => {
 			name: 'Referenscase',
 		},
 		{
-			index: 6,
+			index: 5,
 			name: 'Våra kunder',
 		},
 	];
