@@ -48,7 +48,6 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 	);
 
 	const metaDescription = description || site.siteMetadata.description
-	console.log(site, logo);
 	const metaData: MetaProps[] = [
 		{
 			name: `twitter:card`,
