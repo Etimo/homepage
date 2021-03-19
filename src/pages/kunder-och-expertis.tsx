@@ -25,26 +25,26 @@ const ClientsPage = () => {
 		},
 		{
 			index: 1,
-			name: 'Värde för kund',
-		},
-		{
-			index: 2,
-			name: 'Kompetenser',
-		},
-		{
-			index: 3,
-			name: 'Tjänster',
-		},
-		{
-			index: 4,
-			name: 'Referenscase',
-		},
-		{
-			index: 5,
 			name: 'Våra kunder',
 		},
 		{
+			index: 2,
+			name: 'Värde för kund',
+		},
+		{
+			index: 3,
+			name: 'Kompetenser',
+		},
+		{
+			index: 4,
+			name: 'Tjänster',
+		},
+		{
 			index: 5,
+			name: 'Referenscase',
+		},
+		{
+			index: 6,
 			name: 'Kontakt',
 		},
 	];
@@ -54,11 +54,11 @@ const ClientsPage = () => {
 			<SEO title="Kunder och expertis" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
+			<ClientCustomers />
 			<CreateValue />
 			<Competences />
 			<Services />
 			<ReferenceCase />
-			<ClientCustomers />
 			<Apply variantKey="customers" />
 		</Layout>
 	);
