@@ -9,34 +9,34 @@ type Variant = {
 	text: String;
 	emailText: String;
 	email: String;
-}
-const variants: {[key: string]: Variant} = {
+};
+const variants: { [key: string]: Variant } = {
 	default: {
-		caption: "Bli en i gänget",
-		header: "Ansök här",
-		text: "Vill du jobba hos oss?",
-		emailText: "Skicka ett mail till oss på",
-		email: "kontakt@etimo.se",
+		caption: 'Bli en i gänget',
+		header: 'Ansök här',
+		text: 'Vill du jobba hos oss?',
+		emailText: 'Skicka ett mail till oss på',
+		email: 'kontakt@etimo.se',
 	},
 	customers: {
-		caption: "Bättre mjukvara för en bättre värld",
-		header: "Kontakta oss",
-		text: "Behöver du teknikkompetens i världsklass?",
-		emailText: "Skicka ett mail till Johan på",
-		email: "johan.hazelius@etimo.se",
+		caption: 'Bättre mjukvara för en bättre värld',
+		header: 'Kontakta oss',
+		text: 'Behöver du teknikkompetens i världsklass?',
+		emailText: 'Skicka ett mail till Johan på',
+		email: 'johan.hazelius@etimo.se',
 	},
-}
+};
 
 type Props = {
 	variantKey: string;
-}
-
+	backgroundColor?: string;
+};
 
 const Apply = (props: Props) => {
-	const { variantKey } = props;
+	const { variantKey, backgroundColor } = props;
 	const variant = variants[variantKey];
 	return (
-		<Section style={{ backgroundColor: 'white' }}>
+		<Section style={{ backgroundColor }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>{variant.caption}</Caption>

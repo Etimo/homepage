@@ -4,7 +4,8 @@ import {
 	Competences,
 	CreateValue,
 	Hero,
-	Services
+	Services,
+	ReferenceCase,
 } from '../components/Clients';
 import ClientCustomers from '../components/Clients/ClientCustomers';
 import Layout from '../components/Layout';
@@ -24,11 +25,11 @@ const ClientsPage = () => {
 		},
 		{
 			index: 1,
-			name: 'Värde för kund',
+			name: 'Våra kunder',
 		},
 		{
 			index: 2,
-			name: 'Tjänster',
+			name: 'Värde för kund',
 		},
 		{
 			index: 3,
@@ -36,10 +37,14 @@ const ClientsPage = () => {
 		},
 		{
 			index: 4,
-			name: 'Våra kunder',
+			name: 'Tjänster',
 		},
 		{
 			index: 5,
+			name: 'Referenscase',
+		},
+		{
+			index: 6,
 			name: 'Kontakt',
 		},
 	];
@@ -49,10 +54,11 @@ const ClientsPage = () => {
 			<SEO title="Kunder och expertis" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
-			<CreateValue />
-			<Services />
-			<Competences />
 			<ClientCustomers />
+			<CreateValue />
+			<Competences />
+			<Services />
+			<ReferenceCase />
 			<Apply variantKey="customers" />
 		</Layout>
 	);

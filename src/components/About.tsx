@@ -10,13 +10,7 @@ import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
-
-const EmphasizedH2 = styled(H2)`
-	line-height: 1.25;
-	font-weight: 400;
-	margin-bottom: 0;
-	${tw`text-center lg:text-left md:mt-4 lg:mt-6 xl:mt-8`}
-`;
+import EmphasizedH2 from '../elements/EmphasizedH2';
 
 const GradientSpan = styled.span`
 	border-bottom: 1px solid;
