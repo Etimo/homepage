@@ -298,7 +298,11 @@ const ClientCustomers = () => {
 
 	return (
 		<>
-			<Customers imgDiv={ImageDiv} givenCustomers={customers} />
+			<Customers
+				imgDiv={ImageDiv}
+				givenCustomers={customers}
+				backgroundColor="white"
+			/>
 		</>
 	);
 };

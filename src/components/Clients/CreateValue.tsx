@@ -7,7 +7,7 @@ import Section from '../Section';
 
 const CreateValue = () => {
 	return (
-		<Section style={{ background: 'white' }}>
+		<Section>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>Våra tjänster</Caption>
