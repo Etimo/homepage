@@ -12,7 +12,7 @@ const links = [
 	{ name: 'Start', url: '/', local: true },
 	{ name: 'Karriär', url: '/karriar', local: true },
 	{ name: 'Kunder', url: '/kunder-och-expertis', local: true },
-	{ name: 'Blogg', url: 'https://blog.etimo.se/', local: false },
+	{ name: 'Blogg', url: '/blogg', local: true },
 ];
 
 const Icon = styled(FontAwesomeIcon)`
@@ -133,7 +133,7 @@ const RightMenu = () => {
 										<CyanHover
 											key={link.name}
 											className="mb-6 md:mb-8 mr-auto px-1"
-											style={{minHeight: 36}}
+											style={{ minHeight: 36 }}
 										>
 											{link.local ? (
 												<Link to={link.url}>

@@ -6,7 +6,7 @@ module.exports = {
 		siteUrl: 'https://etimo.se',
 		description: 'Bättre mjukvara för en bättre värld.',
 		imageAlt: 'Etimo logo',
-		imageType: 'image/png'
+		imageType: 'image/png',
 	},
 	plugins: [
 		{
@@ -26,6 +26,14 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
+		{
+			resolve: 'gatsby-source-filesystem',
+			options: {
+				path: `${__dirname}/src/pages/blog`,
+				name: 'blog',
+			},
+		},
+		`gatsby-transformer-remark`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
 		{

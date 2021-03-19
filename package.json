@@ -30,6 +30,7 @@
 		"gatsby-plugin-typescript": "^2.3.1",
 		"gatsby-plugin-web-font-loader": "^1.0.4",
 		"gatsby-source-filesystem": "^2.2.2",
+		"gatsby-transformer-remark": "^3.1.0",
 		"gatsby-transformer-sharp": "^2.4.4",
 		"global": "^4.4.0",
 		"netlify-cms-app": "^2.14.14",

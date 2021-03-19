@@ -1,23 +1,16 @@
 import React from 'react';
-import Content from '../components/Content';
+import { BlogPostData } from '../interface/blog-post-data';
 
-type BlogPostTemplateProps = {
-	content: string | React.ReactNode;
-	contentComponent?: React.ReactNode;
-	description: string;
-	tags: string[];
-	title: string;
-};
-
-const BlogPostTemplate = (props: BlogPostTemplateProps) => {
-	const { content, description, tags, title } = props;
-
-	const PostContent = props.contentComponent || Content;
+const BlogPostTemplate = (props: BlogPostData) => {
+	const { content, description, date, title, tags } = props;
 
 	return (
 		<section>
 			<div className="container flex-column">
 				<h1>{title}</h1>
+				<h4>{date}</h4>
+				<div>{description}</div>
+				<div dangerouslySetInnerHTML={{ __html: content }}></div>
 			</div>
 		</section>
 	);
