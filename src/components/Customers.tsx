@@ -187,7 +187,7 @@ export default ({
 		  `;
 
 	return (
-		<Section style={{ overflow: 'hidden', backgroundColor }}>
+		<Section style={{ backgroundColor }}>
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<FloatUp>

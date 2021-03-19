@@ -18,7 +18,7 @@ const whoTexts = [
 
 const WhoAreYou = () => {
 	return (
-		<Section style={{ overflow: 'hidden' }}>
+		<Section>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<FloatUp>
 					<Caption>Vi söker de allra bästa</Caption>

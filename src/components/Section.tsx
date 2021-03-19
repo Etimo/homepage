@@ -16,6 +16,7 @@ const Section = styled.section<StyleProps>`
 	align-items: center;
 	width: 100%;
 	padding: 50px 0;
+	overflow: hidden;
 	${tw`py-small md:py-large`};
 `;
 
@@ -32,7 +33,9 @@ export default ({ children, headerSpace, ...props }: Props) => {
 	const getHeight = () => {
 		// Don't set a height if it's a mobile phone
 		// since we don't use a left menu on mobile.
-		if (isMobile()) { return undefined; }
+		if (isMobile()) {
+			return undefined;
+		}
 		if (height < sizes().minimumHeight) {
 			return sizes().minimumHeight - (headerSpace ? sizes().headerHeight : 0);
 		}
