@@ -10,7 +10,7 @@ const ScrollToTopButtonStyle = styled.div`
 `;
 
 const Icon = styled(FontAwesomeIcon)`
-	${tw`text-darkGray`};
+	${tw`text-black`};
 `;
 
 type Props = {
