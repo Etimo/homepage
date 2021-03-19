@@ -166,9 +166,16 @@ type CustomersProps = {
 	}[];
 	link?: boolean;
 	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
+	backgroundColor?: string;
 };
 
-export default ({ givenCustomers, link, imgDiv, ...props }: CustomersProps) => {
+export default ({
+	givenCustomers,
+	link,
+	imgDiv,
+	backgroundColor,
+	...props
+}: CustomersProps) => {
 	const customers = givenCustomers ? givenCustomers : generateCustomers();
 
 	/* max-width: 150px; */
@@ -180,7 +187,7 @@ export default ({ givenCustomers, link, imgDiv, ...props }: CustomersProps) => {
 		  `;
 
 	return (
-		<Section style={{ overflow: 'hidden' }}>
+		<Section style={{ overflow: 'hidden', backgroundColor }}>
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<FloatUp>
