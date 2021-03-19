@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from 'react';
 import FloatUp from '../animations/FloatUp';
 import AnimatedH2 from '../elements/AnimatedH2';
@@ -10,91 +10,79 @@ import Section from './Section';
 
 const ThePeople = () => {
 	const data = useStaticQuery(graphql`
-		query {
-			jassyr: file(relativePath: { eq: "jassyr.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			joakim: file(relativePath: { eq: "joakim.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			johan: file(relativePath: { eq: "johan.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			niclas: file(relativePath: { eq: "niclas.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			daniel: file(relativePath: { eq: "daniel.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			philip: file(relativePath: { eq: "philip.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
+	{
+		jassyr: file(relativePath: {eq: "jassyr.jpg"}) {
+			childImageSharp {
+				gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
 			}
 		}
-	`);
+		joakim: file(relativePath: {eq: "joakim.jpg"}) {
+			childImageSharp {
+				gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+		johan: file(relativePath: {eq: "johan.jpg"}) {
+			childImageSharp {
+				gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+		niclas: file(relativePath: {eq: "niclas.jpg"}) {
+			childImageSharp {
+				gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+		daniel: file(relativePath: {eq: "daniel.jpg"}) {
+			childImageSharp {
+				gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+		philip: file(relativePath: {eq: "philip.jpg"}) {
+			childImageSharp {
+				gatsbyImageData(width: 500, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+	}
+`);
 
 	const people = [
 		{
 			name: 'Philip Forsberg',
 			title: 'Konsult',
-			image: <Img fluid={data.philip.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.philip.childImageSharp.gatsbyImageData} />,
 			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
 			github: 'https://github.com/ForsbergPhilip',
 		},
 		{
 			name: 'Joakim Olesen',
 			title: 'Grundare',
-			image: <Img fluid={data.joakim.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.joakim.childImageSharp.gatsbyImageData} />,
 			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
 			github: 'https://github.com/joakim-olesen',
 		},
 		{
 			name: 'Daniel Winther',
 			title: 'Partner',
-			image: <Img fluid={data.daniel.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.daniel.childImageSharp.gatsbyImageData} />,
 			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
 			github: 'https://github.com/indrif',
 		},
 		{
 			name: 'Niclas Lindstedt',
 			title: 'Konsult',
-			image: <Img fluid={data.niclas.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.niclas.childImageSharp.gatsbyImageData} />,
 			linkedin: 'https://www.linkedin.com/in/niclaslindstedt/',
 			github: 'https://github.com/niclaslindstedt',
 		},
 		{
 			name: 'Johan Ahrens',
 			title: 'Konsult',
-			image: <Img fluid={data.johan.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.johan.childImageSharp.gatsbyImageData} />,
 			linkedin: 'https://www.linkedin.com/in/johan-ahrens-b76647a/',
 		},
 		{
 			name: 'Jassyr Bravo',
 			title: 'Konsult',
-			image: <Img fluid={data.jassyr.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.jassyr.childImageSharp.gatsbyImageData} />,
 			linkedin: 'https://www.linkedin.com/in/jassyromar/',
 			github: 'https://github.com/JassyrBravo',
 		},

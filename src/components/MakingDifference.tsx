@@ -11,7 +11,7 @@ import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import { HighlightButton } from './Button';
 import { P } from '../elements';
@@ -47,20 +47,17 @@ const gridVar = {
 export default () => {
 	const [ref, inView] = useInView();
 
-	const data = useStaticQuery(graphql`
-		query {
-			file(relativePath: { eq: "samarbetslogotyp-raddabarnen.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 800) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-		}
-	`);
+	const data = useStaticQuery(graphql`{
+  file(relativePath: {eq: "samarbetslogotyp-raddabarnen.png"}) {
+    childImageSharp {
+      gatsbyImageData(width: 800, layout: CONSTRAINED)
+    }
+  }
+}
+`);
 
 	return (
-		<Section style={{ backgroundColor: 'white' }}>
+        <Section style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<FloatUp>
@@ -100,7 +97,7 @@ export default () => {
 						</CyanHover>
 					</motion.div>
 					<div className="mt-4 mx-auto flex flex-col" style={{ width: '70%' }}>
-						<Img fluid={data.file.childImageSharp.fluid} />
+						<GatsbyImage image={data.file.childImageSharp.gatsbyImageData} />
 						<HighlightButton className="mx-auto">
 							<Link to="https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html">
 								<P>
@@ -113,5 +110,5 @@ export default () => {
 				</div>
 			</div>
 		</Section>
-	);
+    );
 };

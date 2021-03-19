@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image";
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -15,7 +15,7 @@ import EmployeeCard from './EmployeeCard';
 import { Employee } from './EmployeeCards';
 import Section from './Section';
 
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm`};
 `;
 
@@ -29,92 +29,71 @@ const SpacedP = styled(P)`
 
 export default () => {
 	const data = useStaticQuery(graphql`
-		query {
-			erikLogo: file(
-				relativePath: { eq: "funatwork/erik-malm-1-logo-370x262.png" }
-			) {
-				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			innerYard: file(relativePath: { eq: "funatwork/innegard.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			johanHazelius: file(
-				relativePath: { eq: "funatwork/johan-hazelius-1-370x262.png" }
-			) {
-				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			etimoChefs: file(
-				relativePath: { eq: "funatwork/etimo-kockar-1-370x262.png" }
-			) {
-				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			employeesOne: file(
-				relativePath: { eq: "funatwork/kollegor-1-370x262.png" }
-			) {
-				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			lukasLindqvist: file(
-				relativePath: { eq: "funatwork/lukas-lindqvist-1-pengar-370x262.png" }
-			) {
-				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
-				}
+	{
+		erikLogo: file(relativePath: {eq: "funatwork/erik-malm-1-logo-370x262.png"}) {
+			childImageSharp {
+				gatsbyImageData(width: 370, quality: 90, layout: CONSTRAINED, placeholder: BLURRED)
 			}
 		}
-	`);
+		innerYard: file(relativePath: {eq: "funatwork/innegard.jpg"}) {
+			childImageSharp {
+				gatsbyImageData(width: 500, quality: 90, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+		johanHazelius: file(
+			relativePath: {eq: "funatwork/johan-hazelius-1-370x262.png"}) {
+				childImageSharp {
+					gatsbyImageData(width: 370, quality: 90, layout: CONSTRAINED, placeholder: BLURRED)
+				}
+			}
+		etimoChefs: file(relativePath: {eq: "funatwork/etimo-kockar-1-370x262.png"}) {
+			childImageSharp {
+				gatsbyImageData(width: 370, quality: 90, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+		employeesOne: file(relativePath: {eq: "funatwork/kollegor-1-370x262.png"}) {
+			childImageSharp {
+				gatsbyImageData(width: 370, quality: 90, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+		lukasLindqvist: file(relativePath: {eq: "funatwork/lukas-lindqvist-1-pengar-370x262.png"}) {
+			childImageSharp {
+				gatsbyImageData(width: 370, quality: 90, layout: CONSTRAINED, placeholder: BLURRED)
+			}
+		}
+	}
+`);
 
 	const cards: Employee[] = [
 		{
 			name: 'ERIK',
 			title: 'Gillar Java',
-			image: <StyledImg fluid={data.erikLogo.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.erikLogo.childImageSharp.gatsbyImageData} />,
 		},
 		{
 			name: 'HELA GÄNGET',
 			title: 'Lagar mat',
-			image: <StyledImg fluid={data.etimoChefs.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.etimoChefs.childImageSharp.gatsbyImageData} />,
 		},
 		{
 			name: 'JOHAN',
 			title: 'Fokuserar',
-			image: <StyledImg fluid={data.johanHazelius.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.johanHazelius.childImageSharp.gatsbyImageData} />,
 		},
 		{
 			name: 'LUKAS',
 			title: 'Blir rik under tidspress',
-			image: <StyledImg fluid={data.lukasLindqvist.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.lukasLindqvist.childImageSharp.gatsbyImageData} />,
 		},
 		{
 			name: 'INNERGÅRDEN',
 			title: 'Här lunchar vi på soliga dagar',
-			image: <StyledImg fluid={data.innerYard.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.innerYard.childImageSharp.gatsbyImageData} />,
 		},
 		{
 			name: 'KOLLEGOR',
 			title: 'Är på konferens',
-			image: <StyledImg fluid={data.employeesOne.childImageSharp.fluid} />,
+			image: <GatsbyImage image={data.employeesOne.childImageSharp.gatsbyImageData} />,
 		},
 	];
 
