@@ -22,7 +22,7 @@ type Props = {
 };
 
 const SEO = ({ description, lang, meta = [], title }: Props) => {
-	const { site } = useStaticQuery(
+	const { site, logo } = useStaticQuery(
 		graphql`
 			query {
 				site {
@@ -30,30 +30,25 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 						title
 						description
 						author
+						siteUrl
+						imageAlt
+						imageType
+					}
+					
+				}
+				logo: file(relativePath: { eq: "etimo-logo-sharing.png" }) {
+					childImageSharp {
+						fluid(maxWidth: 1200) {
+							src
+						}
 					}
 				}
 			}
 		`
 	);
 
-	const metaDescription = description || site.siteMetadata.description;
+	const metaDescription = description || site.siteMetadata.description
 	const metaData: MetaProps[] = [
-		{
-			name: `description`,
-			content: metaDescription,
-		},
-		{
-			property: `og:title`,
-			content: title,
-		},
-		{
-			property: `og:description`,
-			content: metaDescription,
-		},
-		{
-			property: `og:type`,
-			content: `website`,
-		},
 		{
 			name: `twitter:card`,
 			content: `summary`,
@@ -69,6 +64,45 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 		{
 			name: `twitter:description`,
 			content: metaDescription,
+		},
+		{
+			name: `title`,
+			property: `og:title`,
+			content: site.siteMetadata.title,
+		},
+		{
+			name: `type`,
+			property: `og:type`,
+			content: site.siteMetadata.type,
+		},
+		{
+			name: `url`,
+			property: `og:url`,
+			content: site.siteMetadata.siteUrl,
+		},
+		{
+			name: `description`,
+			property: `og:description`,
+			content: site.siteMetadata.description,
+		},
+		{
+			name: `image`,
+			property: `og:image`,
+			content: logo.childImageSharp.fluid.src,
+		},
+		{
+			name: `image-type`,
+			property: `og:image:type`,
+			content: site.siteMetadata.imageType,
+		},
+		{
+			name: `image-alt`,
+			property: `og:image:alt`,
+			content: site.siteMetadata.imageAlt,
+		},
+		{
+			name: `author`,
+			content: site.siteMetadata.author,
 		},
 		...meta,
 	];

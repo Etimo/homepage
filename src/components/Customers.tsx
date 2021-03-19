@@ -197,7 +197,7 @@ export default ({ givenCustomers, link, imgDiv, ...props }: CustomersProps) => {
 							const classes = `${customer.borders.xs} ${customer.borders.sm} border-gray-300 py-2 lg:py-4 overflow-hidden`;
 
 							return (
-								<div className={classes}>
+								<div key={idx} className={classes}>
 									<FloatInDir
 										direction={customer.direction}
 										delay={idx * 0.075}
