@@ -60,9 +60,9 @@ export default () => {
 	`);
 
 	return (
-		<Section style={{ backgroundColor: 'white' }}>
-			<div className="container mx-auto xl:px-32">
-				<div className="flex flex-col mb-8 overflow-hidden">
+		<Section>
+			<div className="container xl:px-12">
+				<div className="flex flex-col text-center overflow-hidden">
 					<FloatUp>
 						<Caption className="text-center">Skillnad</Caption>
 					</FloatUp>
