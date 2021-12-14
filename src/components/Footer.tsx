@@ -55,7 +55,7 @@ const contactItems = [
 	},
 	{
 		title: 'Adress',
-		description: `Kungsgatan 55<br />111 22 Stockholm`,
+		description: `Dalagatan 7<br />111 23 Stockholm`,
 		class: 'pointer-events-none',
 	},
 	{
