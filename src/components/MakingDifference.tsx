@@ -11,10 +11,7 @@ import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
-import Img from 'gatsby-image';
-import { graphql, useStaticQuery, Link } from 'gatsby';
-import { HighlightButton } from './Button';
-import { P } from '../elements';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -99,17 +96,6 @@ export default () => {
 							})}
 						</CyanHover>
 					</motion.div>
-					<div className="mt-4 mx-auto flex flex-col" style={{ width: '70%' }}>
-						<Img fluid={data.file.childImageSharp.fluid} />
-						<HighlightButton className="mx-auto">
-							<Link to="https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html">
-								<P>
-									Läs på vår blogg om samarbetet med Rädda Barnen där vi är
-									hållbarhetspartner
-								</P>
-							</Link>
-						</HighlightButton>
-					</div>
 				</div>
 			</div>
 		</Section>
