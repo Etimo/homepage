@@ -1,8 +1,9 @@
 import styled, { DefaultTheme, StyledComponent } from 'styled-components';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery, Link } from 'gatsby';
 import { FloatInDir } from '../animations';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
+import { H5 } from '../elements';
 import React from 'react';
 import tw from 'twin.macro';
 import CyanHover from '../animations/CyanHover';
@@ -14,6 +15,7 @@ import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
 import Img from 'gatsby-image';
+
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -117,7 +119,7 @@ return [
 		},
 	},
 	{
-		name: 'Ukraine',
+		name: 'ukraine',
 		url: 'https://how-to-help-ukraine-now.super.site/',
 		image: <Img fluid={data.ukraine.childImageSharp.fluid} />,
 		direction: 'down',
@@ -140,7 +142,7 @@ export default ({imgDiv}: CustomersProps) => {
 	const ImageDiv = imgDiv
 		? imgDiv
 		: styled.div`
-				${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxxs opacity-50 hover:opacity-100`};
+				${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxxs xl:max-w-xxxxxs opacity-50 hover:opacity-100`};
 				${tw`transition-opacity ease-in-out duration-200`};
 		  `;
 
@@ -185,24 +187,29 @@ export default ({imgDiv}: CustomersProps) => {
 						</CyanHover>
 					</motion.div>
 
-					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 mx-8 xl:mx-12">
-						{donations.map((donation, idx) => {
-							
-							return (
-								<div key={idx}>
-									<FloatInDir
-										direction={donation.direction}
-										delay={idx * 0.075}
-									>
-										<ImageDiv>
-											<a href={donation.url} target="_blank">
-												{donation.image}
-											</a>
-										</ImageDiv>
-									</FloatInDir>
-								</div>
-							);
-						})}
+					<FloatUp>
+                    	<H5 className="text-center mt-10 mx-10 text-gray-800">Några organisationer som Etimo har donerat till genom åren:</H5>
+					</FloatUp>
+
+					<div className="flex justify-center">
+						<div className="grid grid-cols-4 gap-4 w-full lg:grid-cols-4 lg:w-2/4 mt-10 mx-8 xl:mx-12">
+							{donations.map((donation, idx) => {
+								return (
+									<div key={idx}>
+										<FloatInDir
+											direction={donation.direction}
+											delay={idx * 0.075}
+										>
+											<ImageDiv>
+												<a href={donation.url} target="_blank">
+													{donation.image}
+												</a>
+											</ImageDiv>
+										</FloatInDir>
+									</div>
+								);
+							})}
+						</div>
 					</div>
 				</div>
 			</div>
