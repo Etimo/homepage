@@ -52,7 +52,7 @@ const workItems = [
 const WorkAtEtimo = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			image: file(relativePath: { eq: "bollhav2.jpg" }) {
+			image: file(relativePath: { eq: "bollhavny.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 540, quality: 90) {
 						...GatsbyImageSharpFluid_tracedSVG
@@ -93,7 +93,7 @@ const WorkAtEtimo = () => {
 							</div>
 						</FadeIn>
 					</div>
-					<div className="w-4/5 sm:w-3/5 lg:w-1/2">
+					<div className="w-4/5 sm:w-3/5 lg:w-2/5">
 						<FadeIn direction="right">
 							<StyledImg fluid={data.image.childImageSharp.fluid} />
 						</FadeIn>
