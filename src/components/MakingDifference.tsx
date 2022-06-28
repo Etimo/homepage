@@ -120,7 +120,7 @@ return [
 	},
 	{
 		name: 'ukraine',
-		url: 'https://how-to-help-ukraine-now.super.site/',
+		url: 'https://supportukrainenow.org/',
 		image: <Img fluid={data.ukraine.childImageSharp.fluid} />,
 		direction: 'down',
 		borders: {
