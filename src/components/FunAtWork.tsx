@@ -34,14 +34,14 @@ export default () => {
 				relativePath: { eq: "funatwork/new/daniel.jpg" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
 			are: file(relativePath: { eq: "funatwork/new/are.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
