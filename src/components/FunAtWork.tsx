@@ -16,7 +16,7 @@ import { Employee } from './EmployeeCards';
 import Section from './Section';
 
 const StyledImg = styled(Img)`
-	${tw`max-w-sm`};
+	${tw`max-w-sm h-full`};
 `;
 
 const SmallerH2 = styled(H2)`
@@ -30,8 +30,8 @@ const SpacedP = styled(P)`
 export default () => {
 	const data = useStaticQuery(graphql`
 		query {
-			erikLogo: file(
-				relativePath: { eq: "funatwork/erik-malm-1-logo-370x262.png" }
+			daniel: file(
+				relativePath: { eq: "funatwork/new/daniel.jpg" }
 			) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
@@ -39,15 +39,15 @@ export default () => {
 					}
 				}
 			}
-			innerYard: file(relativePath: { eq: "funatwork/innegard.jpg" }) {
+			are: file(relativePath: { eq: "funatwork/new/are.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
+					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			johanHazelius: file(
-				relativePath: { eq: "funatwork/johan-hazelius-1-370x262.png" }
+			bradspel: file(
+				relativePath: { eq: "funatwork/new/bradspel.jpg" }
 			) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
@@ -55,8 +55,8 @@ export default () => {
 					}
 				}
 			}
-			etimoChefs: file(
-				relativePath: { eq: "funatwork/etimo-kockar-1-370x262.png" }
+			afterski: file(
+				relativePath: { eq: "funatwork/new/afterski.jpg" }
 			) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
@@ -64,8 +64,8 @@ export default () => {
 					}
 				}
 			}
-			employeesOne: file(
-				relativePath: { eq: "funatwork/kollegor-1-370x262.png" }
+			jassyr: file(
+				relativePath: { eq: "funatwork/new/jassyr.jpg" }
 			) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
@@ -73,8 +73,8 @@ export default () => {
 					}
 				}
 			}
-			lukasLindqvist: file(
-				relativePath: { eq: "funatwork/lukas-lindqvist-1-pengar-370x262.png" }
+			vaxholm: file(
+				relativePath: { eq: "funatwork/new/vaxholm.jpg" }
 			) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
@@ -87,34 +87,36 @@ export default () => {
 
 	const cards: Employee[] = [
 		{
-			name: 'ERIK',
-			title: 'Gillar Java',
-			image: <StyledImg fluid={data.erikLogo.childImageSharp.fluid} />,
+			name: 'DANIEL',
+			title: 'Njuter i backen',
+			image: <StyledImg fluid={data.daniel.childImageSharp.fluid} />,
 		},
 		{
-			name: 'HELA GÄNGET',
-			title: 'Lagar mat',
-			image: <StyledImg fluid={data.etimoChefs.childImageSharp.fluid} />,
-		},
-		{
-			name: 'JOHAN',
-			title: 'Fokuserar',
-			image: <StyledImg fluid={data.johanHazelius.childImageSharp.fluid} />,
-		},
-		{
-			name: 'LUKAS',
-			title: 'Blir rik under tidspress',
-			image: <StyledImg fluid={data.lukasLindqvist.childImageSharp.fluid} />,
-		},
-		{
-			name: 'INNERGÅRDEN',
-			title: 'Här lunchar vi på soliga dagar',
-			image: <StyledImg fluid={data.innerYard.childImageSharp.fluid} />,
+			name: 'BJÖRN OCH JOHAN',
+			title: 'Samtalar i solen',
+			image: <StyledImg fluid={data.are.childImageSharp.fluid} />,
 		},
 		{
 			name: 'KOLLEGOR',
-			title: 'Är på konferens',
-			image: <StyledImg fluid={data.employeesOne.childImageSharp.fluid} />,
+			title: 'På pit stop i Åre',
+			image: <StyledImg fluid={data.afterski.childImageSharp.fluid} />,
+		},
+		{
+			name: 'GÄNGET',
+			title: 'Morgan vinner brädspelskvällen',
+			image: <StyledImg fluid={data.bradspel.childImageSharp.fluid} />,
+		},
+		
+		{
+			name: 'JASSYR',
+			title: 'Vidgar vyerna på Island',
+			image: <StyledImg fluid={data.jassyr.childImageSharp.fluid} />,
+		},
+		
+		{
+			name: 'TEAMBUILDING',
+			title: 'Klurigt i Vaxholm',
+			image: <StyledImg fluid={data.vaxholm.childImageSharp.fluid} />,
 		},
 	];
 
