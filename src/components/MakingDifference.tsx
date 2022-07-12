@@ -1,7 +1,10 @@
-import { motion } from 'framer-motion';
-import React from 'react';
+import styled, { DefaultTheme, StyledComponent } from 'styled-components';
+import { graphql, useStaticQuery, Link } from 'gatsby';
+import { FloatInDir } from '../animations';
 import { useInView } from 'react-intersection-observer';
-import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { H5 } from '../elements';
+import React from 'react';
 import tw from 'twin.macro';
 import CyanHover from '../animations/CyanHover';
 import FloatUp from '../animations/FloatUp';
@@ -11,7 +14,8 @@ import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
-import { graphql, useStaticQuery } from 'gatsby';
+import Img from 'gatsby-image';
+
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -41,20 +45,106 @@ const gridVar = {
 	},
 };
 
-export default () => {
-	const [ref, inView] = useInView();
-
+const generateDontations = () => {
 	const data = useStaticQuery(graphql`
-		query {
-			file(relativePath: { eq: "samarbetslogotyp-raddabarnen.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 800) {
-						...GatsbyImageSharpFluid
-					}
+	query {
+		raddaBarnen: file(
+			relativePath: { eq: "donations/raddabarnen.png" }
+		) {
+			childImageSharp {
+				fluid(maxWidth: 370, quality: 90) {
+					...GatsbyImageSharpFluid_tracedSVG
+				}
+			}
+		}, 
+		handIHand: file(
+			relativePath: { eq: "donations/handihand.png" }
+		) {
+			childImageSharp {
+				fluid(maxWidth: 370, quality: 90) {
+					...GatsbyImageSharpFluid_tracedSVG
+				}
+			}
+		}, 
+		lakareUtanGranser: file(
+			relativePath: { eq: "donations/lakareutangranser.png" }
+		) {
+			childImageSharp {
+				fluid(maxWidth: 370, quality: 90) {
+					...GatsbyImageSharpFluid_tracedSVG
 				}
 			}
 		}
-	`);
+		ukraine: file(
+			relativePath: { eq: "donations/ukraineround.png" }
+		) {
+			childImageSharp {
+				fluid(maxWidth: 370, quality: 90) {
+					...GatsbyImageSharpFluid_tracedSVG
+				}
+			}
+		}
+		
+	}
+`);
+return [
+	{
+		name: 'raddaBarnen',
+		url: 'https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html',
+		image: <Img fluid={data.raddaBarnen.childImageSharp.fluid} />,
+		direction: 'down',
+		borders: {
+			xs: 'border-r border-b',
+			sm: '',
+		},
+	},
+	{
+		name: 'handIHand',
+		url: 'https://www.handinhandsweden.se/',
+		image: <Img fluid={data.handIHand.childImageSharp.fluid} />,
+		direction: 'down',
+		borders: {
+			xs: 'border-b',
+			sm: 'lg:border-r',
+		},
+	},
+	{
+		name: 'lakareUtanGranser',
+		url: 'https://lakareutangranser.se/',
+		image: <Img fluid={data.lakareUtanGranser.childImageSharp.fluid} />,
+		direction: 'down',
+		borders: {
+			xs: 'border-r border-b',
+			sm: '',
+		},
+	},
+	{
+		name: 'ukraine',
+		url: 'https://supportukrainenow.org/',
+		image: <Img fluid={data.ukraine.childImageSharp.fluid} />,
+		direction: 'down',
+		borders: {
+			xs: 'border-b',
+			sm: '',
+		},
+	},
+];
+}
+
+type CustomersProps = {
+	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
+};
+
+export default ({imgDiv}: CustomersProps) => {
+	const [ref, inView] = useInView();
+	const donations = generateDontations();
+
+	const ImageDiv = imgDiv
+		? imgDiv
+		: styled.div`
+				${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxxs xl:max-w-xxxxxs opacity-50 hover:opacity-100`};
+				${tw`transition-opacity ease-in-out duration-200`};
+		  `;
 
 	return (
 		<Section>
@@ -96,6 +186,31 @@ export default () => {
 							})}
 						</CyanHover>
 					</motion.div>
+
+					<FloatUp>
+                    	<H5 className="text-center mt-10 mx-10 text-gray-800">Några organisationer som Etimo har donerat till genom åren:</H5>
+					</FloatUp>
+
+					<div className="flex justify-center">
+						<div className="grid grid-cols-4 gap-4 w-full lg:grid-cols-4 lg:w-2/4 mt-10 mx-8 xl:mx-12">
+							{donations.map((donation, idx) => {
+								return (
+									<div key={idx}>
+										<FloatInDir
+											direction={donation.direction}
+											delay={idx * 0.075}
+										>
+											<ImageDiv>
+												<a href={donation.url} target="_blank">
+													{donation.image}
+												</a>
+											</ImageDiv>
+										</FloatInDir>
+									</div>
+								);
+							})}
+						</div>
+					</div>
 				</div>
 			</div>
 		</Section>
