@@ -28,7 +28,6 @@ export default (props: Props) => {
 		title,
 		image,
 		github,
-		stackOverflow,
 		linkedin,
 		twitter,
 	} = props;
@@ -105,7 +104,7 @@ export default (props: Props) => {
 	const links: Link[] = [];
 
 	if (linkedin) links.push({ icon: <LinkedinIcon />, url: linkedin });
-	if (github) links.push({ icon: <GithubIcon />, url: github });
+	if (github) links.push({ icon: <GithubIcon style={{ height: '80%' }} />, url: github });
 	if (twitter) links.push({ icon: <TwitterIcon />, url: twitter });
 
 	const [ref, inView] = useInView();
