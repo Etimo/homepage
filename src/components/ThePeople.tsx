@@ -17,56 +17,56 @@ const StyledImg = styled(Img)`
 const ThePeople = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			henrik: file(relativePath: { eq: "someofus/new/henrik.jpg" }) {
+			henrik: file(relativePath: { eq: "someofus/new-images/henrik.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			bjorn: file(relativePath: { eq: "someofus/new/bjorn.png" }) {
+			bjorn: file(relativePath: { eq: "someofus/new-images/bjorn.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-            erik: file(relativePath: { eq: "someofus/new/erik.jpg" }) {
+            erik: file(relativePath: { eq: "someofus/new-images/erik.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-            jeanette: file(relativePath: { eq: "someofus/new/jeanette.png" }) {
+            jeanette: file(relativePath: { eq: "someofus/new-images/jeanette.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-			lukas: file(relativePath: { eq: "someofus/new/lukas.png" }) {
+			lukas: file(relativePath: { eq: "someofus/new-images/lukas.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-			rickard: file(relativePath: { eq: "someofus/new/rickard.jpg" }) {
+			rickard: file(relativePath: { eq: "someofus/new-images/rickard.jpg" }) {
                 childImageSharp {
                     fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-			saga: file(relativePath: { eq: "someofus/new/saga.png" }) {
+			saga: file(relativePath: { eq: "someofus/new-images/saga.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
                     }
                 }
             }
-			joakim: file(relativePath: { eq: "someofus/new/joakim.png" }) {
+			joakim: file(relativePath: { eq: "someofus/new-images/joakim.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 500) {
                         ...GatsbyImageSharpFluid
