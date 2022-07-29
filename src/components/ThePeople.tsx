@@ -31,7 +31,7 @@ const ThePeople = () => {
 					}
 				}
 			}
-			erik: file(relativePath: { eq: "someofus/new-images/erik.jpg" }) {
+			alfred: file(relativePath: { eq: "someofus/new-images/affe.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -85,11 +85,11 @@ const ThePeople = () => {
 			github: 'https://github.com/bjornkonrad',
 		},
 		{
-			name: 'Rickard',
+			name: 'Alfred',
 			title: 'Konsult',
-			image: <StyledImg fluid={data.rickard.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/rickard-l%C3%B6fberg-25319639/',
-			github: 'https://github.com/rickardlofberg',
+			image: <StyledImg fluid={data.alfred.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/alfred-stenborg-20700b135/',
+			github: 'https://github.com/affeproffs',
 		},
 		{
 			name: 'Jeanette',
@@ -98,11 +98,11 @@ const ThePeople = () => {
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
 		{
-			name: 'Erik',
+			name: 'Rickard',
 			title: 'Konsult',
-			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/erik-malm-1343662/',
-			github: 'https://github.com/sirscratchalot',
+			image: <StyledImg fluid={data.rickard.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/rickard-l%C3%B6fberg-25319639/',
+			github: 'https://github.com/rickardlofberg',
 		},
 		{
 			name: 'Henrik',
