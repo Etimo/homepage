@@ -1,4 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby';
+import tw from 'twin.macro';
+import styled from 'styled-components';
 import Img from 'gatsby-image';
 import React from 'react';
 import FloatUp from '../animations/FloatUp';
@@ -8,45 +10,63 @@ import Span from '../elements/Span';
 import EmployeeCards from './EmployeeCards';
 import Section from './Section';
 
+const StyledImg = styled(Img)`
+	${tw`max-w-sm h-full`};
+`;
+
 const ThePeople = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			jassyr: file(relativePath: { eq: "jassyr.jpg" }) {
+			henrik: file(relativePath: { eq: "someofus/new-images/henrik.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			joakim: file(relativePath: { eq: "joakim.jpg" }) {
+			bjorn: file(relativePath: { eq: "someofus/new-images/bjorn.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			johan: file(relativePath: { eq: "johan.jpg" }) {
+			alfred: file(relativePath: { eq: "someofus/new-images/affe.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			niclas: file(relativePath: { eq: "niclas.jpg" }) {
+			jeanette: file(relativePath: { eq: "someofus/new-images/jeanette.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			daniel: file(relativePath: { eq: "daniel.jpg" }) {
+			lukas: file(relativePath: { eq: "someofus/new-images/lukas.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			philip: file(relativePath: { eq: "philip.jpg" }) {
+			rickard: file(relativePath: { eq: "someofus/new-images/rickard.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			saga: file(relativePath: { eq: "someofus/new-images/saga.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			joakim: file(relativePath: { eq: "someofus/new-images/joakim.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -58,51 +78,66 @@ const ThePeople = () => {
 
 	const people = [
 		{
-			name: 'Philip Forsberg',
+			name: 'Björn',
 			title: 'Konsult',
-			image: <Img fluid={data.philip.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
-			github: 'https://github.com/ForsbergPhilip',
+			image: <StyledImg fluid={data.bjorn.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/bj%C3%B6rn-wahlberg-68b59020/',
+			github: 'https://github.com/bjornkonrad',
 		},
 		{
-			name: 'Joakim Olesen',
+			name: 'Alfred',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.alfred.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/alfred-stenborg-20700b135/',
+			github: 'https://github.com/affeproffs',
+		},
+		{
+			name: 'Jeanette',
+			title: 'HR och sälj',
+			image: <StyledImg fluid={data.jeanette.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
+		},
+		{
+			name: 'Rickard',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.rickard.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/rickard-l%C3%B6fberg-25319639/',
+			github: 'https://github.com/rickardlofberg',
+		},
+		{
+			name: 'Henrik',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.henrik.childImageSharp.fluid} />,
+			linkedin:
+				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
+			github: 'https://github.com/henrik-westoo',
+		},
+		{
+			name: 'Saga',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.saga.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
+			github: 'https://github.com/hejsaga',
+		},
+		{
+			name: 'Joakim',
 			title: 'Grundare',
-			image: <Img fluid={data.joakim.childImageSharp.fluid} />,
+			image: <StyledImg fluid={data.joakim.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
 			github: 'https://github.com/joakim-olesen',
 		},
 		{
-			name: 'Daniel Winther',
-			title: 'Partner',
-			image: <Img fluid={data.daniel.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
-			github: 'https://github.com/indrif',
-		},
-		{
-			name: 'Niclas Lindstedt',
+			name: 'Lukas',
 			title: 'Konsult',
-			image: <Img fluid={data.niclas.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/niclaslindstedt/',
-			github: 'https://github.com/niclaslindstedt',
-		},
-		{
-			name: 'Johan Ahrens',
-			title: 'Konsult',
-			image: <Img fluid={data.johan.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/johan-ahrens-b76647a/',
-		},
-		{
-			name: 'Jassyr Bravo',
-			title: 'Konsult',
-			image: <Img fluid={data.jassyr.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/jassyromar/',
-			github: 'https://github.com/JassyrBravo',
+			image: <StyledImg fluid={data.lukas.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
+			github: 'https://github.com/ljukas',
 		},
 	];
 
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
-			<div className="container mx-auto xl:px-32 lg:h-full lg:overflow-hidden">
+			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
 				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>
 						<Caption className="text-center">Människorna</Caption>

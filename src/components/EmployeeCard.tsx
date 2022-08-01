@@ -1,6 +1,7 @@
 import GithubIcon from '@material-ui/icons/GitHub';
 import LinkedinIcon from '@material-ui/icons/LinkedIn';
 import TwitterIcon from '@material-ui/icons/Twitter';
+import { makeStyles } from '@material-ui/core';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -22,16 +23,22 @@ const CardDiv = styled(motion.div)`
 	${tw`relative shadow overflow-hidden`};
 `;
 
+const useStyles = makeStyles(({
+	githubIcon: {
+	  height: '80%'
+	},
+}));
+
 export default (props: Props) => {
 	const {
 		name,
 		title,
 		image,
 		github,
-		stackOverflow,
 		linkedin,
 		twitter,
 	} = props;
+	const classes = useStyles();
 
 	const container = {
 		hidden: {
@@ -105,7 +112,7 @@ export default (props: Props) => {
 	const links: Link[] = [];
 
 	if (linkedin) links.push({ icon: <LinkedinIcon />, url: linkedin });
-	if (github) links.push({ icon: <GithubIcon />, url: github });
+	if (github) links.push({ icon: <GithubIcon className={classes.githubIcon} />, url: github });
 	if (twitter) links.push({ icon: <TwitterIcon />, url: twitter });
 
 	const [ref, inView] = useInView();

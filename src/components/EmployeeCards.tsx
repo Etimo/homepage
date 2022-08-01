@@ -21,8 +21,8 @@ export type Employee = {
 };
 
 const CardsGrid = styled(motion.div)`
-	${tw`grid grid-flow-col grid-cols-2 grid-rows-3 gap-4 mt-6 mx-4 overflow-hidden`};
-	${tw`md:grid-cols-3 md:grid-rows-2 md:gap-6`};
+	${tw`grid grid-flow-col grid-cols-2 grid-rows-4 gap-4 mt-6 mx-4 overflow-hidden`};
+	${tw`md:grid-cols-4 md:grid-rows-2 md:gap-6`};
 `;
 
 export default (props: Props) => {
@@ -34,7 +34,7 @@ export default (props: Props) => {
 	const isLaptopOrGreater = () => width >= sizes().laptop;
 	const getMargins = () => isDesktop() ? 252 : 242;
 	const availableHeight = height < sizes().minimumHeight ? sizes().minimumHeight : height - getMargins();
-	const gridStyle = { width: availableHeight * 1.2, maxWidth: 1024 - 32 };
+	const gridStyle = { width: availableHeight * 2.2, maxWidth: 1024 - 32 };
 
 	return (
 		<CardsGrid style={isLaptopOrGreater() ? gridStyle : {}}>
