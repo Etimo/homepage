@@ -1,22 +1,20 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
-import tw from 'twin.macro';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
 import React from 'react';
-import FloatUp from '../animations/FloatUp';
-import AnimatedH2 from '../elements/AnimatedH2';
-import Caption from '../elements/Caption';
-import Span from '../elements/Span';
-import EmployeeCards from './EmployeeCards';
-import Section from './Section';
-import { HighlightButton } from './Button';
-import { P } from '../elements';
+import { graphql, Link, useStaticQuery } from 'gatsby';
+import { AnimatedH2, Caption, P, Span } from '../elements';
+import { HighlightButton } from '../components/Button';
+import { FloatUp } from '../animations';
+import styled from 'styled-components';
+import EmployeeCards from '../components/EmployeeCards';
+import Section from '../components/Section';
+import Layout from '../components/Layout';
+import Img from 'gatsby-image';
+import tw from 'twin.macro';
 
 const StyledImg = styled(Img)`
 	${tw`max-w-sm h-full`};
 `;
 
-const ThePeople = () => {
+const kollegorna = () => {
 	const data = useStaticQuery(graphql`
 		query {
 			henrik: file(relativePath: { eq: "someofus/new-images/henrik.jpg" }) {
@@ -69,6 +67,20 @@ const ThePeople = () => {
 				}
 			}
 			joakim: file(relativePath: { eq: "someofus/new-images/joakim.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			erik: file(relativePath: { eq: "someofus/new-images/erik.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			axel: file(relativePath: { eq: "someofus/new-images/axel.jpeg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -135,32 +147,48 @@ const ThePeople = () => {
 			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
 			github: 'https://github.com/ljukas',
 		},
+		{
+			name: 'Erik',
+			title: 'Partner',
+			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
+			github: 'https://github.com/ljukas',
+		},
+		{
+			name: 'Axel',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
+			github: 'https://github.com/ljukas',
+		},
 	];
 
 	return (
-		<Section style={{ backgroundColor: 'white' }}>
-			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
-				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
-					<FloatUp>
-						<Caption className="text-center">Människorna</Caption>
-					</FloatUp>
-					<div className="flex flex-row justify-center">
-						<AnimatedH2 direction="left">Några av</AnimatedH2>
-						<AnimatedH2 direction="right">
-							<Span secondary>&nbsp;oss</Span>
-						</AnimatedH2>
-					</div>
-					<EmployeeCards employees={people} />
+		<Layout>
+			<Section style={{ backgroundColor: 'white' }}>
+				<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
+					<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
+						<FloatUp>
+							<Caption className="text-center">Människorna</Caption>
+						</FloatUp>
+						<div className="flex flex-row justify-center">
+							<AnimatedH2 direction="left">Vi är</AnimatedH2>
+							<AnimatedH2 direction="right">
+								<Span secondary>&nbsp;Etimo</Span>
+							</AnimatedH2>
+						</div>
+						<EmployeeCards employees={people} employeePage={true} />
 
-					<HighlightButton className="mt-3">
-						<Link to="/kollegorna">
-							<P>Möt hela Etimo</P>
-						</Link>
-					</HighlightButton>
+						<HighlightButton className="mt-3">
+							<Link to="/karriar">
+								<P>Vill du utveckla med oss?</P>
+							</Link>
+						</HighlightButton>
+					</div>
 				</div>
-			</div>
-		</Section>
+			</Section>
+		</Layout>
 	);
 };
 
-export default ThePeople;
+export default kollegorna;
