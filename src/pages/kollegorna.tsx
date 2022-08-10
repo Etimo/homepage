@@ -151,15 +151,15 @@ const kollegorna = () => {
 			name: 'Erik',
 			title: 'Partner',
 			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
-			github: 'https://github.com/ljukas',
+			linkedin: 'https://www.linkedin.com/in/erik-malm-1343662/',
+			github: 'https://github.com/sirscratchalot',
 		},
 		{
 			name: 'Axel',
 			title: 'Konsult',
 			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
-			github: 'https://github.com/ljukas',
+			linkedin: 'https://www.linkedin.com/in/axel-elmarsson-453a93159/',
+			github: 'https://github.com/elmaxe',
 		},
 	];
 
