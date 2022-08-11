@@ -80,7 +80,21 @@ const kollegorna = () => {
 					}
 				}
 			}
-			axel: file(relativePath: { eq: "someofus/new-images/axel.jpeg" }) {
+			axel: file(relativePath: { eq: "someofus/new-images/axel2.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			daniel: file(relativePath: { eq: "someofus/new-images/daniel.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			philip: file(relativePath: { eq: "someofus/new-images/philip.jpeg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -160,6 +174,20 @@ const kollegorna = () => {
 			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/axel-elmarsson-453a93159/',
 			github: 'https://github.com/elmaxe',
+		},
+		{
+			name: 'Philip',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.philip.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
+			github: 'https://github.com/ForsbergPhilip',
+		},
+		{
+			name: 'Daniel',
+			title: 'Partner',
+			image: <StyledImg fluid={data.daniel.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
+			github: 'https://github.com/indrif',
 		},
 	];
 
