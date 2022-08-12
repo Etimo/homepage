@@ -8,7 +8,7 @@ import EmployeeCard from './EmployeeCard';
 
 type Props = {
 	employees: Employee[];
-	employeePage?: boolean;
+	employeePage: boolean;
 };
 
 export type Employee = {
