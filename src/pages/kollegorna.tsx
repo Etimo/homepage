@@ -239,7 +239,7 @@ const kollegorna = () => {
 		},
 		{
 			name: 'Etimo',
-			title: 'Topp 10%',
+			title: 'Kanske du?',
 			image: <StyledImg fluid={data.etimo.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/company/5032461/admin/',
 			github: 'https://github.com/etimo',
