@@ -1,4 +1,4 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 import tw from 'twin.macro';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
@@ -9,6 +9,8 @@ import Caption from '../elements/Caption';
 import Span from '../elements/Span';
 import EmployeeCards from './EmployeeCards';
 import Section from './Section';
+import { HighlightButton } from './Button';
+import { P } from '../elements';
 
 const StyledImg = styled(Img)`
 	${tw`max-w-sm h-full`};
@@ -149,6 +151,12 @@ const ThePeople = () => {
 						</AnimatedH2>
 					</div>
 					<EmployeeCards employees={people} />
+
+					<HighlightButton className="mt-3 mx-auto">
+						<Link to="/kollegorna">
+							<P>Möt hela Etimo</P>
+						</Link>
+					</HighlightButton>
 				</div>
 			</div>
 		</Section>
