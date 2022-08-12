@@ -25,13 +25,14 @@ export default (props: Props) => {
 	const { employees, employeePage } = props;
 
 	const CardsGrid = styled(motion.div)`
-		${tw`grid grid-flow-col grid-cols-2 grid-rows-4 gap-4 mt-6 mx-4 overflow-hidden`};
 		${employeePage
-			? tw`md:grid-cols-4 md:grid-rows-3 md:gap-6`
+		? tw`grid grid-flow-col grid-cols-2 grid-rows-8 gap-4 mt-6 mx-4 overflow-hidden`
+		: tw`grid grid-flow-col grid-cols-2 grid-rows-4 gap-4 mt-6 mx-4 overflow-hidden`};
+		
+		${employeePage
+			? tw`md:grid-cols-4 md:grid-rows-4 md:gap-6`
 			: tw`md:grid-cols-4 md:grid-rows-2 md:gap-6`};
 	`;
-
-	//tw`md:grid-cols-5 md:grid-rows-2 md:gap-6`
 
 	let [height, width] = useViewportSize();
 

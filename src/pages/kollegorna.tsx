@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import { AnimatedH2, Caption, P, Span } from '../elements';
+import { AnimatedH2, Box, Caption, P, Span } from '../elements';
 import { HighlightButton } from '../components/Button';
 import { FloatUp } from '../animations';
 import styled from 'styled-components';
 import EmployeeCards from '../components/EmployeeCards';
-import Section from '../components/Section';
 import Layout from '../components/Layout';
 import Img from 'gatsby-image';
 import tw from 'twin.macro';
@@ -80,21 +79,49 @@ const kollegorna = () => {
 					}
 				}
 			}
-			axel: file(relativePath: { eq: "someofus/new-images/axel2.jpg" }) {
+			axel: file(relativePath: { eq: "someofus/new-images/elmarsson.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			daniel: file(relativePath: { eq: "someofus/new-images/daniel.jpg" }) {
+			daniel: file(relativePath: { eq: "someofus/new-images/danielw.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			philip: file(relativePath: { eq: "someofus/new-images/philip.jpeg" }) {
+			philip: file(relativePath: { eq: "someofus/new-images/phille.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			morgan: file(relativePath: { eq: "someofus/new-images/morgan.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			etimo: file(relativePath: { eq: "someofus/new-images/etimologo.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			niclas: file(relativePath: { eq: "someofus/new-images/niclas.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			johan: file(relativePath: { eq: "someofus/new-images/johan.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -120,10 +147,38 @@ const kollegorna = () => {
 			github: 'https://github.com/affeproffs',
 		},
 		{
+			name: 'Philip',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.philip.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
+			github: 'https://github.com/ForsbergPhilip',
+		},
+		{
+			name: 'Johan',
+			title: 'VD',
+			image: <StyledImg fluid={data.johan.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/johan-hazelius-910b281a/',
+			github: 'https://github.com/JohanHazelius',
+		},
+		{
+			name: 'Morgan',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.morgan.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/morgan-cromell/',
+			github: 'https://github.com/morgan-cromell',
+		},
+		{
 			name: 'Jeanette',
 			title: 'HR och sälj',
 			image: <StyledImg fluid={data.jeanette.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
+		},
+		{
+			name: 'Erik',
+			title: 'Partner',
+			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/erik-malm-1343662/',
+			github: 'https://github.com/sirscratchalot',
 		},
 		{
 			name: 'Rickard',
@@ -131,6 +186,34 @@ const kollegorna = () => {
 			image: <StyledImg fluid={data.rickard.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/rickard-l%C3%B6fberg-25319639/',
 			github: 'https://github.com/rickardlofberg',
+		},
+		{
+			name: 'Joakim',
+			title: 'Grundare',
+			image: <StyledImg fluid={data.joakim.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
+			github: 'https://github.com/joakim-olesen',
+		},
+		{
+			name: 'Axel',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/axel-elmarsson-453a93159/',
+			github: 'https://github.com/elmaxe',
+		},
+		{
+			name: 'Niclas',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.niclas.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/niclaslindstedt/',
+			github: 'https://github.com/niclaslindstedt',
+		},
+		{
+			name: 'Saga',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.saga.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
+			github: 'https://github.com/hejsaga',
 		},
 		{
 			name: 'Henrik',
@@ -141,18 +224,11 @@ const kollegorna = () => {
 			github: 'https://github.com/henrik-westoo',
 		},
 		{
-			name: 'Saga',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.saga.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
-			github: 'https://github.com/hejsaga',
-		},
-		{
-			name: 'Joakim',
-			title: 'Grundare',
-			image: <StyledImg fluid={data.joakim.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
-			github: 'https://github.com/joakim-olesen',
+			name: 'Daniel',
+			title: 'Partner',
+			image: <StyledImg fluid={data.daniel.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
+			github: 'https://github.com/indrif',
 		},
 		{
 			name: 'Lukas',
@@ -162,59 +238,40 @@ const kollegorna = () => {
 			github: 'https://github.com/ljukas',
 		},
 		{
-			name: 'Erik',
-			title: 'Partner',
-			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/erik-malm-1343662/',
-			github: 'https://github.com/sirscratchalot',
-		},
-		{
-			name: 'Axel',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/axel-elmarsson-453a93159/',
-			github: 'https://github.com/elmaxe',
-		},
-		{
-			name: 'Philip',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.philip.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
-			github: 'https://github.com/ForsbergPhilip',
-		},
-		{
-			name: 'Daniel',
-			title: 'Partner',
-			image: <StyledImg fluid={data.daniel.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
-			github: 'https://github.com/indrif',
+			name: 'Etimo',
+			title: 'Topp 10%',
+			image: <StyledImg fluid={data.etimo.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/company/5032461/admin/',
+			github: 'https://github.com/etimo',
 		},
 	];
 
 	return (
 		<Layout>
-			<Section style={{ backgroundColor: 'white' }}>
-				<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
-					<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
-						<FloatUp>
-							<Caption className="text-center">Människorna</Caption>
-						</FloatUp>
-						<div className="flex flex-row justify-center">
-							<AnimatedH2 direction="left">Vi är</AnimatedH2>
-							<AnimatedH2 direction="right">
-								<Span secondary>&nbsp;Etimo</Span>
-							</AnimatedH2>
-						</div>
-						<EmployeeCards employees={people} employeePage={true} />
+			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
+				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
+					<FloatUp>
+						<Caption className="text-center">Människorna</Caption>
+					</FloatUp>
+					<div className="flex flex-row justify-center">
+						<AnimatedH2 direction="left">Vi är</AnimatedH2>
+						<AnimatedH2 direction="right">
+							<Span secondary>&nbsp;Etimo</Span>
+						</AnimatedH2>
+					</div>
+					<EmployeeCards employees={people} employeePage={true} />
 
-						<HighlightButton className="mt-3">
-							<Link to="/karriar">
-								<P>Vill du utveckla med oss?</P>
-							</Link>
-						</HighlightButton>
+					<div className="mx-auto">
+						<Box mt={80} mb={100}>
+							<HighlightButton>
+								<Link to="/karriar">
+									<P>Vill du utveckla med oss?</P>
+								</Link>
+							</HighlightButton>
+						</Box>
 					</div>
 				</div>
-			</Section>
+			</div>
 		</Layout>
 	);
 };

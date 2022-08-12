@@ -152,7 +152,7 @@ const ThePeople = () => {
 					</div>
 					<EmployeeCards employees={people} />
 
-					<HighlightButton className="mt-3">
+					<HighlightButton className="mt-3 mx-auto">
 						<Link to="/kollegorna">
 							<P>Möt hela Etimo</P>
 						</Link>
