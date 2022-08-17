@@ -64,6 +64,9 @@ module.exports = {
 			gridTemplateColumns: {
 				fitting: 'min-content min-content min-content',
 			},
+			gridTemplateColumns: {
+				custom: 'repeat(3, minmax(0, 260px))',
+			},
 			gridTemplateRows: {
 				'8': 'repeat(8, minmax(0, 1fr))',
 			},
