@@ -144,7 +144,7 @@ const ThePeople = () => {
 					<FloatUp>
 						<Caption className="text-center">Människorna</Caption>
 					</FloatUp>
-					<div className="flex flex-row justify-center">
+					<div className="flex flex-row justify-center h-24">
 						<AnimatedH2 direction="left">Några av</AnimatedH2>
 						<AnimatedH2 direction="right">
 							<Span secondary>&nbsp;oss</Span>
@@ -152,7 +152,7 @@ const ThePeople = () => {
 					</div>
 					<EmployeeCards employees={people} />
 
-					<HighlightButton className="mt-3 mx-auto">
+					<HighlightButton className="mt-8 mx-auto">
 						<Link to="/kollegorna">
 							<P>Möt hela Etimo</P>
 						</Link>
