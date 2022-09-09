@@ -23,7 +23,7 @@ export default (props: Props) => {
 	const grid = `grid grid-flow-col grid-cols-2 ${
 		employeePage ? 'grid-rows-8' : 'grid-rows-4'
 	} gap-4 mt-6 mx-4 overflow-hidden md:grid-cols-4 ${
-		employeePage ? 'md:grid-rows-4' : 'md:grid-rows-2'
+		employeePage ? 'md:grid-rows-5' : 'md:grid-rows-3'
 	} md:gap-6`;
 
 	let [height, width] = useViewportSize();
