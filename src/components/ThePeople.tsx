@@ -150,7 +150,7 @@ const ThePeople = () => {
 							<Span secondary>&nbsp;oss</Span>
 						</AnimatedH2>
 					</div>
-					<EmployeeCards employees={people} />
+					<EmployeeCards employees={people} employeePage={false}/>
 
 					<HighlightButton className="mt-8 mx-auto">
 						<Link to="/kollegorna">

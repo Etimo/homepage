@@ -151,7 +151,7 @@ const kollegorna = () => {
 					}
 				}
 			}
-			cola: file(relativePath: { eq: "cola2.jpeg" }) {
+			cola: file(relativePath: { eq: "someofus/new-images/cola.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -253,12 +253,9 @@ const kollegorna = () => {
 			github: 'https://github.com/lille-etimo',
 		},
 		{
-			name: 'Henrik',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.henrik.childImageSharp.fluid} />,
-			linkedin:
-				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
-			github: 'https://github.com/henrik-westoo',
+			name: 'Cola',
+			title: 'Utvecklarens bästa vän',
+			image: <StyledImg fluid={data.cola.childImageSharp.fluid} />,
 		},
 		{
 			name: 'Saga',
@@ -289,9 +286,12 @@ const kollegorna = () => {
 			github: 'https://github.com/JassyrBravo',
 		},
 		{
-			name: 'Cola',
-			title: 'Utvecklarens bästa vän',
-			image: <StyledImg fluid={data.cola.childImageSharp.fluid} />,
+			name: 'Henrik',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.henrik.childImageSharp.fluid} />,
+			linkedin:
+				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
+			github: 'https://github.com/henrik-westoo',
 		},
 		{
 			name: 'Etimo',
