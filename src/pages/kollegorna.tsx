@@ -151,7 +151,7 @@ const kollegorna = () => {
 					}
 				}
 			}
-			cola: file(relativePath: { eq: "someofus/new-images/cola.jpg" }) {
+			colan: file(relativePath: { eq: "someofus/new-images/colan.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -253,9 +253,9 @@ const kollegorna = () => {
 			github: 'https://github.com/lille-etimo',
 		},
 		{
-			name: 'Cola',
+			name: 'Colan',
 			title: 'Utvecklarens bästa vän',
-			image: <StyledImg fluid={data.cola.childImageSharp.fluid} />,
+			image: <StyledImg fluid={data.colan.childImageSharp.fluid} />,
 		},
 		{
 			name: 'Saga',
