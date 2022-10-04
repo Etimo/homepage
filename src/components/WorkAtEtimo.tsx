@@ -68,7 +68,7 @@ const WorkAtEtimo = () => {
 		<Section>
 			{width >= sizes().laptop && <CustomBackground offset={height * 2} />}
 			<div className="container xl:px-24 lg:max-h-95">
-				<div className="flex flex-col pl-12 lg:flex-row items-center lg:justify-center">
+				<div className="flex flex-col xl:pl-12 lg:flex-row items-center lg:justify-center">
 					<div className="w-4/5 sm:w-3/4 lg:w-3/5 lg:mr-2 xl:mr-4 mb-2 lg:mb-0">
 						<FadeIn direction="left">
 							<Caption className="text-center lg:text-left">
