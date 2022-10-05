@@ -121,7 +121,37 @@ const kollegorna = () => {
 					}
 				}
 			}
-			johan: file(relativePath: { eq: "someofus/new-images/johan.jpg" }) {
+			johan: file(
+				relativePath: { eq: "someofus/new-images/johan2.jpg" }
+			) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			lilleman: file(relativePath: { eq: "someofus/new-images/lilleman.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			andre: file(relativePath: { eq: "someofus/new-images/andre.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			jassyr: file(relativePath: { eq: "jassyr2.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			colan: file(relativePath: { eq: "someofus/new-images/colan.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -174,6 +204,13 @@ const kollegorna = () => {
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
 		{
+			name: 'André',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.andre.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/andr%C3%A9-hansson-5b6418128/',
+			github: 'https://github.com/H4zze',
+		},
+		{
 			name: 'Erik',
 			title: 'Partner',
 			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
@@ -188,18 +225,18 @@ const kollegorna = () => {
 			github: 'https://github.com/rickardlofberg',
 		},
 		{
-			name: 'Joakim',
-			title: 'Grundare',
-			image: <StyledImg fluid={data.joakim.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
-			github: 'https://github.com/joakim-olesen',
-		},
-		{
 			name: 'Axel',
 			title: 'Konsult',
 			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/axel-elmarsson-453a93159/',
 			github: 'https://github.com/elmaxe',
+		},
+		{
+			name: 'Joakim',
+			title: 'Grundare',
+			image: <StyledImg fluid={data.joakim.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
+			github: 'https://github.com/joakim-olesen',
 		},
 		{
 			name: 'Niclas',
@@ -209,19 +246,23 @@ const kollegorna = () => {
 			github: 'https://github.com/niclaslindstedt',
 		},
 		{
+			name: 'Lilleman',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.lilleman.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/lillem4n/',
+			github: 'https://github.com/lille-etimo',
+		},
+		{
+			name: 'Colan',
+			title: 'Utvecklarens bästa vän',
+			image: <StyledImg fluid={data.colan.childImageSharp.fluid} />,
+		},
+		{
 			name: 'Saga',
 			title: 'Konsult',
 			image: <StyledImg fluid={data.saga.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
 			github: 'https://github.com/hejsaga',
-		},
-		{
-			name: 'Henrik',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.henrik.childImageSharp.fluid} />,
-			linkedin:
-				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
-			github: 'https://github.com/henrik-westoo',
 		},
 		{
 			name: 'Daniel',
@@ -236,6 +277,21 @@ const kollegorna = () => {
 			image: <StyledImg fluid={data.lukas.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
 			github: 'https://github.com/ljukas',
+		},
+		{
+			name: 'Jassyr',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.jassyr.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/jassyromar/',
+			github: 'https://github.com/JassyrBravo',
+		},
+		{
+			name: 'Henrik',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.henrik.childImageSharp.fluid} />,
+			linkedin:
+				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
+			github: 'https://github.com/henrik-westoo',
 		},
 		{
 			name: 'Etimo',
