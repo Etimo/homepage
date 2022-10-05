@@ -75,6 +75,27 @@ const ThePeople = () => {
 					}
 				}
 			}
+			niclas: file(relativePath: { eq: "someofus/new-images/niclas.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			erik: file(relativePath: { eq: "someofus/new-images/erik.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			axel: file(relativePath: { eq: "someofus/new-images/elmarsson.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
@@ -87,11 +108,11 @@ const ThePeople = () => {
 			github: 'https://github.com/bjornkonrad',
 		},
 		{
-			name: 'Alfred',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.alfred.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/alfred-stenborg-20700b135/',
-			github: 'https://github.com/affeproffs',
+			name: 'Erik',
+			title: 'Partner',
+			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/erik-malm-1343662/',
+			github: 'https://github.com/sirscratchalot',
 		},
 		{
 			name: 'Jeanette',
@@ -100,19 +121,18 @@ const ThePeople = () => {
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
 		{
-			name: 'Rickard',
+			name: 'Niclas',
 			title: 'Konsult',
-			image: <StyledImg fluid={data.rickard.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/rickard-l%C3%B6fberg-25319639/',
-			github: 'https://github.com/rickardlofberg',
+			image: <StyledImg fluid={data.niclas.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/niclaslindstedt/',
+			github: 'https://github.com/niclaslindstedt',
 		},
 		{
-			name: 'Henrik',
+			name: 'Axel',
 			title: 'Konsult',
-			image: <StyledImg fluid={data.henrik.childImageSharp.fluid} />,
-			linkedin:
-				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
-			github: 'https://github.com/henrik-westoo',
+			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/axel-elmarsson-453a93159/',
+			github: 'https://github.com/elmaxe',
 		},
 		{
 			name: 'Saga',
@@ -150,7 +170,7 @@ const ThePeople = () => {
 							<Span secondary>&nbsp;oss</Span>
 						</AnimatedH2>
 					</div>
-					<EmployeeCards employees={people} employeePage={false}/>
+					<EmployeeCards employees={people} employeePage={false} />
 
 					<HighlightButton className="mt-8 mx-auto">
 						<Link to="/kollegorna">
