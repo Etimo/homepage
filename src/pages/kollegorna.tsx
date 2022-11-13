@@ -37,6 +37,13 @@ const kollegorna = () => {
 					}
 				}
 			}
+			therese: file(relativePath: { eq: "someofus/new-images/therese2.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 			jeanette: file(relativePath: { eq: "someofus/new-images/jeanette.png" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
@@ -121,9 +128,7 @@ const kollegorna = () => {
 					}
 				}
 			}
-			johan: file(
-				relativePath: { eq: "someofus/new-images/johan2.jpg" }
-			) {
+			johan: file(relativePath: { eq: "someofus/new-images/johan2.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -144,14 +149,14 @@ const kollegorna = () => {
 					}
 				}
 			}
-			jassyr: file(relativePath: { eq: "jassyr2.jpg" }) {
+			jassyr: file(relativePath: { eq: "someofus/new-images/jassyr.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			colan: file(relativePath: { eq: "someofus/new-images/colan.jpg" }) {
+			colan: file(relativePath: { eq: "someofus/new-images/colis.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -170,11 +175,10 @@ const kollegorna = () => {
 			github: 'https://github.com/bjornkonrad',
 		},
 		{
-			name: 'Alfred',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.alfred.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/alfred-stenborg-20700b135/',
-			github: 'https://github.com/affeproffs',
+			name: 'Therese',
+			title: 'Försäljningschef',
+			image: <StyledImg fluid={data.therese.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/therese-dahlstr%C3%B6m/',
 		},
 		{
 			name: 'Philip',
@@ -246,16 +250,16 @@ const kollegorna = () => {
 			github: 'https://github.com/niclaslindstedt',
 		},
 		{
+			name: 'Colan',
+			title: 'Utvecklarens bästa vän',
+			image: <StyledImg fluid={data.colan.childImageSharp.fluid} />,
+		},
+		{
 			name: 'Lilleman',
 			title: 'Konsult',
 			image: <StyledImg fluid={data.lilleman.childImageSharp.fluid} />,
 			linkedin: 'https://www.linkedin.com/in/lillem4n/',
 			github: 'https://github.com/lille-etimo',
-		},
-		{
-			name: 'Colan',
-			title: 'Utvecklarens bästa vän',
-			image: <StyledImg fluid={data.colan.childImageSharp.fluid} />,
 		},
 		{
 			name: 'Saga',

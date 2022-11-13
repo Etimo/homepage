@@ -137,7 +137,7 @@ export default (props: Props) => {
 					{name}
 				</motion.h3>
 				<motion.span
-					className="m-auto mt-0 mb-0 text-sm md:text-lg px-6"
+					className="m-auto mt-0 mb-0 text-sm md:text-lg px-6 text-center"
 					variants={roleAnimation}
 				>
 					<P>{title}</P>

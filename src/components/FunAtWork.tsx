@@ -6,45 +6,25 @@ import tw from 'twin.macro';
 import FloatUp from '../animations/FloatUp';
 import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
-import H2 from '../elements/H2';
-import P from '../elements/P';
 import Span from '../elements/Span';
-import { sizes } from '../helpers';
-import { useViewportSize } from '../hooks';
-import EmployeeCard from './EmployeeCard';
-import { Employee } from './EmployeeCards';
+import EmployeeCards, { Employee } from './EmployeeCards';
 import Section from './Section';
 
 const StyledImg = styled(Img)`
 	${tw`max-w-sm h-full`};
 `;
 
-const SmallerH2 = styled(H2)`
-	${tw`text-xl mt-1 tracking-widest`};
-`;
-
-const SpacedP = styled(P)`
-	${tw`tracking-widest pb-2`};
-`;
-
 export default () => {
 	const data = useStaticQuery(graphql`
 		query {
-			daniel: file(relativePath: { eq: "funatwork/new/daniel.jpg" }) {
+			cloud: file(relativePath: { eq: "funatwork/new/danielochsaga.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
 					}
 				}
 			}
-			are: file(relativePath: { eq: "funatwork/new/are.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			bradspel: file(relativePath: { eq: "funatwork/new/bradspel.jpg" }) {
+			bradspel: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
@@ -65,7 +45,28 @@ export default () => {
 					}
 				}
 			}
-			vaxholm: file(relativePath: { eq: "funatwork/new/vaxholm.jpg" }) {
+			andre: file(relativePath: { eq: "funatwork/new/andre.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			pillows: file(relativePath: { eq: "funatwork/new/danielochlukas.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			rickard: file(relativePath: { eq: "funatwork/new/rickard.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			chess: file(relativePath: { eq: "funatwork/new/niclas.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
@@ -77,14 +78,14 @@ export default () => {
 
 	const cards: Employee[] = [
 		{
-			name: 'DANIEL',
-			title: 'Njuter i backen',
-			image: <StyledImg fluid={data.daniel.childImageSharp.fluid} />,
+			name: 'RICKARD',
+			title: 'På månen',
+			image: <StyledImg fluid={data.rickard.childImageSharp.fluid} />,
 		},
 		{
-			name: 'BJÖRN OCH JOHAN',
-			title: 'Samtalar i solen',
-			image: <StyledImg fluid={data.are.childImageSharp.fluid} />,
+			name: 'DANIEL & LUKAS',
+			title: 'Njuter i kuddhavet',
+			image: <StyledImg fluid={data.pillows.childImageSharp.fluid} />,
 		},
 		{
 			name: 'KOLLEGOR',
@@ -93,35 +94,39 @@ export default () => {
 		},
 		{
 			name: 'GÄNGET',
-			title: 'Morgan vinner brädspelskvällen',
+			title: 'Morgan vinner brädspelskvällen!',
 			image: <StyledImg fluid={data.bradspel.childImageSharp.fluid} />,
 		},
-
 		{
 			name: 'JASSYR',
 			title: 'Vidgar vyerna på Island',
 			image: <StyledImg fluid={data.jassyr.childImageSharp.fluid} />,
 		},
-
 		{
-			name: 'TEAMBUILDING',
-			title: 'Klurigt i Vaxholm',
-			image: <StyledImg fluid={data.vaxholm.childImageSharp.fluid} />,
+			name: 'NICLAS & ALFRED',
+			title: 'Schack matt',
+			image: <StyledImg fluid={data.chess.childImageSharp.fluid} />,
+		},
+		{
+			name: 'DANIEL & SAGA',
+			title: 'Laddar upp i molnet',
+			image: <StyledImg fluid={data.cloud.childImageSharp.fluid} />,
+		},
+		{
+			name: 'ANDRÈ',
+			title: 'Kaffepaus i glitterboxen',
+			image: <StyledImg fluid={data.andre.childImageSharp.fluid} />,
 		},
 	];
 
-	const [h, width] = useViewportSize();
-
-	/* 6:1 until sm then 3x2 until md then 2x3*/
-	/* banners up until lg, lg+ uses hover */
 	return (
 		<Section style={{ backgroundColor: 'white' }}>
-			<div className="container mx-auto xl:px-16 lg:h-full lg:overflow-hidden">
-				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 text-center lg:justify-center">
+			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
+				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>
-						<Caption>Kul</Caption>
+						<Caption className="text-center">Kul</Caption>
 					</FloatUp>
-					<div className="flex flex-row justify-center">
+					<div className="flex flex-row justify-center h-24">
 						<AnimatedH2 direction="left">
 							Kul <Span secondary>på</Span>
 						</AnimatedH2>
@@ -129,29 +134,7 @@ export default () => {
 							<Span secondary>&nbsp;jobbet</Span>
 						</AnimatedH2>
 					</div>
-					<div className="container">
-						<div className="inline-grid grid-cols-1 sm:grid-cols-2 md:grid-cols-custom mt-6 mx-4 sm:mx-8 xl:mx-20 gap-8 lg:self-auto overflow-hidden">
-							{width >= sizes().laptop &&
-								/* Hover effect */
-								cards.map((card) => <EmployeeCard {...card} key={card.name} />)}
-
-							{width < sizes().laptop &&
-								/* Banners */
-								cards.map((card) => {
-									return (
-										<FloatUp>
-											<div className="flex flex-col max-w-sm mx-auto">
-												{card.image}
-												<div className="bg-cyan px-3">
-													<SmallerH2>{card.name}</SmallerH2>
-													<SpacedP>{card.title}</SpacedP>
-												</div>
-											</div>
-										</FloatUp>
-									);
-								})}
-						</div>
-					</div>
+					<EmployeeCards employees={cards} employeePage={false} />
 				</div>
 			</div>
 		</Section>
