@@ -59,7 +59,7 @@ export default () => {
 					}
 				}
 			}
-			rickard: file(relativePath: { eq: "funatwork/new/rickard.jpg" }) {
+			rickard: file(relativePath: { eq: "funatwork/new/rickardny.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
