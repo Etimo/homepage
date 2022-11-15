@@ -96,6 +96,13 @@ const ThePeople = () => {
 					}
 				}
 			}
+			therese: file(relativePath: { eq: "someofus/new-images/therese2.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
@@ -108,11 +115,10 @@ const ThePeople = () => {
 			github: 'https://github.com/bjornkonrad',
 		},
 		{
-			name: 'Erik',
-			title: 'Partner',
-			image: <StyledImg fluid={data.erik.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/erik-malm-1343662/',
-			github: 'https://github.com/sirscratchalot',
+			name: 'Therese',
+			title: 'Försäljningschef',
+			image: <StyledImg fluid={data.therese.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/therese-dahlstr%C3%B6m/',
 		},
 		{
 			name: 'Jeanette',
