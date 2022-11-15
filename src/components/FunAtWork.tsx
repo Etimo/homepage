@@ -103,7 +103,7 @@ export default () => {
 			image: <StyledImg fluid={data.jassyr.childImageSharp.fluid} />,
 		},
 		{
-			name: 'NICLAS & ALFRED',
+			name: 'ALFRED & NICLAS',
 			title: 'Schack matt',
 			image: <StyledImg fluid={data.chess.childImageSharp.fluid} />,
 		},
