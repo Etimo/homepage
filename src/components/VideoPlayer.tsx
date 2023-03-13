@@ -26,20 +26,11 @@ type Props = {
 
 export default ({ children, headerSpace, ...props }: Props) => {
 	const [width] = useViewportSize();
-
 	const isMobile = () => width < sizes().laptop;
-
-	const getWidth = () => {
-		if (isMobile()) {
-			return width - 20;
-		} else {
-			return width - 200;
-		}
-	};
 
 	return (
 		<VideoContainer>
-			<VideoPlayer width={getWidth()} {...props}>
+			<VideoPlayer width={isMobile() ? width - 20 : width - 200} {...props}>
 				<iframe
 					style={{ aspectRatio: '16/9', width: '100%' }}
 					src="https://www.youtube-nocookie.com/embed/lvwHkwsdph4?cc_load_policy=1?modestbranding=1"
