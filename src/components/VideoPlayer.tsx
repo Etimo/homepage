@@ -4,7 +4,6 @@ import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 
 type StyleProps = {
-	height?: number;
 	width?: number;
 } & ThemeProps<DefaultTheme>;
 
