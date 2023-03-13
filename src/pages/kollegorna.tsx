@@ -8,6 +8,7 @@ import EmployeeCards from '../components/EmployeeCards';
 import Layout from '../components/Layout';
 import Img from 'gatsby-image';
 import tw from 'twin.macro';
+import VideoPlayer from '../components/VideoPlayer';
 
 const StyledImg = styled(Img)`
 	${tw`max-w-sm h-full`};
@@ -156,7 +157,7 @@ const kollegorna = () => {
 					}
 				}
 			}
-			colan: file(relativePath: { eq: "someofus/new-images/colis.jpg" }) {
+			klara: file(relativePath: { eq: "someofus/new-images/klara.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 500) {
 						...GatsbyImageSharpFluid
@@ -250,9 +251,11 @@ const kollegorna = () => {
 			github: 'https://github.com/niclaslindstedt',
 		},
 		{
-			name: 'Colan',
-			title: 'Utvecklarens bästa vän',
-			image: <StyledImg fluid={data.colan.childImageSharp.fluid} />,
+			name: 'Klara',
+			title: 'Konsult',
+			image: <StyledImg fluid={data.klara.childImageSharp.fluid} />,
+			linkedin: 'https://www.linkedin.com/in/klara-djurberg-889853127/',
+			github: 'https://github.com/klaradj',
 		},
 		{
 			name: 'Lilleman',
@@ -321,8 +324,10 @@ const kollegorna = () => {
 					</div>
 					<EmployeeCards employees={people} employeePage={true} />
 
+					<VideoPlayer />
+
 					<div className="mx-auto">
-						<Box mt={80} mb={100}>
+						<Box mb={100}>
 							<HighlightButton>
 								<Link to="/karriar">
 									<P>Vill du utveckla med oss?</P>
