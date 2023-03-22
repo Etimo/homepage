@@ -14,7 +14,7 @@ const VideoContainer = styled.section<StyleProps>`
 `;
 
 const VideoPlayer = styled.section<StyleProps>`
-	margin: 5rem 1rem 1rem 1rem;
+	margin: 5rem 1rem 1rem;
 	width: ${(props) => props.width}px;
 `;
 
