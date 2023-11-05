@@ -24,7 +24,7 @@ export default () => {
 					}
 				}
 			}
-			bradspel: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
+			boardgame: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
@@ -80,7 +80,7 @@ export default () => {
 					}
 				}
 			}
-			italienbro: file(relativePath: { eq: "funatwork/new/italien.JPG" }) {
+			dolceaqua: file(relativePath: { eq: "funatwork/new/italien.JPG" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
@@ -120,12 +120,12 @@ export default () => {
 		{
 			name: 'GÄNGET I ITALIEN',
 			title: 'På bron till Dolce Acqua',
-			image: <StyledImg fluid={data.italienbro.childImageSharp.fluid} />,
+			image: <StyledImg fluid={data.dolceaqua.childImageSharp.fluid} />,
 		},
 		{
 			name: 'GÄNGET',
 			title: 'På brädspelskväll',
-			image: <StyledImg fluid={data.bradspel.childImageSharp.fluid} />,
+			image: <StyledImg fluid={data.boardgame.childImageSharp.fluid} />,
 		},
 		{
 			name: 'ANDRÈ',
