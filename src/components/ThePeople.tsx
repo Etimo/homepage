@@ -1,4 +1,4 @@
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { Link } from 'gatsby';
 import tw from 'twin.macro';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
@@ -11,153 +11,68 @@ import EmployeeCards from './EmployeeCards';
 import Section from './Section';
 import { HighlightButton } from './Button';
 import { P } from '../elements';
+import useProfileImages from '../hooks/useProfileImages';
 
 const StyledImg = styled(Img)`
 	${tw`max-w-sm h-full`};
 `;
 
 const ThePeople = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			henrik: file(relativePath: { eq: "someofus/new-images/henrik.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			bjorn: file(relativePath: { eq: "someofus/new-images/bjorn.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			alfred: file(relativePath: { eq: "someofus/new-images/affe.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			jeanette: file(relativePath: { eq: "someofus/new-images/jeanette.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			lukas: file(relativePath: { eq: "someofus/new-images/lukas.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			rickard: file(relativePath: { eq: "someofus/new-images/rickard.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			saga: file(relativePath: { eq: "someofus/new-images/saga.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			joakim: file(relativePath: { eq: "someofus/new-images/joakim.png" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			niclas: file(relativePath: { eq: "someofus/new-images/niclas.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			erik: file(relativePath: { eq: "someofus/new-images/erik.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			axel: file(relativePath: { eq: "someofus/new-images/elmarsson.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			therese: file(relativePath: { eq: "someofus/new-images/therese2.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-		}
-	`);
+	const images = useProfileImages();
 
 	const people = [
 		{
 			name: 'Björn',
 			title: 'Konsult',
-			image: <StyledImg fluid={data.bjorn.childImageSharp.fluid} />,
+			image: <StyledImg fluid={images.bjorn} />,
 			linkedin: 'https://www.linkedin.com/in/bj%C3%B6rn-wahlberg-68b59020/',
 			github: 'https://github.com/bjornkonrad',
 		},
 		{
-			name: 'Therese',
-			title: 'Försäljningschef',
-			image: <StyledImg fluid={data.therese.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/therese-dahlstr%C3%B6m/',
-		},
-		{
 			name: 'Jeanette',
-			title: 'HR och sälj',
-			image: <StyledImg fluid={data.jeanette.childImageSharp.fluid} />,
+			title: 'VD',
+			image: <StyledImg fluid={images.jeanette} />,
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
-		},
-		{
-			name: 'Niclas',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.niclas.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/niclaslindstedt/',
-			github: 'https://github.com/niclaslindstedt',
-		},
-		{
-			name: 'Axel',
-			title: 'Konsult',
-			image: <StyledImg fluid={data.axel.childImageSharp.fluid} />,
-			linkedin: 'https://www.linkedin.com/in/axel-elmarsson-453a93159/',
-			github: 'https://github.com/elmaxe',
 		},
 		{
 			name: 'Saga',
 			title: 'Konsult',
-			image: <StyledImg fluid={data.saga.childImageSharp.fluid} />,
+			image: <StyledImg fluid={images.saga} />,
 			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
 			github: 'https://github.com/hejsaga',
 		},
 		{
 			name: 'Joakim',
 			title: 'Grundare',
-			image: <StyledImg fluid={data.joakim.childImageSharp.fluid} />,
+			image: <StyledImg fluid={images.joakim} />,
 			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
 			github: 'https://github.com/joakim-olesen',
 		},
 		{
+			name: 'Malin W',
+			title: 'Konsult',
+			image: <StyledImg fluid={images.malinw} />,
+			linkedin: 'https://www.linkedin.com/in/malin-wadholm/',
+			github: 'https://github.com/wadholm',
+		},
+		{
+			name: 'Morgan',
+			title: 'Konsult',
+			image: <StyledImg fluid={images.morgan} />,
+			linkedin: 'https://www.linkedin.com/in/morgan-cromell/',
+			github: 'https://github.com/morgan-cromell',
+		},
+		{
+			name: 'Philip',
+			title: 'Konsult',
+			image: <StyledImg fluid={images.philip} />,
+			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
+			github: 'https://github.com/ForsbergPhilip',
+		},
+		{
 			name: 'Lukas',
 			title: 'Konsult',
-			image: <StyledImg fluid={data.lukas.childImageSharp.fluid} />,
+			image: <StyledImg fluid={images.lukas} />,
 			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
 			github: 'https://github.com/ljukas',
 		},
