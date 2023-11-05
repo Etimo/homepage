@@ -20,11 +20,10 @@ export type Employee = {
 
 export default (props: Props) => {
 	const { employees, employeePage } = props;
-	const grid = `grid grid-flow-col grid-cols-2 ${
-		employeePage ? 'grid-rows-10' : 'grid-rows-4'
-	} gap-4 mt-6 mx-4 overflow-hidden md:grid-cols-4 ${
-		employeePage ? 'md:grid-rows-5' : 'md:grid-rows-2'
-	} md:gap-6`;
+
+	const grid = `grid grid-flow-row gap-4 mt-6 mx-4 overflow-hidden grid-cols-2 md:grid-cols-4 md:gap-6 ${
+		employeePage ? 'md:grid-rows-4' : 'md:grid-rows-2'
+	}`;
 
 	let [height, width] = useViewportSize();
 
@@ -35,10 +34,14 @@ export default (props: Props) => {
 		height < sizes().minimumHeight
 			? sizes().minimumHeight
 			: height - getMargins();
-	const gridStyle = { width: availableHeight * 2.2, maxWidth: 1024 - 32 };
+	const laptopGridStyle = { width: availableHeight * 2.2, maxWidth: 1024 - 32 };
+	const mobileGridStyle = employeePage ? {} : { height: availableHeight * 1.5 };
 
 	return (
-		<div className={grid} style={isLaptopOrGreater() ? gridStyle : {}}>
+		<div
+			className={grid}
+			style={isLaptopOrGreater() ? laptopGridStyle : mobileGridStyle}
+		>
 			{employees.map((employee) => (
 				<EmployeeCard {...employee} key={employee.name} />
 			))}
