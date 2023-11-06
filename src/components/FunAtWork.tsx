@@ -113,7 +113,7 @@ export default () => {
 		},
 
 		{
-			name: 'GÄNGET PÅ PILGRIMSLEDEN',
+			name: 'PÅ PILGRIMSLEDEN',
 			title: 'På vandring i Italien',
 			image: <StyledImg fluid={data.italy.childImageSharp.fluid} />,
 		},
