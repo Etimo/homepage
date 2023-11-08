@@ -63,7 +63,7 @@ const kollegorna = () => {
 		},
 		{
 			name: 'Johan',
-			title: 'Sälj',
+			title: 'Medgrundare',
 			image: <StyledImg fluid={images.johan} />,
 			linkedin: 'https://www.linkedin.com/in/johan-hazelius-910b281a/',
 			github: 'https://github.com/JohanHazelius',
