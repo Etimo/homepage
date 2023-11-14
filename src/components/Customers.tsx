@@ -7,8 +7,20 @@ import { FloatInDir, FloatUp } from '../animations';
 import { AnimatedH2, Caption, P, Span } from '../elements';
 import { HighlightButton } from './Button';
 import Section from './Section';
+import { FloatDirection } from '../animations/FloatInDir';
 
-const generateCustomers = () => {
+export type CustomerType = {
+	name: string;
+	url: string;
+	image: JSX.Element;
+	borders: {
+		xs: string;
+		sm: string;
+	};
+	direction: FloatDirection;
+};
+
+const generateCustomers = (): CustomerType[] => {
 	const data = useStaticQuery(graphql`
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
@@ -162,7 +174,7 @@ type CustomersProps = {
 			xs: string;
 			sm: string;
 		};
-		direction: string;
+		direction: FloatDirection;
 	}[];
 	link?: boolean;
 	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;

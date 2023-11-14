@@ -1,9 +1,10 @@
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import React from 'react';
 
 type Props = {
 	children: React.ReactNode;
 	className?: string;
+	variants?: Variants;
 };
 
 export default ({ children, className, ...props }: Props) => {

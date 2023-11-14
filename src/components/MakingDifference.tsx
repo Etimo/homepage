@@ -15,7 +15,7 @@ import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
 import Img from 'gatsby-image';
-
+import { FloatDirection } from '../animations/FloatInDir';
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -45,97 +45,102 @@ const gridVar = {
 	},
 };
 
-const generateDontations = () => {
+type DonationType = {
+	name: string;
+	url: string;
+	image: JSX.Element;
+	direction: FloatDirection;
+	borders: {
+		xs: string;
+		sm: string;
+	};
+};
+
+const generateDontations = (): DonationType[] => {
 	const data = useStaticQuery(graphql`
-	query {
-		raddaBarnen: file(
-			relativePath: { eq: "donations/raddabarnen.png" }
-		) {
-			childImageSharp {
-				fluid(maxWidth: 370, quality: 90) {
-					...GatsbyImageSharpFluid_tracedSVG
+		query {
+			raddaBarnen: file(relativePath: { eq: "donations/raddabarnen.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
 				}
 			}
-		}, 
-		handIHand: file(
-			relativePath: { eq: "donations/handihand.png" }
-		) {
-			childImageSharp {
-				fluid(maxWidth: 370, quality: 90) {
-					...GatsbyImageSharpFluid_tracedSVG
+			handIHand: file(relativePath: { eq: "donations/handihand.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
 				}
 			}
-		}, 
-		lakareUtanGranser: file(
-			relativePath: { eq: "donations/lakareutangranser.png" }
-		) {
-			childImageSharp {
-				fluid(maxWidth: 370, quality: 90) {
-					...GatsbyImageSharpFluid_tracedSVG
+			lakareUtanGranser: file(
+				relativePath: { eq: "donations/lakareutangranser.png" }
+			) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
 				}
 			}
-		}
-		ukraine: file(
-			relativePath: { eq: "donations/ukraineround.png" }
-		) {
-			childImageSharp {
-				fluid(maxWidth: 370, quality: 90) {
-					...GatsbyImageSharpFluid_tracedSVG
+			ukraine: file(relativePath: { eq: "donations/ukraineround.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid_tracedSVG
+					}
 				}
 			}
 		}
-		
-	}
-`);
-return [
-	{
-		name: 'raddaBarnen',
-		url: 'https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html',
-		image: <Img fluid={data.raddaBarnen.childImageSharp.fluid} />,
-		direction: 'down',
-		borders: {
-			xs: 'border-r border-b',
-			sm: '',
+	`);
+	return [
+		{
+			name: 'raddaBarnen',
+			url:
+				'https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html',
+			image: <Img fluid={data.raddaBarnen.childImageSharp.fluid} />,
+			direction: 'down',
+			borders: {
+				xs: 'border-r border-b',
+				sm: '',
+			},
 		},
-	},
-	{
-		name: 'handIHand',
-		url: 'https://www.handinhandsweden.se/',
-		image: <Img fluid={data.handIHand.childImageSharp.fluid} />,
-		direction: 'down',
-		borders: {
-			xs: 'border-b',
-			sm: 'lg:border-r',
+		{
+			name: 'handIHand',
+			url: 'https://www.handinhandsweden.se/',
+			image: <Img fluid={data.handIHand.childImageSharp.fluid} />,
+			direction: 'down',
+			borders: {
+				xs: 'border-b',
+				sm: 'lg:border-r',
+			},
 		},
-	},
-	{
-		name: 'lakareUtanGranser',
-		url: 'https://lakareutangranser.se/',
-		image: <Img fluid={data.lakareUtanGranser.childImageSharp.fluid} />,
-		direction: 'down',
-		borders: {
-			xs: 'border-r border-b',
-			sm: '',
+		{
+			name: 'lakareUtanGranser',
+			url: 'https://lakareutangranser.se/',
+			image: <Img fluid={data.lakareUtanGranser.childImageSharp.fluid} />,
+			direction: 'down',
+			borders: {
+				xs: 'border-r border-b',
+				sm: '',
+			},
 		},
-	},
-	{
-		name: 'ukraine',
-		url: 'https://supportukrainenow.org/',
-		image: <Img fluid={data.ukraine.childImageSharp.fluid} />,
-		direction: 'down',
-		borders: {
-			xs: 'border-b',
-			sm: '',
+		{
+			name: 'ukraine',
+			url: 'https://supportukrainenow.org/',
+			image: <Img fluid={data.ukraine.childImageSharp.fluid} />,
+			direction: 'down',
+			borders: {
+				xs: 'border-b',
+				sm: '',
+			},
 		},
-	},
-];
-}
+	];
+};
 
 type CustomersProps = {
 	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
 };
 
-export default ({imgDiv}: CustomersProps) => {
+export default ({ imgDiv }: CustomersProps) => {
 	const [ref, inView] = useInView();
 	const donations = generateDontations();
 
@@ -188,7 +193,9 @@ export default ({imgDiv}: CustomersProps) => {
 					</motion.div>
 
 					<FloatUp>
-                    	<H5 className="text-center mt-10 mx-10 text-gray-800">Några organisationer som Etimo har donerat till genom åren:</H5>
+						<H5 className="text-center mt-10 mx-10 text-gray-800">
+							Några organisationer som Etimo har donerat till genom åren:
+						</H5>
 					</FloatUp>
 
 					<div className="flex justify-center">

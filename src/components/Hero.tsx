@@ -32,16 +32,11 @@ const items = [
 ];
 
 const Splash = () => {
-	const [h, width] = useViewportSize();
-
+	//TODO: Save 200 px in theme? //Klara
 	return (
 		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
-				<FloatInDir
-					className="flex items-end"
-					style={{ height: '200px' }}
-					direction="down"
-				>
+				<FloatInDir className="flex items-end h-[200px]" direction="down">
 					<HeroTitle>Etimo</HeroTitle>
 				</FloatInDir>
 				<FloatUp>

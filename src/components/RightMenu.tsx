@@ -129,11 +129,11 @@ const RightMenu = () => {
 						>
 							<div className="flex flex-col text-white h-full">
 								{links.map((link) => {
+									// TODO: save min-h-[36px] in a tailwind-config?
 									return (
 										<CyanHover
 											key={link.name}
-											className="mb-6 md:mb-8 mr-auto px-1"
-											style={{minHeight: 36}}
+											className="mb-6 md:mb-8 mr-auto px-1 min-h-[36px]"
 										>
 											{link.local ? (
 												<Link to={link.url}>
