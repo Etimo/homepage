@@ -87,6 +87,20 @@ export default () => {
 					}
 				}
 			}
+			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
@@ -97,9 +111,9 @@ export default () => {
 			image: <StyledImg fluid={data.moon.childImageSharp.fluid} />,
 		},
 		{
-			name: 'DANIEL & LUKAS',
-			title: 'Njuter i kuddhavet',
-			image: <StyledImg fluid={data.pillows.childImageSharp.fluid} />,
+			name: 'JOHAN',
+			title: 'Njuter av lugnet',
+			image: <StyledImg fluid={data.rest.childImageSharp.fluid} />,
 		},
 		{
 			name: 'KOLLEGOR',
@@ -111,16 +125,15 @@ export default () => {
 			title: 'Laddar upp i molnet',
 			image: <StyledImg fluid={data.cloud.childImageSharp.fluid} />,
 		},
-
 		{
-			name: 'PÅ PILGRIMSLEDEN',
-			title: 'På vandring i Italien',
-			image: <StyledImg fluid={data.italy.childImageSharp.fluid} />,
+			name: 'JEANETTE',
+			title: 'DJ:ar i rinken',
+			image: <StyledImg fluid={data.disco.childImageSharp.fluid} />,
 		},
 		{
-			name: 'GÄNGET I ITALIEN',
-			title: 'På bron till Dolce Acqua',
-			image: <StyledImg fluid={data.dolceaqua.childImageSharp.fluid} />,
+			name: 'DANIEL & LUKAS',
+			title: 'Njuter i kuddhavet',
+			image: <StyledImg fluid={data.pillows.childImageSharp.fluid} />,
 		},
 		{
 			name: 'GÄNGET',
