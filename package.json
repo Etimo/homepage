@@ -75,5 +75,8 @@
 	},
 	"bugs": {
 		"url": "https://github.com/ljukas/etimo.se/issues"
+	},
+	"resolutions": {
+		"sharp": "^0.29.0"
 	}
 }

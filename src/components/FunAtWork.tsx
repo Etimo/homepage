@@ -24,7 +24,7 @@ export default () => {
 					}
 				}
 			}
-			bradspel: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
+			boardgame: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
@@ -66,7 +66,35 @@ export default () => {
 					}
 				}
 			}
-			chess: file(relativePath: { eq: "funatwork/new/niclas.jpg" }) {
+			italy: file(relativePath: { eq: "funatwork/new/italienvandring.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			moon: file(relativePath: { eq: "funatwork/new/joakimochbjorn.jpeg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			dolceaqua: file(relativePath: { eq: "funatwork/new/italien.JPG" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 370, quality: 90) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
 				childImageSharp {
 					fluid(maxWidth: 370, quality: 90) {
 						...GatsbyImageSharpFluid
@@ -78,14 +106,14 @@ export default () => {
 
 	const cards: Employee[] = [
 		{
-			name: 'RICKARD',
+			name: 'BJÖRN & JOAKIM',
 			title: 'På månen',
-			image: <StyledImg fluid={data.rickard.childImageSharp.fluid} />,
+			image: <StyledImg fluid={data.moon.childImageSharp.fluid} />,
 		},
 		{
-			name: 'DANIEL & LUKAS',
-			title: 'Njuter i kuddhavet',
-			image: <StyledImg fluid={data.pillows.childImageSharp.fluid} />,
+			name: 'JOHAN',
+			title: 'Njuter av lugnet',
+			image: <StyledImg fluid={data.rest.childImageSharp.fluid} />,
 		},
 		{
 			name: 'KOLLEGOR',
@@ -93,24 +121,24 @@ export default () => {
 			image: <StyledImg fluid={data.afterski.childImageSharp.fluid} />,
 		},
 		{
-			name: 'GÄNGET',
-			title: 'Morgan vinner brädspelskvällen!',
-			image: <StyledImg fluid={data.bradspel.childImageSharp.fluid} />,
-		},
-		{
-			name: 'JASSYR',
-			title: 'Vidgar vyerna på Island',
-			image: <StyledImg fluid={data.jassyr.childImageSharp.fluid} />,
-		},
-		{
-			name: 'ALFRED & NICLAS',
-			title: 'Schack matt',
-			image: <StyledImg fluid={data.chess.childImageSharp.fluid} />,
-		},
-		{
 			name: 'DANIEL & SAGA',
 			title: 'Laddar upp i molnet',
 			image: <StyledImg fluid={data.cloud.childImageSharp.fluid} />,
+		},
+		{
+			name: 'JEANETTE',
+			title: 'DJ:ar i rinken',
+			image: <StyledImg fluid={data.disco.childImageSharp.fluid} />,
+		},
+		{
+			name: 'DANIEL & LUKAS',
+			title: 'Njuter i kuddhavet',
+			image: <StyledImg fluid={data.pillows.childImageSharp.fluid} />,
+		},
+		{
+			name: 'GÄNGET',
+			title: 'På brädspelskväll',
+			image: <StyledImg fluid={data.boardgame.childImageSharp.fluid} />,
 		},
 		{
 			name: 'ANDRÈ',

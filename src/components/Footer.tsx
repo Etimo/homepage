@@ -47,7 +47,7 @@ const InfoCaption = styled(Caption)`
 `;
 
 const contactItems = [
-	{ title: 'Telefon', description: '076 - 213 85 97', link: 'tel:0762138597' },
+	{ title: 'Telefon', description: '076 - 021 31 50', link: 'tel:0760213150' },
 	{
 		title: 'E-post',
 		description: 'kontakt@etimo.se',
