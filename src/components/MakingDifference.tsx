@@ -1,5 +1,5 @@
-import styled, { DefaultTheme, StyledComponent } from 'styled-components';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
 import { FloatInDir } from '../animations';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
@@ -14,7 +14,7 @@ import Caption from '../elements/Caption';
 import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { FloatDirection } from '../animations/FloatInDir';
 
 const customerTexts = [
@@ -61,32 +61,24 @@ const generateDontations = (): DonationType[] => {
 		query {
 			raddaBarnen: file(relativePath: { eq: "donations/raddabarnen.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			handIHand: file(relativePath: { eq: "donations/handihand.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			lakareUtanGranser: file(
 				relativePath: { eq: "donations/lakareutangranser.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			ukraine: file(relativePath: { eq: "donations/ukraineround.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 		}
@@ -94,9 +86,13 @@ const generateDontations = (): DonationType[] => {
 	return [
 		{
 			name: 'raddaBarnen',
-			url:
-				'https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html',
-			image: <Img fluid={data.raddaBarnen.childImageSharp.fluid} />,
+			url: 'https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html',
+			image: (
+				<GatsbyImage
+					image={data.raddaBarnen.childImageSharp.gatsbyImageData}
+					alt="Rädda barnens logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-r border-b',
@@ -106,7 +102,12 @@ const generateDontations = (): DonationType[] => {
 		{
 			name: 'handIHand',
 			url: 'https://www.handinhandsweden.se/',
-			image: <Img fluid={data.handIHand.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.handIHand.childImageSharp.gatsbyImageData}
+					alt="HandIHand:s logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-b',
@@ -116,7 +117,12 @@ const generateDontations = (): DonationType[] => {
 		{
 			name: 'lakareUtanGranser',
 			url: 'https://lakareutangranser.se/',
-			image: <Img fluid={data.lakareUtanGranser.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.lakareUtanGranser.childImageSharp.gatsbyImageData}
+					alt="Läkare utan gränsers logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-r border-b',
@@ -126,7 +132,12 @@ const generateDontations = (): DonationType[] => {
 		{
 			name: 'ukraine',
 			url: 'https://supportukrainenow.org/',
-			image: <Img fluid={data.ukraine.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.ukraine.childImageSharp.gatsbyImageData}
+					alt="Support Ukraine now:s logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-b',
@@ -137,7 +148,7 @@ const generateDontations = (): DonationType[] => {
 };
 
 type CustomersProps = {
-	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
+	imgDiv?: React.FC;
 };
 
 export default ({ imgDiv }: CustomersProps) => {

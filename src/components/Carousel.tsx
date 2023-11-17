@@ -38,7 +38,7 @@ const Carousel = ({ items }: Props) => {
 	useInterval(() => setPage((page + 1) % items.length), 12000);
 
 	return (
-		<AnimatePresence exitBeforeEnter initial={false}>
+		<AnimatePresence mode="wait" initial={false}>
 			<Item
 				key={page}
 				variants={variants}

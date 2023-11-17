@@ -1,6 +1,10 @@
 const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
+	content: [
+		'./src/pages/**/*.{js,jsx,ts,tsx}',
+		'./src/components/**/*.{js,jsx,ts,tsx}',
+	],
 	theme: {
 		extend: {
 			fontFamily: {
@@ -21,9 +25,9 @@ module.exports = {
 				small: '13px',
 			},
 			spacing: {
-				'95': '95%',
+				95: '95%',
 				'3/4': '75%',
-				'125': '125%',
+				125: '125%',
 				'15p': '15px',
 				'60p': '60px',
 				'50p': '50px',
@@ -68,8 +72,8 @@ module.exports = {
 				custom: 'repeat(3, minmax(0, 260px))',
 			},
 			gridTemplateRows: {
-				'8': 'repeat(8, minmax(0, 1fr))',
-				'10': 'repeat(10, minmax(0, 1fr))',
+				8: 'repeat(8, minmax(0, 1fr))',
+				10: 'repeat(10, minmax(0, 1fr))',
 			},
 		},
 	},

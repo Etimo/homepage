@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -10,7 +10,7 @@ import Span from '../elements/Span';
 import EmployeeCards, { Employee } from './EmployeeCards';
 import Section from './Section';
 
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
 `;
 
@@ -19,72 +19,52 @@ export default () => {
 		query {
 			cloud: file(relativePath: { eq: "funatwork/new/danielochsaga.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			boardgame: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			afterski: file(relativePath: { eq: "funatwork/new/afterski.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			jassyr: file(relativePath: { eq: "funatwork/new/jassyr.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			andre: file(relativePath: { eq: "funatwork/new/andre.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			pillows: file(relativePath: { eq: "funatwork/new/danielochlukas.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			rickard: file(relativePath: { eq: "funatwork/new/rickardny.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			italy: file(relativePath: { eq: "funatwork/new/italienvandring.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			moon: file(relativePath: { eq: "funatwork/new/joakimochbjorn.jpeg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			dolceaqua: file(relativePath: { eq: "funatwork/new/italien.JPG" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 		}
@@ -94,43 +74,83 @@ export default () => {
 		{
 			name: 'BJÖRN & JOAKIM',
 			title: 'På månen',
-			image: <StyledImg fluid={data.moon.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.moon.childImageSharp.gatsbyImageData}
+					alt="På månen"
+				/>
+			),
 		},
 		{
 			name: 'DANIEL & LUKAS',
 			title: 'Njuter i kuddhavet',
-			image: <StyledImg fluid={data.pillows.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.pillows.childImageSharp.gatsbyImageData}
+					alt="Daniel och Lukas njuter i kuddhavet"
+				/>
+			),
 		},
 		{
 			name: 'KOLLEGOR',
 			title: 'På pit stop i Åre',
-			image: <StyledImg fluid={data.afterski.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.afterski.childImageSharp.gatsbyImageData}
+					alt="Kollegor på pit-stop i Åre"
+				/>
+			),
 		},
 		{
 			name: 'DANIEL & SAGA',
 			title: 'Laddar upp i molnet',
-			image: <StyledImg fluid={data.cloud.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.cloud.childImageSharp.gatsbyImageData}
+					alt="Daniel och Saga laddar upp i molnet"
+				/>
+			),
 		},
 
 		{
 			name: 'PÅ PILGRIMSLEDEN',
 			title: 'På vandring i Italien',
-			image: <StyledImg fluid={data.italy.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.italy.childImageSharp.gatsbyImageData}
+					alt="På vandring i Italien"
+				/>
+			),
 		},
 		{
 			name: 'GÄNGET I ITALIEN',
 			title: 'På bron till Dolce Acqua',
-			image: <StyledImg fluid={data.dolceaqua.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.dolceaqua.childImageSharp.gatsbyImageData}
+					alt="På bron till Dolce Acqua"
+				/>
+			),
 		},
 		{
 			name: 'GÄNGET',
 			title: 'På brädspelskväll',
-			image: <StyledImg fluid={data.boardgame.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.boardgame.childImageSharp.gatsbyImageData}
+					alt="Gänget på brädspelskväll"
+				/>
+			),
 		},
 		{
 			name: 'ANDRÈ',
 			title: 'Kaffepaus i glitterboxen',
-			image: <StyledImg fluid={data.andre.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.andre.childImageSharp.gatsbyImageData}
+					alt="Kaffepaus i glitterboxen"
+				/>
+			),
 		},
 	];
 

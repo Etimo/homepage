@@ -1,9 +1,9 @@
 import { motion, useAnimation } from 'framer-motion';
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
-import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import tw from 'twin.macro';
+import BlurIn from '../animations/variants/BlurIn';
 
 const StyledDiv = styled.div`
 	margin: auto 0;
@@ -20,27 +20,21 @@ const HeaderLogo = () => {
 		query {
 			placeholderImage: file(relativePath: { eq: "etimo-logo.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 200) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 200, quality: 90)
 				}
 			}
 		}
 	`);
 
-	const controls = useAnimation()
-
-	function useEffect() {
-		controls.start(i => ({
-		  opacity: 1
-		}))
-	}
-
+	//TODO: fade in logo, before migration to gatsby-plugin-image fadein was set to true. Klara. 2023-11-15
 	return (
 		<StyledDiv>
 			<Link to="/">
-				<motion.div initial={{ opacity: 0 }} animate={controls}>
-					<Img fadeIn fluid={data.placeholderImage.childImageSharp.fluid} onLoad={useEffect} />
+				<motion.div initial="hidden">
+					<GatsbyImage
+						image={data.placeholderImage.childImageSharp.gatsbyImageData}
+						alt="Etimo logo"
+					/>
 				</motion.div>
 			</Link>
 		</StyledDiv>

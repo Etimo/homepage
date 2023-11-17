@@ -15,6 +15,7 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
+	// TODO: remove unused code
 	const data = useStaticQuery(graphql`
 		query SiteTitleQuery {
 			site {

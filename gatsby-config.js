@@ -26,8 +26,6 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
 		{
 			// TODO: Figure out exactly what this does
 			resolve: `gatsby-plugin-manifest`,
@@ -70,6 +68,9 @@ module.exports = {
 		},
 		`gatsby-plugin-netlify-cms`,
 		'gatsby-plugin-ts-checker',
+		`gatsby-plugin-image`,
+		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`,
 		// ! Add gatsby-plugin-google-analytics
 		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
 	],

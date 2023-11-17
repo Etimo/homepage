@@ -6,21 +6,13 @@ import Box, { BoxProps } from '../elements/Box';
 
 type FadeInDirection = 'left' | 'right';
 
-type StyleProps = {
-	full?: boolean;
-};
-
 type Props = {
 	children: React.ReactNode;
 	direction: FadeInDirection;
-} & StyleProps;
+};
+// const MotionBox = motion(Box, { forwardMotionProps: true });
 
-const MotionBox = motion.custom(styled(Box)<StyleProps>`
-	height: ${({ full }) => full && '100%'};
-	width: ${({ full }) => full && '100%'};
-`);
-
-export default ({ full, children, direction, ...props }: Props & BoxProps) => {
+export default ({ children, direction, ...props }: Props & BoxProps) => {
 	const [entered, setEntered] = useState(false);
 	const [ref, inView] = useInView();
 	const xDir = direction === 'left' ? '-20%' : '20%';
@@ -32,8 +24,7 @@ export default ({ full, children, direction, ...props }: Props & BoxProps) => {
 	}, [inView, entered]);
 
 	return (
-		<MotionBox
-			full={full}
+		<motion.div
 			{...props}
 			ref={ref}
 			animate={entered ? 'enter' : 'exit'}
@@ -47,6 +38,6 @@ export default ({ full, children, direction, ...props }: Props & BoxProps) => {
 			}}
 		>
 			{children}
-		</MotionBox>
+		</motion.div>
 	);
 };

@@ -1,7 +1,5 @@
 import { Link } from 'gatsby';
-import tw from 'twin.macro';
-import styled from 'styled-components';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import FloatUp from '../animations/FloatUp';
 import AnimatedH2 from '../elements/AnimatedH2';
@@ -13,9 +11,7 @@ import { HighlightButton } from './Button';
 import { P } from '../elements';
 import useProfileImages from '../hooks/useProfileImages';
 
-const StyledImg = styled(Img)`
-	${tw`max-w-sm h-full`};
-`;
+const imageClassName = 'max-w-sm h-full';
 
 const ThePeople = () => {
 	const images = useProfileImages();
@@ -24,55 +20,61 @@ const ThePeople = () => {
 		{
 			name: 'Björn',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.bjorn} />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.bjorn}
+					alt="Björn"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/bj%C3%B6rn-wahlberg-68b59020/',
 			github: 'https://github.com/bjornkonrad',
 		},
 		{
 			name: 'Jeanette',
 			title: 'VD',
-			image: <StyledImg fluid={images.jeanette} />,
+			image: <GatsbyImage image={images.jeanette} alt="Jeanette" />,
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
 		{
 			name: 'Saga',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.saga} />,
+			image: <GatsbyImage image={images.saga} alt="Saga" />,
 			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
 			github: 'https://github.com/hejsaga',
 		},
 		{
 			name: 'Joakim',
 			title: 'Grundare',
-			image: <StyledImg fluid={images.joakim} />,
+			image: <GatsbyImage image={images.joakim} alt="Joakim" />,
 			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
 			github: 'https://github.com/joakim-olesen',
 		},
 		{
 			name: 'Malin W',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.malinw} />,
+			image: <GatsbyImage image={images.malinw} alt="Malin W" />,
 			linkedin: 'https://www.linkedin.com/in/malin-wadholm/',
 			github: 'https://github.com/wadholm',
 		},
 		{
 			name: 'Morgan',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.morgan} />,
+			image: <GatsbyImage image={images.morgan} alt="Morgan" />,
 			linkedin: 'https://www.linkedin.com/in/morgan-cromell/',
 			github: 'https://github.com/morgan-cromell',
 		},
 		{
 			name: 'Philip',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.philip} />,
+			image: <GatsbyImage image={images.philip} alt="Morgan" />,
 			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
 			github: 'https://github.com/ForsbergPhilip',
 		},
 		{
 			name: 'Lukas',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.lukas} />,
+			image: <GatsbyImage image={images.lukas} alt="Lukas" />,
 			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
 			github: 'https://github.com/ljukas',
 		},

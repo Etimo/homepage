@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 
 /*
@@ -13,20 +13,25 @@ import React from 'react';
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
+//TODO: ta bort? Verkar inte användas någonstans... Klara. 2023-11-15
+
 const Image = () => {
 	const data = useStaticQuery(graphql`
 		query {
 			placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 300) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 300)
 				}
 			}
 		}
 	`);
 
-	return <Img fluid={data.placeholderImage.childImageSharp.fluid} />;
+	return (
+		<GatsbyImage
+			image={data.placeholderImage.childImageSharp.gatsbyImageData}
+			alt=""
+		/>
+	);
 };
 
 export default Image;

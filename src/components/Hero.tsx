@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
-import { useViewportSize } from '../hooks';
 import Carousel from './Carousel';
 import Section from './Section';
 
@@ -32,12 +31,11 @@ const items = [
 ];
 
 const Splash = () => {
-	//TODO: Save 200 px in theme? //Klara
 	return (
 		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
 				<FloatInDir className="flex items-end h-[200px]" direction="down">
-					<HeroTitle>Etimo</HeroTitle>
+					<HeroTitle className="overflow-hidden">Etimo</HeroTitle>
 				</FloatInDir>
 				<FloatUp>
 					<HeroContent>

@@ -6,12 +6,12 @@ import { FloatUp } from '../animations';
 import styled from 'styled-components';
 import EmployeeCards from '../components/EmployeeCards';
 import Layout from '../components/Layout';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 import VideoPlayer from '../components/VideoPlayer';
 import { useProfileImages } from '../hooks/useProfileImages';
 
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
 `;
 
@@ -22,84 +22,84 @@ const kollegorna = () => {
 		{
 			name: 'Björn',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.bjorn} />,
+			image: <StyledImg image={images.bjorn} alt="Björn" />,
 			linkedin: 'https://www.linkedin.com/in/bj%C3%B6rn-wahlberg-68b59020/',
 			github: 'https://github.com/bjornkonrad',
 		},
 		{
 			name: 'Jeanette',
 			title: 'VD',
-			image: <StyledImg fluid={images.jeanette} />,
+			image: <StyledImg image={images.jeanette} alt="Jeanette" />,
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
 
 		{
 			name: 'Erik',
 			title: 'Partner',
-			image: <StyledImg fluid={images.erik} />,
+			image: <StyledImg image={images.erik} alt="Erik" />,
 			linkedin: 'https://www.linkedin.com/in/erik-malm-1343662/',
 			github: 'https://github.com/sirscratchalot',
 		},
 		{
 			name: 'Joakim',
 			title: 'Grundare',
-			image: <StyledImg fluid={images.joakim} />,
+			image: <StyledImg image={images.joakim} alt="Joakim" />,
 			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
 			github: 'https://github.com/joakim-olesen',
 		},
 		{
 			name: 'Morgan',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.morgan} />,
+			image: <StyledImg image={images.morgan} alt="Morgan" />,
 			linkedin: 'https://www.linkedin.com/in/morgan-cromell/',
 			github: 'https://github.com/morgan-cromell',
 		},
 		{
 			name: 'Malin W',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.malinw} />,
+			image: <StyledImg image={images.malinw} alt="Malin W" />,
 			linkedin: 'https://www.linkedin.com/in/malin-wadholm/',
 			github: 'https://github.com/wadholm',
 		},
 		{
 			name: 'Johan',
 			title: 'Medgrundare',
-			image: <StyledImg fluid={images.johan} />,
+			image: <StyledImg image={images.johan} alt="Johan" />,
 			linkedin: 'https://www.linkedin.com/in/johan-hazelius-910b281a/',
 			github: 'https://github.com/JohanHazelius',
 		},
 		{
 			name: 'Lukas',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.lukas} />,
+			image: <StyledImg image={images.lukas} alt="Lukas" />,
 			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
 			github: 'https://github.com/ljukas',
 		},
 		{
 			name: 'Philip',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.philip} />,
+			image: <StyledImg image={images.philip} alt="Philip" />,
 			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
 			github: 'https://github.com/ForsbergPhilip',
 		},
 		{
 			name: 'André',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.andre} />,
+			image: <StyledImg image={images.andre} alt="André" />,
 			linkedin: 'https://www.linkedin.com/in/andr%C3%A9-hansson-5b6418128/',
 			github: 'https://github.com/H4zze',
 		},
 		{
 			name: 'Klara',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.klara} />,
+			image: <StyledImg image={images.klara} alt="Klara" />,
 			linkedin: 'https://www.linkedin.com/in/klara-djurberg-889853127/',
 			github: 'https://github.com/klaradj',
 		},
 		{
 			name: 'Henrik',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.henrik} />,
+			image: <StyledImg image={images.henrik} alt="Henrik" />,
 			linkedin:
 				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
 			github: 'https://github.com/henrik-westoo',
@@ -107,26 +107,26 @@ const kollegorna = () => {
 		{
 			name: 'Saga',
 			title: 'Konsult',
-			image: <StyledImg fluid={images.saga} />,
+			image: <StyledImg image={images.saga} alt="Saga" />,
 			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
 			github: 'https://github.com/hejsaga',
 		},
 		{
 			name: 'Daniel',
 			title: 'Partner',
-			image: <StyledImg fluid={images.daniel} />,
+			image: <StyledImg image={images.daniel} alt="Daniel" />,
 			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
 			github: 'https://github.com/indrif',
 		},
 		{
 			name: 'Colan',
 			title: 'Konsultens bästa vän',
-			image: <StyledImg fluid={images.colan} />,
+			image: <StyledImg image={images.colan} alt="Colan" />,
 		},
 		{
 			name: 'Etimo',
 			title: 'Kanske du?',
-			image: <StyledImg fluid={images.etimo} />,
+			image: <StyledImg image={images.etimo} alt="Etimos logga" />,
 			linkedin: 'https://www.linkedin.com/company/5032461',
 			github: 'https://github.com/etimo',
 		},

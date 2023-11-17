@@ -1,5 +1,5 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -33,7 +33,7 @@ const EmphasizedH2 = styled(H2)`
 `;
 
 /* Shadow won't appear without margin */
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
 	box-shadow: 0px 0px 15px -2px rgba(120, 120, 120, 1);
 	${tw`m-4 lg:m-6`};
 `;
@@ -54,9 +54,7 @@ const WorkAtEtimo = () => {
 		query {
 			image: file(relativePath: { eq: "bollhavny.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 540, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500)
 				}
 			}
 		}
@@ -95,7 +93,10 @@ const WorkAtEtimo = () => {
 					</div>
 					<div className="w-4/5 sm:w-3/5 lg:w-2/5">
 						<FadeIn direction="right">
-							<StyledImg fluid={data.image.childImageSharp.fluid} />
+							<StyledImg
+								image={data.image.childImageSharp.gatsbyImageData}
+								alt="Kollegor i bollhavet"
+							/>
 						</FadeIn>
 					</div>
 				</div>
