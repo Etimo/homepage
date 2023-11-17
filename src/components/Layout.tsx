@@ -15,16 +15,6 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
-
 	const theme: DefaultTheme = {
 		primary: '#2c3e50',
 		secondary: '#42c8ad',

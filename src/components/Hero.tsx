@@ -32,11 +32,10 @@ const items = [
 ];
 
 const Splash = () => {
-	//TODO: Save 200 px in theme? //Klara
 	return (
 		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
-				<FloatInDir className="flex items-end h-[200px]" direction="down">
+				<FloatInDir className="flex items-end h-heroFloatIn" direction="down">
 					<HeroTitle>Etimo</HeroTitle>
 				</FloatInDir>
 				<FloatUp>

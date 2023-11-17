@@ -3,6 +3,12 @@ const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
 	theme: {
 		extend: {
+			minHeight: {
+				cyanHover: '36px',
+			},
+			height: {
+				heroFloatIn: '200px',
+			},
 			fontFamily: {
 				etimo: ['Quattrocento Sans', 'sans-serif'],
 				mont: ['Montserrat', ...defaultTheme.fontFamily.sans],
