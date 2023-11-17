@@ -64,12 +64,6 @@ const About = () => {
 							{width < sizes().desktop ? ` ` : <br />}
 							lösningar som kan bidra till samhällsnyttan.
 						</P>
-						<br />
-						<HighlightButton>
-							<a href="https://blog.etimo.se/" target="_blank">
-								<P>Läs gärna vår blogg</P>
-							</a>
-						</HighlightButton>
 					</FadeIn>
 				</div>
 			</div>

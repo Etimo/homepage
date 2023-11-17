@@ -6,7 +6,7 @@ module.exports = {
 		siteUrl: 'https://etimo.se',
 		description: 'Bättre mjukvara för en bättre värld.',
 		imageAlt: 'Etimo logo',
-		imageType: 'image/png'
+		imageType: 'image/png',
 	},
 	plugins: [
 		{
@@ -61,13 +61,13 @@ module.exports = {
 				},
 			},
 		},
-		{
+		/* 	{
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
 				trackingId: 'UA-47276360-1',
 				head: true,
 			},
-		},
+		}, */
 		`gatsby-plugin-netlify-cms`,
 		// ! Add gatsby-plugin-google-analytics
 		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
