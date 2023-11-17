@@ -124,11 +124,10 @@ const kollegorna = () => {
 			image: <StyledImg fluid={images.colan} />,
 		},
 		{
-			name: 'Etimo',
-			title: 'Kanske du?',
-			image: <StyledImg fluid={images.etimo} />,
-			linkedin: 'https://www.linkedin.com/company/5032461',
-			github: 'https://github.com/etimo',
+			name: 'Malin Lindbom',
+			title: 'Produktledning',
+			image: <StyledImg fluid={images.malinl} />,
+			linkedin: 'https://www.linkedin.com/in/malin-lindbom-60a13a65/',
 		},
 	];
 

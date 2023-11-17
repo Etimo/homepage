@@ -149,8 +149,8 @@ const RightMenu = () => {
 								})}
 								<div className="mt-auto">
 									<ModifiedCapt>Telefon:</ModifiedCapt>
-									<a href="tel:0762138597" target="_blank">
-										<HoverP className="mb-7">076 - 213 85 97</HoverP>
+									<a href="tel:0760213150" target="_blank">
+										<HoverP className="mb-7">076 - 021 31 50</HoverP>
 									</a>
 									<ModifiedCapt>E-post:</ModifiedCapt>
 									<a href="mailto:kontakt@etimo.se" target="_blank">
