@@ -2,12 +2,13 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
-type FloatDirection = 'left' | 'right' | 'up' | 'down';
+export type FloatDirection = 'left' | 'right' | 'up' | 'down';
 
 type Props = {
 	children: React.ReactNode;
 	direction: FloatDirection;
 	delay?: number;
+	className?: string;
 };
 
 export default ({ children, direction, delay, ...props }: Props) => {

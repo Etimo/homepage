@@ -4,6 +4,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import Customers from '../Customers';
+import { CustomerType } from '../Customers';
 
 const ClientCustomers = () => {
 	const data = useStaticQuery(graphql`
@@ -127,7 +128,7 @@ const ClientCustomers = () => {
 		}
 	`);
 
-	const customers = [
+	const customers: CustomerType[] = [
 		{
 			name: 'Blocket',
 			url: 'https://www.blocket.se/',

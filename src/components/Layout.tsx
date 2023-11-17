@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, DefaultTheme } from 'styled-components';
 import '../css/global.css';
 import { sizes } from '../helpers';
 import Footer from './Footer';
@@ -15,17 +15,7 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
-
-	const theme = {
+	const theme: DefaultTheme = {
 		primary: '#2c3e50',
 		secondary: '#42c8ad',
 		colors: {
@@ -38,12 +28,12 @@ const Layout = ({ children }: Props) => {
 			headline: {
 				font: 'Questrial',
 			},
-
 			caption: {
 				spacing: '0.4em',
 				size: 10,
 				font: 'Questrial',
 			},
+			font: 'Montserrat',
 		},
 		sizes: {
 			extraSmall: '0px',

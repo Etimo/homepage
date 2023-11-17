@@ -53,6 +53,12 @@ module.exports = {
 			maxHeight: {
 				'3/4': '75%',
 			},
+			minHeight: {
+				cyanHover: '36px',
+			},
+			height: {
+				heroFloatIn: '200px',
+			},
 			lineHeight: {
 				small: '1.7',
 				large: '2.15',

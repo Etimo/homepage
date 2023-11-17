@@ -6,7 +6,7 @@ module.exports = {
 		siteUrl: 'https://etimo.se',
 		description: 'Bättre mjukvara för en bättre värld.',
 		imageAlt: 'Etimo logo',
-		imageType: 'image/png'
+		imageType: 'image/png',
 	},
 	plugins: [
 		{
@@ -69,6 +69,7 @@ module.exports = {
 			},
 		},
 		`gatsby-plugin-netlify-cms`,
+		'gatsby-plugin-ts-checker',
 		// ! Add gatsby-plugin-google-analytics
 		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
 	],
