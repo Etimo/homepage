@@ -163,10 +163,10 @@ export default () => {
 					</FloatUp>
 					<div className="flex flex-row justify-center h-24">
 						<AnimatedH2 direction="left">
-							Kul <Span secondary>på</Span>
+							Kul <Span>på</Span>
 						</AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span secondary>&nbsp;jobbet</Span>
+							<Span>&nbsp;jobbet</Span>
 						</AnimatedH2>
 					</div>
 					<EmployeeCards employees={cards} employeePage={false} />

@@ -44,7 +44,7 @@ const Apply = (props: Props) => {
 					<P>{variant.text}</P>
 					<P>
 						{variant.emailText}{' '}
-						<Span secondary>
+						<Span>
 							<a href={`mailto:${variant.email}`} target="_blank">
 								{variant.email}
 							</a>

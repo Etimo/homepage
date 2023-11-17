@@ -90,7 +90,7 @@ const ThePeople = () => {
 					<div className="flex flex-row justify-center h-24">
 						<AnimatedH2 direction="left">Några av</AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span secondary>&nbsp;oss</Span>
+							<Span>&nbsp;oss</Span>
 						</AnimatedH2>
 					</div>
 					<EmployeeCards employees={people} employeePage={false} />

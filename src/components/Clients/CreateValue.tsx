@@ -15,7 +15,7 @@ const CreateValue = () => {
 				<div className="flex justify-center">
 					<AnimatedH2 direction="left">Vi skapar&nbsp;</AnimatedH2>
 					<AnimatedH2 direction="right">
-						<Span secondary>värde</Span>
+						<Span>värde</Span>
 					</AnimatedH2>
 				</div>
 				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 mx-auto lg:mx-0 lg:w-full">

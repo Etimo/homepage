@@ -1,18 +1,16 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import styled from 'styled-components';
-import Box, { BoxProps } from '../elements/Box';
 
 type FadeInDirection = 'left' | 'right';
 
 type Props = {
 	children: React.ReactNode;
 	direction: FadeInDirection;
+	className?: string;
 };
-// const MotionBox = motion(Box, { forwardMotionProps: true });
 
-export default ({ children, direction, ...props }: Props & BoxProps) => {
+export default ({ children, direction, ...props }: Props) => {
 	const [entered, setEntered] = useState(false);
 	const [ref, inView] = useInView();
 	const xDir = direction === 'left' ? '-20%' : '20%';
