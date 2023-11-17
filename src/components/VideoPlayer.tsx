@@ -33,7 +33,7 @@ export default ({ children, headerSpace, ...props }: Props) => {
 			<VideoPlayer width={isMobile() ? width - 20 : width - 200} {...props}>
 				<iframe
 					style={{ aspectRatio: '16/9', width: '100%' }}
-					src="https://www.youtube-nocookie.com/embed/lvwHkwsdph4?cc_load_policy=1?modestbranding=1"
+					src="https://www.youtube-nocookie.com/embed/XvhnFCddD4g?si=FyT1c_QT_1_SeMhG?cc_load_policy=1?modestbranding=1"
 					title="Etimo"
 					frameBorder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
