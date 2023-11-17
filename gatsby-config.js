@@ -61,7 +61,9 @@ module.exports = {
 				},
 			},
 		},
-		/* 	{
+		/* 
+		// Disabled Google Analytics to strategize on its integration
+		{
 			resolve: 'gatsby-plugin-google-analytics',
 			options: {
 				trackingId: 'UA-47276360-1',
