@@ -4,6 +4,9 @@
 	"description": "Etimos homapage, a Gatsby site.",
 	"version": "0.1.0",
 	"author": "Lukas Lindqvist <lukas.lindqvist@etimo.se>",
+	"engines": {
+		"node": ">=20.0.0"
+	},
 	"dependencies": {
 		"@fortawesome/fontawesome-svg-core": "^6.4.2",
 		"@fortawesome/free-brands-svg-icons": "^6.4.2",
