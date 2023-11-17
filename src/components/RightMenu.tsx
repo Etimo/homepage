@@ -92,7 +92,7 @@ const RightMenu = () => {
 						className="mx-auto"
 						width="30"
 						height="20"
-						stroke-width="1"
+						strokeWidth="1"
 						initial="init"
 						animate="anim"
 						stroke="black"
