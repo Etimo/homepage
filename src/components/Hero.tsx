@@ -5,6 +5,8 @@ import { FloatInDir, FloatUp } from '../animations';
 import { useViewportSize } from '../hooks';
 import Carousel from './Carousel';
 import Section from './Section';
+import { HighlightButton } from './Button';
+import { Link } from 'gatsby';
 
 const Hero = styled.div<ThemeProps<DefaultTheme>>`
 	max-width: 76rem;
@@ -31,6 +33,20 @@ const items = [
 	'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
 ];
 
+const LinkSection = styled.div`
+	${tw`flex flex-row justify-center`}
+`;
+
+const Separator = styled.span`
+	color: ${(props) => props.theme.primary};
+	font-size: 1.2em;
+	margin: 0 10px;
+`;
+
+const Space = styled.div`
+	width: 10px;
+`;
+
 const Splash = () => {
 	const [h, width] = useViewportSize();
 
@@ -38,8 +54,8 @@ const Splash = () => {
 		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
 				<FloatInDir
-					className="flex items-end"
-					style={{ height: '200px' }}
+					className="flex"
+					style={{ height: '140px' }}
 					direction="down"
 				>
 					<HeroTitle>Etimo</HeroTitle>
@@ -48,6 +64,18 @@ const Splash = () => {
 					<HeroContent>
 						<Carousel items={items} />
 					</HeroContent>
+
+					<LinkSection>
+						<HighlightButton>
+							<Link to="/kunder-och-expertis">Kunder</Link>
+						</HighlightButton>
+						<Space />
+						<Separator>|</Separator>
+						<Space />
+						<HighlightButton>
+							<Link to="/karriar">Karriär</Link>
+						</HighlightButton>
+					</LinkSection>
 				</FloatUp>
 			</Hero>
 		</Section>

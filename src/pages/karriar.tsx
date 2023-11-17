@@ -5,6 +5,7 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import ThePeople from '../components/ThePeople';
 
 const CareerPage = () => {
 	const [height, width] = useViewportSize();
@@ -25,6 +26,10 @@ const CareerPage = () => {
 		},
 		{
 			index: 3,
+			name: 'Vi',
+		},
+		{
+			index: 4,
 			name: 'Ansök',
 		},
 	];
@@ -36,6 +41,7 @@ const CareerPage = () => {
 			<IntroText />
 			<WorkingHere />
 			<WhoAreYou />
+			<ThePeople />
 			<Apply variantKey="default" backgroundColor="white" />
 		</Layout>
 	);
