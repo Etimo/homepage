@@ -1,7 +1,7 @@
 {
 	"name": "@etimo/homepage",
 	"private": true,
-	"description": "Etimos homapage, a Gatsby site.",
+	"description": "Etimos homepage, a Gatsby site.",
 	"version": "0.1.0",
 	"author": "Lukas Lindqvist <lukas.lindqvist@etimo.se>",
 	"engines": {

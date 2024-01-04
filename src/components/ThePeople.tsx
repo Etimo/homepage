@@ -33,48 +33,90 @@ const ThePeople = () => {
 		{
 			name: 'Jeanette',
 			title: 'VD',
-			image: <GatsbyImage image={images.jeanette} alt="Jeanette" />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.jeanette}
+					alt="Jeanette"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
 		{
 			name: 'Saga',
 			title: 'Konsult',
-			image: <GatsbyImage image={images.saga} alt="Saga" />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.saga}
+					alt="Saga"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
 			github: 'https://github.com/hejsaga',
 		},
 		{
 			name: 'Joakim',
 			title: 'Grundare',
-			image: <GatsbyImage image={images.joakim} alt="Joakim" />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.joakim}
+					alt="Joakim"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/joakim-olesen-a583181/',
 			github: 'https://github.com/joakim-olesen',
 		},
 		{
 			name: 'Malin W',
 			title: 'Konsult',
-			image: <GatsbyImage image={images.malinw} alt="Malin W" />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.malinw}
+					alt="Malin W"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/malin-wadholm/',
 			github: 'https://github.com/wadholm',
 		},
 		{
 			name: 'Morgan',
 			title: 'Konsult',
-			image: <GatsbyImage image={images.morgan} alt="Morgan" />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.morgan}
+					alt="Morgan"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/morgan-cromell/',
 			github: 'https://github.com/morgan-cromell',
 		},
 		{
 			name: 'Philip',
 			title: 'Konsult',
-			image: <GatsbyImage image={images.philip} alt="Morgan" />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.philip}
+					alt="Morgan"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
 			github: 'https://github.com/ForsbergPhilip',
 		},
 		{
 			name: 'Lukas',
 			title: 'Konsult',
-			image: <GatsbyImage image={images.lukas} alt="Lukas" />,
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.lukas}
+					alt="Lukas"
+				/>
+			),
 			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
 			github: 'https://github.com/ljukas',
 		},
