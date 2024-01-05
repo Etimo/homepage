@@ -13,7 +13,7 @@ const Competences = () => {
 				<div className="flex flex-col md:flex-row justify-center">
 					<AnimatedH2 direction="left">Exempel på våra&nbsp;</AnimatedH2>
 					<AnimatedH2 direction="right">
-						<Span>kompetenser</Span>
+						<Span secondary>kompetenser</Span>
 					</AnimatedH2>
 				</div>
 				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 mx-auto lg:mx-0 lg:w-full">

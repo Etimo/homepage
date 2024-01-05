@@ -231,7 +231,7 @@ export default ({
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Ett urval av</AnimatedH2>
 						<AnimatedH2 direction="right">
-							&nbsp;våra <Span> kunder</Span>
+							&nbsp;våra <Span secondary> kunder</Span>
 						</AnimatedH2>
 					</div>
 					<div className="grid grid-cols-2 lg:grid-cols-4 mt-8 mx-8 xl:mx-12">

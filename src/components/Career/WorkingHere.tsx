@@ -24,7 +24,7 @@ const WorkingHere = () => {
 						<Caption>Jobbet</Caption>
 						<H2 className="mb-4 md:mb-6 mt-2 md:mt-4">
 							Att jobba på <br />
-							<Span>Etimo</Span>
+							<Span secondary>Etimo</Span>
 						</H2>
 					</FloatUp>
 				</div>

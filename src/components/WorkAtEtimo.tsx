@@ -73,7 +73,7 @@ const WorkAtEtimo = () => {
 								Att jobba på Etimo
 							</Caption>
 							<EmphasizedH2>
-								Hur är det att <Span>jobba </Span>
+								Hur är det att <Span secondary>jobba </Span>
 								på Etimo?
 							</EmphasizedH2>
 							<div className="mx-4 lg:mx-0">

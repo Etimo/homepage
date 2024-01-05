@@ -140,7 +140,7 @@ const kollegorna = () => {
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Vi är</AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span>&nbsp;Etimo</Span>
+							<Span secondary>&nbsp;Etimo</Span>
 						</AnimatedH2>
 					</div>
 					<EmployeeCards employees={people} employeePage={true} />
