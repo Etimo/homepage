@@ -129,11 +129,10 @@ const RightMenu = () => {
 						>
 							<div className="flex flex-col text-white h-full">
 								{links.map((link) => {
-									// TODO: save min-h-[36px] in a tailwind-config?
 									return (
 										<CyanHover
 											key={link.name}
-											className="mb-6 md:mb-8 mr-auto px-1 min-h-[36px]"
+											className="mb-6 md:mb-8 mr-auto px-1 min-h-cyanHover"
 										>
 											{link.local ? (
 												<Link to={link.url}>
@@ -149,8 +148,8 @@ const RightMenu = () => {
 								})}
 								<div className="mt-auto">
 									<ModifiedCapt>Telefon:</ModifiedCapt>
-									<a href="tel:0762138597" target="_blank">
-										<HoverP className="mb-7">076 - 213 85 97</HoverP>
+									<a href="tel:0760213150" target="_blank">
+										<HoverP className="mb-7">076 - 021 31 50</HoverP>
 									</a>
 									<ModifiedCapt>E-post:</ModifiedCapt>
 									<a href="mailto:kontakt@etimo.se" target="_blank">

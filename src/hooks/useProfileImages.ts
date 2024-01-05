@@ -95,6 +95,13 @@ export const useProfileImages = () => {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
+			malinl: file(relativePath: { eq: "someofus/new-images/IMG_4564.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
@@ -117,6 +124,7 @@ export const useProfileImages = () => {
 		andre: data.andre.childImageSharp.gatsbyImageData,
 		klara: data.klara.childImageSharp.gatsbyImageData,
 		colan: data.colan.childImageSharp.gatsbyImageData,
+		malinl: data.malinl.childImageSharp.gatsbyImageData,
 	};
 };
 

@@ -32,7 +32,6 @@ const kollegorna = () => {
 			image: <StyledImg image={images.jeanette} alt="Jeanette" />,
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
-
 		{
 			name: 'Erik',
 			title: 'Partner',
@@ -124,11 +123,10 @@ const kollegorna = () => {
 			image: <StyledImg image={images.colan} alt="Colan" />,
 		},
 		{
-			name: 'Etimo',
-			title: 'Kanske du?',
-			image: <StyledImg image={images.etimo} alt="Etimos logga" />,
-			linkedin: 'https://www.linkedin.com/company/5032461',
-			github: 'https://github.com/etimo',
+			name: 'Malin Lindbom',
+			title: 'Produktledning',
+			image: <StyledImg image={images.malinl} alt="Malin" />,
+			linkedin: 'https://www.linkedin.com/in/malin-lindbom-60a13a65/',
 		},
 	];
 

@@ -1,4 +1,3 @@
-import { graphql, useStaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { ThemeProvider, DefaultTheme } from 'styled-components';
@@ -15,17 +14,6 @@ type Props = {
 };
 
 const Layout = ({ children }: Props) => {
-	// TODO: remove unused code
-	const data = useStaticQuery(graphql`
-		query SiteTitleQuery {
-			site {
-				siteMetadata {
-					title
-				}
-			}
-		}
-	`);
-
 	const theme: DefaultTheme = {
 		primary: '#2c3e50',
 		secondary: '#42c8ad',
