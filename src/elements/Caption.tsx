@@ -8,8 +8,6 @@ export default styled.div<ThemeProps<DefaultTheme>>`
 	line-height: 2;
 	text-transform: uppercase;
 	font-weight: 400;
-
-	color: ${({ theme }) => theme.primary} 
 	}};
 
 	${tw`mb-1 md:mb-3 lg:mb-4 overflow-hidden`}
