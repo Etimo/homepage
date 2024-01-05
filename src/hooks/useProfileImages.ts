@@ -100,6 +100,13 @@ export const useProfileImages = () => {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
+			malinl: file(relativePath: { eq: "someofus/new-images/IMG_4564.jpg" }) {
+				childImageSharp {
+					fluid(maxWidth: 500) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
 		}
 	`);
 
