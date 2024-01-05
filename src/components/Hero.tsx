@@ -34,7 +34,7 @@ const Splash = () => {
 	return (
 		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
-				<FloatInDir className="flex items-end h-[200px]" direction="down">
+				<FloatInDir className="flex items-end h-heroFloatIn" direction="down">
 					<HeroTitle className="overflow-hidden">Etimo</HeroTitle>
 				</FloatInDir>
 				<FloatUp>

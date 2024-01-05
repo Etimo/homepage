@@ -132,7 +132,7 @@ const ClientCustomers = () => {
 			url: 'https://www.tele2.se/',
 			image: (
 				<GatsbyImage
-					image={data.tele2.childImageSharp.fluid}
+					image={data.tele2.childImageSharp.gatsbyImageData}
 					alt="Tele2:s logga"
 				/>
 			),
@@ -147,7 +147,7 @@ const ClientCustomers = () => {
 			url: 'https://www.mira.se/',
 			image: (
 				<GatsbyImage
-					image={data.mira.childImageSharp.fluid}
+					image={data.mira.childImageSharp.gatsbyImageData}
 					alt="Miras logga"
 				/>
 			),
@@ -162,7 +162,7 @@ const ClientCustomers = () => {
 			url: 'https://www.qliro.com/sv-se',
 			image: (
 				<GatsbyImage
-					image={data.qliro.childImageSharp.fluid}
+					image={data.qliro.childImageSharp.gatsbyImageData}
 					alt="Qliros logga"
 				/>
 			),
@@ -176,7 +176,10 @@ const ClientCustomers = () => {
 			name: 'SEB',
 			url: 'https://seb.se/',
 			image: (
-				<GatsbyImage image={data.seb.childImageSharp.fluid} alt="SEB:s logga" />
+				<GatsbyImage
+					image={data.seb.childImageSharp.gatsbyImageData}
+					alt="SEB:s logga"
+				/>
 			),
 			borders: {
 				xs: 'border-b',
@@ -189,7 +192,7 @@ const ClientCustomers = () => {
 			url: 'https://www.quinyx.com/sv/',
 			image: (
 				<GatsbyImage
-					image={data.quinyx.childImageSharp.fluid}
+					image={data.quinyx.childImageSharp.gatsbyImageData}
 					alt="Quinix logga"
 				/>
 			),
@@ -204,7 +207,7 @@ const ClientCustomers = () => {
 			url: 'https://www.nobina.com/sv/Sverige/',
 			image: (
 				<GatsbyImage
-					image={data.nobina.childImageSharp.fluid}
+					image={data.nobina.childImageSharp.gatsbyImageData}
 					alt="Nobinas logga"
 				/>
 			),
@@ -219,7 +222,7 @@ const ClientCustomers = () => {
 			url: 'https://appva.com/sv/',
 			image: (
 				<GatsbyImage
-					image={data.appva.childImageSharp.fluid}
+					image={data.appva.childImageSharp.gatsbyImageData}
 					alt="Appvas logga"
 				/>
 			),
@@ -234,7 +237,7 @@ const ClientCustomers = () => {
 			url: 'https://www.comviq.se/',
 			image: (
 				<GatsbyImage
-					image={data.comviq.childImageSharp.fluid}
+					image={data.comviq.childImageSharp.gatsbyImageData}
 					alt="Comviqs logga"
 				/>
 			),
@@ -249,7 +252,7 @@ const ClientCustomers = () => {
 			url: 'https://www.mittskolval.se/',
 			image: (
 				<GatsbyImage
-					image={data.mittskolval.childImageSharp.fluid}
+					image={data.mittskolval.childImageSharp.gatsbyImageData}
 					alt="Mitt skolvals logga"
 				/>
 			),
@@ -264,7 +267,7 @@ const ClientCustomers = () => {
 			url: 'https://www.expressen.se/',
 			image: (
 				<GatsbyImage
-					image={data.expressen.childImageSharp.fluid}
+					image={data.expressen.childImageSharp.gatsbyImageData}
 					alt="Expressens logga"
 				/>
 			),
@@ -278,7 +281,10 @@ const ClientCustomers = () => {
 			name: 'Vklass',
 			url: 'https://www.vklass.com/',
 			image: (
-				<GatsbyImage image={data.vklass.childImageSharp.fluid} alt="Vklass" />
+				<GatsbyImage
+					image={data.vklass.childImageSharp.gatsbyImageData}
+					alt="Vklass"
+				/>
 			),
 			borders: {
 				xs: 'border-b border-r',
@@ -291,7 +297,7 @@ const ClientCustomers = () => {
 			url: 'https://www.struqtur.se/',
 			image: (
 				<GatsbyImage
-					image={data.struqtur.childImageSharp.fluid}
+					image={data.struqtur.childImageSharp.gatsbyImageData}
 					alt="Struqtur"
 				/>
 			),
@@ -306,7 +312,7 @@ const ClientCustomers = () => {
 			url: 'https://www.timewave.se/',
 			image: (
 				<GatsbyImage
-					image={data.timewave.childImageSharp.fluid}
+					image={data.timewave.childImageSharp.gatsbyImageData}
 					alt="Timewaves logga"
 				/>
 			),
@@ -321,7 +327,7 @@ const ClientCustomers = () => {
 			url: 'https://www.bytbil.com/',
 			image: (
 				<GatsbyImage
-					image={data.bytbil.childImageSharp.fluid}
+					image={data.bytbil.childImageSharp.gatsbyImageData}
 					alt="Bytbils logga"
 				/>
 			),

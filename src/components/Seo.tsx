@@ -21,6 +21,7 @@ type Props = {
 	meta?: MetaProps[];
 };
 
+//TODO: Gatsby image for logo?
 const SEO = ({ description, lang, meta = [], title }: Props) => {
 	const { site, logo } = useStaticQuery(
 		graphql`
@@ -34,7 +35,6 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 						imageAlt
 						imageType
 					}
-					
 				}
 				logo: file(relativePath: { eq: "etimo-logo-sharing.png" }) {
 					childImageSharp {
@@ -47,7 +47,7 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 		`
 	);
 
-	const metaDescription = description || site.siteMetadata.description
+	const metaDescription = description || site.siteMetadata.description;
 	const metaData: MetaProps[] = [
 		{
 			name: `twitter:card`,

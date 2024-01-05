@@ -67,6 +67,16 @@ export default () => {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
+			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
+				childImageSharp {
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+				}
+			}
+			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
+				childImageSharp {
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+				}
+			}
 		}
 	`);
 
@@ -82,12 +92,12 @@ export default () => {
 			),
 		},
 		{
-			name: 'DANIEL & LUKAS',
-			title: 'Njuter i kuddhavet',
+			name: 'JOHAN',
+			title: 'Njuter av lugnet',
 			image: (
 				<StyledImg
-					image={data.pillows.childImageSharp.gatsbyImageData}
-					alt="Daniel och Lukas njuter i kuddhavet"
+					image={data.rest.childImageSharp.gatsbyImageData}
+					alt="Johan njuter av lugnet"
 				/>
 			),
 		},
@@ -111,24 +121,23 @@ export default () => {
 				/>
 			),
 		},
-
 		{
-			name: 'PÅ PILGRIMSLEDEN',
-			title: 'På vandring i Italien',
+			name: 'JEANETTE',
+			title: 'DJ:ar i rinken',
 			image: (
 				<StyledImg
-					image={data.italy.childImageSharp.gatsbyImageData}
-					alt="På vandring i Italien"
+					image={data.disco.childImageSharp.gatsbyImageData}
+					alt="Jeanette dj:ar i rinken"
 				/>
 			),
 		},
 		{
-			name: 'GÄNGET I ITALIEN',
-			title: 'På bron till Dolce Acqua',
+			name: 'DANIEL & LUKAS',
+			title: 'Njuter i kuddhavet',
 			image: (
 				<StyledImg
-					image={data.dolceaqua.childImageSharp.gatsbyImageData}
-					alt="På bron till Dolce Acqua"
+					image={data.pillows.childImageSharp.gatsbyImageData}
+					alt="Daniel och Lukas i kuddhavet"
 				/>
 			),
 		},
