@@ -40,7 +40,7 @@ const Services = () => {
 				<div className="flex flex-col md:flex-row justify-center">
 					<AnimatedH2 direction="left">Våra tjänster&nbsp;</AnimatedH2>
 					<AnimatedH2 direction="right">
-						får <Span secondary>toppbetyg</Span>
+						får <Span>toppbetyg</Span>
 					</AnimatedH2>
 				</div>
 				<motion.div

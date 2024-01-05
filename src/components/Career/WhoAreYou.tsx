@@ -25,7 +25,7 @@ const WhoAreYou = () => {
 				</FloatUp>
 				<div className="flex flex-col md:flex-row justify-center">
 					<AnimatedH2 direction="left">
-						Är <Span secondary>du</Span> vår&nbsp;
+						Är <Span>du</Span> vår&nbsp;
 					</AnimatedH2>
 					<AnimatedH2 direction="right">nästa kollega?</AnimatedH2>
 				</div>

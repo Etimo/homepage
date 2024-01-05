@@ -172,7 +172,7 @@ export default ({ imgDiv }: CustomersProps) => {
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Etimo gör</AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span secondary>&nbsp;skillnad</Span>
+							<Span>&nbsp;skillnad</Span>
 						</AnimatedH2>
 					</div>
 					<motion.div

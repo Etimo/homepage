@@ -19,7 +19,7 @@ const ReferenceCase = () => {
 						</Caption>
 						<EmphasizedH2>
 							Referenscase: <br />
-							<Span secondary>Migrering till molnet</Span>
+							<Span>Migrering till molnet</Span>
 						</EmphasizedH2>
 					</FadeIn>
 				</div>

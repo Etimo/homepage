@@ -37,7 +37,7 @@ const About = () => {
 							Välkommen till Etimo!
 						</Caption>
 						<EmphasizedH2>
-							<Span secondary>Passion</Span> för teknik, <br />
+							<Span>Passion</Span> för teknik, <br />
 							kundvärde och <br />
 							samhällsnytta
 						</EmphasizedH2>
