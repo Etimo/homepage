@@ -27,7 +27,6 @@ module.exports = {
 			},
 		},
 		{
-			// TODO: Figure out exactly what this does
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `gatsby-starter-default`,
@@ -59,19 +58,10 @@ module.exports = {
 				},
 			},
 		},
-		{
-			resolve: 'gatsby-plugin-google-analytics',
-			options: {
-				trackingId: 'UA-47276360-1',
-				head: true,
-			},
-		},
 		`gatsby-plugin-netlify-cms`,
 		'gatsby-plugin-ts-checker',
 		`gatsby-plugin-image`,
 		`gatsby-plugin-sharp`,
 		`gatsby-transformer-sharp`,
-		// ! Add gatsby-plugin-google-analytics
-		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
 	],
 };

@@ -38,9 +38,7 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 				}
 				logo: file(relativePath: { eq: "etimo-logo-sharing.png" }) {
 					childImageSharp {
-						fluid(maxWidth: 1200) {
-							src
-						}
+						gatsbyImageData(layout: CONSTRAINED, width: 1200)
 					}
 				}
 			}
@@ -88,7 +86,7 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 		{
 			name: `image`,
 			property: `og:image`,
-			content: logo.childImageSharp.fluid.src,
+			content: logo.childImageSharp.gatsbyImageData,
 		},
 		{
 			name: `image-type`,
