@@ -14,7 +14,7 @@ const Section = styled(motion.div)<SectionProps>`
 	text-decoration: none;
 	border: none;
 	margin: 1rem 0;
-	font-size: 1rem;
+	font-size: 12px;
 	background-color: inherit;
 	text-align: left;
 	padding: 0;
@@ -28,11 +28,11 @@ const Section = styled(motion.div)<SectionProps>`
 
 const variants = [
 	{
-		fontSize: 12,
+		fontSize: '12px',
 		transition: { type: 'tween' },
 	},
 	{
-		fontSize: 16,
+		fontSize: '16px',
 		transition: { type: 'tween' },
 	},
 ];
@@ -46,7 +46,10 @@ type Props = {
 const SectionComponent = ({ index, isActive, children }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [variant, cycleVariant] = useCycle(...variants);
-	const sectionHeight = viewportHeight < sizes().minimumHeight ? sizes().minimumHeight : viewportHeight;
+	const sectionHeight =
+		viewportHeight < sizes().minimumHeight
+			? sizes().minimumHeight
+			: viewportHeight;
 
 	useEffect(() => {
 		if (isActive) {
@@ -61,7 +64,7 @@ const SectionComponent = ({ index, isActive, children }: Props) => {
 	};
 
 	return (
-		<Section animate={variant} isActive={isActive} onClick={clickHandler}>
+		<Section isActive={isActive} onClick={clickHandler} animate={variant}>
 			{children}
 		</Section>
 	);
