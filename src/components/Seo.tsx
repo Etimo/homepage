@@ -21,7 +21,6 @@ type Props = {
 	meta?: MetaProps[];
 };
 
-//TODO: Gatsby image for logo?
 const SEO = ({ description, lang, meta = [], title }: Props) => {
 	const { site, logo } = useStaticQuery(
 		graphql`
