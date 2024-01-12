@@ -2,8 +2,9 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import { CyanHover, FloatUp } from '../../animations';
-import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
+import { AnimatedH2, Caption, H4, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const gridVar = {
 	init: {},
@@ -29,7 +30,7 @@ const evaluations = [
 ];
 
 const Services = () => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 
 	return (
 		<Section>

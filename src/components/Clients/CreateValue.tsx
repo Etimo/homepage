@@ -2,8 +2,9 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import React from 'react';
 import { FloatInDir, FloatUp } from '../../animations';
-import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
+import { AnimatedH2, Caption, H4, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const CreateValue = () => {
 	return (

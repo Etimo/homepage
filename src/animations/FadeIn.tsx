@@ -12,7 +12,7 @@ type Props = {
 
 export default ({ children, direction, ...props }: Props) => {
 	const [entered, setEntered] = useState(false);
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 	const xDir = direction === 'left' ? '-20%' : '20%';
 
 	useEffect(() => {
@@ -23,6 +23,7 @@ export default ({ children, direction, ...props }: Props) => {
 
 	return (
 		<motion.div
+			className="h-full w-full"
 			{...props}
 			ref={ref}
 			animate={entered ? 'enter' : 'exit'}

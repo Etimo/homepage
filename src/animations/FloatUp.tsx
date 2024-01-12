@@ -10,7 +10,7 @@ type Props = {
 };
 
 export default ({ children, className, ...props }: Props) => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 	const [_, width] = useViewportSize();
 
 	return (

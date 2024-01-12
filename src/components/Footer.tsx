@@ -60,8 +60,7 @@ const contactItems = [
 	},
 	{
 		description: 'Karta',
-		link:
-			'https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159',
+		link: 'https://www.google.com/maps/place/Etimo/@59.3341074,18.0564272,17z/data=!3m1!4b1!4m5!3m4!1s0x465f9d456a3a308f:0xb48135247622ea68!8m2!3d59.3341074!4d18.0586159',
 		class: 'mt-1',
 	},
 ];
@@ -99,7 +98,7 @@ const itemVar = {
 };
 
 const Footer = () => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 
 	return (
 		<Section style={{ backgroundColor: '#231f20' }}>

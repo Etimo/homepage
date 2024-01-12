@@ -6,13 +6,13 @@ import tw from 'twin.macro';
 import FadeIn from '../animations/FadeIn';
 import { P } from '../elements';
 import Caption from '../elements/Caption';
-import DashedP from '../elements/DashedP';
 import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
+import DashedP from './DashedP';
 
 const CustomBackground = styled.div<{ offset: number }>`
 	position: absolute;
@@ -54,7 +54,7 @@ const WorkAtEtimo = () => {
 		query {
 			image: file(relativePath: { eq: "bollhavny.jpg" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500)
+					gatsbyImageData(layout: CONSTRAINED, width: 360, quality: 90)
 				}
 			}
 		}

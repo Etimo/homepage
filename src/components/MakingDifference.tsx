@@ -11,11 +11,11 @@ import FloatUp from '../animations/FloatUp';
 import BlurIn from '../animations/variants/BlurIn';
 import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
-import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import { FloatDirection } from '../animations/FloatInDir';
+import DashedP from './DashedP';
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -152,7 +152,7 @@ type CustomersProps = {
 };
 
 export default ({ imgDiv }: CustomersProps) => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 	const donations = generateDontations();
 
 	const ImageDiv = imgDiv

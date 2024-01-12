@@ -1,7 +1,8 @@
 import React from 'react';
 import { FloatInDir, FloatUp } from '../../animations';
-import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
+import { AnimatedH2, Caption, H4, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const Competences = () => {
 	return (

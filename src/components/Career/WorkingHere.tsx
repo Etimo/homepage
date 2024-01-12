@@ -1,7 +1,8 @@
 import React from 'react';
 import { FloatUp } from '../../animations';
-import { Caption, DashedP, H2, Span } from '../../elements';
+import { Caption, H2, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const bulletPoints = [
 	'Du är vår viktigaste resurs och du väljer själv dina uppdrag, har möjlighet att påverka vilka kunder du vill jobba med och har ansvar och förtroende för hur din vardag ser ut',
