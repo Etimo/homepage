@@ -79,16 +79,12 @@ export default () => {
 			}
 			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 		}

@@ -32,10 +32,8 @@ const WorkingHere = () => {
 				<div className="w-11/12 md:w-2/3 mx-auto overflow-hidden">
 					{bulletPoints.map((bulletText) => {
 						return (
-							<FloatUp>
-								<DashedP className="mt-2" key={bulletText}>
-									{bulletText}
-								</DashedP>
+							<FloatUp key={bulletText}>
+								<DashedP className="mt-2">{bulletText}</DashedP>
 							</FloatUp>
 						);
 					})}
