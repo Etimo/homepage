@@ -3,12 +3,10 @@ import FadeIn from '../../animations/FadeIn';
 import Caption from '../../elements/Caption';
 import P from '../../elements/P';
 import Span from '../../elements/Span';
-import { useViewportSize } from '../../hooks';
 import Section from '../Section';
 import EmphasizedH2 from '../../elements/EmphasizedH2';
 
 const ReferenceCase = () => {
-	const [h, width] = useViewportSize();
 	return (
 		<Section style={{ background: 'white' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
