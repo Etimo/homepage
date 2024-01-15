@@ -7,5 +7,12 @@ type Props = {
 } & React.HTMLAttributes<HTMLParagraphElement>;
 
 export default ({ children, ...props }: Props) => {
-	return <P {...props}>- {children}</P>;
+	return (
+		<div className="flex flex-row">
+			<P {...props} className={`${props.className} mr-1.5`}>
+				-
+			</P>
+			<P {...props}> {children}</P>
+		</div>
+	);
 };
