@@ -6,7 +6,7 @@ import { sizes } from '../../helpers';
 import { useViewportSize } from '../../hooks';
 
 type SectionProps = {
-	isActive: boolean;
+	$isActive: boolean;
 	theme: DefaultTheme;
 };
 
@@ -22,7 +22,7 @@ const Section = styled(motion.div)<SectionProps>`
 	z-index: 100;
 	overflow: hidden;
 	height: 20px;
-	color: ${(props) => (props.isActive ? props.theme.secondary : '#888888')};
+	color: ${(props) => (props.$isActive ? props.theme.secondary : '#888888')};
 	font-family: ${(props) => props.theme.typography.headline.font};
 `;
 
@@ -64,7 +64,7 @@ const SectionComponent = ({ index, isActive, children }: Props) => {
 	};
 
 	return (
-		<Section isActive={isActive} onClick={clickHandler} animate={variant}>
+		<Section $isActive={isActive} onClick={clickHandler} animate={variant}>
 			{children}
 		</Section>
 	);
