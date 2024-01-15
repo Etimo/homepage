@@ -38,7 +38,6 @@ module.exports = {
 				icon: `src/images/etimofavicon.png`, // This path is relative to the root of the site.
 			},
 		},
-		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-remove-serviceworker`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-sitemap`,

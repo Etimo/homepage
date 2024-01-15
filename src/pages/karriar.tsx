@@ -31,7 +31,6 @@ const CareerPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Karriär" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<IntroText />
 			<WorkingHere />
@@ -40,5 +39,9 @@ const CareerPage = () => {
 		</Layout>
 	);
 };
+
+export function Head() {
+	return <SEO title="Karriär" />;
+}
 
 export default CareerPage;

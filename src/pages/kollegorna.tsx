@@ -10,6 +10,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';
 import VideoPlayer from '../components/VideoPlayer';
 import { useProfileImages } from '../hooks/useProfileImages';
+import SEO from '../components/Seo';
 
 const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
@@ -161,5 +162,9 @@ const kollegorna = () => {
 		</Layout>
 	);
 };
+
+export function Head() {
+	return <SEO title="Kollegorna" />;
+}
 
 export default kollegorna;

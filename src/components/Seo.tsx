@@ -9,9 +9,7 @@
 
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
-// Same as react-helmet uses
 type MetaProps = JSX.IntrinsicElements['meta'];
 
 type Props = {
@@ -105,14 +103,13 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 	];
 
 	return (
-		<Helmet
-			htmlAttributes={{
-				lang,
-			}}
-			title={title}
-			titleTemplate={`${site.siteMetadata.title} | %s`}
-			meta={metaData}
-		/>
+		<>
+			<html lang={lang} />
+			<title>{`${site.siteMetadata.title} | ${title}`}</title>
+			{metaData.map((meta) => (
+				<meta name={meta.name} content={meta.content} key={meta.name}></meta>
+			))}
+		</>
 	);
 };
 
