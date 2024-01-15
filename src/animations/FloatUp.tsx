@@ -15,7 +15,7 @@ export default ({ children, className, ...props }: Props) => {
 
 	return (
 		<motion.div
-			className={className + ' overflow-hidden'}
+			className={className ?? '' + ' overflow-hidden'}
 			{...props}
 			ref={ref}
 			initial={{
