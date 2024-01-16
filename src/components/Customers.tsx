@@ -24,42 +24,82 @@ const generateCustomers = (): CustomerType[] => {
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			blocket: file(relativePath: { eq: "customers/modified/blocket.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			qliro: file(relativePath: { eq: "customers/modified/qliro.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			karma: file(relativePath: { eq: "customers/modified/karma.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			mira: file(relativePath: { eq: "customers/modified/mira.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			nobina: file(relativePath: { eq: "customers/modified/nobina.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			quinyx: file(relativePath: { eq: "customers/modified/quinyx.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			seb: file(relativePath: { eq: "customers/modified/seb.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 		}
@@ -244,11 +284,11 @@ export default ({
 										direction={customer.direction}
 										delay={idx * 0.075}
 									>
-										<ImageDiv>
+										<div className="mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxs opacity-50 hover:opacity-100 transition-opacity ease-in-out duration-200">
 											<a href={customer.url} target="_blank">
 												{customer.image}
 											</a>
-										</ImageDiv>
+										</div>
 									</FloatInDir>
 								</div>
 							);

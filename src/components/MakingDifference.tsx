@@ -61,24 +61,44 @@ const generateDontations = (): DonationType[] => {
 		query {
 			raddaBarnen: file(relativePath: { eq: "donations/raddabarnen.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 370
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			handIHand: file(relativePath: { eq: "donations/handihand.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 370
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			lakareUtanGranser: file(
 				relativePath: { eq: "donations/lakareutangranser.png" }
 			) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 370
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			ukraine: file(relativePath: { eq: "donations/ukraineround.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 370
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 		}
