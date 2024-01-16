@@ -1,8 +1,6 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
 import { AnimatedH2, Caption, P, Span } from '../elements';
 import { HighlightButton } from './Button';
@@ -252,14 +250,6 @@ export default ({
 	...props
 }: CustomersProps) => {
 	const customers = givenCustomers ? givenCustomers : generateCustomers();
-
-	/* max-width: 150px; */
-	const ImageDiv = imgDiv
-		? imgDiv
-		: styled.div`
-				${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxs opacity-50 hover:opacity-100`};
-				${tw`transition-opacity ease-in-out duration-200`};
-		  `;
 
 	return (
 		<Section style={{ backgroundColor }}>
