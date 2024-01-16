@@ -8,8 +8,8 @@ import { useInView } from 'react-intersection-observer';
 import { useHover } from 'react-use';
 import styled from 'styled-components';
 import tw from 'twin.macro';
-import BlurIn from '../animations/variants/BlurIn';
-import P from '../elements/P';
+import BlurIn from '../../animations/variants/BlurIn';
+import P from '../../elements/P';
 import { Employee } from './EmployeeCards';
 
 type Link = {

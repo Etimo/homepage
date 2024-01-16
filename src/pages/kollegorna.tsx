@@ -4,7 +4,7 @@ import { AnimatedH2, Box, Caption, P, Span } from '../elements';
 import { HighlightButton } from '../components/Button';
 import { FloatUp } from '../animations';
 import styled from 'styled-components';
-import EmployeeCards from '../components/EmployeeCards';
+import EmployeeCards from '../components/Employees/EmployeeCards';
 import Layout from '../components/Layout';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import tw from 'twin.macro';

@@ -1,5 +1,3 @@
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { motion } from 'framer-motion';
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
@@ -9,30 +7,7 @@ import FloatUp from '../animations/FloatUp';
 import { AnimatedH2 } from '../elements';
 import Caption from '../elements/Caption';
 import Section from './Section';
-
-const IconHolder = styled.footer`
-	${tw`pt-6 md:pt-8 lg:pt-10`};
-	display: flex;
-	flex-direction: row-reverse;
-	> ul {
-		list-style-type: none;
-		display: flex;
-		margin: auto;
-		padding: 0;
-	}
-	> ul li {
-		padding: 5px;
-	}
-`;
-
-const Icon = styled(FontAwesomeIcon)`
-	transition: color 0.1s ease-out;
-	${tw`text-darkGray`};
-
-	:hover {
-		color: ${(props) => props.theme.secondary};
-	}
-`;
+import { FollowEtimoLinks } from './FollowEtimoLinks';
 
 const InfoP = styled.p`
 	${tw`text-center text-sm tracking-wider ease-in duration-200`};
@@ -146,20 +121,7 @@ const Footer = () => {
 
 				<div className="mx-auto flex flex-col pt-2 md:pt-4 lg:pt-6 xl:pt-8 overflow-hidden">
 					<FloatUp>
-						<IconHolder>
-							<ul>
-								<li>
-									<a
-										href="https://github.com/Etimo/"
-										target="_blank"
-										title="Etimos Github"
-									>
-										<Icon icon={faGithubSquare} size="2x" />
-									</a>
-								</li>
-								{/* Add more icons here */}
-							</ul>
-						</IconHolder>
+						<FollowEtimoLinks variant="center" />
 						<InfoP className="text-darkGray pointer-events-none">© Etimo</InfoP>
 					</FloatUp>
 				</div>
