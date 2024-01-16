@@ -36,7 +36,7 @@ const Services = () => {
 		<Section>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
-					<Caption>Nöjda kunder</Caption>
+					<Caption>Tjänster</Caption>
 				</FloatUp>
 				<div className="flex flex-col md:flex-row justify-center">
 					<AnimatedH2 direction="left">Våra tjänster&nbsp;</AnimatedH2>

@@ -9,7 +9,7 @@ const Competences = () => {
 		<Section style={{ background: 'white' }}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
-					<Caption>Områden</Caption>
+					<Caption>Kompetenser</Caption>
 				</FloatUp>
 				<div className="flex flex-col md:flex-row justify-center">
 					<AnimatedH2 direction="left">Exempel på våra&nbsp;</AnimatedH2>
