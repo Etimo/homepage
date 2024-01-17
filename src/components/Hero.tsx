@@ -11,7 +11,7 @@ const Hero = styled.div<ThemeProps<DefaultTheme>>`
 	${tw`flex flex-col mx-auto overflow-hidden items-center h-25r lg:h-auto justify-center`};
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
 	color: ${(props) => props.theme.primary};
 	${tw`font-etimo mb-8 uppercase text-5xl mx-auto md:text-6xl lg:text-8xl md:mb-4 tracking-tight`};
 `;
