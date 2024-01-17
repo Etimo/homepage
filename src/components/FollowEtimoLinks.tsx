@@ -35,7 +35,7 @@ export const FollowEtimoLinks = ({ variant, ...props }: Props) => {
 		<ul
 			{...props}
 			className={`${props.className ?? ''} mb-2 mt-2 flex flex-row ${
-				variant === 'center' ? 'justify-center' : 'justify-content'
+				variant === 'center' ? 'pl-2 justify-center' : 'justify-content'
 			}`}
 		>
 			{linkIcons.map(({ icon, title, href }) => (
