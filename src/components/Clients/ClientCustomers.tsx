@@ -163,7 +163,7 @@ const ClientCustomers = () => {
 					)
 				}
 			}
-			bytbil: file(relativePath: { eq: "customers/modified/bytbil.png" }) {
+			bovra: file(relativePath: { eq: "customers/modified/bovra.png" }) {
 				childImageSharp {
 					gatsbyImageData(
 						layout: CONSTRAINED
@@ -178,12 +178,12 @@ const ClientCustomers = () => {
 
 	const customers: CustomerType[] = [
 		{
-			name: 'Blocket',
-			url: 'https://www.blocket.se/',
+			name: 'Mitt skolval',
+			url: 'https://www.mittskolval.se/',
 			image: (
 				<GatsbyImage
-					image={data.blocket.childImageSharp.gatsbyImageData}
-					alt="Blockets logga"
+					image={data.mittskolval.childImageSharp.gatsbyImageData}
+					alt="Mitt skolvals logga"
 				/>
 			),
 			borders: {
@@ -191,21 +191,6 @@ const ClientCustomers = () => {
 				sm: '',
 			},
 			direction: 'right',
-		},
-		{
-			name: 'Karma',
-			url: 'https://karma.life/sv/',
-			image: (
-				<GatsbyImage
-					image={data.karma.childImageSharp.gatsbyImageData}
-					alt="Karmas logga"
-				/>
-			),
-			borders: {
-				xs: 'border-b',
-				sm: 'lg:border-r',
-			},
-			direction: 'down',
 		},
 		{
 			name: 'Tele2',
@@ -217,18 +202,33 @@ const ClientCustomers = () => {
 				/>
 			),
 			borders: {
+				xs: 'border-b',
+				sm: 'lg:border-r',
+			},
+			direction: 'down',
+		},
+		{
+			name: 'Karma',
+			url: 'https://karma.life/sv/',
+			image: (
+				<GatsbyImage
+					image={data.karma.childImageSharp.gatsbyImageData}
+					alt="Karmas logga"
+				/>
+			),
+			borders: {
 				xs: 'border-r border-b',
 				sm: '',
 			},
 			direction: 'down',
 		},
 		{
-			name: 'Mira',
-			url: 'https://www.mira.se/',
+			name: 'Nobina',
+			url: 'https://www.nobina.com/sv/Sverige/',
 			image: (
 				<GatsbyImage
-					image={data.mira.childImageSharp.gatsbyImageData}
-					alt="Miras logga"
+					image={data.nobina.childImageSharp.gatsbyImageData}
+					alt="Nobinas logga"
 				/>
 			),
 			borders: {
@@ -253,12 +253,12 @@ const ClientCustomers = () => {
 			direction: 'right',
 		},
 		{
-			name: 'SEB',
-			url: 'https://seb.se/',
+			name: 'Blocket',
+			url: 'https://www.blocket.se/',
 			image: (
 				<GatsbyImage
-					image={data.seb.childImageSharp.gatsbyImageData}
-					alt="SEB:s logga"
+					image={data.blocket.childImageSharp.gatsbyImageData}
+					alt="Blockets logga"
 				/>
 			),
 			borders: {
@@ -268,12 +268,12 @@ const ClientCustomers = () => {
 			direction: 'right',
 		},
 		{
-			name: 'Quinyx',
-			url: 'https://www.quinyx.com/sv/',
+			name: 'SEB',
+			url: 'https://seb.se/',
 			image: (
 				<GatsbyImage
-					image={data.quinyx.childImageSharp.gatsbyImageData}
-					alt="Quinix logga"
+					image={data.seb.childImageSharp.gatsbyImageData}
+					alt="SEB:s logga"
 				/>
 			),
 			borders: {
@@ -283,12 +283,12 @@ const ClientCustomers = () => {
 			direction: 'left',
 		},
 		{
-			name: 'Nobina',
-			url: 'https://www.nobina.com/sv/Sverige/',
+			name: 'Bovra',
+			url: 'https://bovra.se/',
 			image: (
 				<GatsbyImage
-					image={data.nobina.childImageSharp.gatsbyImageData}
-					alt="Nobinas logga"
+					image={data.bovra.childImageSharp.gatsbyImageData}
+					alt="Bovras logga"
 				/>
 			),
 			borders: {
@@ -328,12 +328,12 @@ const ClientCustomers = () => {
 			direction: 'up',
 		},
 		{
-			name: 'Mitt skolval',
-			url: 'https://www.mittskolval.se/',
+			name: 'Quinyx',
+			url: 'https://www.quinyx.com/sv/',
 			image: (
 				<GatsbyImage
-					image={data.mittskolval.childImageSharp.gatsbyImageData}
-					alt="Mitt skolvals logga"
+					image={data.quinyx.childImageSharp.gatsbyImageData}
+					alt="Quinix logga"
 				/>
 			),
 			borders: {
@@ -403,12 +403,12 @@ const ClientCustomers = () => {
 			direction: 'up',
 		},
 		{
-			name: 'Bytbil',
-			url: 'https://www.bytbil.com/',
+			name: 'Mira',
+			url: 'https://www.mira.se/',
 			image: (
 				<GatsbyImage
-					image={data.bytbil.childImageSharp.gatsbyImageData}
-					alt="Bytbils logga"
+					image={data.mira.childImageSharp.gatsbyImageData}
+					alt="Miras logga"
 				/>
 			),
 			borders: {
