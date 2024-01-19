@@ -1,28 +1,18 @@
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
-import styled from 'styled-components';
-import Box, { BoxProps } from '../elements/Box';
 
 type FadeInDirection = 'left' | 'right';
-
-type StyleProps = {
-	full?: boolean;
-};
 
 type Props = {
 	children: React.ReactNode;
 	direction: FadeInDirection;
-} & StyleProps;
+	className?: string;
+};
 
-const MotionBox = motion.custom(styled(Box)<StyleProps>`
-	height: ${({ full }) => full && '100%'};
-	width: ${({ full }) => full && '100%'};
-`);
-
-export default ({ full, children, direction, ...props }: Props & BoxProps) => {
+export default ({ children, direction, ...props }: Props) => {
 	const [entered, setEntered] = useState(false);
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 	const xDir = direction === 'left' ? '-20%' : '20%';
 
 	useEffect(() => {
@@ -32,8 +22,8 @@ export default ({ full, children, direction, ...props }: Props & BoxProps) => {
 	}, [inView, entered]);
 
 	return (
-		<MotionBox
-			full={full}
+		<motion.div
+			className="h-full w-full"
 			{...props}
 			ref={ref}
 			animate={entered ? 'enter' : 'exit'}
@@ -47,6 +37,6 @@ export default ({ full, children, direction, ...props }: Props & BoxProps) => {
 			}}
 		>
 			{children}
-		</MotionBox>
+		</motion.div>
 	);
 };

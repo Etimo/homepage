@@ -5,15 +5,15 @@ import posed from 'react-pose';
 const FadeInAnimation = ({ children, delay, duration, ...props }) => {
 	const FadeIn = posed.div({
 		hidden: {
-			opacity: 0
+			opacity: 0,
 		},
 		visible: {
 			opacity: 1,
 			delay,
 			transition: {
-				duration
-			}
-		}
+				duration,
+			},
+		},
 	});
 
 	return (
@@ -25,13 +25,13 @@ const FadeInAnimation = ({ children, delay, duration, ...props }) => {
 
 FadeInAnimation.defaultProps = {
 	delay: 0,
-	duration: 1000
+	duration: 1000,
 };
 
 FadeInAnimation.propTypes = {
 	children: propTypes.element.isRequired,
 	delay: propTypes.number,
-	duration: propTypes.number
+	duration: propTypes.number,
 };
 
 export default FadeInAnimation;

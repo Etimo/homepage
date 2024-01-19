@@ -51,7 +51,6 @@ const ClientsPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Kunder och expertis" />
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
 			<ClientCustomers />
@@ -63,5 +62,9 @@ const ClientsPage = () => {
 		</Layout>
 	);
 };
+
+export function Head() {
+	return <SEO title="Kunder och expertis" />;
+}
 
 export default ClientsPage;

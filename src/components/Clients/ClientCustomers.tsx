@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -11,118 +11,86 @@ const ClientCustomers = () => {
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			blocket: file(relativePath: { eq: "customers/modified/blocket.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			qliro: file(relativePath: { eq: "customers/modified/qliro.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			karma: file(relativePath: { eq: "customers/modified/karma.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			mira: file(relativePath: { eq: "customers/modified/mira.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			nobina: file(relativePath: { eq: "customers/modified/nobina.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			quinyx: file(relativePath: { eq: "customers/modified/quinyx.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			seb: file(relativePath: { eq: "customers/modified/seb.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			appva: file(relativePath: { eq: "customers/modified/appva.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			comviq: file(relativePath: { eq: "customers/modified/comviq.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			mittskolval: file(
 				relativePath: { eq: "customers/modified/mittskolval.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			expressen: file(
 				relativePath: { eq: "customers/modified/expressen.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			vklass: file(relativePath: { eq: "customers/modified/vklass.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			struqtur: file(relativePath: { eq: "customers/modified/struqtur.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			timewave: file(relativePath: { eq: "customers/modified/timewave.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			bytbil: file(relativePath: { eq: "customers/modified/bytbil.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 		}
@@ -132,7 +100,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Blocket',
 			url: 'https://www.blocket.se/',
-			image: <Img fluid={data.blocket.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.blocket.childImageSharp.gatsbyImageData}
+					alt="Blockets logga"
+				/>
+			),
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -142,7 +115,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Karma',
 			url: 'https://karma.life/sv/',
-			image: <Img fluid={data.karma.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.karma.childImageSharp.gatsbyImageData}
+					alt="Karmas logga"
+				/>
+			),
 			borders: {
 				xs: 'border-b',
 				sm: 'lg:border-r',
@@ -152,7 +130,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Tele2',
 			url: 'https://www.tele2.se/',
-			image: <Img fluid={data.tele2.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.tele2.childImageSharp.gatsbyImageData}
+					alt="Tele2:s logga"
+				/>
+			),
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -162,7 +145,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Mira',
 			url: 'https://www.mira.se/',
-			image: <Img fluid={data.mira.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.mira.childImageSharp.gatsbyImageData}
+					alt="Miras logga"
+				/>
+			),
 			borders: {
 				xs: 'border-b',
 				sm: '',
@@ -172,7 +160,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Qliro',
 			url: 'https://www.qliro.com/sv-se',
-			image: <Img fluid={data.qliro.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.qliro.childImageSharp.gatsbyImageData}
+					alt="Qliros logga"
+				/>
+			),
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -182,7 +175,12 @@ const ClientCustomers = () => {
 		{
 			name: 'SEB',
 			url: 'https://seb.se/',
-			image: <Img fluid={data.seb.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.seb.childImageSharp.gatsbyImageData}
+					alt="SEB:s logga"
+				/>
+			),
 			borders: {
 				xs: 'border-b',
 				sm: 'lg:border-r',
@@ -192,7 +190,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Quinyx',
 			url: 'https://www.quinyx.com/sv/',
-			image: <Img fluid={data.quinyx.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.quinyx.childImageSharp.gatsbyImageData}
+					alt="Quinix logga"
+				/>
+			),
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -202,7 +205,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Nobina',
 			url: 'https://www.nobina.com/sv/Sverige/',
-			image: <Img fluid={data.nobina.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.nobina.childImageSharp.gatsbyImageData}
+					alt="Nobinas logga"
+				/>
+			),
 			borders: {
 				xs: 'border-b',
 				sm: '',
@@ -212,7 +220,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Appva',
 			url: 'https://appva.com/sv/',
-			image: <Img fluid={data.appva.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.appva.childImageSharp.gatsbyImageData}
+					alt="Appvas logga"
+				/>
+			),
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -222,7 +235,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Comviq',
 			url: 'https://www.comviq.se/',
-			image: <Img fluid={data.comviq.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.comviq.childImageSharp.gatsbyImageData}
+					alt="Comviqs logga"
+				/>
+			),
 			borders: {
 				xs: 'border-b',
 				sm: 'lg:border-r',
@@ -232,7 +250,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Mitt skolval',
 			url: 'https://www.mittskolval.se/',
-			image: <Img fluid={data.mittskolval.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.mittskolval.childImageSharp.gatsbyImageData}
+					alt="Mitt skolvals logga"
+				/>
+			),
 			borders: {
 				xs: 'border-r border-b',
 				sm: '',
@@ -242,7 +265,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Expressen',
 			url: 'https://www.expressen.se/',
-			image: <Img fluid={data.expressen.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.expressen.childImageSharp.gatsbyImageData}
+					alt="Expressens logga"
+				/>
+			),
 			borders: {
 				xs: 'border-b',
 				sm: '',
@@ -252,7 +280,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Vklass',
 			url: 'https://www.vklass.com/',
-			image: <Img fluid={data.vklass.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.vklass.childImageSharp.gatsbyImageData}
+					alt="Vklass"
+				/>
+			),
 			borders: {
 				xs: 'border-b border-r',
 				sm: 'lg:border-b-0',
@@ -262,7 +295,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Struqtur',
 			url: 'https://www.struqtur.se/',
-			image: <Img fluid={data.struqtur.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.struqtur.childImageSharp.gatsbyImageData}
+					alt="Struqtur"
+				/>
+			),
 			borders: {
 				xs: 'border-b',
 				sm: 'lg:border-r lg:border-b-0',
@@ -272,7 +310,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Timewave',
 			url: 'https://www.timewave.se/',
-			image: <Img fluid={data.timewave.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.timewave.childImageSharp.gatsbyImageData}
+					alt="Timewaves logga"
+				/>
+			),
 			borders: {
 				xs: 'border-r',
 				sm: '',
@@ -282,7 +325,12 @@ const ClientCustomers = () => {
 		{
 			name: 'Bytbil',
 			url: 'https://www.bytbil.com/',
-			image: <Img fluid={data.bytbil.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.bytbil.childImageSharp.gatsbyImageData}
+					alt="Bytbils logga"
+				/>
+			),
 			borders: {
 				xs: '',
 				sm: '',

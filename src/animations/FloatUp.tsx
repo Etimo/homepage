@@ -10,12 +10,12 @@ type Props = {
 };
 
 export default ({ children, className, ...props }: Props) => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 	const [_, width] = useViewportSize();
 
 	return (
 		<motion.div
-			className={className + ' overflow-hidden'}
+			className={className ?? '' + ' overflow-hidden'}
 			{...props}
 			ref={ref}
 			initial={{

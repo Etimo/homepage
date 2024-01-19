@@ -1,7 +1,8 @@
 import React from 'react';
 import { FloatUp } from '../../animations';
-import { Caption, DashedP, H2, Span } from '../../elements';
+import { Caption, H2, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const bulletPoints = [
 	'Du är vår viktigaste resurs och du väljer själv dina uppdrag, har möjlighet att påverka vilka kunder du vill jobba med och har ansvar och förtroende för hur din vardag ser ut',
@@ -24,17 +25,15 @@ const WorkingHere = () => {
 						<Caption>Jobbet</Caption>
 						<H2 className="mb-4 md:mb-6 mt-2 md:mt-4">
 							Att jobba på <br />
-							<Span secondary>Etimo</Span>
+							<Span>Etimo</Span>
 						</H2>
 					</FloatUp>
 				</div>
 				<div className="w-11/12 md:w-2/3 mx-auto overflow-hidden">
 					{bulletPoints.map((bulletText) => {
 						return (
-							<FloatUp>
-								<DashedP className="mt-2" key={bulletText}>
-									{bulletText}
-								</DashedP>
+							<FloatUp key={bulletText}>
+								<DashedP className="mt-2">{bulletText}</DashedP>
 							</FloatUp>
 						);
 					})}

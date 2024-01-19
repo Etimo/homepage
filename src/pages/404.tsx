@@ -10,10 +10,10 @@ const NotFoundPage = () => (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
-					<FadeIn direction="left" flex flexDirection="column">
+					<FadeIn direction="left">
 						<Caption className="text-center lg:text-left">404</Caption>
 						<EmphasizedH2>
-							Sidan kunde <Span secondary>inte hittas</Span>
+							Sidan kunde <Span>inte hittas</Span>
 						</EmphasizedH2>
 					</FadeIn>
 				</div>

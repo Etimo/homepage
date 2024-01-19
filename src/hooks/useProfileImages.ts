@@ -5,194 +5,124 @@ export const useProfileImages = () => {
 		query {
 			henrik: file(relativePath: { eq: "someofus/new-images/henrik.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			bjorn: file(relativePath: { eq: "someofus/new-images/bjorn.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			alfred: file(relativePath: { eq: "someofus/new-images/affe.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			malinw: file(relativePath: { eq: "someofus/new-images/malinw.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			jeanette: file(
 				relativePath: { eq: "someofus/new-images/jeanette2.jpg" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			lukas: file(relativePath: { eq: "someofus/new-images/lukas.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			rickard: file(relativePath: { eq: "someofus/new-images/rickard.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			saga: file(relativePath: { eq: "someofus/new-images/saga.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			joakim: file(relativePath: { eq: "someofus/new-images/joakim.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			erik: file(relativePath: { eq: "someofus/new-images/erik.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			axel: file(relativePath: { eq: "someofus/new-images/elmarsson.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			daniel: file(relativePath: { eq: "someofus/new-images/danielw.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			philip: file(relativePath: { eq: "someofus/new-images/phille.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			morgan: file(relativePath: { eq: "someofus/new-images/morgan.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			etimo: file(relativePath: { eq: "someofus/new-images/etimologo.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			niclas: file(relativePath: { eq: "someofus/new-images/niclas.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			johan: file(relativePath: { eq: "someofus/new-images/johan2.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			lilleman: file(relativePath: { eq: "someofus/new-images/lilleman.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			andre: file(relativePath: { eq: "someofus/new-images/andre.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
-				}
-			}
-			jassyr: file(relativePath: { eq: "someofus/new-images/jassyr.jpg" }) {
-				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			klara: file(relativePath: { eq: "someofus/new-images/klara.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			colan: file(relativePath: { eq: "someofus/new-images/colan.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 			malinl: file(relativePath: { eq: "someofus/new-images/IMG_4564.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 500) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
 		}
 	`);
 
 	return {
-		henrik: data.henrik.childImageSharp.fluid,
-		bjorn: data.bjorn.childImageSharp.fluid,
-		alfred: data.alfred.childImageSharp.fluid,
-		malinw: data.malinw.childImageSharp.fluid,
-		jeanette: data.jeanette.childImageSharp.fluid,
-		lukas: data.lukas.childImageSharp.fluid,
-		rickard: data.rickard.childImageSharp.fluid,
-		saga: data.saga.childImageSharp.fluid,
-		joakim: data.joakim.childImageSharp.fluid,
-		erik: data.erik.childImageSharp.fluid,
-		axel: data.axel.childImageSharp.fluid,
-		daniel: data.daniel.childImageSharp.fluid,
-		philip: data.philip.childImageSharp.fluid,
-		morgan: data.morgan.childImageSharp.fluid,
-		etimo: data.etimo.childImageSharp.fluid,
-		niclas: data.niclas.childImageSharp.fluid,
-		johan: data.johan.childImageSharp.fluid,
-		lilleman: data.lilleman.childImageSharp.fluid,
-		andre: data.andre.childImageSharp.fluid,
-		jassyr: data.jassyr.childImageSharp.fluid,
-		klara: data.klara.childImageSharp.fluid,
-		colan: data.colan.childImageSharp.fluid,
-		malinl: data.malinl.childImageSharp.fluid,
+		henrik: data.henrik.childImageSharp.gatsbyImageData,
+		bjorn: data.bjorn.childImageSharp.gatsbyImageData,
+		malinw: data.malinw.childImageSharp.gatsbyImageData,
+		jeanette: data.jeanette.childImageSharp.gatsbyImageData,
+		lukas: data.lukas.childImageSharp.gatsbyImageData,
+		rickard: data.rickard.childImageSharp.gatsbyImageData,
+		saga: data.saga.childImageSharp.gatsbyImageData,
+		joakim: data.joakim.childImageSharp.gatsbyImageData,
+		erik: data.erik.childImageSharp.gatsbyImageData,
+		axel: data.axel.childImageSharp.gatsbyImageData,
+		daniel: data.daniel.childImageSharp.gatsbyImageData,
+		philip: data.philip.childImageSharp.gatsbyImageData,
+		morgan: data.morgan.childImageSharp.gatsbyImageData,
+		etimo: data.etimo.childImageSharp.gatsbyImageData,
+		johan: data.johan.childImageSharp.gatsbyImageData,
+		andre: data.andre.childImageSharp.gatsbyImageData,
+		klara: data.klara.childImageSharp.gatsbyImageData,
+		colan: data.colan.childImageSharp.gatsbyImageData,
+		malinl: data.malinl.childImageSharp.gatsbyImageData,
 	};
 };
 

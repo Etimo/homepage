@@ -1,7 +1,8 @@
 import React from 'react';
 import { FadeIn, FloatUp } from '../../animations';
-import { AnimatedH2, Caption, DashedP, H3, P, Span } from '../../elements';
+import { AnimatedH2, Caption, H3, P, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const thriveTexts = [
 	'Du har en stark vilja att ständigt lära mer och utvecklas i din yrkesroll',
@@ -25,7 +26,7 @@ const WhoAreYou = () => {
 				</FloatUp>
 				<div className="flex flex-col md:flex-row justify-center">
 					<AnimatedH2 direction="left">
-						Är <Span secondary>du</Span> vår&nbsp;
+						Är <Span>du</Span> vår&nbsp;
 					</AnimatedH2>
 					<AnimatedH2 direction="right">nästa kollega?</AnimatedH2>
 				</div>

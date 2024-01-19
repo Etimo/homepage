@@ -1,7 +1,8 @@
 import React from 'react';
 import { FloatInDir, FloatUp } from '../../animations';
-import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
+import { AnimatedH2, Caption, H4, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const Competences = () => {
 	return (
@@ -13,7 +14,7 @@ const Competences = () => {
 				<div className="flex flex-col md:flex-row justify-center">
 					<AnimatedH2 direction="left">Exempel på våra&nbsp;</AnimatedH2>
 					<AnimatedH2 direction="right">
-						<Span secondary>kompetenser</Span>
+						<Span>kompetenser</Span>
 					</AnimatedH2>
 				</div>
 				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 mx-auto lg:mx-0 lg:w-full">

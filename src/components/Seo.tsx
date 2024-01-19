@@ -9,9 +9,7 @@
 
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import { Helmet } from 'react-helmet';
 
-// Same as react-helmet uses
 type MetaProps = JSX.IntrinsicElements['meta'];
 
 type Props = {
@@ -34,20 +32,17 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 						imageAlt
 						imageType
 					}
-					
 				}
 				logo: file(relativePath: { eq: "etimo-logo-sharing.png" }) {
 					childImageSharp {
-						fluid(maxWidth: 1200) {
-							src
-						}
+						gatsbyImageData(layout: CONSTRAINED, width: 1200)
 					}
 				}
 			}
 		`
 	);
 
-	const metaDescription = description || site.siteMetadata.description
+	const metaDescription = description || site.siteMetadata.description;
 	const metaData: MetaProps[] = [
 		{
 			name: `twitter:card`,
@@ -88,7 +83,7 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 		{
 			name: `image`,
 			property: `og:image`,
-			content: logo.childImageSharp.fluid.src,
+			content: logo.childImageSharp.gatsbyImageData,
 		},
 		{
 			name: `image-type`,
@@ -108,14 +103,13 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 	];
 
 	return (
-		<Helmet
-			htmlAttributes={{
-				lang,
-			}}
-			title={title}
-			titleTemplate={`${site.siteMetadata.title} | %s`}
-			meta={metaData}
-		/>
+		<>
+			<html lang={lang} />
+			<title>{`${site.siteMetadata.title} | ${title}`}</title>
+			{metaData.map((meta) => (
+				<meta name={meta.name} content={meta.content} key={meta.name}></meta>
+			))}
+		</>
 	);
 };
 

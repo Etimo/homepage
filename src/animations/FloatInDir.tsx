@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default ({ children, direction, delay, ...props }: Props) => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 
 	let xDir = '0',
 		yDir = '0';

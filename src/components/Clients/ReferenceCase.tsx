@@ -3,23 +3,21 @@ import FadeIn from '../../animations/FadeIn';
 import Caption from '../../elements/Caption';
 import P from '../../elements/P';
 import Span from '../../elements/Span';
-import { useViewportSize } from '../../hooks';
 import Section from '../Section';
 import EmphasizedH2 from '../../elements/EmphasizedH2';
 
 const ReferenceCase = () => {
-	const [h, width] = useViewportSize();
 	return (
 		<Section style={{ background: 'white' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
-					<FadeIn direction="left" flex flexDirection="column">
+					<FadeIn direction="left">
 						<Caption className="text-center lg:text-left">
 							Ett av våra kunduppdrag
 						</Caption>
 						<EmphasizedH2>
 							Referenscase: <br />
-							<Span secondary>Migrering till molnet</Span>
+							<Span>Migrering till molnet</Span>
 						</EmphasizedH2>
 					</FadeIn>
 				</div>

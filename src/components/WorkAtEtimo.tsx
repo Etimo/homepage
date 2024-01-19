@@ -1,18 +1,18 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
 import FadeIn from '../animations/FadeIn';
 import { P } from '../elements';
 import Caption from '../elements/Caption';
-import DashedP from '../elements/DashedP';
 import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
+import DashedP from './DashedP';
 
 const CustomBackground = styled.div<{ offset: number }>`
 	position: absolute;
@@ -33,7 +33,7 @@ const EmphasizedH2 = styled(H2)`
 `;
 
 /* Shadow won't appear without margin */
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
 	box-shadow: 0px 0px 15px -2px rgba(120, 120, 120, 1);
 	${tw`m-4 lg:m-6`};
 `;
@@ -54,9 +54,7 @@ const WorkAtEtimo = () => {
 		query {
 			image: file(relativePath: { eq: "bollhavny.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 540, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 360, quality: 90)
 				}
 			}
 		}
@@ -75,7 +73,7 @@ const WorkAtEtimo = () => {
 								Att jobba på Etimo
 							</Caption>
 							<EmphasizedH2>
-								Hur är det att <Span secondary>jobba </Span>
+								Hur är det att <Span>jobba </Span>
 								på Etimo?
 							</EmphasizedH2>
 							<div className="mx-4 lg:mx-0">
@@ -95,7 +93,10 @@ const WorkAtEtimo = () => {
 					</div>
 					<div className="w-4/5 sm:w-3/5 lg:w-2/5">
 						<FadeIn direction="right">
-							<StyledImg fluid={data.image.childImageSharp.fluid} />
+							<StyledImg
+								image={data.image.childImageSharp.gatsbyImageData}
+								alt="Kollegor i bollhavet"
+							/>
 						</FadeIn>
 					</div>
 				</div>

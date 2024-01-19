@@ -2,8 +2,9 @@ import SupervisorAccountIcon from '@material-ui/icons/SupervisorAccount';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import React from 'react';
 import { FloatInDir, FloatUp } from '../../animations';
-import { AnimatedH2, Caption, DashedP, H4, Span } from '../../elements';
+import { AnimatedH2, Caption, H4, Span } from '../../elements';
 import Section from '../Section';
+import DashedP from '../DashedP';
 
 const CreateValue = () => {
 	return (
@@ -15,7 +16,7 @@ const CreateValue = () => {
 				<div className="flex justify-center">
 					<AnimatedH2 direction="left">Vi skapar&nbsp;</AnimatedH2>
 					<AnimatedH2 direction="right">
-						<Span secondary>värde</Span>
+						<Span>värde</Span>
 					</AnimatedH2>
 				</div>
 				<div className="flex flex-col lg:flex-row mt-6 lg:mt-10 mx-auto lg:mx-0 lg:w-full">

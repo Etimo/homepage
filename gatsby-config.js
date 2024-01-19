@@ -26,10 +26,7 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
-		`gatsby-transformer-sharp`,
-		`gatsby-plugin-sharp`,
 		{
-			// TODO: Figure out exactly what this does
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `gatsby-starter-default`,
@@ -41,7 +38,6 @@ module.exports = {
 				icon: `src/images/etimofavicon.png`, // This path is relative to the root of the site.
 			},
 		},
-		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-remove-serviceworker`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-sitemap`,
@@ -72,7 +68,8 @@ module.exports = {
 		}, */
 		`gatsby-plugin-netlify-cms`,
 		'gatsby-plugin-ts-checker',
-		// ! Add gatsby-plugin-google-analytics
-		// TODO: Maybe add gatsby-plugin-sitemap for better search-engine results
+		`gatsby-plugin-image`,
+		`gatsby-plugin-sharp`,
+		`gatsby-transformer-sharp`,
 	],
 };

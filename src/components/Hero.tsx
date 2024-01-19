@@ -2,7 +2,6 @@ import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
-import { useViewportSize } from '../hooks';
 import Carousel from './Carousel';
 import Section from './Section';
 
@@ -12,7 +11,7 @@ const Hero = styled.div<ThemeProps<DefaultTheme>>`
 	${tw`flex flex-col mx-auto overflow-hidden items-center h-25r lg:h-auto justify-center`};
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
 	color: ${(props) => props.theme.primary};
 	${tw`font-etimo mb-8 uppercase text-5xl mx-auto md:text-6xl lg:text-8xl md:mb-4 tracking-tight`};
 `;
@@ -36,7 +35,7 @@ const Splash = () => {
 		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
 			<Hero>
 				<FloatInDir className="flex items-end h-heroFloatIn" direction="down">
-					<HeroTitle>Etimo</HeroTitle>
+					<HeroTitle className="overflow-hidden">Etimo</HeroTitle>
 				</FloatInDir>
 				<FloatUp>
 					<HeroContent>

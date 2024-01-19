@@ -18,7 +18,6 @@ const IndexPage = () => {
 
 	return (
 		<Layout>
-			<SEO title="Hem" />
 			{scrollbarEnabled && <Scroller />}
 
 			<Hero />
@@ -39,5 +38,9 @@ const IndexPage = () => {
 		</Layout>
 	);
 };
+
+export function Head() {
+	return <SEO title="Hem" />;
+}
 
 export default IndexPage;

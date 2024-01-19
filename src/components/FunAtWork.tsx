@@ -1,5 +1,5 @@
 import { graphql, useStaticQuery } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -10,7 +10,7 @@ import Span from '../elements/Span';
 import EmployeeCards, { Employee } from './EmployeeCards';
 import Section from './Section';
 
-const StyledImg = styled(Img)`
+const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
 `;
 
@@ -19,86 +19,72 @@ export default () => {
 		query {
 			cloud: file(relativePath: { eq: "funatwork/new/danielochsaga.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			boardgame: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			afterski: file(relativePath: { eq: "funatwork/new/afterski.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			jassyr: file(relativePath: { eq: "funatwork/new/jassyr.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			andre: file(relativePath: { eq: "funatwork/new/andre.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			pillows: file(relativePath: { eq: "funatwork/new/danielochlukas.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			rickard: file(relativePath: { eq: "funatwork/new/rickardny.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			italy: file(relativePath: { eq: "funatwork/new/italienvandring.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			moon: file(relativePath: { eq: "funatwork/new/joakimochbjorn.jpeg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			dolceaqua: file(relativePath: { eq: "funatwork/new/italien.JPG" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+				}
+			}
+			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
+				childImageSharp {
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+				}
+			}
+			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
+				childImageSharp {
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 		}
@@ -108,42 +94,82 @@ export default () => {
 		{
 			name: 'BJÖRN & JOAKIM',
 			title: 'På månen',
-			image: <StyledImg fluid={data.moon.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.moon.childImageSharp.gatsbyImageData}
+					alt="På månen"
+				/>
+			),
 		},
 		{
 			name: 'JOHAN',
 			title: 'Njuter av lugnet',
-			image: <StyledImg fluid={data.rest.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.rest.childImageSharp.gatsbyImageData}
+					alt="Johan njuter av lugnet"
+				/>
+			),
 		},
 		{
 			name: 'KOLLEGOR',
 			title: 'På pit stop i Åre',
-			image: <StyledImg fluid={data.afterski.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.afterski.childImageSharp.gatsbyImageData}
+					alt="Kollegor på pit-stop i Åre"
+				/>
+			),
 		},
 		{
 			name: 'DANIEL & SAGA',
 			title: 'Laddar upp i molnet',
-			image: <StyledImg fluid={data.cloud.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.cloud.childImageSharp.gatsbyImageData}
+					alt="Daniel och Saga laddar upp i molnet"
+				/>
+			),
 		},
 		{
 			name: 'JEANETTE',
 			title: 'DJ:ar i rinken',
-			image: <StyledImg fluid={data.disco.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.disco.childImageSharp.gatsbyImageData}
+					alt="Jeanette dj:ar i rinken"
+				/>
+			),
 		},
 		{
 			name: 'DANIEL & LUKAS',
 			title: 'Njuter i kuddhavet',
-			image: <StyledImg fluid={data.pillows.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.pillows.childImageSharp.gatsbyImageData}
+					alt="Daniel och Lukas i kuddhavet"
+				/>
+			),
 		},
 		{
 			name: 'GÄNGET',
 			title: 'På brädspelskväll',
-			image: <StyledImg fluid={data.boardgame.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.boardgame.childImageSharp.gatsbyImageData}
+					alt="Gänget på brädspelskväll"
+				/>
+			),
 		},
 		{
 			name: 'ANDRÈ',
 			title: 'Kaffepaus i glitterboxen',
-			image: <StyledImg fluid={data.andre.childImageSharp.fluid} />,
+			image: (
+				<StyledImg
+					image={data.andre.childImageSharp.gatsbyImageData}
+					alt="Kaffepaus i glitterboxen"
+				/>
+			),
 		},
 	];
 
@@ -156,10 +182,10 @@ export default () => {
 					</FloatUp>
 					<div className="flex flex-row justify-center h-24">
 						<AnimatedH2 direction="left">
-							Kul <Span secondary>på</Span>
+							Kul <Span>på</Span>
 						</AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span secondary>&nbsp;jobbet</Span>
+							<Span>&nbsp;jobbet</Span>
 						</AnimatedH2>
 					</div>
 					<EmployeeCards employees={cards} employeePage={false} />

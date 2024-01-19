@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import FadeIn from '../animations/FadeIn';
 import Caption from '../elements/Caption';
-import H2 from '../elements/H2';
 import P from '../elements/P';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
@@ -33,12 +32,12 @@ const About = () => {
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
-					<FadeIn direction="left" flex flexDirection="column">
+					<FadeIn direction="left" className="flex flex-col">
 						<Caption className="text-center lg:text-left">
 							Välkommen till Etimo!
 						</Caption>
 						<EmphasizedH2>
-							<Span secondary>Passion</Span> för teknik, <br />
+							<Span>Passion</Span> för teknik, <br />
 							kundvärde och <br />
 							samhällsnytta
 						</EmphasizedH2>

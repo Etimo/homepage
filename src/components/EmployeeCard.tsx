@@ -23,21 +23,14 @@ const CardDiv = styled(motion.div)`
 	${tw`relative shadow overflow-hidden`};
 `;
 
-const useStyles = makeStyles(({
+const useStyles = makeStyles({
 	githubIcon: {
-	  height: '80%'
+		height: '80%',
 	},
-}));
+});
 
 export default (props: Props) => {
-	const {
-		name,
-		title,
-		image,
-		github,
-		linkedin,
-		twitter,
-	} = props;
+	const { name, title, image, github, linkedin, twitter } = props;
 	const classes = useStyles();
 
 	const container = {
@@ -112,10 +105,14 @@ export default (props: Props) => {
 	const links: Link[] = [];
 
 	if (linkedin) links.push({ icon: <LinkedinIcon />, url: linkedin });
-	if (github) links.push({ icon: <GithubIcon className={classes.githubIcon} />, url: github });
+	if (github)
+		links.push({
+			icon: <GithubIcon className={classes.githubIcon} />,
+			url: github,
+		});
 	if (twitter) links.push({ icon: <TwitterIcon />, url: twitter });
 
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 
 	const element = (hovered: boolean) => (
 		<CardDiv

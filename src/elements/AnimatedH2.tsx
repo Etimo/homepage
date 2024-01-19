@@ -11,7 +11,7 @@ type Props = {
 };
 
 export default ({ children, className, direction, ...props }: Props) => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 	const xDir = direction === 'left' ? '-20%' : '20%';
 
 	const fadeVar = {

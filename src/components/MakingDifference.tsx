@@ -1,5 +1,5 @@
-import styled, { DefaultTheme, StyledComponent } from 'styled-components';
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import styled from 'styled-components';
+import { graphql, useStaticQuery } from 'gatsby';
 import { FloatInDir } from '../animations';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
@@ -11,11 +11,11 @@ import FloatUp from '../animations/FloatUp';
 import BlurIn from '../animations/variants/BlurIn';
 import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
-import DashedP from '../elements/DashedP';
 import Span from '../elements/Span';
 import Section from './Section';
-import Img from 'gatsby-image';
+import { GatsbyImage } from 'gatsby-plugin-image';
 import { FloatDirection } from '../animations/FloatInDir';
+import DashedP from './DashedP';
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -61,32 +61,24 @@ const generateDontations = (): DonationType[] => {
 		query {
 			raddaBarnen: file(relativePath: { eq: "donations/raddabarnen.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			handIHand: file(relativePath: { eq: "donations/handihand.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			lakareUtanGranser: file(
 				relativePath: { eq: "donations/lakareutangranser.png" }
 			) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 			ukraine: file(relativePath: { eq: "donations/ukraineround.png" }) {
 				childImageSharp {
-					fluid(maxWidth: 370, quality: 90) {
-						...GatsbyImageSharpFluid_tracedSVG
-					}
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 		}
@@ -94,9 +86,13 @@ const generateDontations = (): DonationType[] => {
 	return [
 		{
 			name: 'raddaBarnen',
-			url:
-				'https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html',
-			image: <Img fluid={data.raddaBarnen.childImageSharp.fluid} />,
+			url: 'https://blog.etimo.se/featured/2020/12/14/radda-barnen-samarbete.html',
+			image: (
+				<GatsbyImage
+					image={data.raddaBarnen.childImageSharp.gatsbyImageData}
+					alt="Rädda barnens logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-r border-b',
@@ -106,7 +102,12 @@ const generateDontations = (): DonationType[] => {
 		{
 			name: 'handIHand',
 			url: 'https://www.handinhandsweden.se/',
-			image: <Img fluid={data.handIHand.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.handIHand.childImageSharp.gatsbyImageData}
+					alt="HandIHand:s logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-b',
@@ -116,7 +117,12 @@ const generateDontations = (): DonationType[] => {
 		{
 			name: 'lakareUtanGranser',
 			url: 'https://lakareutangranser.se/',
-			image: <Img fluid={data.lakareUtanGranser.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.lakareUtanGranser.childImageSharp.gatsbyImageData}
+					alt="Läkare utan gränsers logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-r border-b',
@@ -126,7 +132,12 @@ const generateDontations = (): DonationType[] => {
 		{
 			name: 'ukraine',
 			url: 'https://supportukrainenow.org/',
-			image: <Img fluid={data.ukraine.childImageSharp.fluid} />,
+			image: (
+				<GatsbyImage
+					image={data.ukraine.childImageSharp.gatsbyImageData}
+					alt="Support Ukraine now:s logga"
+				/>
+			),
 			direction: 'down',
 			borders: {
 				xs: 'border-b',
@@ -137,11 +148,11 @@ const generateDontations = (): DonationType[] => {
 };
 
 type CustomersProps = {
-	imgDiv?: StyledComponent<'div', DefaultTheme, {}, never>;
+	imgDiv?: React.FC;
 };
 
 export default ({ imgDiv }: CustomersProps) => {
-	const [ref, inView] = useInView();
+	const [ref, inView] = useInView({ triggerOnce: true });
 	const donations = generateDontations();
 
 	const ImageDiv = imgDiv
@@ -161,7 +172,7 @@ export default ({ imgDiv }: CustomersProps) => {
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Etimo gör</AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span secondary>&nbsp;skillnad</Span>
+							<Span>&nbsp;skillnad</Span>
 						</AnimatedH2>
 					</div>
 					<motion.div
