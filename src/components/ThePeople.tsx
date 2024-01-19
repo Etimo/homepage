@@ -137,10 +137,8 @@ const ThePeople = () => {
 					</div>
 					<EmployeeCards employees={people} employeePage={false} />
 
-					<HighlightButton className="mt-8 mx-auto">
-						<Link to="/kollegorna">
-							<P>Möt hela Etimo</P>
-						</Link>
+					<HighlightButton className="mt-8 mx-auto overflow-hidden">
+						<Link to="/kollegorna">Möt hela Etimo</Link>
 					</HighlightButton>
 				</div>
 			</div>
