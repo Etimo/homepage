@@ -11,7 +11,7 @@ const CreateValue = () => {
 		<Section>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
-					<Caption>Våra tjänster</Caption>
+					<Caption>Värde för kund</Caption>
 				</FloatUp>
 				<div className="flex justify-center">
 					<AnimatedH2 direction="left">Vi skapar&nbsp;</AnimatedH2>
