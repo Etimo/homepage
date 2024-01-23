@@ -65,7 +65,7 @@ module.exports = {
 					anonymize: true,
 					allowAdFeatures: false,
 				},
-				environments: ['production', 'development'],
+				environments: ['production'],
 			},
 		},
 		`gatsby-plugin-netlify-cms`,
