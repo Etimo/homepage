@@ -57,15 +57,17 @@ module.exports = {
 				},
 			},
 		},
-		/* 
-		// Disabled Google Analytics to strategize on its integration
 		{
-			resolve: 'gatsby-plugin-google-analytics',
+			resolve: `gatsby-plugin-gdpr-cookies`,
 			options: {
-				trackingId: 'UA-47276360-1',
-				head: true,
+				googleAnalytics: {
+					trackingId: 'G-VCD8Z6L6BQ',
+					anonymize: true,
+					allowAdFeatures: false,
+				},
+				environments: ['production', 'development'],
 			},
-		}, */
+		},
 		`gatsby-plugin-netlify-cms`,
 		'gatsby-plugin-ts-checker',
 		`gatsby-plugin-image`,
