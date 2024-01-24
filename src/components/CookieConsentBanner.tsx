@@ -1,17 +1,14 @@
 import React from 'react';
-import { DefaultTheme } from 'styled-components';
+import { useTheme } from 'styled-components';
 import '../css/global.css';
 import { Caption } from '../elements';
 import { useLocation } from '@reach/router';
 import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies';
 import CookieConsent from 'react-cookie-consent';
 
-type Props = {
-	theme: DefaultTheme;
-};
-
-export const CookieConsentBanner = ({ theme }: Props) => {
+export const CookieConsentBanner = () => {
 	const location = useLocation();
+	const theme = useTheme();
 	return (
 		<CookieConsent
 			location="bottom"
