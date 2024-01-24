@@ -19,23 +19,21 @@ export const CookieConsentBanner = () => {
 			style={{ background: theme.primary, alignItems: 'center' }}
 			buttonStyle={{
 				background: theme.secondary,
-				fontSize: '13px',
-				fontFamily: theme.typography.paragraph.font,
+				fontSize: '0.875rem',
 			}}
 			declineButtonStyle={{
 				background: theme.primary,
-				fontSize: '13px',
+				fontSize: '0.875rem',
 				border: '1px solid black',
-				fontFamily: theme.typography.paragraph.font,
 			}}
 			onAccept={() => initializeAndTrack(location)}
 		>
 			<div className="min-h-16">
 				<Caption>Cookies</Caption>
-				<P className="text-white text-small">
+				<p className="text-white text-sm">
 					Vi använder cookies för att analysera användarbeteenden och förbättra
 					din upplevelse på vår hemsida.
-				</P>
+				</p>
 			</div>
 		</CookieConsent>
 	);
