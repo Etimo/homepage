@@ -13,7 +13,6 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
-import { CookieConsentBanner } from '../components/CookieConsentBanner';
 
 const ClientsPage = () => {
 	const [height, width] = useViewportSize();
@@ -60,7 +59,6 @@ const ClientsPage = () => {
 			<Services />
 			<ReferenceCase />
 			<Apply variantKey="customers" />
-			<CookieConsentBanner />
 		</Layout>
 	);
 };

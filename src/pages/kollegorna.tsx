@@ -11,7 +11,6 @@ import tw from 'twin.macro';
 import VideoPlayer from '../components/VideoPlayer';
 import { useProfileImages } from '../hooks/useProfileImages';
 import SEO from '../components/Seo';
-import { CookieConsentBanner } from '../components/CookieConsentBanner';
 
 const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
@@ -160,7 +159,6 @@ const kollegorna = () => {
 					</div>
 				</div>
 			</div>
-			<CookieConsentBanner />
 		</Layout>
 	);
 };
