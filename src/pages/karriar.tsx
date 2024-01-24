@@ -5,6 +5,7 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import { CookieConsentBanner } from '../components/CookieConsentBanner';
 
 const CareerPage = () => {
 	const [height, width] = useViewportSize();
@@ -36,6 +37,7 @@ const CareerPage = () => {
 			<WorkingHere />
 			<WhoAreYou />
 			<Apply variantKey="default" backgroundColor="white" />
+			<CookieConsentBanner />
 		</Layout>
 	);
 };

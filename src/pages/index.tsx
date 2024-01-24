@@ -11,6 +11,7 @@ import ThePeople from '../components/ThePeople';
 import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import { CookieConsentBanner } from '../components/CookieConsentBanner';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -33,6 +34,7 @@ const IndexPage = () => {
 			<FunAtWork />
 
 			<MakingDifference />
+			<CookieConsentBanner />
 		</Layout>
 	);
 };
