@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from 'styled-components';
 import '../css/global.css';
-import { Caption } from '../elements';
+import { Caption, P } from '../elements';
 import { useLocation } from '@reach/router';
 import { initializeAndTrack } from 'gatsby-plugin-gdpr-cookies';
 import CookieConsent from 'react-cookie-consent';
@@ -16,21 +16,26 @@ export const CookieConsentBanner = () => {
 			declineButtonText="Avböj cookies"
 			enableDeclineButton
 			cookieName="gatsby-gdpr-google-analytics"
-			style={{ background: theme.primary }}
-			buttonStyle={{ background: theme.secondary, fontSize: '13px' }}
+			style={{ background: theme.primary, alignItems: 'center' }}
+			buttonStyle={{
+				background: theme.secondary,
+				fontSize: '13px',
+				fontFamily: theme.typography.paragraph.font,
+			}}
 			declineButtonStyle={{
 				background: theme.primary,
 				fontSize: '13px',
 				border: '1px solid black',
+				fontFamily: theme.typography.paragraph.font,
 			}}
 			onAccept={() => initializeAndTrack(location)}
 		>
-			<div className="h-16">
+			<div className="min-h-16">
 				<Caption>Cookies</Caption>
-				<p>
-					Vi använder cookies för att kunna analysera användarbeteenden, så att
-					vi kan ge dig en så positiv upplevelse som möjligt av vår hemsida.
-				</p>
+				<P className="text-white text-small">
+					Vi använder cookies för att analysera användarbeteenden och förbättra
+					din upplevelse på vår hemsida.
+				</P>
 			</div>
 		</CookieConsent>
 	);

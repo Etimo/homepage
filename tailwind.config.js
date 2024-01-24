@@ -65,6 +65,7 @@ module.exports = {
 			},
 			minHeight: {
 				cyanHover: '36px',
+				16: '4rem',
 			},
 			height: {
 				heroFloatIn: '200px',
