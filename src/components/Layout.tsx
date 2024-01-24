@@ -8,7 +8,6 @@ import Header from './Header';
 import './layout.css';
 import RightMenu from './RightMenu';
 import { ScrollToTopButton } from '../components/Button';
-import { useLocation } from '@reach/router';
 import { CookieConsentBanner } from './CookieConsentBanner';
 
 type Props = {
@@ -57,7 +56,7 @@ const Layout = ({ children }: Props) => {
 					<ScrollToTopButton showBelow={300} />
 					{children}
 
-					<CookieConsentBanner theme={theme} />
+					<CookieConsentBanner />
 				</main>
 
 				<Footer />
