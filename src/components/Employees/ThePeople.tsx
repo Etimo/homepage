@@ -1,15 +1,15 @@
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import FloatUp from '../animations/FloatUp';
-import AnimatedH2 from '../elements/AnimatedH2';
-import Caption from '../elements/Caption';
-import Span from '../elements/Span';
+import FloatUp from '../../animations/FloatUp';
+import AnimatedH2 from '../../elements/AnimatedH2';
+import Caption from '../../elements/Caption';
+import Span from '../../elements/Span';
 import EmployeeCards from './EmployeeCards';
-import Section from './Section';
-import { HighlightButton } from './Button';
-import { P } from '../elements';
-import useProfileImages from '../hooks/useProfileImages';
+import Section from '../Section';
+import { HighlightButton } from '../Button';
+import { P } from '../../elements';
+import useProfileImages from '../../hooks/useProfileImages';
 
 const imageClassName = 'max-w-sm h-full';
 

@@ -7,7 +7,7 @@ import FloatUp from '../animations/FloatUp';
 import AnimatedH2 from '../elements/AnimatedH2';
 import Caption from '../elements/Caption';
 import Span from '../elements/Span';
-import EmployeeCards, { Employee } from './EmployeeCards';
+import EmployeeCards, { Employee } from './Employees/EmployeeCards';
 import Section from './Section';
 
 const StyledImg = styled(GatsbyImage)`

@@ -1,5 +1,3 @@
-import { faGithubSquare } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link } from 'gatsby';
 import React, { useState } from 'react';
@@ -7,21 +5,13 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 import { CyanHover } from '../animations';
 import { Caption, H4, P } from '../elements';
+import { FollowEtimoLinks } from './FollowEtimoLinks';
 
 const links = [
 	{ name: 'Start', url: '/', local: true },
 	{ name: 'Karriär', url: '/karriar', local: true },
 	{ name: 'Kunder', url: '/kunder-och-expertis', local: true },
 ];
-
-const Icon = styled(FontAwesomeIcon)`
-	transition: color 0.1s ease-out;
-	${tw`text-darkGray`};
-
-	:hover {
-		color: ${(props) => props.theme.secondary};
-	}
-`;
 
 const MenuNav = styled(motion.nav)(() => [
 	tw`fixed h-full bg-menuGray top-0 right-0 z-40`,
@@ -155,15 +145,8 @@ const RightMenu = () => {
 										<HoverP className="mb-7">kontakt@etimo.se</HoverP>
 									</a>
 									<Caption>Följ oss:</Caption>
-									<div className="ml-2 mb-2 mt-2">
-										<a
-											href="https://github.com/Etimo/"
-											target="_blank"
-											title="Etimos Github"
-										>
-											<Icon icon={faGithubSquare} size="2x" />
-										</a>
-									</div>
+
+									<FollowEtimoLinks />
 								</div>
 							</div>
 						</MenuNav>

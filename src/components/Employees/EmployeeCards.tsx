@@ -1,6 +1,6 @@
 import React from 'react';
-import { sizes } from '../helpers';
-import { useViewportSize } from '../hooks';
+import { sizes } from '../../helpers';
+import { useViewportSize } from '../../hooks';
 import EmployeeCard from './EmployeeCard';
 
 type Props = {
