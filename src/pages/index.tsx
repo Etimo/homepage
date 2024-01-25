@@ -33,8 +33,6 @@ const IndexPage = () => {
 			<FunAtWork />
 
 			<MakingDifference />
-
-			{/* <SplashOld /> */}
 		</Layout>
 	);
 };

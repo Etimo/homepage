@@ -8,6 +8,7 @@ import Header from './Header';
 import './layout.css';
 import RightMenu from './RightMenu';
 import { ScrollToTopButton } from '../components/Button';
+import { CookieConsentBanner } from './CookieConsentBanner';
 
 type Props = {
 	children: React.ReactNode;
@@ -54,7 +55,10 @@ const Layout = ({ children }: Props) => {
 					<RightMenu />
 					<ScrollToTopButton showBelow={300} />
 					{children}
+
+					<CookieConsentBanner />
 				</main>
+
 				<Footer />
 			</>
 		</ThemeProvider>

@@ -7,7 +7,6 @@ import P from '../elements/P';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
-import { HighlightButton } from './Button';
 import Section from './Section';
 import EmphasizedH2 from '../elements/EmphasizedH2';
 
