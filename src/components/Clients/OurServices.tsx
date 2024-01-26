@@ -9,9 +9,9 @@ import { CyanHover, FloatUp } from '../../animations';
 import BlurIn from '../../animations/variants/BlurIn';
 import DashedP from '../DashedP';
 
-const startupTexts = [
+const developingTeamTexts = [
 	'Teknisk kompetens för att bygga din idé',
-	'Erfarenhet av nyutveckling från tidigare startup-projekt',
+	'Erfarenhet av nyutveckling från startup-projekt',
 	'Produktrådgivning för att bygga rätt produkt',
 	'Helhetslösningar för utveckling och finansiering via Etimo Ventures',
 ];
@@ -20,8 +20,12 @@ const developmentTexts = [
 	'Skräddarsydda digitala lösningar',
 	'Skala upp ditt team med en eller flera kompetenta utvecklare',
 	'Molntjänster, DevOps och automatisering',
-	'Nyutveckling och vidareutveckling av befintliga system',
 	'Vi bygger skalbart, säkert och effektivt',
+];
+
+const productTexts = [
+	'Vi erbjuder produktledning och rådgivning',
+	'Vi har roller såsom produktägare och product manager',
 ];
 
 const leaderText = [
@@ -71,8 +75,8 @@ export const OurServices = () => {
 							className="flex flex-col border p-10 lg:m-4"
 							variants={BlurIn()}
 						>
-							<H3Title>Startup</H3Title>
-							{startupTexts.map((cText) => {
+							<H3Title>Utvecklingsteam</H3Title>
+							{developingTeamTexts.map((cText) => {
 								return <DashedP key={cText}>{cText}</DashedP>;
 							})}
 						</CyanHover>
@@ -81,7 +85,7 @@ export const OurServices = () => {
 							className="flex flex-col border p-10 lg:m-4"
 							variants={BlurIn()}
 						>
-							<H3Title>Utveckling</H3Title>
+							<H3Title>Utvecklare</H3Title>
 							{developmentTexts.map((sText) => {
 								return <DashedP key={sText}>{sText}</DashedP>;
 							})}
@@ -91,7 +95,17 @@ export const OurServices = () => {
 							className="flex flex-col border p-10 lg:m-4"
 							variants={BlurIn()}
 						>
-							<H3Title>Ledarskap</H3Title>
+							<H3Title>Produktledning</H3Title>
+							{productTexts.map((sText) => {
+								return <DashedP key={sText}>{sText}</DashedP>;
+							})}
+						</CyanHover>
+
+						<CyanHover
+							className="flex flex-col border p-10 lg:m-4"
+							variants={BlurIn()}
+						>
+							<H3Title>Ledarskap och förändringsarbete</H3Title>
 							{leaderText.map((cText) => {
 								return <DashedP key={cText}>{cText}</DashedP>;
 							})}
