@@ -39,7 +39,10 @@ type Props = {
 export default ({ givenSections, ...props }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
-	const sectionHeight = viewportHeight < sizes().minimumHeight ? sizes().minimumHeight : viewportHeight;
+	const sectionHeight =
+		viewportHeight < sizes().minimumHeight
+			? sizes().minimumHeight
+			: viewportHeight;
 
 	useScrollPosition(
 		({ currPos }) => {
