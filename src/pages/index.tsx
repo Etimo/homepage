@@ -7,7 +7,7 @@ import Layout from '../components/Layout';
 import MakingDifference from '../components/MakingDifference';
 import Scroller from '../components/Scroller/Scroller';
 import SEO from '../components/Seo';
-import ThePeople from '../components/ThePeople';
+import ThePeople from '../components/Employees/ThePeople';
 import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
@@ -33,8 +33,6 @@ const IndexPage = () => {
 			<FunAtWork />
 
 			<MakingDifference />
-
-			{/* <SplashOld /> */}
 		</Layout>
 	);
 };

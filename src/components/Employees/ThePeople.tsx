@@ -1,15 +1,15 @@
 import { Link } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import FloatUp from '../animations/FloatUp';
-import AnimatedH2 from '../elements/AnimatedH2';
-import Caption from '../elements/Caption';
-import Span from '../elements/Span';
+import FloatUp from '../../animations/FloatUp';
+import AnimatedH2 from '../../elements/AnimatedH2';
+import Caption from '../../elements/Caption';
+import Span from '../../elements/Span';
 import EmployeeCards from './EmployeeCards';
-import Section from './Section';
-import { HighlightButton } from './Button';
-import { P } from '../elements';
-import useProfileImages from '../hooks/useProfileImages';
+import Section from '../Section';
+import { HighlightButton } from '../Button';
+import { P } from '../../elements';
+import useProfileImages from '../../hooks/useProfileImages';
 
 const imageClassName = 'max-w-sm h-full';
 
@@ -137,10 +137,8 @@ const ThePeople = () => {
 					</div>
 					<EmployeeCards employees={people} employeePage={false} />
 
-					<HighlightButton className="mt-8 mx-auto">
-						<Link to="/kollegorna">
-							<P>Möt hela Etimo</P>
-						</Link>
+					<HighlightButton className="mt-8 mx-auto overflow-hidden">
+						<Link to="/kollegorna">Möt hela Etimo</Link>
 					</HighlightButton>
 				</div>
 			</div>
