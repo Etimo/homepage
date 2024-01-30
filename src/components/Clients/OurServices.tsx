@@ -10,28 +10,24 @@ import BlurIn from '../../animations/variants/BlurIn';
 import DashedP from '../DashedP';
 
 const developingTeamTexts = [
-	'Teknisk kompetens för att bygga din idé',
-	'Erfarenhet av nyutveckling från startup-projekt',
-	'Produktrådgivning för att bygga rätt produkt',
-	'Helhetslösningar för utveckling och finansiering via Etimo Ventures',
+	'Helhetslösning och partnerskap att förverkliga din idé från start till mål',
+	'Utvecklare med tidigare erfarenhet från framgångsrika start-ups, konsumentprodukter och affärskritiska system',
+	'Produktrådgivning för att bygga rätt produkt utifrån dina mål och finansiella förutsättningar',
 ];
 
 const developmentTexts = [
-	'Skräddarsydda digitala lösningar',
-	'Skala upp ditt team med en eller flera kompetenta utvecklare',
-	'Molntjänster, DevOps och automatisering',
-	'Vi bygger skalbart, säkert och effektivt',
+	'Uppskalning av team med en eller flera utvecklare',
+	'Seniora utvecklare med bred teknisk erfarenhet av olika språk, DevOps, systemarkitektur och molntjänster',
 ];
 
 const productTexts = [
-	'Vi erbjuder produktledning och rådgivning',
-	'Vi har roller såsom produktägare och product manager',
+	'Interim produktägare, produktchef och CPO med mångårig erfarenhet inom produktledning på start-ups och growth företag',
+	'Coachning och mentorskap av produktteam och produktledare för att lyfta produkt-hantverk och bygga rätt produkt',
 ];
 
 const leaderText = [
-	'Vi erbjuder exempelvis CTO, Tech Lead, produktledning och seniora utvecklare',
-	'Vi leder effektiva utvecklingsteam med god trivsel',
-	'Teknikval baserade på mångårig erfarenhet av stora digitala system',
+	'Ledare med mångårig erfarenhet av roller som CTO,  team lead, agila coacher och produktledning',
+	'Erfarenhet av att bygga högpresterande och agila självgående team med fokus på god trivsel',
 ];
 
 const H3Title = styled.h3`

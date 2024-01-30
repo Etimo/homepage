@@ -22,7 +22,7 @@ const ClientsPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Kunder',
+			name: 'Tjänster',
 		},
 		{
 			index: 1,
