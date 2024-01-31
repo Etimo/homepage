@@ -14,6 +14,7 @@ import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
 import { OurServices } from '../components/Clients/OurServices';
+import MakingDifference from '../components/MakingDifference';
 
 const ClientsPage = () => {
 	const [height, width] = useViewportSize();
@@ -64,6 +65,7 @@ const ClientsPage = () => {
 			<Competences />
 			<Services />
 			<ReferenceCase />
+			<MakingDifference />
 			<Apply variantKey="customers" />
 		</Layout>
 	);

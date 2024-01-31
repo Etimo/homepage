@@ -39,7 +39,10 @@ type Props = {
 export default ({ givenSections, ...props }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
-	const sectionHeight = viewportHeight < sizes().minimumHeight ? sizes().minimumHeight : viewportHeight;
+	const sectionHeight =
+		viewportHeight < sizes().minimumHeight
+			? sizes().minimumHeight
+			: viewportHeight;
 
 	useScrollPosition(
 		({ currPos }) => {
@@ -68,27 +71,15 @@ export default ({ givenSections, ...props }: Props) => {
 				},
 				{
 					index: 1,
-					name: 'Vår passion',
-				},
-				{
-					index: 2,
-					name: 'Att jobba här',
-				},
-				{
-					index: 3,
-					name: 'Några av oss',
-				},
-				{
-					index: 4,
 					name: 'Våra kunder',
 				},
 				{
-					index: 5,
-					name: 'Kul på jobbet',
+					index: 2,
+					name: 'Några av oss',
 				},
 				{
-					index: 6,
-					name: 'Vi gör skillnad',
+					index: 3,
+					name: 'Att jobba här',
 				},
 		  ];
 

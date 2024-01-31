@@ -5,6 +5,8 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import About from '../components/About';
+import FunAtWork from '../components/FunAtWork';
 
 const CareerPage = () => {
 	const [height, width] = useViewportSize();
@@ -17,14 +19,22 @@ const CareerPage = () => {
 		},
 		{
 			index: 1,
-			name: 'Jobbet',
+			name: 'Vår passion',
 		},
 		{
 			index: 2,
-			name: 'Du',
+			name: 'Kul på jobbet',
 		},
 		{
 			index: 3,
+			name: 'Jobbet',
+		},
+		{
+			index: 4,
+			name: 'Du',
+		},
+		{
+			index: 5,
 			name: 'Ansök',
 		},
 	];
@@ -33,6 +43,8 @@ const CareerPage = () => {
 		<Layout>
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<IntroText />
+			<About />
+			<FunAtWork />
 			<WorkingHere />
 			<WhoAreYou />
 			<Apply variantKey="default" backgroundColor="white" />
