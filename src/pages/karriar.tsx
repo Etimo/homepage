@@ -31,7 +31,6 @@ const CareerPage = () => {
 
 	return (
 		<Layout>
-			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<IntroText />
 			<WorkingHere />
 			<WhoAreYou />

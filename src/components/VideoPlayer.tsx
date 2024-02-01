@@ -32,7 +32,7 @@ export default ({ children, headerSpace, ...props }: Props) => {
 	const isMobile = () => width < sizes().laptop;
 
 	return (
-		<Section>
+		<Section style={{ backgroundColor: '#FFFFFF' }}>
 			<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 				<FloatUp>
 					<Caption className="text-center">Kollegorna</Caption>

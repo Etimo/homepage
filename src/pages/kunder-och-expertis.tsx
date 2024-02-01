@@ -51,7 +51,6 @@ const ClientsPage = () => {
 
 	return (
 		<Layout>
-			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<Hero />
 			<ClientCustomers />
 			<CreateValue />

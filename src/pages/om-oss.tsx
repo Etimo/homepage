@@ -30,7 +30,6 @@ const AboutUsPage = () => {
 
 	return (
 		<Layout>
-			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<AllPeople />
 			<VideoPlayer />
 			<MakingDifference />
