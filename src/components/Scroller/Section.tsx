@@ -7,17 +7,18 @@ import { useViewportSize } from '../../hooks';
 
 type SectionProps = {
 	$isActive: boolean;
+	$hasAtLeastTabletHeight: boolean;
 	theme: DefaultTheme;
 };
 
 const Section = styled(motion.div)<SectionProps>`
 	text-decoration: none;
 	border: none;
-	margin: 1rem 0;
 	font-size: 12px;
 	background-color: inherit;
 	text-align: left;
 	padding: 0;
+	margin: ${(props) => (props.$hasAtLeastTabletHeight ? '1rem 0' : '0.4rem 0')};
 	cursor: pointer;
 	z-index: 100;
 	overflow: hidden;
@@ -64,7 +65,12 @@ const SectionComponent = ({ index, isActive, children }: Props) => {
 	};
 
 	return (
-		<Section $isActive={isActive} onClick={clickHandler} animate={variant}>
+		<Section
+			$isActive={isActive}
+			$hasAtLeastTabletHeight={viewportHeight >= sizes().tablet}
+			onClick={clickHandler}
+			animate={variant}
+		>
 			{children}
 		</Section>
 	);
