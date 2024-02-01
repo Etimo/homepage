@@ -9,14 +9,19 @@ import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
-import { useViewportSize } from '../hooks';
+import { useSectionHeight, useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
 import DashedP from './DashedP';
 
-const CustomBackground = styled.div<{ offset: number }>`
+type CustomBackgroundProps = {
+	offset: number;
+	height: number;
+};
+
+const CustomBackground = styled.div<CustomBackgroundProps>`
 	position: absolute;
-	height: 125%;
+	height: ${(props) => props.height + 'px'};
 	left: calc(50% + 275px);
 	top: ${(props) => props.offset + 'px'};
 	right: 0;
@@ -60,11 +65,14 @@ const WorkAtEtimo = () => {
 		}
 	`);
 
+	const sectionHeight = useSectionHeight();
 	const [height, width] = useViewportSize();
 
 	return (
 		<Section>
-			{width >= sizes().laptop && <CustomBackground offset={height * 2} />}
+			{width >= sizes().laptop && sectionHeight && (
+				<CustomBackground offset={sectionHeight * 2} height={sectionHeight} />
+			)}
 			<div className="container xl:px-24 lg:max-h-95">
 				<div className="flex flex-col xl:pl-12 lg:flex-row items-center lg:justify-center">
 					<div className="w-4/5 sm:w-3/4 lg:w-3/5 lg:mr-2 xl:mr-4 mb-2 lg:mb-0">
