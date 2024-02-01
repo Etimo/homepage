@@ -10,24 +10,6 @@ import VideoPlayer from '../components/VideoPlayer';
 import MakingDifference from '../components/MakingDifference';
 
 const AboutUsPage = () => {
-	const [height, width] = useViewportSize();
-	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
-
-	const sections = [
-		{
-			index: 0,
-			name: 'Kollegorna',
-		},
-		{
-			index: 1,
-			name: 'Video',
-		},
-		{
-			index: 2,
-			name: 'Social hållbarhet',
-		},
-	];
-
 	return (
 		<Layout>
 			<AllPeople />
