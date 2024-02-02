@@ -8,7 +8,6 @@ import FunAtWork from '../components/FunAtWork';
 const CareerPage = () => {
 	return (
 		<Layout>
-			<IntroText />
 			<About />
 			<FunAtWork />
 			<WorkingHere />

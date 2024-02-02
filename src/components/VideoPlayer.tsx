@@ -28,20 +28,21 @@ type Props = {
 };
 
 export default ({ children, headerSpace, ...props }: Props) => {
-	const [width] = useViewportSize();
+	const [height, width] = useViewportSize();
 	const isMobile = () => width < sizes().laptop;
 
 	return (
 		<Section style={{ backgroundColor: '#FFFFFF' }}>
 			<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 				<FloatUp>
-					<Caption className="text-center">Kollegorna</Caption>
+					<Caption className="text-center">Våra värderingar</Caption>
 				</FloatUp>
 				<div className="flex flex-row justify-center">
-					<AnimatedH2 direction="left">Vi är</AnimatedH2>
+					<AnimatedH2 direction="left">Vad</AnimatedH2>
 					<AnimatedH2 direction="right">
-						<Span>&nbsp;Etimo</Span>
+						<Span>&nbsp;Etimo&nbsp;</Span>
 					</AnimatedH2>
+					<AnimatedH2 direction="right">står för</AnimatedH2>
 				</div>
 				<VideoContainer>
 					<VideoPlayer width={isMobile() ? width - 20 : width - 200} {...props}>

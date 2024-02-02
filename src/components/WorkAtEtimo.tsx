@@ -71,7 +71,7 @@ const WorkAtEtimo = () => {
 	return (
 		<Section>
 			{width >= sizes().laptop && sectionHeight && (
-				<CustomBackground offset={sectionHeight * 2} height={sectionHeight} />
+				<CustomBackground offset={sectionHeight * 3} height={sectionHeight} />
 			)}
 			<div className="container xl:px-24 lg:max-h-95">
 				<div className="flex flex-col xl:pl-12 lg:flex-row items-center lg:justify-center">

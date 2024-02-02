@@ -5,7 +5,6 @@ import AnimatedH2 from '../../elements/AnimatedH2';
 import Caption from '../../elements/Caption';
 import Span from '../../elements/Span';
 import EmployeeCards from './EmployeeCards';
-import Section from '../Section';
 import useProfileImages from '../../hooks/useProfileImages';
 import styled from 'styled-components';
 import tw from 'twin.macro';
@@ -130,12 +129,12 @@ const AllPeople = () => {
 	];
 
 	return (
-		<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
-			<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
+		<div className="container mx-auto mb-16 xl:px-12 lg:h-full lg:overflow-hidden">
+			<div className="flex flex-col mb-16 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 				<FloatUp>
 					<Caption className="text-center">Människorna</Caption>
 				</FloatUp>
-				<div className="flex flex-row justify-center">
+				<div className="flex flex-row justify-center mb-8">
 					<AnimatedH2 direction="left">Vi är</AnimatedH2>
 					<AnimatedH2 direction="right">
 						<Span>&nbsp;Etimo</Span>
