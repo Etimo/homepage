@@ -22,8 +22,8 @@ const variants: { [key: string]: Variant } = {
 		caption: 'Bättre mjukvara för en bättre värld',
 		header: 'Kontakta oss',
 		text: 'Behöver du teknikkompetens i världsklass?',
-		emailText: 'Skicka ett mail till Johan på',
-		email: 'johan.hazelius@etimo.se',
+		emailText: 'Skicka ett mail till Jeanette på',
+		email: 'jeanette.britan@etimo.se',
 	},
 };
 
