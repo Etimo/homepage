@@ -19,7 +19,7 @@ const whoTexts = [
 
 const WhoAreYou = () => {
 	return (
-		<Section>
+		<Section style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<FloatUp>
 					<Caption>Vi söker de allra bästa</Caption>

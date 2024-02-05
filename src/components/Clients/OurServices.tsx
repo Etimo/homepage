@@ -52,7 +52,7 @@ export const OurServices = () => {
 	const [ref, inView] = useInView({ triggerOnce: true });
 
 	return (
-		<Section>
+		<Section headerSpace>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<FloatUp>
