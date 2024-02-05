@@ -19,23 +19,23 @@ const developingTeamTexts = [
 const developmentTexts = [
 	'Uppskalning av ditt team med en eller flera utvecklare.',
 	'Seniora utvecklare med bred teknisk kompetens och lång erfarenhet.',
-	'Tillgång till hela Etimos erfarenhetsbas i ditt utvecklingsprojekt.',
+	'Tillgång till hela Etimos erfarenhetsbas.',
 ];
 
 const productTexts = [
 	'Interim produktägare, produktchef och CPO med mångårig erfarenhet. ',
-	'Coachning och mentorskap av produktteam och ledare. ',
-	'Utbilda, föreläsa och facilitera workshops inom produktledarskap, produktstrategi och discovery.',
+	'Coachning och mentorskap av produktteam.',
+	'Utbilda, föreläsa och facilitera workshops inom produktledarskap och produktstrategi.',
 ];
 
 const leaderText = [
-	'Ledare med mångårig erfarenhet av roller som CTO,  team lead, agila coacher och produktledning.',
+	'Ledare med erfarenhet av roller som CTO,  team lead och agila coacher.',
 	'Erfarenhet av att bygga högpresterande, agila och självgående team.',
-	'Utbilda, föreläsa och facilitera workshops inom agilt förändringsarbete.',
+	'Utbilda och föreläsa om agilt förändringsarbete.  ',
 ];
 
 const H3Title = styled.h3`
-	${tw`font-quest text-xl lg:text-2xl mb-4`};
+	${tw`font-quest text-xl lg:text-2xl`};
 `;
 
 const gridVar = {
@@ -65,7 +65,7 @@ export const OurServices = () => {
 						</AnimatedH2>
 					</div>
 					<motion.div
-						className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mt-8 lg:mt-12 mx-6 overflow-hidden"
+						className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden"
 						ref={ref}
 						variants={gridVar}
 						initial="init"
