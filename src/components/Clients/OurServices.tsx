@@ -10,24 +10,28 @@ import BlurIn from '../../animations/variants/BlurIn';
 import DashedP from '../DashedP';
 
 const developingTeamTexts = [
-	'Helhetslösning och partnerskap att förverkliga din idé från start till mål',
-	'Utvecklare med tidigare erfarenhet från framgångsrika start-ups, konsumentprodukter och affärskritiska system',
-	'Produktrådgivning för att bygga rätt produkt utifrån dina mål och finansiella förutsättningar',
+	'Helhetsåtagande och partnerskap för att förverkliga din idé från start till mål.',
+	'Utvecklare med erfarenhet från framgångsrika start-ups, konsumentprodukter och affärskritiska system.',
+	'Produktrådgivning för att bygga rätt produkt utifrån dina mål och finansiella förutsättningar.',
+	'Bred teknisk kompetens inom moderna tekniker för backend och frontend.',
 ];
 
 const developmentTexts = [
-	'Uppskalning av team med en eller flera utvecklare',
-	'Seniora utvecklare med bred teknisk erfarenhet av olika språk, DevOps, systemarkitektur och molntjänster',
+	'Uppskalning av ditt team med en eller flera utvecklare.',
+	'Seniora utvecklare med bred teknisk kompetens och lång erfarenhet av att ta ansvar för hela utvecklingskedjan, från bygge till drift, med hjälp av beprövade moderna verktyg, tekniker och metodologier.',
+	'Tillgång till hela Etimos erfarenhetsbas i ditt utvecklingsprojekt.',
 ];
 
 const productTexts = [
-	'Interim produktägare, produktchef och CPO med mångårig erfarenhet inom produktledning på start-ups och growth företag',
-	'Coachning och mentorskap av produktteam och produktledare för att lyfta produkt-hantverk och bygga rätt produkt',
+	'Interim produktägare, produktchef och CPO med mångårig erfarenhet inom produktledning på start-ups och growth-företag. ',
+	'Coachning och mentorskap av produktteam och ledare för att bygga rätt produkt.',
+	'Utbilda, föreläsa och facilitera workshops inom produktledarskap, produktstrategi, discovery och hur produktteam börjar arbeta i enlighet med produktmodellen.',
 ];
 
 const leaderText = [
-	'Ledare med mångårig erfarenhet av roller som CTO,  team lead, agila coacher och produktledning',
-	'Erfarenhet av att bygga högpresterande och agila självgående team med fokus på god trivsel',
+	'Ledare med mångårig erfarenhet av roller som CTO,  team lead, agila coacher och produktledning.',
+	'Erfarenhet av att bygga högpresterande, agila och självgående team med fokus på god trivsel och resultat.',
+	'Utbilda, föreläsa och facilitera workshops inom agilt förändringsarbete och strategier för att framgångsrikt driva produktutveckling inom SaaS-företag, start-ups, scale-ups och mogna organisationer.',
 ];
 
 const H3Title = styled.h3`
