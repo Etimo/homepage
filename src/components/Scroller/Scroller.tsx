@@ -33,10 +33,10 @@ const opacVar = {
 };
 
 type Props = {
-	givenSections?: { index: number; name: string }[];
+	givenSections?: { index: number; name: string; height: number }[];
 };
 
-export default ({ givenSections, ...props }: Props) => {
+export default ({ givenSections }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
 	const sectionHeight =
