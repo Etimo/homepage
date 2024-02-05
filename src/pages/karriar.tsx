@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apply, IntroText, WhoAreYou, WorkingHere } from '../components/Career';
+import { Apply, WhoAreYou, WorkingHere } from '../components/Career';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
