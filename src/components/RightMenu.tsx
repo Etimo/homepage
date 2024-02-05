@@ -10,7 +10,7 @@ import { FollowEtimoLinks } from './FollowEtimoLinks';
 const links = [
 	{ name: 'Start', url: '/', local: true },
 	{ name: 'Karriär', url: '/karriar', local: true },
-	{ name: 'Tjänster', url: '/kunder-och-expertis', local: true },
+	{ name: 'Våra Tjänster', url: '/kunder-och-expertis', local: true },
 ];
 
 const MenuNav = styled(motion.nav)(() => [
