@@ -3,7 +3,6 @@ import { Apply } from '../components/Career';
 import {
 	Competences,
 	CreateValue,
-	Hero,
 	Services,
 	ReferenceCase,
 } from '../components/Clients';
@@ -13,6 +12,7 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import { OurServices } from '../components/Clients/OurServices';
 
 const ClientsPage = () => {
 	const [height, width] = useViewportSize();
@@ -21,7 +21,7 @@ const ClientsPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Kunder',
+			name: 'Våra tjänster',
 		},
 		{
 			index: 1,
@@ -37,7 +37,7 @@ const ClientsPage = () => {
 		},
 		{
 			index: 4,
-			name: 'Tjänster',
+			name: 'Nöjda kunder',
 		},
 		{
 			index: 5,
@@ -52,7 +52,7 @@ const ClientsPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
-			<Hero />
+			<OurServices />
 			<ClientCustomers />
 			<CreateValue />
 			<Competences />

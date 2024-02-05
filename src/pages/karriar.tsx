@@ -1,5 +1,5 @@
 import React from 'react';
-import { Apply, IntroText, WhoAreYou, WorkingHere } from '../components/Career';
+import { Apply, WhoAreYou, WorkingHere } from '../components/Career';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
@@ -13,18 +13,14 @@ const CareerPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Karriär',
-		},
-		{
-			index: 1,
 			name: 'Jobbet',
 		},
 		{
-			index: 2,
+			index: 1,
 			name: 'Du',
 		},
 		{
-			index: 3,
+			index: 2,
 			name: 'Ansök',
 		},
 	];
@@ -32,7 +28,6 @@ const CareerPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
-			<IntroText />
 			<WorkingHere />
 			<WhoAreYou />
 			<Apply variantKey="default" backgroundColor="white" />
