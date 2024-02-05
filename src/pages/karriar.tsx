@@ -13,18 +13,14 @@ const CareerPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Karriär',
-		},
-		{
-			index: 1,
 			name: 'Jobbet',
 		},
 		{
-			index: 2,
+			index: 1,
 			name: 'Du',
 		},
 		{
-			index: 3,
+			index: 2,
 			name: 'Ansök',
 		},
 	];
@@ -32,7 +28,6 @@ const CareerPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
-			<IntroText />
 			<WorkingHere />
 			<WhoAreYou />
 			<Apply variantKey="default" backgroundColor="white" />
