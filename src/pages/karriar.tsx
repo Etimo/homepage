@@ -30,7 +30,7 @@ const CareerPage = () => {
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
 			<WorkingHere />
 			<WhoAreYou />
-			<Apply variantKey="default" backgroundColor="white" />
+			<Apply variantKey="default" />
 		</Layout>
 	);
 };
