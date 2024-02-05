@@ -3,7 +3,6 @@ import { Apply } from '../components/Career';
 import {
 	Competences,
 	CreateValue,
-	Hero,
 	Services,
 	ReferenceCase,
 } from '../components/Clients';
@@ -22,34 +21,30 @@ const ClientsPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Tjänster',
-		},
-		{
-			index: 1,
 			name: 'Våra tjänster',
 		},
 		{
-			index: 2,
+			index: 1,
 			name: 'Våra kunder',
 		},
 		{
-			index: 3,
+			index: 2,
 			name: 'Värde för kund',
 		},
 		{
-			index: 4,
+			index: 3,
 			name: 'Kompetenser',
 		},
 		{
-			index: 5,
-			name: 'Tjänster',
+			index: 4,
+			name: 'Nöjda kunder',
 		},
 		{
-			index: 6,
+			index: 5,
 			name: 'Referenscase',
 		},
 		{
-			index: 7,
+			index: 6,
 			name: 'Kontakt',
 		},
 	];
@@ -57,7 +52,6 @@ const ClientsPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller givenSections={sections} />}
-			<Hero />
 			<OurServices />
 			<ClientCustomers />
 			<CreateValue />
