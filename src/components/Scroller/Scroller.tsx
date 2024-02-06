@@ -2,9 +2,10 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { sizes } from '../../helpers';
 import { useViewportSize } from '../../hooks';
 import Section from './Section';
+
+import { animateScroll } from 'react-scroll';
 
 const Holder = styled.div`
 	position: fixed;
@@ -33,22 +34,32 @@ const opacVar = {
 };
 
 type Props = {
-	givenSections?: { index: number; name: string; height: number }[];
+	sections: { index: number; name: string; height: number }[];
 };
 
-export default ({ givenSections }: Props) => {
+export default ({ sections }: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
-	const sectionHeight =
-		viewportHeight < sizes().minimumHeight
-			? sizes().minimumHeight
-			: viewportHeight;
-
 	useScrollPosition(
 		({ currPos }) => {
 			const screenMid = Math.abs(currPos.y) + viewportHeight / 2;
-			const spanStart = activeSection * sectionHeight;
-			const spanEnd = (activeSection + 1) * sectionHeight;
+
+			const spanStart = sections
+				.filter((section) => section.index < activeSection)
+				.map((section) => section.height)
+				.reduce(
+					(accumulatedHeight, sectionHeight) =>
+						accumulatedHeight + sectionHeight,
+					0
+				);
+			const spanEnd = sections
+				.filter((section) => section.index <= activeSection)
+				.map((section) => section.height)
+				.reduce(
+					(accumulatedHeight, sectionHeight) =>
+						accumulatedHeight + sectionHeight,
+					0
+				);
 
 			if (screenMid < spanStart) {
 				setActiveSection(activeSection - 1);
@@ -56,44 +67,22 @@ export default ({ givenSections }: Props) => {
 				setActiveSection(activeSection + 1);
 			}
 		},
-		[sectionHeight, activeSection],
+		[sections, activeSection],
 		undefined,
 		false,
 		50
 	);
 
-	const sections = givenSections
-		? givenSections
-		: [
-				{
-					index: 0,
-					name: 'Start',
-				},
-				{
-					index: 1,
-					name: 'Vår passion',
-				},
-				{
-					index: 2,
-					name: 'Att jobba här',
-				},
-				{
-					index: 3,
-					name: 'Några av oss',
-				},
-				{
-					index: 4,
-					name: 'Våra kunder',
-				},
-				{
-					index: 5,
-					name: 'Kul på jobbet',
-				},
-				{
-					index: 6,
-					name: 'Vi gör skillnad',
-				},
-		  ];
+	const clickHandler = (index: number) => {
+		const scrollToHeight = sections
+			.filter((section) => section.index < index)
+			.map((section) => section.height)
+			.reduce(
+				(accumulatedHeight, sectionHeight) => accumulatedHeight + sectionHeight,
+				0
+			);
+		animateScroll.scrollTo(scrollToHeight);
+	};
 
 	return (
 		<motion.div variants={opacVar} initial="init" animate="anim">
@@ -103,6 +92,8 @@ export default ({ givenSections }: Props) => {
 						key={section.name}
 						index={section.index}
 						isActive={section.index === activeSection}
+						sectionHeight={section.height}
+						clickHandler={clickHandler}
 					>
 						{section.name}
 					</Section>

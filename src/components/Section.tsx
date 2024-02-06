@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
-import { useSectionHeight } from '../hooks';
 
 type StyleProps = {
 	height?: number;
@@ -22,12 +21,10 @@ const Section = styled.section<StyleProps>`
 type Props = {
 	children?: React.ReactNode;
 	style?: React.CSSProperties;
-	headerSpace?: boolean;
+	sectionHeight: number;
 };
 
-export default ({ children, headerSpace, ...props }: Props) => {
-	const sectionHeight = useSectionHeight(headerSpace);
-
+export default ({ children, sectionHeight, ...props }: Props) => {
 	return (
 		<Section height={sectionHeight} {...props}>
 			{children}

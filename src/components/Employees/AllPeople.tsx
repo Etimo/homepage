@@ -14,7 +14,12 @@ const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
 `;
 
-const AllPeople = () => {
+type AllPeopleProps = {
+	sectionHeight: number;
+};
+
+const AllPeople = (props: AllPeopleProps) => {
+	const sectionHeight = props.sectionHeight;
 	const images = useProfileImages();
 
 	const people = [
@@ -130,20 +135,22 @@ const AllPeople = () => {
 	];
 
 	return (
-		<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
-			<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
-				<FloatUp>
-					<Caption className="text-center">Människorna</Caption>
-				</FloatUp>
-				<div className="flex flex-row justify-center">
-					<AnimatedH2 direction="left">Vi är</AnimatedH2>
-					<AnimatedH2 direction="right">
-						<Span>&nbsp;Etimo</Span>
-					</AnimatedH2>
+		<Section sectionHeight={sectionHeight}>
+			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
+				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
+					<FloatUp>
+						<Caption className="text-center">Människorna</Caption>
+					</FloatUp>
+					<div className="flex flex-row justify-center">
+						<AnimatedH2 direction="left">Vi är</AnimatedH2>
+						<AnimatedH2 direction="right">
+							<Span>&nbsp;Etimo</Span>
+						</AnimatedH2>
+					</div>
+					<EmployeeCards employees={people} employeePage={true} />
 				</div>
-				<EmployeeCards employees={people} employeePage={true} />
 			</div>
-		</div>
+		</Section>
 	);
 };
 

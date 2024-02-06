@@ -16,9 +16,14 @@ const bulletPoints = [
 	'Vi jobbar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
 ];
 
-const WorkingHere = () => {
+type WorkingHereProps = {
+	sectionHeight: number;
+};
+
+const WorkingHere = (props: WorkingHereProps) => {
+	const { sectionHeight } = props;
 	return (
-		<Section style={{ backgroundColor: 'white' }}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32 text-left">
 				<div className="flex flex-col lg:w-1/2 my-auto md:mt-60p lg:mt-0 text-center md:text-left overflow-hidden">
 					<FloatUp>

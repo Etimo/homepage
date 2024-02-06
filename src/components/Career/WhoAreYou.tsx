@@ -17,9 +17,14 @@ const whoTexts = [
 	'Du pratar flytande svenska och engelska',
 ];
 
-const WhoAreYou = () => {
+type WhoAreYouProps = {
+	sectionHeight: number;
+};
+
+const WhoAreYou = (props: WhoAreYouProps) => {
+	const { sectionHeight } = props;
 	return (
-		<Section>
+		<Section sectionHeight={sectionHeight}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<FloatUp>
 					<Caption>Vi söker de allra bästa</Caption>

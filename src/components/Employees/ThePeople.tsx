@@ -8,12 +8,15 @@ import Span from '../../elements/Span';
 import EmployeeCards from './EmployeeCards';
 import Section from '../Section';
 import { HighlightButton } from '../Button';
-import { P } from '../../elements';
 import useProfileImages from '../../hooks/useProfileImages';
 
 const imageClassName = 'max-w-sm h-full';
 
-const ThePeople = () => {
+type Props = {
+	sectionHeight: number;
+};
+
+const ThePeople = ({ sectionHeight }: Props) => {
 	const images = useProfileImages();
 
 	const people = [
@@ -123,7 +126,7 @@ const ThePeople = () => {
 	];
 
 	return (
-		<Section style={{ backgroundColor: 'white' }}>
+		<Section style={{ backgroundColor: 'white' }} sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
 				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>

@@ -24,15 +24,15 @@ const VideoPlayer = styled.section<StyleProps>`
 type Props = {
 	children?: React.ReactNode;
 	style?: React.CSSProperties;
-	headerSpace?: boolean;
+	sectionHeight: number;
 };
 
-export default ({ children, headerSpace, ...props }: Props) => {
+export default ({ children, sectionHeight, ...props }: Props) => {
 	const [width] = useViewportSize();
 	const isMobile = () => width < sizes().laptop;
 
 	return (
-		<Section>
+		<Section sectionHeight={sectionHeight} style={{ background: 'white' }}>
 			<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 				<FloatUp>
 					<Caption className="text-center">Kollegorna</Caption>

@@ -10,7 +10,10 @@ import MakingDifference from '../components/MakingDifference';
 
 const AboutUsPage = () => {
 	const [height, width] = useViewportSize();
-	const sectionHeightWithHeaderSpace = useSectionHeight(true);
+	const sectionHeightWithHeaderSpace = useSectionHeight(
+		true,
+		sizes().minimumHeight * 4
+	);
 	const sectionHeightWithoutHeaderSpace = useSectionHeight(false);
 	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
 
@@ -18,26 +21,28 @@ const AboutUsPage = () => {
 		{
 			index: 0,
 			name: 'Kollegorna',
-			height: sectionHeightWithHeaderSpace ?? height,
+			height: (sectionHeightWithHeaderSpace ?? height) + sizes().headerHeight,
 		},
 		{
 			index: 1,
 			name: 'Video',
-			height: sectionHeightWithHeaderSpace ?? height,
+			height: sectionHeightWithoutHeaderSpace ?? height,
 		},
 		{
 			index: 2,
 			name: 'Social hållbarhet',
-			height: sectionHeightWithHeaderSpace ?? height,
+			height: sectionHeightWithoutHeaderSpace ?? height,
 		},
 	];
 
 	return (
 		<Layout>
-			{scrollbarEnabled && <Scroller givenSections={sections} />}
-			<AllPeople />
-			<VideoPlayer />
-			<MakingDifference />
+			{scrollbarEnabled && <Scroller sections={sections} />}
+			<AllPeople sectionHeight={sectionHeightWithHeaderSpace ?? height} />
+			<VideoPlayer sectionHeight={sectionHeightWithoutHeaderSpace ?? height} />
+			<MakingDifference
+				sectionHeight={sectionHeightWithoutHeaderSpace ?? height}
+			/>
 		</Layout>
 	);
 };
