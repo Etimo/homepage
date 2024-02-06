@@ -48,11 +48,16 @@ const gridVar = {
 	},
 };
 
-export const OurServices = () => {
+type OurServicesProps = {
+	sectionHeight: number;
+};
+
+export const OurServices = (props: OurServicesProps) => {
+	const { sectionHeight } = props;
 	const [ref, inView] = useInView({ triggerOnce: true });
 
 	return (
-		<Section headerSpace>
+		<Section sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<FloatUp>
