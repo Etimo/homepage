@@ -3,7 +3,6 @@ import { Apply } from '../components/Career';
 import {
 	Competences,
 	CreateValue,
-	Hero,
 	Services,
 	ReferenceCase,
 } from '../components/Clients';
@@ -13,6 +12,7 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
+import { OurServices } from '../components/Clients/OurServices';
 
 const ClientsPage = () => {
 	const [height, width] = useViewportSize();
@@ -24,8 +24,8 @@ const ClientsPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Kunder',
-			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
+			name: 'Våra tjänster',
+			height: (sectionWithHeaderHeight ?? height) - sizes().headerHeight,
 		},
 		{
 			index: 1,
@@ -44,7 +44,7 @@ const ClientsPage = () => {
 		},
 		{
 			index: 4,
-			name: 'Tjänster',
+			name: 'Nöjda kunder',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
@@ -62,7 +62,7 @@ const ClientsPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
-			<Hero sectionHeight={sectionWithHeaderHeight ?? height} />
+			<OurServices sectionHeight={sectionWithHeaderHeight ?? height} />
 			<ClientCustomers sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<CreateValue sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Competences sectionHeight={sectionWithoutHeaderHeight ?? height} />

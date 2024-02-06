@@ -24,7 +24,7 @@ type WhoAreYouProps = {
 const WhoAreYou = (props: WhoAreYouProps) => {
 	const { sectionHeight } = props;
 	return (
-		<Section sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<FloatUp>
 					<Caption>Vi söker de allra bästa</Caption>
