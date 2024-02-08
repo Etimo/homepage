@@ -30,7 +30,7 @@ type AboutProps = {
 };
 
 const About = ({ sectionHeight }: AboutProps) => {
-	const [h, width] = useViewportSize();
+	const [height, width] = useViewportSize();
 	return (
 		<Section
 			sectionHeight={sectionHeight}

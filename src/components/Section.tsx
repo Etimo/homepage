@@ -1,6 +1,8 @@
 import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
+import { useViewportSize } from '../hooks';
+import { sizes } from '../helpers';
 
 type StyleProps = {
 	height?: number;
@@ -25,8 +27,10 @@ type Props = {
 };
 
 export default ({ children, sectionHeight, ...props }: Props) => {
+	const [height, width] = useViewportSize();
+	const isMobile = () => width < sizes().laptop;
 	return (
-		<Section height={sectionHeight} {...props}>
+		<Section height={isMobile() ? undefined : sectionHeight} {...props}>
 			{children}
 		</Section>
 	);

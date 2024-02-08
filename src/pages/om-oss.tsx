@@ -12,7 +12,7 @@ const AboutUsPage = () => {
 	const [height, width] = useViewportSize();
 	const sectionHeightWithHeaderSpace = useSectionHeight(
 		true,
-		sizes().minimumHeight * 4
+		sizes().minimumHeightXxl
 	);
 	const sectionHeightWithoutHeaderSpace = useSectionHeight(false);
 	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
@@ -25,7 +25,7 @@ const AboutUsPage = () => {
 		},
 		{
 			index: 1,
-			name: 'Video',
+			name: 'Våra värderingar',
 			height: sectionHeightWithoutHeaderSpace ?? height,
 		},
 		{

@@ -18,19 +18,23 @@ const ClientsPage = () => {
 	const [height, width] = useViewportSize();
 	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
 
-	const sectionWithHeaderHeight = useSectionHeight(true);
+	const sectionWithHeaderHeight = useSectionHeight(
+		true,
+		sizes().minimumHeightLarge
+	);
 	const sectionWithoutHeaderHeight = useSectionHeight(false);
+	const largeSectionHeight = useSectionHeight(false, sizes().minimumHeightXl);
 
 	const sections = [
 		{
 			index: 0,
 			name: 'Våra tjänster',
-			height: (sectionWithHeaderHeight ?? height) - sizes().headerHeight,
+			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
 		},
 		{
 			index: 1,
 			name: 'Våra kunder',
-			height: sectionWithoutHeaderHeight ?? height,
+			height: largeSectionHeight ?? height,
 		},
 		{
 			index: 2,
@@ -63,7 +67,7 @@ const ClientsPage = () => {
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
 			<OurServices sectionHeight={sectionWithHeaderHeight ?? height} />
-			<ClientCustomers sectionHeight={sectionWithoutHeaderHeight ?? height} />
+			<ClientCustomers sectionHeight={largeSectionHeight ?? height} />
 			<CreateValue sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Competences sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Services sectionHeight={sectionWithoutHeaderHeight ?? height} />

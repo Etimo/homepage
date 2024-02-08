@@ -9,7 +9,7 @@ import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
-import { useSectionHeight, useViewportSize } from '../hooks';
+import { useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
 import DashedP from './DashedP';

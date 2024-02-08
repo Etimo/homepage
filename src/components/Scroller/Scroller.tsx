@@ -33,33 +33,26 @@ const opacVar = {
 	},
 };
 
+type Section = {
+	index: number;
+	name: string;
+	height: number;
+};
+
 type Props = {
-	sections: { index: number; name: string; height: number }[];
+	sections: Section[];
 };
 
 export default ({ sections }: Props) => {
-	const [viewportHeight] = useViewportSize();
+	const [height, width] = useViewportSize();
 	const [activeSection, setActiveSection] = useState(0);
 	useScrollPosition(
 		({ currPos }) => {
-			const screenMid = Math.abs(currPos.y) + viewportHeight / 2;
+			if (sections.length === 0) return;
+			const screenMid = Math.abs(currPos.y) + height / 2;
 
-			const spanStart = sections
-				.filter((section) => section.index < activeSection)
-				.map((section) => section.height)
-				.reduce(
-					(accumulatedHeight, sectionHeight) =>
-						accumulatedHeight + sectionHeight,
-					0
-				);
-			const spanEnd = sections
-				.filter((section) => section.index <= activeSection)
-				.map((section) => section.height)
-				.reduce(
-					(accumulatedHeight, sectionHeight) =>
-						accumulatedHeight + sectionHeight,
-					0
-				);
+			const spanStart = getHeightOfPreviousSections(sections, activeSection);
+			const spanEnd = getHeightOfPreviousSections(sections, activeSection + 1);
 
 			if (screenMid < spanStart) {
 				setActiveSection(activeSection - 1);
@@ -101,4 +94,14 @@ export default ({ sections }: Props) => {
 			</Holder>
 		</motion.div>
 	);
+};
+
+const getHeightOfPreviousSections = (sections: Section[], index: number) => {
+	return sections
+		.filter((section) => section.index < index)
+		.map((section) => section.height)
+		.reduce(
+			(accumulatedHeight, sectionHeight) => accumulatedHeight + sectionHeight,
+			0
+		);
 };
