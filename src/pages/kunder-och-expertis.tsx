@@ -12,7 +12,7 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
-import { OurServices } from '../components/Clients/OurServices';
+import { OurServicesSection } from '../components/Clients/OurServices/OurServicesSection';
 
 const ClientsPage = () => {
 	const [height, width] = useViewportSize();
@@ -66,7 +66,7 @@ const ClientsPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
-			<OurServices sectionHeight={sectionWithHeaderHeight ?? height} />
+			<OurServicesSection sectionHeight={sectionWithHeaderHeight ?? height} />
 			<ClientCustomers sectionHeight={largeSectionHeight ?? height} />
 			<CreateValue sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Competences sectionHeight={sectionWithoutHeaderHeight ?? height} />

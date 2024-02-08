@@ -126,7 +126,7 @@ const ThePeople = ({ sectionHeight }: Props) => {
 	];
 
 	return (
-		<Section style={{ backgroundColor: 'white' }} sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
 				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>
@@ -141,7 +141,7 @@ const ThePeople = ({ sectionHeight }: Props) => {
 					<EmployeeCards employees={people} employeePage={false} />
 
 					<HighlightButton className="mt-8 mx-auto overflow-hidden">
-						<Link to="/om-oss">Möt hela Etimo</Link>
+						<Link to="/om-oss">Mer om oss</Link>
 					</HighlightButton>
 				</div>
 			</div>

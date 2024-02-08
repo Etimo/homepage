@@ -1,7 +1,4 @@
 import React from 'react';
-import About from '../components/About';
-import Customers from '../components/Customers';
-import { FunAtWork } from '../components/FunAtWork';
 import Hero from '../components/Hero';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller/Scroller';
@@ -10,6 +7,7 @@ import ThePeople from '../components/Employees/ThePeople';
 import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
+import { OurServicesSectionWithLink } from '../components/Clients/OurServices/OurServicesSectionWithLink';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -17,6 +15,10 @@ const IndexPage = () => {
 
 	const sectionWithHeaderHeight = useSectionHeight(true);
 	const sectionWithoutHeaderHeight = useSectionHeight(false);
+	const sectionWithoutHeaderHeightLarge = useSectionHeight(
+		false,
+		sizes().minimumHeightLarge
+	);
 
 	const sections = [
 		{
@@ -26,27 +28,17 @@ const IndexPage = () => {
 		},
 		{
 			index: 1,
-			name: 'Vår passion',
+			name: 'Våra tjänster',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
 			index: 2,
-			name: 'Att jobba här',
+			name: 'Om oss',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
 			index: 3,
-			name: 'Några av oss',
-			height: sectionWithoutHeaderHeight ?? height,
-		},
-		{
-			index: 4,
-			name: 'Våra kunder',
-			height: sectionWithoutHeaderHeight ?? height,
-		},
-		{
-			index: 5,
-			name: 'Kul på jobbet',
+			name: 'Karriär',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 	];
@@ -57,15 +49,13 @@ const IndexPage = () => {
 
 			<Hero sectionHeight={sectionWithHeaderHeight ?? height} />
 
-			<About sectionHeight={sectionWithoutHeaderHeight ?? height} />
-
-			<WorkAtEtimo sectionHeight={sectionWithoutHeaderHeight ?? height} />
+			<OurServicesSectionWithLink
+				sectionHeight={sectionWithoutHeaderHeightLarge ?? height}
+			/>
 
 			<ThePeople sectionHeight={sectionWithoutHeaderHeight ?? height} />
 
-			<Customers link sectionHeight={sectionWithoutHeaderHeight ?? height} />
-
-			<FunAtWork sectionHeight={sectionWithoutHeaderHeight ?? height} />
+			<WorkAtEtimo sectionHeight={sectionWithoutHeaderHeight ?? height} />
 		</Layout>
 	);
 };
