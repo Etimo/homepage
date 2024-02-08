@@ -30,9 +30,16 @@ const items = [
 	'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
 ];
 
-const Splash = () => {
+type Props = {
+	sectionHeight: number;
+};
+
+const Splash = ({ sectionHeight }: Props) => {
 	return (
-		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
+		<Section
+			sectionHeight={sectionHeight}
+			style={{ backgroundColor: '#F9F9F9' }}
+		>
 			<Hero>
 				<FloatInDir className="flex items-end h-heroFloatIn" direction="down">
 					<HeroTitle className="overflow-hidden">Etimo</HeroTitle>

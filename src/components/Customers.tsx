@@ -202,6 +202,7 @@ type CustomersProps = {
 	link?: boolean;
 	imgDiv?: React.FC;
 	backgroundColor?: string;
+	sectionHeight: number;
 };
 
 export default ({
@@ -209,6 +210,7 @@ export default ({
 	link,
 	imgDiv,
 	backgroundColor,
+	sectionHeight,
 	...props
 }: CustomersProps) => {
 	const customers = givenCustomers ? givenCustomers : generateCustomers();
@@ -222,7 +224,7 @@ export default ({
 		  `;
 
 	return (
-		<Section style={{ backgroundColor }}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor }}>
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<FloatUp>

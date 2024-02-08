@@ -9,7 +9,7 @@ import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
-import { useSectionHeight, useViewportSize } from '../hooks';
+import { useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
 import DashedP from './DashedP';
@@ -53,8 +53,10 @@ const workItems = [
 	'Fredagar jobbar vi alla från kontoret (och många av oss spelar VR i vår VR-studio)',
 	'Vi jobbar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
 ];
-
-const WorkAtEtimo = () => {
+type Props = {
+	sectionHeight: number;
+};
+const WorkAtEtimo = ({ sectionHeight }: Props) => {
 	const data = useStaticQuery(graphql`
 		query {
 			image: file(relativePath: { eq: "bollhavny.jpg" }) {
@@ -65,11 +67,10 @@ const WorkAtEtimo = () => {
 		}
 	`);
 
-	const sectionHeight = useSectionHeight();
 	const [height, width] = useViewportSize();
 
 	return (
-		<Section>
+		<Section sectionHeight={sectionHeight}>
 			{width >= sizes().laptop && sectionHeight && (
 				<CustomBackground offset={sectionHeight * 2} height={sectionHeight} />
 			)}

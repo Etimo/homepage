@@ -9,8 +9,9 @@ import { FollowEtimoLinks } from './FollowEtimoLinks';
 
 const links = [
 	{ name: 'Start', url: '/', local: true },
-	{ name: 'Karriär', url: '/karriar', local: true },
 	{ name: 'Våra tjänster', url: '/kunder-och-expertis', local: true },
+	{ name: 'Om oss', url: '/om-oss', local: true },
+	{ name: 'Karriär', url: '/karriar', local: true },
 ];
 
 const MenuNav = styled(motion.nav)(() => [

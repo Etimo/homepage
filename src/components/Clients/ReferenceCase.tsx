@@ -6,9 +6,14 @@ import Span from '../../elements/Span';
 import Section from '../Section';
 import EmphasizedH2 from '../../elements/EmphasizedH2';
 
-const ReferenceCase = () => {
+type ReferenceCaseProps = {
+	sectionHeight: number;
+};
+
+const ReferenceCase = (props: ReferenceCaseProps) => {
+	const { sectionHeight } = props;
 	return (
-		<Section style={{ background: 'white' }}>
+		<Section sectionHeight={sectionHeight} style={{ background: 'white' }}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
 					<FadeIn direction="left">
