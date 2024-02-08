@@ -48,7 +48,7 @@ const AboutUsPage = () => {
 };
 
 export function Head() {
-	return <SEO title="Karriär" />;
+	return <SEO title="Om oss" />;
 }
 
 export default AboutUsPage;

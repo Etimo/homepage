@@ -34,7 +34,7 @@ const CareerPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
-			<WorkingHere sectionHeight={sectionWithoutHeaderHeight ?? height} />
+			<WorkingHere sectionHeight={sectionWithHeaderHeight ?? height} />
 			<WhoAreYou sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Apply
 				sectionHeight={sectionWithoutHeaderHeight ?? height}
