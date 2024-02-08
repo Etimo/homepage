@@ -141,7 +141,7 @@ const ThePeople = ({ sectionHeight }: Props) => {
 					<EmployeeCards employees={people} employeePage={false} />
 
 					<HighlightButton className="mt-8 mx-auto overflow-hidden">
-						<Link to="/kollegorna">Möt hela Etimo</Link>
+						<Link to="/om-oss">Möt hela Etimo</Link>
 					</HighlightButton>
 				</div>
 			</div>
