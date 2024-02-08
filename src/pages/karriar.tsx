@@ -39,7 +39,6 @@ const CareerPage = () => {
 			<Apply
 				sectionHeight={sectionWithoutHeaderHeight ?? height}
 				variantKey="default"
-				backgroundColor="white"
 			/>
 		</Layout>
 	);

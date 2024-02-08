@@ -30,7 +30,7 @@ const AboutUsPage = () => {
 		},
 		{
 			index: 2,
-			name: 'Social hållbarhet',
+			name: 'Skillnad',
 			height: sectionHeightWithoutHeaderSpace ?? height,
 		},
 	];
