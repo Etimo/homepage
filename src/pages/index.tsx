@@ -29,7 +29,7 @@ const IndexPage = () => {
 		{
 			index: 1,
 			name: 'Våra tjänster',
-			height: sectionWithoutHeaderHeight ?? height,
+			height: sectionWithoutHeaderHeightLarge ?? height,
 		},
 		{
 			index: 2,
