@@ -14,7 +14,12 @@ const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
 `;
 
-export default () => {
+type FunAtWorkProps = {
+	sectionHeight: number;
+};
+
+export const FunAtWork = (props: FunAtWorkProps) => {
+	const { sectionHeight } = props;
 	const data = useStaticQuery(graphql`
 		query {
 			cloud: file(relativePath: { eq: "funatwork/new/danielochsaga.jpg" }) {
@@ -174,7 +179,7 @@ export default () => {
 	];
 
 	return (
-		<Section style={{ backgroundColor: 'white' }}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
 				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>

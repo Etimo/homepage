@@ -1,41 +1,45 @@
 import React from 'react';
-import { Apply, IntroText, WhoAreYou, WorkingHere } from '../components/Career';
+import { Apply, WhoAreYou, WorkingHere } from '../components/Career';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
-import { useViewportSize } from '../hooks';
+import { useSectionHeight, useViewportSize } from '../hooks';
 
 const CareerPage = () => {
 	const [height, width] = useViewportSize();
 	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
 
+	const sectionWithHeaderHeight = useSectionHeight(true);
+	const sectionWithoutHeaderHeight = useSectionHeight(false);
+
 	const sections = [
 		{
 			index: 0,
-			name: 'Karriär',
+			name: 'Jobbet',
+			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
 		},
 		{
 			index: 1,
-			name: 'Jobbet',
+			name: 'Du',
+			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
 			index: 2,
-			name: 'Du',
-		},
-		{
-			index: 3,
 			name: 'Ansök',
+			height: sectionWithoutHeaderHeight ?? height,
 		},
 	];
 
 	return (
 		<Layout>
-			{scrollbarEnabled && <Scroller givenSections={sections} />}
-			<IntroText />
-			<WorkingHere />
-			<WhoAreYou />
-			<Apply variantKey="default" backgroundColor="white" />
+			{scrollbarEnabled && <Scroller sections={sections} />}
+			<WorkingHere sectionHeight={sectionWithHeaderHeight ?? height} />
+			<WhoAreYou sectionHeight={sectionWithoutHeaderHeight ?? height} />
+			<Apply
+				sectionHeight={sectionWithoutHeaderHeight ?? height}
+				variantKey="default"
+			/>
 		</Layout>
 	);
 };

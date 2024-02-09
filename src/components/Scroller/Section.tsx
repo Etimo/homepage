@@ -1,23 +1,23 @@
 import { motion, useCycle } from 'framer-motion';
 import React, { useEffect } from 'react';
-import { animateScroll } from 'react-scroll';
 import styled, { DefaultTheme } from 'styled-components';
 import { sizes } from '../../helpers';
 import { useViewportSize } from '../../hooks';
 
 type SectionProps = {
 	$isActive: boolean;
+	$hasAtLeastTabletHeight: boolean;
 	theme: DefaultTheme;
 };
 
 const Section = styled(motion.div)<SectionProps>`
 	text-decoration: none;
 	border: none;
-	margin: 1rem 0;
 	font-size: 12px;
 	background-color: inherit;
 	text-align: left;
 	padding: 0;
+	margin: ${(props) => (props.$hasAtLeastTabletHeight ? '1rem 0' : '0.4rem 0')};
 	cursor: pointer;
 	z-index: 100;
 	overflow: hidden;
@@ -39,17 +39,20 @@ const variants = [
 
 type Props = {
 	index: number;
+	sectionHeight: number;
 	isActive: boolean;
 	children: React.ReactNode;
+	clickHandler: (index: number) => void;
 };
 
-const SectionComponent = ({ index, isActive, children }: Props) => {
+const SectionComponent = ({
+	index,
+	isActive,
+	children,
+	clickHandler,
+}: Props) => {
 	const [viewportHeight] = useViewportSize();
 	const [variant, cycleVariant] = useCycle(...variants);
-	const sectionHeight =
-		viewportHeight < sizes().minimumHeight
-			? sizes().minimumHeight
-			: viewportHeight;
 
 	useEffect(() => {
 		if (isActive) {
@@ -59,12 +62,13 @@ const SectionComponent = ({ index, isActive, children }: Props) => {
 		}
 	}, [isActive]);
 
-	const clickHandler = () => {
-		animateScroll.scrollTo(index * sectionHeight);
-	};
-
 	return (
-		<Section $isActive={isActive} onClick={clickHandler} animate={variant}>
+		<Section
+			$isActive={isActive}
+			$hasAtLeastTabletHeight={viewportHeight >= sizes().tablet}
+			onClick={() => clickHandler(index)}
+			animate={variant}
+		>
 			{children}
 		</Section>
 	);

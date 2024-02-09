@@ -14,9 +14,14 @@ import { HighlightButton } from './Button';
 import Section from './Section';
 import DashedP from './DashedP';
 
-const CustomBackground = styled.div<{ offset: number }>`
+type CustomBackgroundProps = {
+	offset: number;
+	height: number;
+};
+
+const CustomBackground = styled.div<CustomBackgroundProps>`
 	position: absolute;
-	height: 125%;
+	height: ${(props) => props.height + 'px'};
 	left: calc(50% + 275px);
 	top: ${(props) => props.offset + 'px'};
 	right: 0;
@@ -48,8 +53,10 @@ const workItems = [
 	'Fredagar jobbar vi alla från kontoret (och många av oss spelar VR i vår VR-studio)',
 	'Vi jobbar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
 ];
-
-const WorkAtEtimo = () => {
+type Props = {
+	sectionHeight: number;
+};
+const WorkAtEtimo = ({ sectionHeight }: Props) => {
 	const data = useStaticQuery(graphql`
 		query {
 			image: file(relativePath: { eq: "bollhavny.jpg" }) {
@@ -63,8 +70,10 @@ const WorkAtEtimo = () => {
 	const [height, width] = useViewportSize();
 
 	return (
-		<Section>
-			{width >= sizes().laptop && <CustomBackground offset={height * 2} />}
+		<Section sectionHeight={sectionHeight}>
+			{width >= sizes().laptop && sectionHeight && (
+				<CustomBackground offset={sectionHeight * 2} height={sectionHeight} />
+			)}
 			<div className="container xl:px-24 lg:max-h-95">
 				<div className="flex flex-col xl:pl-12 lg:flex-row items-center lg:justify-center">
 					<div className="w-4/5 sm:w-3/4 lg:w-3/5 lg:mr-2 xl:mr-4 mb-2 lg:mb-0">

@@ -11,7 +11,7 @@ const Hero = styled.div<ThemeProps<DefaultTheme>>`
 	${tw`flex flex-col mx-auto overflow-hidden items-center h-25r lg:h-auto justify-center`};
 `;
 
-const HeroTitle = styled.h1`
+const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
 	color: ${(props) => props.theme.primary};
 	${tw`font-etimo mb-8 uppercase text-5xl mx-auto md:text-6xl lg:text-8xl md:mb-4 tracking-tight`};
 `;
@@ -30,9 +30,16 @@ const items = [
 	'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
 ];
 
-const Splash = () => {
+type Props = {
+	sectionHeight: number;
+};
+
+const Splash = ({ sectionHeight }: Props) => {
 	return (
-		<Section headerSpace style={{ backgroundColor: '#F9F9F9' }}>
+		<Section
+			sectionHeight={sectionHeight}
+			style={{ backgroundColor: '#F9F9F9' }}
+		>
 			<Hero>
 				<FloatInDir className="flex items-end h-heroFloatIn" direction="down">
 					<HeroTitle className="overflow-hidden">Etimo</HeroTitle>

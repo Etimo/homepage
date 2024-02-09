@@ -57,6 +57,17 @@ module.exports = {
 				},
 			},
 		},
+		{
+			resolve: `gatsby-plugin-gdpr-cookies`,
+			options: {
+				googleAnalytics: {
+					trackingId: 'G-VCD8Z6L6BQ',
+					anonymize: true,
+					allowAdFeatures: false,
+				},
+				environments: ['production'],
+			},
+		},
 		`gatsby-plugin-netlify-cms`,
 		'gatsby-plugin-ts-checker',
 		`gatsby-plugin-image`,

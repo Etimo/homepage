@@ -169,9 +169,10 @@ const generateDontations = (): DonationType[] => {
 
 type CustomersProps = {
 	imgDiv?: React.FC;
+	sectionHeight: number;
 };
 
-export default ({ imgDiv }: CustomersProps) => {
+export default ({ imgDiv, sectionHeight }: CustomersProps) => {
 	const [ref, inView] = useInView({ triggerOnce: true });
 	const donations = generateDontations();
 
@@ -183,7 +184,7 @@ export default ({ imgDiv }: CustomersProps) => {
 		  `;
 
 	return (
-		<Section>
+		<Section sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<FloatUp>

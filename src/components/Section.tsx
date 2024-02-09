@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
-import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import { sizes } from '../helpers';
 
 type StyleProps = {
 	height?: number;
@@ -23,27 +23,14 @@ const Section = styled.section<StyleProps>`
 type Props = {
 	children?: React.ReactNode;
 	style?: React.CSSProperties;
-	headerSpace?: boolean;
+	sectionHeight: number;
 };
 
-export default ({ children, headerSpace, ...props }: Props) => {
+export default ({ children, sectionHeight, ...props }: Props) => {
 	const [height, width] = useViewportSize();
-
 	const isMobile = () => width < sizes().laptop;
-	const getHeight = () => {
-		// Don't set a height if it's a mobile phone
-		// since we don't use a left menu on mobile.
-		if (isMobile()) {
-			return undefined;
-		}
-		if (height < sizes().minimumHeight) {
-			return sizes().minimumHeight - (headerSpace ? sizes().headerHeight : 0);
-		}
-		return headerSpace ? height - sizes().headerHeight : height;
-	};
-
 	return (
-		<Section height={getHeight()} {...props}>
+		<Section height={isMobile() ? undefined : sectionHeight} {...props}>
 			{children}
 		</Section>
 	);

@@ -2,6 +2,10 @@ import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
+import { FloatUp } from '../animations';
+import { AnimatedH2, Caption, Span } from '../elements';
+import Section from './Section';
+import useIsMobile from '../hooks/useIsMobile';
 
 type StyleProps = {
 	width?: number;
@@ -21,25 +25,38 @@ const VideoPlayer = styled.section<StyleProps>`
 type Props = {
 	children?: React.ReactNode;
 	style?: React.CSSProperties;
-	headerSpace?: boolean;
+	sectionHeight: number;
 };
 
-export default ({ children, headerSpace, ...props }: Props) => {
-	const [width] = useViewportSize();
-	const isMobile = () => width < sizes().laptop;
+export default ({ children, sectionHeight, ...props }: Props) => {
+	const [height, width] = useViewportSize();
+	const isMobile = useIsMobile();
 
 	return (
-		<VideoContainer>
-			<VideoPlayer width={isMobile() ? width - 20 : width - 200} {...props}>
-				<iframe
-					style={{ aspectRatio: '16/9', width: '100%' }}
-					src="https://www.youtube-nocookie.com/embed/XvhnFCddD4g?si=FyT1c_QT_1_SeMhG?cc_load_policy=1?modestbranding=1"
-					title="Etimo"
-					frameBorder="0"
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-					allowFullScreen
-				></iframe>
-			</VideoPlayer>
-		</VideoContainer>
+		<Section sectionHeight={sectionHeight} style={{ background: 'white' }}>
+			<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
+				<FloatUp>
+					<Caption className="text-center">Våra värderingar</Caption>
+				</FloatUp>
+				<div className="flex flex-row justify-center">
+					<AnimatedH2 direction="left">Lär känna</AnimatedH2>
+					<AnimatedH2 direction="right">
+						<Span>&nbsp;Etimo</Span>
+					</AnimatedH2>
+				</div>
+				<VideoContainer>
+					<VideoPlayer width={isMobile ? width - 20 : width - 200} {...props}>
+						<iframe
+							style={{ aspectRatio: '16/9', width: '100%' }}
+							src="https://www.youtube-nocookie.com/embed/XvhnFCddD4g?si=FyT1c_QT_1_SeMhG?cc_load_policy=1?modestbranding=1"
+							title="Etimo"
+							frameBorder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+							allowFullScreen
+						></iframe>
+					</VideoPlayer>
+				</VideoContainer>
+			</div>
+		</Section>
 	);
 };

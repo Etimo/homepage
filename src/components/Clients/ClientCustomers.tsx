@@ -6,7 +6,12 @@ import tw from 'twin.macro';
 import Customers from '../Customers';
 import { CustomerType } from '../Customers';
 
-const ClientCustomers = () => {
+type ClientCustomersProps = {
+	sectionHeight: number;
+};
+
+const ClientCustomers = (props: ClientCustomersProps) => {
+	const { sectionHeight } = props;
 	const data = useStaticQuery(graphql`
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
@@ -428,6 +433,7 @@ const ClientCustomers = () => {
 	return (
 		<>
 			<Customers
+				sectionHeight={sectionHeight}
 				imgDiv={ImageDiv}
 				givenCustomers={customers}
 				backgroundColor="white"

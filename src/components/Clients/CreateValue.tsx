@@ -6,9 +6,14 @@ import { AnimatedH2, Caption, H4, Span } from '../../elements';
 import Section from '../Section';
 import DashedP from '../DashedP';
 
-const CreateValue = () => {
+type CreateValueProps = {
+	sectionHeight: number;
+};
+
+const CreateValue = (props: CreateValueProps) => {
+	const { sectionHeight } = props;
 	return (
-		<Section>
+		<Section sectionHeight={sectionHeight}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>Våra tjänster</Caption>

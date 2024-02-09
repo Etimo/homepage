@@ -1,22 +1,25 @@
-import React from 'react';
-import { Link } from 'gatsby';
-import { AnimatedH2, Box, Caption, P, Span } from '../elements';
-import { HighlightButton } from '../components/Button';
-import { FloatUp } from '../animations';
-import styled from 'styled-components';
-import EmployeeCards from '../components/Employees/EmployeeCards';
-import Layout from '../components/Layout';
 import { GatsbyImage } from 'gatsby-plugin-image';
+import React from 'react';
+import FloatUp from '../../animations/FloatUp';
+import AnimatedH2 from '../../elements/AnimatedH2';
+import Caption from '../../elements/Caption';
+import Span from '../../elements/Span';
+import EmployeeCards from './EmployeeCards';
+import Section from '../Section';
+import useProfileImages from '../../hooks/useProfileImages';
+import styled from 'styled-components';
 import tw from 'twin.macro';
-import VideoPlayer from '../components/VideoPlayer';
-import { useProfileImages } from '../hooks/useProfileImages';
-import SEO from '../components/Seo';
 
 const StyledImg = styled(GatsbyImage)`
 	${tw`max-w-sm h-full`};
 `;
 
-const kollegorna = () => {
+type AllPeopleProps = {
+	sectionHeight: number;
+};
+
+const AllPeople = (props: AllPeopleProps) => {
+	const sectionHeight = props.sectionHeight;
 	const images = useProfileImages();
 
 	const people = [
@@ -132,7 +135,7 @@ const kollegorna = () => {
 	];
 
 	return (
-		<Layout>
+		<Section sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
 				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>
@@ -145,26 +148,10 @@ const kollegorna = () => {
 						</AnimatedH2>
 					</div>
 					<EmployeeCards employees={people} employeePage={true} />
-
-					<VideoPlayer />
-
-					<div className="mx-auto">
-						<Box mb={100}>
-							<HighlightButton>
-								<Link to="/karriar">
-									<P>Vill du utveckla med oss?</P>
-								</Link>
-							</HighlightButton>
-						</Box>
-					</div>
 				</div>
 			</div>
-		</Layout>
+		</Section>
 	);
 };
 
-export function Head() {
-	return <SEO title="Kollegorna" />;
-}
-
-export default kollegorna;
+export default AllPeople;

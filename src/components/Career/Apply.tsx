@@ -22,21 +22,23 @@ const variants: { [key: string]: Variant } = {
 		caption: 'Bättre mjukvara för en bättre värld',
 		header: 'Kontakta oss',
 		text: 'Behöver du teknikkompetens i världsklass?',
-		emailText: 'Skicka ett mail till Johan på',
-		email: 'johan.hazelius@etimo.se',
+		emailText: 'Skicka ett mail till Jeanette på',
+		email: 'jeanette.britan@etimo.se',
 	},
 };
 
 type Props = {
 	variantKey: string;
 	backgroundColor?: string;
+	sectionHeight: number;
 };
 
 const Apply = (props: Props) => {
+	const { sectionHeight } = props;
 	const { variantKey, backgroundColor } = props;
 	const variant = variants[variantKey];
 	return (
-		<Section style={{ backgroundColor }}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>{variant.caption}</Caption>

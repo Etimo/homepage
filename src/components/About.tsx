@@ -7,7 +7,6 @@ import P from '../elements/P';
 import Span from '../elements/Span';
 import { sizes } from '../helpers';
 import { useViewportSize } from '../hooks';
-import { HighlightButton } from './Button';
 import Section from './Section';
 import EmphasizedH2 from '../elements/EmphasizedH2';
 
@@ -26,10 +25,17 @@ const GradientSpan = styled.span`
 	${tw`border-blackGray ease-in duration-200 bg-right lg:bg-left hover:bg-right `};
 `;
 
-const About = () => {
-	const [h, width] = useViewportSize();
+type AboutProps = {
+	sectionHeight: number;
+};
+
+const About = ({ sectionHeight }: AboutProps) => {
+	const [height, width] = useViewportSize();
 	return (
-		<Section style={{ backgroundColor: '#FFFFFF' }}>
+		<Section
+			sectionHeight={sectionHeight}
+			style={{ backgroundColor: '#FFFFFF' }}
+		>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
 					<FadeIn direction="left" className="flex flex-col">
@@ -63,12 +69,6 @@ const About = () => {
 							{width < sizes().desktop ? ` ` : <br />}
 							lösningar som kan bidra till samhällsnyttan.
 						</P>
-						<br />
-						<HighlightButton>
-							<a href="https://blog.etimo.se/" target="_blank">
-								<P>Läs gärna vår blogg</P>
-							</a>
-						</HighlightButton>
 					</FadeIn>
 				</div>
 			</div>
