@@ -28,7 +28,7 @@ const ClientsPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Våra tjänster',
+			name: 'Erbjudande',
 			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
 		},
 		{

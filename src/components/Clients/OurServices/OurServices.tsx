@@ -51,63 +51,52 @@ export const OurServices = () => {
 	const [ref, inView] = useInView({ triggerOnce: true });
 
 	return (
-		<div className="flex flex-col mb-8 overflow-hidden">
-			<FloatUp>
-				<Caption className="text-center">Våra tjänster</Caption>
-			</FloatUp>
-			<div className="flex flex-row justify-center">
-				<AnimatedH2 direction="left">Etimo </AnimatedH2>
-				<AnimatedH2 direction="right">
-					<Span>&nbsp;erbjuder</Span>
-				</AnimatedH2>
-			</div>
-			<motion.div
-				className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden"
-				ref={ref}
-				variants={gridVar}
-				initial="init"
-				animate={inView ? 'anim' : ''}
+		<motion.div
+			className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden"
+			ref={ref}
+			variants={gridVar}
+			initial="init"
+			animate={inView ? 'anim' : ''}
+		>
+			<CyanHover
+				className="flex flex-col border p-10 lg:m-4"
+				variants={BlurIn()}
 			>
-				<CyanHover
-					className="flex flex-col border p-10 lg:m-4"
-					variants={BlurIn()}
-				>
-					<H3Title>Utvecklingsteam</H3Title>
-					{developingTeamTexts.map((cText) => {
-						return <DashedP key={cText}>{cText}</DashedP>;
-					})}
-				</CyanHover>
+				<H3Title>Utvecklingsteam</H3Title>
+				{developingTeamTexts.map((cText) => {
+					return <DashedP key={cText}>{cText}</DashedP>;
+				})}
+			</CyanHover>
 
-				<CyanHover
-					className="flex flex-col border p-10 lg:m-4"
-					variants={BlurIn()}
-				>
-					<H3Title>Utvecklare</H3Title>
-					{developmentTexts.map((sText) => {
-						return <DashedP key={sText}>{sText}</DashedP>;
-					})}
-				</CyanHover>
+			<CyanHover
+				className="flex flex-col border p-10 lg:m-4"
+				variants={BlurIn()}
+			>
+				<H3Title>Utvecklare</H3Title>
+				{developmentTexts.map((sText) => {
+					return <DashedP key={sText}>{sText}</DashedP>;
+				})}
+			</CyanHover>
 
-				<CyanHover
-					className="flex flex-col border p-10 lg:m-4"
-					variants={BlurIn()}
-				>
-					<H3Title>Produktledning</H3Title>
-					{productTexts.map((sText) => {
-						return <DashedP key={sText}>{sText}</DashedP>;
-					})}
-				</CyanHover>
+			<CyanHover
+				className="flex flex-col border p-10 lg:m-4"
+				variants={BlurIn()}
+			>
+				<H3Title>Produktledning</H3Title>
+				{productTexts.map((sText) => {
+					return <DashedP key={sText}>{sText}</DashedP>;
+				})}
+			</CyanHover>
 
-				<CyanHover
-					className="flex flex-col border p-10 lg:m-4"
-					variants={BlurIn()}
-				>
-					<H3Title>Ledarskap och förändringsarbete</H3Title>
-					{leaderText.map((cText) => {
-						return <DashedP key={cText}>{cText}</DashedP>;
-					})}
-				</CyanHover>
-			</motion.div>
-		</div>
+			<CyanHover
+				className="flex flex-col border p-10 lg:m-4"
+				variants={BlurIn()}
+			>
+				<H3Title>Ledarskap och förändringsarbete</H3Title>
+				{leaderText.map((cText) => {
+					return <DashedP key={cText}>{cText}</DashedP>;
+				})}
+			</CyanHover>
+		</motion.div>
 	);
 };
