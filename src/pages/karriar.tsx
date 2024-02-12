@@ -5,6 +5,8 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
+import About from '../components/About';
+import { FunAtWork } from '../components/FunAtWork';
 
 const CareerPage = () => {
 	const [height, width] = useViewportSize();
@@ -16,16 +18,26 @@ const CareerPage = () => {
 	const sections = [
 		{
 			index: 0,
-			name: 'Jobbet',
+			name: 'Vår passion',
 			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
 		},
 		{
 			index: 1,
+			name: 'Kul på jobbet',
+			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
+		},
+		{
+			index: 2,
+			name: 'Jobbet',
+			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
+		},
+		{
+			index: 3,
 			name: 'Du',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 2,
+			index: 4,
 			name: 'Ansök',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
@@ -34,7 +46,9 @@ const CareerPage = () => {
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
-			<WorkingHere sectionHeight={sectionWithHeaderHeight ?? height} />
+			<About sectionHeight={sectionWithHeaderHeight ?? height} />
+			<FunAtWork sectionHeight={sectionWithoutHeaderHeight ?? height} />
+			<WorkingHere sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<WhoAreYou sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Apply
 				sectionHeight={sectionWithoutHeaderHeight ?? height}
