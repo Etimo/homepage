@@ -16,86 +16,166 @@ const ClientCustomers = (props: ClientCustomersProps) => {
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			blocket: file(relativePath: { eq: "customers/modified/blocket.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			qliro: file(relativePath: { eq: "customers/modified/qliro.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			karma: file(relativePath: { eq: "customers/modified/karma.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			mira: file(relativePath: { eq: "customers/modified/mira.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			nobina: file(relativePath: { eq: "customers/modified/nobina.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			quinyx: file(relativePath: { eq: "customers/modified/quinyx.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			seb: file(relativePath: { eq: "customers/modified/seb.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			appva: file(relativePath: { eq: "customers/modified/appva.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			comviq: file(relativePath: { eq: "customers/modified/comviq.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			mittskolval: file(
 				relativePath: { eq: "customers/modified/mittskolval.png" }
 			) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			expressen: file(
 				relativePath: { eq: "customers/modified/expressen.png" }
 			) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			vklass: file(relativePath: { eq: "customers/modified/vklass.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			struqtur: file(relativePath: { eq: "customers/modified/struqtur.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			timewave: file(relativePath: { eq: "customers/modified/timewave.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			bytbil: file(relativePath: { eq: "customers/modified/bytbil.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 		}

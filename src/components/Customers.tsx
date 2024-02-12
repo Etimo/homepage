@@ -1,8 +1,6 @@
 import { graphql, Link, useStaticQuery } from 'gatsby';
 import { GatsbyImage } from 'gatsby-plugin-image';
 import React from 'react';
-import styled from 'styled-components';
-import tw from 'twin.macro';
 import { FloatInDir, FloatUp } from '../animations';
 import { AnimatedH2, Caption, P, Span } from '../elements';
 import { HighlightButton } from './Button';
@@ -24,42 +22,82 @@ const generateCustomers = (): CustomerType[] => {
 		query {
 			tele2: file(relativePath: { eq: "customers/modified/tele2.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			blocket: file(relativePath: { eq: "customers/modified/blocket.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			qliro: file(relativePath: { eq: "customers/modified/qliro.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			karma: file(relativePath: { eq: "customers/modified/karma.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			mira: file(relativePath: { eq: "customers/modified/mira.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			nobina: file(relativePath: { eq: "customers/modified/nobina.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			quinyx: file(relativePath: { eq: "customers/modified/quinyx.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 			seb: file(relativePath: { eq: "customers/modified/seb.png" }) {
 				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
+					gatsbyImageData(
+						layout: CONSTRAINED
+						width: 500
+						quality: 90
+						placeholder: NONE
+					)
 				}
 			}
 		}
@@ -215,14 +253,6 @@ export default ({
 }: CustomersProps) => {
 	const customers = givenCustomers ? givenCustomers : generateCustomers();
 
-	/* max-width: 150px; */
-	const ImageDiv = imgDiv
-		? imgDiv
-		: styled.div`
-				${tw`mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxs opacity-50 hover:opacity-100`};
-				${tw`transition-opacity ease-in-out duration-200`};
-		  `;
-
 	return (
 		<Section sectionHeight={sectionHeight} style={{ backgroundColor }}>
 			<div className="container mx-auto xl:px-12">
@@ -246,11 +276,11 @@ export default ({
 										direction={customer.direction}
 										delay={idx * 0.075}
 									>
-										<ImageDiv>
+										<div className="mx-auto w-full max-w-xxxxxs md:max-w-xxxxs xl:max-w-xxxs opacity-50 hover:opacity-100 transition-opacity ease-in-out duration-200">
 											<a href={customer.url} target="_blank">
 												{customer.image}
 											</a>
-										</ImageDiv>
+										</div>
 									</FloatInDir>
 								</div>
 							);
