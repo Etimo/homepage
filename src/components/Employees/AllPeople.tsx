@@ -139,7 +139,7 @@ const AllPeople = (props: AllPeopleProps) => {
 			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
 				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>
-						<Caption className="text-center">Människorna</Caption>
+						<Caption className="text-center">Kollegorna</Caption>
 					</FloatUp>
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Vi är</AnimatedH2>

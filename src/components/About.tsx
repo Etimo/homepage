@@ -32,10 +32,7 @@ type AboutProps = {
 const About = ({ sectionHeight }: AboutProps) => {
 	const [height, width] = useViewportSize();
 	return (
-		<Section
-			sectionHeight={sectionHeight}
-			style={{ backgroundColor: '#FFFFFF' }}
-		>
+		<Section sectionHeight={sectionHeight}>
 			<div className="flex container flex-col md:flex-row px-8 lg:px-32">
 				<div className="md:w-1/2">
 					<FadeIn direction="left" className="flex flex-col">

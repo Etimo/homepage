@@ -8,28 +8,9 @@ import { P } from '../elements';
 import Caption from '../elements/Caption';
 import H2 from '../elements/H2';
 import Span from '../elements/Span';
-import { sizes } from '../helpers';
-import { useViewportSize } from '../hooks';
 import { HighlightButton } from './Button';
 import Section from './Section';
 import DashedP from './DashedP';
-
-type CustomBackgroundProps = {
-	offset: number;
-	height: number;
-};
-
-const CustomBackground = styled.div<CustomBackgroundProps>`
-	position: absolute;
-	height: ${(props) => props.height + 'px'};
-	left: calc(50% + 275px);
-	top: ${(props) => props.offset + 'px'};
-	right: 0;
-	bottom: 0;
-	display: block;
-	z-index: 0;
-	background-color: white;
-`;
 
 const EmphasizedH2 = styled(H2)`
 	line-height: 1.25;
@@ -67,20 +48,13 @@ const WorkAtEtimo = ({ sectionHeight }: Props) => {
 		}
 	`);
 
-	const [height, width] = useViewportSize();
-
 	return (
-		<Section sectionHeight={sectionHeight}>
-			{width >= sizes().laptop && sectionHeight && (
-				<CustomBackground offset={sectionHeight * 2} height={sectionHeight} />
-			)}
+		<Section sectionHeight={sectionHeight} style={{ background: 'white' }}>
 			<div className="container xl:px-24 lg:max-h-95">
 				<div className="flex flex-col xl:pl-12 lg:flex-row items-center lg:justify-center">
 					<div className="w-4/5 sm:w-3/4 lg:w-3/5 lg:mr-2 xl:mr-4 mb-2 lg:mb-0">
 						<FadeIn direction="left">
-							<Caption className="text-center lg:text-left">
-								Att jobba på Etimo
-							</Caption>
+							<Caption className="text-center lg:text-left">Karriär</Caption>
 							<EmphasizedH2>
 								Hur är det att <Span>jobba </Span>
 								på Etimo?
@@ -94,7 +68,7 @@ const WorkAtEtimo = ({ sectionHeight }: Props) => {
 							<div className="text-center lg:text-left">
 								<HighlightButton>
 									<Link to="/karriar">
-										<P>Läs mer om att jobba hos oss</P>
+										<P>Mer om att jobba hos oss</P>
 									</Link>
 								</HighlightButton>
 							</div>
