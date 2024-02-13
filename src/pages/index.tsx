@@ -15,9 +15,9 @@ const IndexPage = () => {
 
 	const sectionWithHeaderHeight = useSectionHeight(true);
 	const sectionWithoutHeaderHeight = useSectionHeight(false);
-	const sectionWithoutHeaderHeightLarge = useSectionHeight(
+	const sectionWithoutHeaderHeightXl = useSectionHeight(
 		false,
-		sizes().minimumHeightLarge
+		sizes().minimumHeightXl
 	);
 
 	const sections = [
@@ -29,7 +29,7 @@ const IndexPage = () => {
 		{
 			index: 1,
 			name: 'Våra tjänster',
-			height: sectionWithoutHeaderHeightLarge ?? height,
+			height: sectionWithoutHeaderHeightXl ?? height,
 		},
 		{
 			index: 2,
@@ -50,7 +50,7 @@ const IndexPage = () => {
 			<Hero sectionHeight={sectionWithHeaderHeight ?? height} />
 
 			<OurServicesSectionWithLink
-				sectionHeight={sectionWithoutHeaderHeightLarge ?? height}
+				sectionHeight={sectionWithoutHeaderHeightXl ?? height}
 			/>
 
 			<ThePeople sectionHeight={sectionWithoutHeaderHeight ?? height} />
