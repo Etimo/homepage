@@ -8,7 +8,6 @@ import Span from '../../elements/Span';
 import EmployeeCards from './EmployeeCards';
 import Section from '../Section';
 import { HighlightButton } from '../Button';
-import { P } from '../../elements';
 import useProfileImages from '../../hooks/useProfileImages';
 
 const imageClassName = 'max-w-sm h-full';

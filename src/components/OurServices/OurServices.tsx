@@ -3,10 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import React from 'react';
 import tw from 'twin.macro';
-import { AnimatedH2, Caption, Span } from '../../../elements';
-import { CyanHover, FloatUp } from '../../../animations';
-import BlurIn from '../../../animations/variants/BlurIn';
-import DashedP from '../../DashedP';
+import { CyanHover } from '../../animations';
+import BlurIn from '../../animations/variants/BlurIn';
+import DashedP from '../DashedP';
 
 const developingTeamTexts = [
 	'Helhetsåtagande och partnerskap.',

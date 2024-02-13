@@ -7,7 +7,7 @@ import ThePeople from '../components/Employees/ThePeople';
 import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
-import { OurServicesSectionWithLink } from '../components/Clients/OurServices/OurServicesSectionWithLink';
+import { OurServicesSectionWithLink } from '../components/OurServices/OurServicesSectionWithLink';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();

@@ -12,7 +12,7 @@ import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
-import { OurServicesSection } from '../components/Clients/OurServices/OurServicesSection';
+import { OurServicesSection } from '../components/OurServices/OurServicesSection';
 
 const ClientsPage = () => {
 	const [height, width] = useViewportSize();
