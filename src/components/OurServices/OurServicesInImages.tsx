@@ -3,12 +3,9 @@ import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
 import React from 'react';
 import tw from 'twin.macro';
-import BlurIn from '../../animations/variants/BlurIn';
 import { graphql, useStaticQuery } from 'gatsby';
-import { convertToBgImage } from 'gbimage-bridge';
-import { getImage } from 'gatsby-plugin-image';
-import BackgroundImage from 'gatsby-background-image';
-import { CyanHover } from '../../animations';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { ServiceImageContainer } from './ServiceImageContainer';
 
 const gridVar = {
 	init: {},
@@ -28,7 +25,9 @@ export type ServiceType = {
 	image: JSX.Element;
 };
 
-const getBackgroundImages = () => {
+export const OurServicesInImages = () => {
+	const [ref, inView] = useInView({ triggerOnce: true });
+
 	const data = useStaticQuery(graphql`
 		query {
 			developer: file(relativePath: { eq: "services/developer.jpg" }) {
@@ -76,18 +75,6 @@ const getBackgroundImages = () => {
 		}
 	`);
 
-	return {
-		developerTeam: convertToBgImage(getImage(data.developerTeam)),
-		developer: convertToBgImage(getImage(data.developer)),
-		productManagement: convertToBgImage(getImage(data.productManagement)),
-		leadership: convertToBgImage(getImage(data.leadership)),
-	};
-};
-
-export const OurServicesInImages = () => {
-	const [ref, inView] = useInView({ triggerOnce: true });
-	const backgroundImages = getBackgroundImages();
-
 	return (
 		<motion.div
 			className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden"
@@ -96,37 +83,47 @@ export const OurServicesInImages = () => {
 			initial="init"
 			animate={inView ? 'anim' : ''}
 		>
-			<motion.div className="flex flex-col lg:m-4 h-full" variants={BlurIn()}>
-				<BackgroundImage {...backgroundImages.developerTeam}>
-					<CyanHover className="h-full min-h-350p align-bottom opacity-80">
-						<H3Title>Utvecklingsteam</H3Title>
-					</CyanHover>
-				</BackgroundImage>
-			</motion.div>
+			<ServiceImageContainer>
+				<GatsbyImage
+					alt="fyra personer som tittar på dataskärmar och pratar"
+					image={data.developerTeam.childImageSharp.gatsbyImageData}
+					className="opacity-100"
+				/>
 
-			<motion.div className="flex flex-col lg:m-4 h-full" variants={BlurIn()}>
-				<BackgroundImage {...backgroundImages.developer}>
-					<CyanHover className="h-full min-h-350p opacity-80">
-						<H3Title>Utvecklare</H3Title>
-					</CyanHover>
-				</BackgroundImage>
-			</motion.div>
+				<H3Title className="absolute w-full">Utvecklingsteam</H3Title>
+			</ServiceImageContainer>
 
-			<motion.div className="flex flex-col lg:m-4 h-full" variants={BlurIn()}>
-				<BackgroundImage {...backgroundImages.productManagement}>
-					<CyanHover className="h-full min-h-350p opacity-80">
-						<H3Title>Produktledning</H3Title>
-					</CyanHover>
-				</BackgroundImage>
-			</motion.div>
+			<ServiceImageContainer>
+				<GatsbyImage
+					alt="en utvecklare framför en datorskärm"
+					image={data.developer.childImageSharp.gatsbyImageData}
+					className="opacity-100"
+				/>
 
-			<motion.div className="flex flex-col lg:m-4 h-full" variants={BlurIn()}>
-				<BackgroundImage {...backgroundImages.leadership}>
-					<CyanHover className="h-full min-h-350p opacity-80">
-						<H3Title>Ledarskap och förändringsarbete</H3Title>
-					</CyanHover>
-				</BackgroundImage>
-			</motion.div>
+				<H3Title className="absolute w-full">Utvecklare</H3Title>
+			</ServiceImageContainer>
+
+			<ServiceImageContainer>
+				<GatsbyImage
+					alt="produktledning"
+					image={data.productManagement.childImageSharp.gatsbyImageData}
+					className="opacity-100"
+				/>
+
+				<H3Title className="absolute w-full">Produktledning</H3Title>
+			</ServiceImageContainer>
+
+			<ServiceImageContainer>
+				<GatsbyImage
+					alt="två personer som pratar"
+					image={data.leadership.childImageSharp.gatsbyImageData}
+					className="opacity-100"
+				/>
+
+				<H3Title className="absolute w-full">
+					Ledarskap och förändringsarbete
+				</H3Title>
+			</ServiceImageContainer>
 		</motion.div>
 	);
 };
