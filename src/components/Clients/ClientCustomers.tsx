@@ -436,7 +436,6 @@ const ClientCustomers = (props: ClientCustomersProps) => {
 				sectionHeight={sectionHeight}
 				imgDiv={ImageDiv}
 				givenCustomers={customers}
-				backgroundColor="white"
 			/>
 		</>
 	);

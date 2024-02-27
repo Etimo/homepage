@@ -8,6 +8,7 @@ import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
 import { OurServicesSectionWithLink } from '../components/Clients/OurServices/OurServicesSectionWithLink';
+import Customers from '../components/Customers';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -33,11 +34,16 @@ const IndexPage = () => {
 		},
 		{
 			index: 2,
+			name: 'Våra kunder',
+			height: sectionWithoutHeaderHeightLarge ?? height,
+		},
+		{
+			index: 3,
 			name: 'Om oss',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 3,
+			index: 4,
 			name: 'Karriär',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
@@ -52,6 +58,8 @@ const IndexPage = () => {
 			<OurServicesSectionWithLink
 				sectionHeight={sectionWithoutHeaderHeightLarge ?? height}
 			/>
+
+			<Customers link sectionHeight={sectionWithoutHeaderHeight ?? height} />
 
 			<ThePeople sectionHeight={sectionWithoutHeaderHeight ?? height} />
 
