@@ -15,11 +15,11 @@ export const EtimoVentures = (props: EtimoVenturesProps) => {
 				<FloatUp>
 					<Caption>Etimo Ventures</Caption>
 				</FloatUp>
-				<div className="flex flex-col md:flex-row justify-center">
+				<div className="flex flex-col justify-center">
 					<AnimatedH2 direction="left">
-						Upptäck <Span>möjligheterna</Span> med&nbsp; Etimo Ventures och
-						Etimo AB
+						Upptäck <Span>möjligheterna</Span> med
 					</AnimatedH2>
+					<AnimatedH2 direction="right">Etimo Ventures och Etimo AB</AnimatedH2>
 				</div>
 				<div className="w-11/12 md:w-3/4 mx-auto text-left mt-12 lg:mt-12">
 					<FadeIn direction="right">
