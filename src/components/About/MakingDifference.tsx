@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import { graphql, useStaticQuery } from 'gatsby';
-import { FloatInDir } from '../animations';
+import { FloatInDir } from '../../animations';
 import { useInView } from 'react-intersection-observer';
 import { motion } from 'framer-motion';
-import { H5 } from '../elements';
+import { H5 } from '../../elements';
 import React from 'react';
 import tw from 'twin.macro';
-import CyanHover from '../animations/CyanHover';
-import FloatUp from '../animations/FloatUp';
-import BlurIn from '../animations/variants/BlurIn';
-import AnimatedH2 from '../elements/AnimatedH2';
-import Caption from '../elements/Caption';
-import Span from '../elements/Span';
-import Section from './Section';
+import CyanHover from '../../animations/CyanHover';
+import FloatUp from '../../animations/FloatUp';
+import BlurIn from '../../animations/variants/BlurIn';
+import AnimatedH2 from '../../elements/AnimatedH2';
+import Caption from '../../elements/Caption';
+import Span from '../../elements/Span';
+import Section from '../Section';
 import { GatsbyImage } from 'gatsby-plugin-image';
-import { FloatDirection } from '../animations/FloatInDir';
-import DashedP from './DashedP';
+import { FloatDirection } from '../../animations/FloatInDir';
+import DashedP from '../DashedP';
 
 const customerTexts = [
 	'Ständigt fokus på att leverera kundvärde',
@@ -184,7 +184,7 @@ export default ({ imgDiv, sectionHeight }: CustomersProps) => {
 		  `;
 
 	return (
-		<Section sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<FloatUp>

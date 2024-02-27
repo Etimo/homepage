@@ -8,6 +8,7 @@ export default () => {
 		minimumHeight: 770,
 		minimumHeightLarge: 1000,
 		minimumHeightXl: 1100,
-		minimumHeightXxl: 1900,
+		minimumHeightXxl: 1500,
+		minimumHeight3xl: 1900,
 	};
 };
