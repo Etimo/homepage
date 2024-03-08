@@ -11,7 +11,7 @@ type CompetencesProps = {
 const Competences = (props: CompetencesProps) => {
 	const { sectionHeight } = props;
 	return (
-		<Section style={{ background: 'white' }} sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>Kompetenser</Caption>

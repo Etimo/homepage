@@ -289,8 +289,8 @@ export default ({
 					{link && (
 						<div className="flex mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
 							<HighlightButton>
-								<Link to="/kunder-och-expertis">
-									<P>Läs mer om våra kunder och tjänster</P>
+								<Link to="/kunder">
+									<P>Mer om våra kunder</P>
 								</Link>
 							</HighlightButton>
 						</div>
