@@ -7,7 +7,8 @@ export default () => {
 		headerHeight: 140,
 		minimumHeight: 770,
 		minimumHeightLarge: 1000,
-		minimumHeightXl: 1200,
-		minimumHeightXxl: 1900,
+		minimumHeightXl: 1100,
+		minimumHeightXxl: 1500,
+		minimumHeight3xl: 1900,
 	};
 };

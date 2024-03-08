@@ -6,15 +6,21 @@ import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
 import AllPeople from '../components/Employees/AllPeople';
 import VideoPlayer from '../components/VideoPlayer';
-import MakingDifference from '../components/MakingDifference';
+import MakingDifference from '../components/About/MakingDifference';
+import { EtimoVentures } from '../components/About/EtimoVentures';
 
 const AboutUsPage = () => {
 	const [height, width] = useViewportSize();
 	const sectionHeightWithHeaderSpace = useSectionHeight(
 		true,
-		sizes().minimumHeightXxl
+		sizes().minimumHeight3xl
 	);
 	const sectionHeightWithoutHeaderSpace = useSectionHeight(false);
+	const sectionLargeHeightWithoutHeaderSpace = useSectionHeight(
+		false,
+		sizes().minimumHeightXxl
+	);
+
 	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
 
 	const sections = [
@@ -30,6 +36,11 @@ const AboutUsPage = () => {
 		},
 		{
 			index: 2,
+			name: 'Etimo Ventures',
+			height: sectionLargeHeightWithoutHeaderSpace ?? height,
+		},
+		{
+			index: 3,
 			name: 'Skillnad',
 			height: sectionHeightWithoutHeaderSpace ?? height,
 		},
@@ -40,6 +51,9 @@ const AboutUsPage = () => {
 			{scrollbarEnabled && <Scroller sections={sections} />}
 			<AllPeople sectionHeight={sectionHeightWithHeaderSpace ?? height} />
 			<VideoPlayer sectionHeight={sectionHeightWithoutHeaderSpace ?? height} />
+			<EtimoVentures
+				sectionHeight={sectionLargeHeightWithoutHeaderSpace ?? height}
+			/>
 			<MakingDifference
 				sectionHeight={sectionHeightWithoutHeaderSpace ?? height}
 			/>
