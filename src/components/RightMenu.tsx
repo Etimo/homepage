@@ -6,10 +6,13 @@ import tw from 'twin.macro';
 import { CyanHover } from '../animations';
 import { Caption, H4, P } from '../elements';
 import { FollowEtimoLinks } from './FollowEtimoLinks';
+import { useViewportSize } from '../hooks';
+import { sizes } from '../helpers';
 
 const links = [
 	{ name: 'Start', url: '/', local: true },
-	{ name: 'Våra tjänster', url: '/kunder-och-expertis', local: true },
+	{ name: 'Våra tjänster', url: '/tjanster', local: true },
+	{ name: 'Våra kunder', url: '/kunder', local: true },
 	{ name: 'Om oss', url: '/om-oss', local: true },
 	{ name: 'Karriär', url: '/karriar', local: true },
 ];
@@ -19,8 +22,8 @@ const MenuNav = styled(motion.nav)(() => [
 	tw`w-270p md:w-350p lg:w-25r xl:w-450p` /* Width */,
 	tw`pl-8 pr-5 pt-20 pb-5` /* Phones */,
 	tw`md:pl-large md:pr-8 md:pb-8` /* Tablets */,
-	tw`lg:pl-60p lg:pr-small lg:pt-32 lg:pb-large` /* Laptops */,
-	tw`xl:pl-20` /* Desktops */,
+	tw`lg:pl-60p lg:pr-small lg:pb-large` /* Laptops */,
+	tw`xl:pl-20 xl:pt-32` /* Desktops */,
 ]);
 
 const HamburgerButton = styled.div`
@@ -65,6 +68,9 @@ const lineVar = {
 
 const RightMenu = () => {
 	const [active, setActive] = useState(false);
+	const [height, width] = useViewportSize();
+
+	const isLaptop = height <= sizes().minimumHeight && width >= sizes().laptop;
 
 	return (
 		<>
@@ -136,19 +142,21 @@ const RightMenu = () => {
 										</CyanHover>
 									);
 								})}
-								<div className="mt-auto">
-									<ModifiedCapt>Telefon:</ModifiedCapt>
-									<a href="tel:0760213150" target="_blank">
-										<HoverP className="mb-7">076 - 021 31 50</HoverP>
-									</a>
-									<ModifiedCapt>E-post:</ModifiedCapt>
-									<a href="mailto:kontakt@etimo.se" target="_blank">
-										<HoverP className="mb-7">kontakt@etimo.se</HoverP>
-									</a>
-									<Caption>Följ oss:</Caption>
 
-									<FollowEtimoLinks />
-								</div>
+								{!isLaptop && (
+									<div className="mt-auto">
+										<ModifiedCapt>Telefon:</ModifiedCapt>
+										<a href="tel:0760213150" target="_blank">
+											<HoverP className="mb-7">076 - 021 31 50</HoverP>
+										</a>
+										<ModifiedCapt>E-post:</ModifiedCapt>
+										<a href="mailto:kontakt@etimo.se" target="_blank">
+											<HoverP className="mb-7">kontakt@etimo.se</HoverP>
+										</a>
+										<Caption>Följ oss:</Caption>
+										<FollowEtimoLinks />
+									</div>
+								)}
 							</div>
 						</MenuNav>
 						<div

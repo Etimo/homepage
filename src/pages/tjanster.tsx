@@ -1,12 +1,6 @@
 import React from 'react';
 import { Apply } from '../components/Career';
-import {
-	Competences,
-	CreateValue,
-	Services,
-	ReferenceCase,
-} from '../components/Clients';
-import ClientCustomers from '../components/Clients/ClientCustomers';
+import { Competences, CreateValue, ReferenceCase } from '../components/Clients';
 import Layout from '../components/Layout';
 import Scroller from '../components/Scroller';
 import SEO from '../components/Seo';
@@ -14,7 +8,7 @@ import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
 import { OurServicesSection } from '../components/Clients/OurServices/OurServicesSection';
 
-const ClientsPage = () => {
+const ServicesPage = () => {
 	const [height, width] = useViewportSize();
 	const scrollbarEnabled = width >= sizes().desktop; // Desktop++
 
@@ -23,7 +17,6 @@ const ClientsPage = () => {
 		sizes().minimumHeightLarge
 	);
 	const sectionWithoutHeaderHeight = useSectionHeight(false);
-	const largeSectionHeight = useSectionHeight(false, sizes().minimumHeightXl);
 
 	const sections = [
 		{
@@ -33,31 +26,21 @@ const ClientsPage = () => {
 		},
 		{
 			index: 1,
-			name: 'Våra kunder',
-			height: largeSectionHeight ?? height,
-		},
-		{
-			index: 2,
 			name: 'Värde för kund',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 3,
+			index: 2,
 			name: 'Kompetenser',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 4,
-			name: 'Nöjda kunder',
-			height: sectionWithoutHeaderHeight ?? height,
-		},
-		{
-			index: 5,
+			index: 3,
 			name: 'Referenscase',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 6,
+			index: 4,
 			name: 'Kontakt',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
@@ -67,10 +50,8 @@ const ClientsPage = () => {
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
 			<OurServicesSection sectionHeight={sectionWithHeaderHeight ?? height} />
-			<ClientCustomers sectionHeight={largeSectionHeight ?? height} />
 			<CreateValue sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Competences sectionHeight={sectionWithoutHeaderHeight ?? height} />
-			<Services sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<ReferenceCase sectionHeight={sectionWithoutHeaderHeight ?? height} />
 			<Apply
 				variantKey="customers"
@@ -84,4 +65,4 @@ export function Head() {
 	return <SEO title="Våra tjänster" />;
 }
 
-export default ClientsPage;
+export default ServicesPage;
