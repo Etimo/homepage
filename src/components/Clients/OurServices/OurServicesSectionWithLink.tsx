@@ -29,7 +29,7 @@ export const OurServicesSectionWithLink = (props: OurServicesProps) => {
 					<OurServices />
 					<div className="flex mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
 						<HighlightButton className="mt-8 mx-auto overflow-hidden">
-							<Link to="/kunder-och-expertis">Mer om våra tjänster</Link>
+							<Link to="/tjanster">Mer om våra tjänster</Link>
 						</HighlightButton>
 					</div>
 				</div>

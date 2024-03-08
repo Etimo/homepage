@@ -13,7 +13,7 @@ type CreateValueProps = {
 const CreateValue = (props: CreateValueProps) => {
 	const { sectionHeight } = props;
 	return (
-		<Section sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>Våra tjänster</Caption>

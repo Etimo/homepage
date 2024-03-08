@@ -29,16 +29,16 @@ const evaluations = [
 	'100% av kunderna säger att de vill jobba med oss igen',
 ];
 
-type ServicesProps = {
+type HappyClientsProps = {
 	sectionHeight: number;
 };
 
-const Services = (props: ServicesProps) => {
+const HappyClients = (props: HappyClientsProps) => {
 	const { sectionHeight } = props;
 	const [ref, inView] = useInView({ triggerOnce: true });
 
 	return (
-		<Section sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 xl:px-32 text-center overflow-hidden">
 				<FloatUp>
 					<Caption>Nöjda kunder</Caption>
@@ -79,4 +79,4 @@ const Services = (props: ServicesProps) => {
 	);
 };
 
-export default Services;
+export default HappyClients;
