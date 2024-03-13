@@ -139,11 +139,8 @@ export default (props: Props) => {
 				>
 					<P>{title}</P>
 				</motion.span>
-				<motion.div
-					initial="hidden"
-					variants={linkContainerAnimation}
-					className="flex flex-column m-auto mt-2"
-				>
+
+				<div className="flex flex-column m-auto mt-2">
 					{links &&
 						links.map(({ icon, url }, index) => (
 							<motion.a
@@ -156,7 +153,7 @@ export default (props: Props) => {
 								{icon}
 							</motion.a>
 						))}
-				</motion.div>
+				</div>
 			</motion.div>
 
 			{image}
