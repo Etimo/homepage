@@ -18,7 +18,7 @@ const gridVar = {
 };
 
 const H3Title = styled.h3`
-	${tw`font-quest text-xl lg:text-2xl text-center align-bottom bg-white bg-opacity-75 p-2`};
+	${tw`font-quest text-xl lg:text-2xl text-center align-bottom bg-white bg-opacity-25 p-2`};
 `;
 
 export type ServiceType = {
@@ -77,7 +77,7 @@ export const OurServicesInImages = () => {
 
 	return (
 		<motion.div
-			className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden"
+			className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden text-[1.2rem]"
 			ref={ref}
 			variants={gridVar}
 			initial="init"
@@ -87,7 +87,7 @@ export const OurServicesInImages = () => {
 				<GatsbyImage
 					alt="fyra personer som tittar på dataskärmar och pratar"
 					image={data.developerTeam.childImageSharp.gatsbyImageData}
-					className="opacity-100"
+					className="opacity-100 aspect-4/3 object-bottom"
 				/>
 
 				<H3Title className="absolute w-full">Utvecklingsteam</H3Title>
@@ -97,7 +97,7 @@ export const OurServicesInImages = () => {
 				<GatsbyImage
 					alt="en utvecklare framför en datorskärm"
 					image={data.developer.childImageSharp.gatsbyImageData}
-					className="opacity-100"
+					className="opacity-100  aspect-4/3"
 				/>
 
 				<H3Title className="absolute w-full">Utvecklare</H3Title>
@@ -105,24 +105,24 @@ export const OurServicesInImages = () => {
 
 			<ServiceImageContainer>
 				<GatsbyImage
-					alt="produktledning"
-					image={data.productManagement.childImageSharp.gatsbyImageData}
-					className="opacity-100"
-				/>
-
-				<H3Title className="absolute w-full">Produktledning</H3Title>
-			</ServiceImageContainer>
-
-			<ServiceImageContainer>
-				<GatsbyImage
 					alt="två personer som pratar"
 					image={data.leadership.childImageSharp.gatsbyImageData}
-					className="opacity-100"
+					className="opacity-100  aspect-4/3"
 				/>
 
 				<H3Title className="absolute w-full">
 					Ledarskap och förändringsarbete
 				</H3Title>
+			</ServiceImageContainer>
+
+			<ServiceImageContainer>
+				<GatsbyImage
+					alt="produktledning"
+					image={data.productManagement.childImageSharp.gatsbyImageData}
+					className="opacity-100  aspect-4/3"
+				/>
+
+				<H3Title className="absolute w-full">Produktledning</H3Title>
 			</ServiceImageContainer>
 		</motion.div>
 	);
