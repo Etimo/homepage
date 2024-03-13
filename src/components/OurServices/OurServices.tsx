@@ -81,9 +81,9 @@ export const OurServices = () => {
 				className="flex flex-col border p-10 lg:m-4"
 				variants={BlurIn()}
 			>
-				<H3Title>Produktledning</H3Title>
-				{productTexts.map((sText) => {
-					return <DashedP key={sText}>{sText}</DashedP>;
+				<H3Title>Ledarskap och förändringsarbete</H3Title>
+				{leaderText.map((cText) => {
+					return <DashedP key={cText}>{cText}</DashedP>;
 				})}
 			</CyanHover>
 
@@ -91,9 +91,9 @@ export const OurServices = () => {
 				className="flex flex-col border p-10 lg:m-4"
 				variants={BlurIn()}
 			>
-				<H3Title>Ledarskap och förändringsarbete</H3Title>
-				{leaderText.map((cText) => {
-					return <DashedP key={cText}>{cText}</DashedP>;
+				<H3Title>Produktledning</H3Title>
+				{productTexts.map((sText) => {
+					return <DashedP key={sText}>{sText}</DashedP>;
 				})}
 			</CyanHover>
 		</motion.div>
