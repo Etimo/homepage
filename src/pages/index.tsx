@@ -7,8 +7,8 @@ import ThePeople from '../components/Employees/ThePeople';
 import WorkAtEtimo from '../components/WorkAtEtimo';
 import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
-import { OurServicesSectionWithLink } from '../components/Clients/OurServices/OurServicesSectionWithLink';
 import Customers from '../components/Customers';
+import { OurServicesSectionWithLink } from '../components/OurServices/OurServicesSectionWithLink';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -20,6 +20,10 @@ const IndexPage = () => {
 		false,
 		sizes().minimumHeightLarge
 	);
+	const sectionWithoutHeaderHeightXl = useSectionHeight(
+		false,
+		sizes().minimumHeightXl
+	);
 
 	const sections = [
 		{
@@ -30,7 +34,7 @@ const IndexPage = () => {
 		{
 			index: 1,
 			name: 'Våra tjänster',
-			height: sectionWithoutHeaderHeightLarge ?? height,
+			height: sectionWithoutHeaderHeightXl ?? height,
 		},
 		{
 			index: 2,
@@ -56,7 +60,7 @@ const IndexPage = () => {
 			<Hero sectionHeight={sectionWithHeaderHeight ?? height} />
 
 			<OurServicesSectionWithLink
-				sectionHeight={sectionWithoutHeaderHeightLarge ?? height}
+				sectionHeight={sectionWithoutHeaderHeightXl ?? height}
 			/>
 
 			<Customers link sectionHeight={sectionWithoutHeaderHeight ?? height} />

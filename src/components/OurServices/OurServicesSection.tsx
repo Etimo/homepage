@@ -1,8 +1,8 @@
 import React from 'react';
-import Section from '../../Section';
+import Section from '../Section';
 import { OurServices } from './OurServices';
-import { FloatUp } from '../../../animations';
-import { AnimatedH2, Caption, Span } from '../../../elements';
+import { FloatUp } from '../../animations';
+import { AnimatedH2, Caption, Span } from '../../elements';
 
 type OurServicesProps = {
 	sectionHeight: number;
