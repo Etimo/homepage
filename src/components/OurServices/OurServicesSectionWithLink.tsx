@@ -27,7 +27,7 @@ export const OurServicesSectionWithLink = (props: OurServicesProps) => {
 						</AnimatedH2>
 					</div>
 					<OurServicesInImages />
-					<div className="flex mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
+					<div className="flex mx-auto">
 						<HighlightButton className="mt-8 mx-auto overflow-hidden">
 							<Link to="/tjanster">Mer om våra tjänster</Link>
 						</HighlightButton>

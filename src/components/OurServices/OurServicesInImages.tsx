@@ -18,7 +18,7 @@ const gridVar = {
 };
 
 const H3Title = styled.h3`
-	${tw`font-quest text-xl lg:text-2xl text-center align-bottom bg-white bg-opacity-25 p-2`};
+	${tw`font-quest text-lg text-center align-bottom bg-white bg-opacity-25 p-2`};
 `;
 
 export type ServiceType = {
