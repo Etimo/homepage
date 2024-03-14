@@ -77,7 +77,7 @@ export const OurServicesInImages = () => {
 
 	return (
 		<motion.div
-			className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden text-[1.2rem]"
+			className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-0 mx-6 overflow-hidden"
 			ref={ref}
 			variants={gridVar}
 			initial="init"
