@@ -92,13 +92,7 @@ const AllPeople = (props: AllPeopleProps) => {
 			linkedin: 'https://www.linkedin.com/in/andr%C3%A9-hansson-5b6418128/',
 			github: 'https://github.com/H4zze',
 		},
-		{
-			name: 'Klara',
-			title: 'Konsult',
-			image: <StyledImg image={images.klara} alt="Klara" />,
-			linkedin: 'https://www.linkedin.com/in/klara-djurberg-889853127/',
-			github: 'https://github.com/klaradj',
-		},
+
 		{
 			name: 'Henrik',
 			title: 'Konsult',
@@ -122,15 +116,22 @@ const AllPeople = (props: AllPeopleProps) => {
 			github: 'https://github.com/indrif',
 		},
 		{
-			name: 'Colan',
-			title: 'Konsultens bästa vän',
-			image: <StyledImg image={images.colan} alt="Colan" />,
-		},
-		{
 			name: 'Malin Lindbom',
 			title: 'Produktledning',
 			image: <StyledImg image={images.malinl} alt="Malin" />,
 			linkedin: 'https://www.linkedin.com/in/malin-lindbom-60a13a65/',
+		},
+		{
+			name: 'Colan',
+			title: 'Konsultens bästa vän',
+			image: <StyledImg image={images.colan} alt="dog" />,
+		},
+		{
+			name: 'Etimo',
+			title: 'Kanske du?',
+			image: <StyledImg image={images.etimo} alt="Etimo" />,
+			linkedin: 'https://www.linkedin.com/company/5032461',
+			github: 'https://github.com/etimo',
 		},
 	];
 
