@@ -62,7 +62,12 @@ const AboutUsPage = () => {
 };
 
 export function Head() {
-	return <SEO title="Om oss" />;
+	return (
+		<SEO
+			title="Om oss"
+			description="Upptäck Etimo - vårt engagemang, värderingar och hur vi skapar värde för våra kunder."
+		/>
+	);
 }
 
 export default AboutUsPage;

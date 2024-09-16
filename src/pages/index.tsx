@@ -73,7 +73,12 @@ const IndexPage = () => {
 };
 
 export function Head() {
-	return <SEO title="Hem" />;
+	return (
+		<SEO
+			title="Hem"
+			description="Etimo är ledande IT-konsulter som utvecklar skräddarsydda digitala lösningar med fokus på teknik, kundvärde och samhällsnytta."
+		/>
+	);
 }
 
 export default IndexPage;
