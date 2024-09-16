@@ -50,7 +50,9 @@ const ClientsPage = () => {
 };
 
 export function Head() {
-	return <SEO title="Våra kunder" />;
+	return (
+		<SEO title="Våra kunder" description="Utforska ett urval av våra kunder" />
+	);
 }
 
 export default ClientsPage;
