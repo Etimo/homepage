@@ -9,6 +9,7 @@ import { sizes } from '../helpers';
 import { useSectionHeight, useViewportSize } from '../hooks';
 import Customers from '../components/Customers';
 import { OurServicesSectionWithLink } from '../components/OurServices/OurServicesSectionWithLink';
+import CustomerTestimonials from '../components/CustomerTestimonials';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -43,11 +44,16 @@ const IndexPage = () => {
 		},
 		{
 			index: 3,
+			name: 'Sagt om oss',
+			height: sectionWithoutHeaderHeightLarge ?? height,
+		},
+		{
+			index: 4,
 			name: 'Om oss',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 4,
+			index: 5,
 			name: 'Karriär',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
@@ -64,6 +70,11 @@ const IndexPage = () => {
 			/>
 
 			<Customers link sectionHeight={sectionWithoutHeaderHeight ?? height} />
+
+			<CustomerTestimonials
+				link
+				sectionHeight={sectionWithoutHeaderHeight ?? height}
+			/>
 
 			<ThePeople sectionHeight={sectionWithoutHeaderHeight ?? height} />
 
