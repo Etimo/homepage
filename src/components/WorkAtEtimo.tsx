@@ -25,7 +25,6 @@ const StyledImg = styled(GatsbyImage)`
 `;
 
 const workItems = [
-	'Du väljer själv dina uppdrag',
 	'10% av din tid är kompetensutveckling',
 	'Du har en personlig mentor',
 	'Du har tydlig karriärväg i en organisation med platt hierarki och transparens',

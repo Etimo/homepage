@@ -18,7 +18,7 @@ const gridVar = {
 };
 
 const H3Title = styled.h3`
-	${tw`font-quest text-lg text-center align-bottom bg-white bg-opacity-25 p-2`};
+	${tw`font-quest text-center align-bottom bg-white bg-opacity-25 p-2`};
 `;
 
 export type ServiceType = {
@@ -30,7 +30,7 @@ export const OurServicesInImages = () => {
 
 	const data = useStaticQuery(graphql`
 		query {
-			developer: file(relativePath: { eq: "services/developer.jpg" }) {
+			developer: file(relativePath: { eq: "services/developerv2.jpeg" }) {
 				childImageSharp {
 					gatsbyImageData(
 						layout: CONSTRAINED
@@ -95,16 +95,6 @@ export const OurServicesInImages = () => {
 
 			<ServiceImageContainer>
 				<GatsbyImage
-					alt="en utvecklare framför en datorskärm"
-					image={data.developer.childImageSharp.gatsbyImageData}
-					className="opacity-100  aspect-4/3"
-				/>
-
-				<H3Title className="absolute w-full">Utvecklare</H3Title>
-			</ServiceImageContainer>
-
-			<ServiceImageContainer>
-				<GatsbyImage
 					alt="två personer som pratar"
 					image={data.leadership.childImageSharp.gatsbyImageData}
 					className="opacity-100  aspect-4/3"
@@ -113,6 +103,16 @@ export const OurServicesInImages = () => {
 				<H3Title className="absolute w-full">
 					Ledarskap och förändringsarbete
 				</H3Title>
+			</ServiceImageContainer>
+
+			<ServiceImageContainer>
+				<GatsbyImage
+					alt="två utvecklare framför en datorskärm"
+					image={data.developer.childImageSharp.gatsbyImageData}
+					className="opacity-100  aspect-4/3"
+				/>
+
+				<H3Title className="absolute w-full">Utvecklare</H3Title>
 			</ServiceImageContainer>
 
 			<ServiceImageContainer>

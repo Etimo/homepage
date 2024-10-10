@@ -5,7 +5,7 @@ import Section from '../Section';
 import DashedP from '../DashedP';
 
 const bulletPoints = [
-	'Du är vår viktigaste resurs och du väljer själv dina uppdrag, har möjlighet att påverka vilka kunder du vill jobba med och har ansvar och förtroende för hur din vardag ser ut',
+	'Du är vår viktigaste resurs och vi är måna om att du har ett uppdrag där du trivs',
 	'Du har en personlig mentor som du kan bolla idéer, funderingar och tekniker med och någon som kan hjälpa dig att utvecklas',
 	'10 % av din arbetstid ges till kompetensutveckling',
 	'Vi har en platt organisation med korta beslutsvägar och transparens',
