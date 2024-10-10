@@ -29,10 +29,10 @@ const workItems = [
 	'10% av din tid är kompetensutveckling',
 	'Du har en personlig mentor',
 	'Du har tydlig karriärväg i en organisation med platt hierarki och transparens',
-	'Du har möjlighet till delägarskap (bolaget ägs till 100% av seniora medarbetare)',
-	'Du jobbar ibland inhouse och ibland ute hos kund',
-	'Fredagar jobbar vi alla från kontoret (och många av oss spelar VR i vår VR-studio)',
-	'Vi jobbar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
+	'Du har möjlighet till delägarskap då bolaget ägs till 100% av seniora medarbetare',
+	'Du arbetar ibland inhouse och ibland ute hos kund',
+	'På fredagar arbetar vi alla från kontoret och utmanar varandra i Mario Kart',
+	'Vi arbetar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
 ];
 type Props = {
 	sectionHeight: number;
