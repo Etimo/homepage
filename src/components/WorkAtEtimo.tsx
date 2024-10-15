@@ -28,10 +28,10 @@ const workItems = [
 	'10% av din tid är kompetensutveckling',
 	'Du har en personlig mentor',
 	'Du har tydlig karriärväg i en organisation med platt hierarki och transparens',
-	'Du har möjlighet till delägarskap (bolaget ägs till 100% av seniora medarbetare)',
-	'Du jobbar ibland inhouse och ibland ute hos kund',
-	'Fredagar jobbar vi alla från kontoret (och många av oss spelar VR i vår VR-studio)',
-	'Vi jobbar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
+	'Du har möjlighet till delägarskap då bolaget ägs till 100% av seniora medarbetare',
+	'Du arbetar ibland inhouse och ibland ute hos kund',
+	'På fredagar arbetar vi alla från kontoret och utmanar varandra i Mario Kart',
+	'Vi arbetar utifrån våra värdeord som är kompetens, öppenhet och samhällsnytta',
 ];
 type Props = {
 	sectionHeight: number;
@@ -48,7 +48,7 @@ const WorkAtEtimo = ({ sectionHeight }: Props) => {
 	`);
 
 	return (
-		<Section sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="container xl:px-24 lg:max-h-95">
 				<div className="flex flex-col xl:pl-12 lg:flex-row items-center lg:justify-center">
 					<div className="w-4/5 sm:w-3/4 lg:w-3/5 lg:mr-2 xl:mr-4 mb-2 lg:mb-0">
