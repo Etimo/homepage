@@ -126,7 +126,7 @@ const ThePeople = ({ sectionHeight }: Props) => {
 	];
 
 	return (
-		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
+		<Section sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-12 lg:h-full lg:overflow-hidden">
 				<div className="flex flex-col mb-8 lg:h-95 lg:max-h-95 lg:justify-center lg:items-center">
 					<FloatUp>

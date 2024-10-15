@@ -12,18 +12,6 @@ const items = [
 		company: 'Causey & Westling',
 		role: 'Vice VD & Partner',
 	},
-	{
-		text: 'En transmodulär plattform för att optimera synergier mellan våra flödesbaserade processer sattes upp av Etimo. De designade även en hyperkonvergerad infrastruktur för att möjliggöra dynamisk skalbarhet i vårt ekosystem',
-		name: 'Jane Doe',
-		company: 'Anonymous',
-		role: 'PO',
-	},
-	{
-		text: 'Etimo byggde en mikrotjänstarkitektur som effektivt hanterar våra datadrivna applikationer. De introducerade en CI/CD-pipeline för att optimera våra release-cykler och implementerade containerbaserade lösningar för att möjliggöra sömlös skalbarhet.',
-		name: 'John Doe',
-		company: 'Company Name',
-		role: 'Project Manager',
-	},
 ];
 
 const createVariants = (direction: 'left' | 'right') => ({
@@ -115,7 +103,7 @@ const Testimonials = () => {
 				</TestimonialItem>
 			</AnimatePresence>
 
-			<div className="flex justify-center mt-4 space-x-2">
+			{/* <div className="flex justify-center mt-4 space-x-2">
 				{items.map((_, index) => (
 					<div
 						key={index}
@@ -130,7 +118,7 @@ const Testimonials = () => {
 						}}
 					></div>
 				))}
-			</div>
+			</div> */}
 		</TestimonialsContainer>
 	);
 };

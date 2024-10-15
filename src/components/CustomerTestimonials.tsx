@@ -8,13 +8,12 @@ import Testimonials from './Testimonials';
 
 type Props = {
 	link: boolean;
-	backgroundColor?: string;
 	sectionHeight: number;
 };
 
-export default ({ backgroundColor, sectionHeight, link }: Props) => {
+export default ({ sectionHeight, link }: Props) => {
 	return (
-		<Section sectionHeight={sectionHeight} style={{ backgroundColor }}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="container mx-auto xl:px-12">
 				<div className="flex flex-col mb-8">
 					<FloatUp>
