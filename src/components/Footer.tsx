@@ -8,6 +8,8 @@ import { AnimatedH2 } from '../elements';
 import Caption from '../elements/Caption';
 import Section from './Section';
 import { FollowEtimoLinks } from './FollowEtimoLinks';
+import { GatsbyImage } from 'gatsby-plugin-image';
+import { graphql, useStaticQuery } from 'gatsby';
 
 const InfoP = styled.p`
 	${tw`text-center text-sm tracking-wider ease-in duration-200`};
@@ -74,6 +76,17 @@ const itemVar = {
 
 const Footer = () => {
 	const [ref, inView] = useInView({ triggerOnce: true });
+	const data = useStaticQuery(graphql`
+		query {
+			doctorsWithoutBorders: file(
+				relativePath: { eq: "donations/doctors-without-borders-supporter.png" }
+			) {
+				childImageSharp {
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+				}
+			}
+		}
+	`);
 
 	return (
 		<Section style={{ backgroundColor: '#231f20' }}>
@@ -123,6 +136,15 @@ const Footer = () => {
 					<FloatUp>
 						<FollowEtimoLinks variant="center" />
 						<InfoP className="text-darkGray pointer-events-none">© Etimo</InfoP>
+					</FloatUp>
+				</div>
+
+				<div className="flex justify-center pt-2 md:pt-4 lg:pt-6 overflow-hidden saturate-[.75]">
+					<FloatUp>
+						<GatsbyImage
+							image={data.doctorsWithoutBorders.childImageSharp.gatsbyImageData}
+							alt="Läkare utan gränsers logga"
+						/>
 					</FloatUp>
 				</div>
 			</div>
