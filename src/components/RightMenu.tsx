@@ -12,6 +12,7 @@ import { sizes } from '../helpers';
 const links = [
 	{ name: 'Start', url: '/', local: true },
 	{ name: 'Våra tjänster', url: '/tjanster', local: true },
+	{ name: 'Vår investeringsstrategi', url: '/etimo-ventures', local: true },
 	{ name: 'Våra kunder', url: '/kunder', local: true },
 	{ name: 'Om oss', url: '/om-oss', local: true },
 	{ name: 'Karriär', url: '/karriar', local: true },

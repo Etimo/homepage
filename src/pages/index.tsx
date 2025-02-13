@@ -10,6 +10,7 @@ import { useSectionHeight, useViewportSize } from '../hooks';
 import Customers from '../components/Customers';
 import { OurServicesSectionWithLink } from '../components/OurServices/OurServicesSectionWithLink';
 import CustomerTestimonials from '../components/CustomerTestimonials';
+import { EtimoVentures } from '../components/EtimoVentures/EtimoVentures';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -39,21 +40,26 @@ const IndexPage = () => {
 		},
 		{
 			index: 2,
-			name: 'Våra kunder',
+			name: 'Vår strategi',
 			height: sectionWithoutHeaderHeightLarge ?? height,
 		},
 		{
 			index: 3,
-			name: 'Sagt om oss',
+			name: 'Våra kunder',
 			height: sectionWithoutHeaderHeightLarge ?? height,
 		},
 		{
 			index: 4,
+			name: 'Sagt om oss',
+			height: sectionWithoutHeaderHeightLarge ?? height,
+		},
+		{
+			index: 5,
 			name: 'Om oss',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 5,
+			index: 6,
 			name: 'Karriär',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
@@ -68,6 +74,8 @@ const IndexPage = () => {
 			<OurServicesSectionWithLink
 				sectionHeight={sectionWithoutHeaderHeightXl ?? height}
 			/>
+
+			<EtimoVentures sectionHeight={sectionWithoutHeaderHeight ?? height} />
 
 			<Customers link sectionHeight={sectionWithoutHeaderHeight ?? height} />
 

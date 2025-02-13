@@ -17,7 +17,7 @@ export const EtimoVentures = (props: EtimoVenturesProps) => {
 				</FloatUp>
 				<div className="flex flex-col justify-center w-11/12 md:w-3/4 mx-auto">
 					<AnimatedH2 direction="left">
-						Upptäck <Span>möjligheterna</Span> med Etimo Ventures och Etimo AB
+						Upptäck <Span>möjligheterna</Span> med Etimo och Etimo Ventures
 					</AnimatedH2>
 				</div>
 				<div className="w-11/12 md:w-3/4 mx-auto text-left mt-12 lg:mt-12">
@@ -25,11 +25,10 @@ export const EtimoVentures = (props: EtimoVenturesProps) => {
 						<P>
 							Hos Etimo Ventures, i samarbete med Etimo AB, är vi inte bara
 							investerare - vi är partners i din framgångsresa. Vi erbjuder en
-							kombination av kapital och teknisk expertis för att stödja små
-							växande mjukvaruföretag som delar vår vision: att skapa bättre
+							kombination av kapital och modern teknisk kompetens för att stödja
+							små växande mjukvaruföretag som delar vår vision: att skapa bättre
 							mjukvara för en bättre värld.
 						</P>
-						<P className="mt-4">Vad gör Etimo Ventures unikt?</P>
 					</FadeIn>
 					<FadeIn direction="left">
 						<H3 className="text-left mt-12 mb-2">Strategiskt partnerskap</H3>
@@ -53,7 +52,7 @@ export const EtimoVentures = (props: EtimoVenturesProps) => {
 						<P>
 							Hos Etimo är vi inte ute efter snabba vinster. Vi strävar efter
 							att skapa långsiktiga kundrelationer och partnerskap, där vi
-							kontinuerligt stöder ditt företags tillväxt och utveckling.
+							kontinuerligt stödjer ditt företags tillväxt och utveckling.
 						</P>
 					</FadeIn>
 					<FadeIn direction="right">
