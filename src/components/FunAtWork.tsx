@@ -47,7 +47,7 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			pillows: file(relativePath: { eq: "funatwork/new/danielochlukas.jpg" }) {
+			budapest: file(relativePath: { eq: "funatwork/new/budapest.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
@@ -57,11 +57,7 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			italy: file(relativePath: { eq: "funatwork/new/italienvandring.jpg" }) {
-				childImageSharp {
-					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
-				}
-			}
+
 			moon: file(relativePath: { eq: "funatwork/new/joakimochbjorn.jpeg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
@@ -88,6 +84,11 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 				}
 			}
 			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
+				childImageSharp {
+					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
+				}
+			}
+			italy: file(relativePath: { eq: "funatwork/new/danielochhenrik.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
@@ -121,7 +122,7 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 			title: 'På pit stop i Åre',
 			image: (
 				<StyledImg
-					image={data.afterski.childImageSharp.gatsbyImageData}
+					image={data.italy.childImageSharp.gatsbyImageData}
 					alt="Kollegor på pit-stop i Åre"
 				/>
 			),
@@ -147,16 +148,6 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 			),
 		},
 		{
-			name: 'DANIEL & LUKAS',
-			title: 'Njuter i kuddhavet',
-			image: (
-				<StyledImg
-					image={data.pillows.childImageSharp.gatsbyImageData}
-					alt="Daniel och Lukas i kuddhavet"
-				/>
-			),
-		},
-		{
 			name: 'GÄNGET',
 			title: 'På brädspelskväll',
 			image: (
@@ -166,6 +157,17 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 				/>
 			),
 		},
+		{
+			name: 'MORGAN & ERIK',
+			title: 'Njuter på Donau',
+			image: (
+				<StyledImg
+					image={data.budapest.childImageSharp.gatsbyImageData}
+					alt="Morgan och Erik på Donau"
+				/>
+			),
+		},
+
 		{
 			name: 'ANDRÈ',
 			title: 'Kaffepaus i glitterboxen',
