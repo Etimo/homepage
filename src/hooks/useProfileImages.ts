@@ -35,7 +35,7 @@ export const useProfileImages = () => {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			saga: file(relativePath: { eq: "someofus/new-images/saga.png" }) {
+			saga: file(relativePath: { eq: "someofus/new-images/sagacitrus.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}

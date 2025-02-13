@@ -71,13 +71,7 @@ const AllPeople = (props: AllPeopleProps) => {
 			linkedin: 'https://www.linkedin.com/in/johan-hazelius-910b281a/',
 			github: 'https://github.com/JohanHazelius',
 		},
-		{
-			name: 'Lukas',
-			title: 'Konsult',
-			image: <StyledImg image={images.lukas} alt="Lukas" />,
-			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
-			github: 'https://github.com/ljukas',
-		},
+
 		{
 			name: 'Philip',
 			title: 'Konsult',
@@ -92,7 +86,11 @@ const AllPeople = (props: AllPeopleProps) => {
 			linkedin: 'https://www.linkedin.com/in/andr%C3%A9-hansson-5b6418128/',
 			github: 'https://github.com/H4zze',
 		},
-
+		{
+			name: 'Colan',
+			title: 'Konsultens bästa vän',
+			image: <StyledImg image={images.colan} alt="dog" />,
+		},
 		{
 			name: 'Henrik',
 			title: 'Konsult',
@@ -101,13 +99,7 @@ const AllPeople = (props: AllPeopleProps) => {
 				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
 			github: 'https://github.com/henrik-westoo',
 		},
-		{
-			name: 'Saga',
-			title: 'Konsult',
-			image: <StyledImg image={images.saga} alt="Saga" />,
-			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
-			github: 'https://github.com/hejsaga',
-		},
+
 		{
 			name: 'Daniel',
 			title: 'Partner',
@@ -121,10 +113,13 @@ const AllPeople = (props: AllPeopleProps) => {
 			image: <StyledImg image={images.malinl} alt="Malin" />,
 			linkedin: 'https://www.linkedin.com/in/malin-lindbom-60a13a65/',
 		},
+
 		{
-			name: 'Colan',
-			title: 'Konsultens bästa vän',
-			image: <StyledImg image={images.colan} alt="dog" />,
+			name: 'Saga',
+			title: 'Konsult',
+			image: <StyledImg image={images.saga} alt="Saga" />,
+			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
+			github: 'https://github.com/hejsaga',
 		},
 		{
 			name: 'Etimo',

@@ -7,7 +7,6 @@ import { useSectionHeight, useViewportSize } from '../hooks';
 import AllPeople from '../components/Employees/AllPeople';
 import VideoPlayer from '../components/VideoPlayer';
 import MakingDifference from '../components/About/MakingDifference';
-import { EtimoVentures } from '../components/About/EtimoVentures';
 
 const AboutUsPage = () => {
 	const [height, width] = useViewportSize();
@@ -34,11 +33,7 @@ const AboutUsPage = () => {
 			name: 'Våra värderingar',
 			height: sectionHeightWithoutHeaderSpace ?? height,
 		},
-		{
-			index: 2,
-			name: 'Etimo Ventures',
-			height: sectionLargeHeightWithoutHeaderSpace ?? height,
-		},
+
 		{
 			index: 3,
 			name: 'Skillnad',
@@ -51,9 +46,6 @@ const AboutUsPage = () => {
 			{scrollbarEnabled && <Scroller sections={sections} />}
 			<AllPeople sectionHeight={sectionHeightWithHeaderSpace ?? height} />
 			<VideoPlayer sectionHeight={sectionHeightWithoutHeaderSpace ?? height} />
-			<EtimoVentures
-				sectionHeight={sectionLargeHeightWithoutHeaderSpace ?? height}
-			/>
 			<MakingDifference
 				sectionHeight={sectionHeightWithoutHeaderSpace ?? height}
 			/>
