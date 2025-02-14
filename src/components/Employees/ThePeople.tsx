@@ -22,7 +22,7 @@ const ThePeople = ({ sectionHeight }: Props) => {
 	const people = [
 		{
 			name: 'Björn',
-			title: 'Konsult',
+			title: 'Partner',
 			image: (
 				<GatsbyImage
 					className={imageClassName}
@@ -45,19 +45,7 @@ const ThePeople = ({ sectionHeight }: Props) => {
 			),
 			linkedin: 'https://www.linkedin.com/in/jeanettebritan/',
 		},
-		{
-			name: 'Saga',
-			title: 'Konsult',
-			image: (
-				<GatsbyImage
-					className={imageClassName}
-					image={images.saga}
-					alt="Saga"
-				/>
-			),
-			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
-			github: 'https://github.com/hejsaga',
-		},
+
 		{
 			name: 'Joakim',
 			title: 'Grundare',
@@ -104,24 +92,37 @@ const ThePeople = ({ sectionHeight }: Props) => {
 				<GatsbyImage
 					className={imageClassName}
 					image={images.philip}
-					alt="Morgan"
+					alt="Philip"
 				/>
 			),
 			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
 			github: 'https://github.com/ForsbergPhilip',
 		},
 		{
-			name: 'Lukas',
+			name: 'Daniel',
+			title: 'Partner',
+			image: (
+				<GatsbyImage
+					className={imageClassName}
+					image={images.daniel}
+					alt="Daniel"
+				/>
+			),
+			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
+			github: 'https://github.com/indrif',
+		},
+		{
+			name: 'Saga',
 			title: 'Konsult',
 			image: (
 				<GatsbyImage
 					className={imageClassName}
-					image={images.lukas}
-					alt="Lukas"
+					image={images.saga}
+					alt="Saga"
 				/>
 			),
-			linkedin: 'https://www.linkedin.com/in/lukas-lindqvist/',
-			github: 'https://github.com/ljukas',
+			linkedin: 'https://www.linkedin.com/in/sagaswahn/',
+			github: 'https://github.com/hejsaga',
 		},
 	];
 
