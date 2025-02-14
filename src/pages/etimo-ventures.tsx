@@ -10,21 +10,27 @@ const InvestmentStrategy = () => {
 	const [height, width] = useViewportSize();
 	const scrollbarEnabled = width >= sizes().desktop;
 
-	const sectionWithHeaderHeight = useSectionHeight(true);
-	const sectionWithoutHeaderHeight = useSectionHeight(false);
+	const sectionLargeHeightWithoutHeaderSpace = useSectionHeight(
+		false,
+		sizes().minimumHeightXxl
+	);
+
+	const custom = sectionLargeHeightWithoutHeaderSpace
+		? sectionLargeHeightWithoutHeaderSpace - 300
+		: height;
 
 	const sections = [
 		{
 			index: 0,
 			name: 'Om Etimo Ventures',
-			height: (sectionWithHeaderHeight ?? height) + sizes().headerHeight,
+			height: sectionLargeHeightWithoutHeaderSpace ?? height,
 		},
 	];
 
 	return (
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
-			<EtimoVentures sectionHeight={sectionWithoutHeaderHeight ?? height} />
+			<EtimoVentures sectionHeight={custom} />
 		</Layout>
 	);
 };
