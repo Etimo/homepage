@@ -40,7 +40,7 @@ const IndexPage = () => {
 		},
 		{
 			index: 2,
-			name: 'Vår strategi',
+			name: 'Investeringsstrategi',
 			height: sectionWithoutHeaderHeightLarge ?? height,
 		},
 		{
