@@ -118,12 +118,12 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 			),
 		},
 		{
-			name: 'KOLLEGOR',
-			title: 'På pit stop i Åre',
+			name: 'DANIEL & HENRIK',
+			title: 'Jobbar på soliga strategier',
 			image: (
 				<StyledImg
 					image={data.italy.childImageSharp.gatsbyImageData}
-					alt="Kollegor på pit-stop i Åre"
+					alt="Kollegor som arbetar i solen"
 				/>
 			),
 		},
