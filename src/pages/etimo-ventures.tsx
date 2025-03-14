@@ -35,13 +35,13 @@ const InvestmentStrategy = () => {
 	);
 };
 
-export function Head() {
+export const Head = () => {
 	return (
 		<SEO
 			title="Etimo Ventures"
 			description="Vi erbjuder en kombination av kapital och modern teknisk kompetens för att stödja små växande mjukvaruföretag som delar vår vision: att skapa bättre mjukvara för en bättre värld."
 		/>
 	);
-}
+};
 
 export default InvestmentStrategy;

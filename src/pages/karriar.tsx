@@ -58,13 +58,13 @@ const CareerPage = () => {
 	);
 };
 
-export function Head() {
+export const Head = () => {
 	return (
 		<SEO
 			title="Karriär"
 			description="Vår största tillgång är du, och vi ser till att du har ett meningsfullt och utvecklande uppdrag där du trivs."
 		/>
 	);
-}
+};
 
 export default CareerPage;

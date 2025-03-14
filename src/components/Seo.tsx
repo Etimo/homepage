@@ -1,11 +1,6 @@
 /**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
-// TODO: Maybe remove the twitter stuff.
+	https://www.gatsbyjs.com/docs/reference/built-in-components/gatsby-head/
+*/
 
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
@@ -14,12 +9,10 @@ type MetaProps = JSX.IntrinsicElements['meta'];
 
 type Props = {
 	title: string;
-	description?: string;
-	lang?: string;
-	meta?: MetaProps[];
+	description: string;
 };
 
-const SEO = ({ description, lang, meta = [], title }: Props) => {
+const SEO = ({ description, title }: Props) => {
 	const { site, logo } = useStaticQuery(
 		graphql`
 			query {
@@ -27,8 +20,6 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 					siteMetadata {
 						title
 						description
-						author
-						siteUrl
 						imageAlt
 						imageType
 					}
@@ -42,46 +33,19 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 		`
 	);
 
-	const metaDescription = description || site.siteMetadata.description;
 	const metaData: MetaProps[] = [
 		{
-			name: `twitter:card`,
-			content: `summary`,
-		},
-		{
-			name: `twitter:creator`,
-			content: site.siteMetadata.author,
-		},
-		{
-			name: `twitter:title`,
-			content: title,
-		},
-		{
-			name: `twitter:description`,
-			content: metaDescription,
-		},
-		{
-			name: `title`,
-			property: `og:title`,
+			name: 'title',
+			property: `title`,
 			content: site.siteMetadata.title,
 		},
 		{
-			name: `type`,
-			property: `og:type`,
-			content: site.siteMetadata.type,
+			name: 'description',
+			property: `description`,
+			content: description ?? site.siteMetadata.description,
 		},
 		{
-			name: `url`,
-			property: `og:url`,
-			content: site.siteMetadata.siteUrl,
-		},
-		{
-			name: `description`,
-			property: `og:description`,
-			content: site.siteMetadata.description,
-		},
-		{
-			name: `image`,
+			name: 'image',
 			property: `og:image`,
 			content: logo.childImageSharp.gatsbyImageData,
 		},
@@ -95,16 +59,10 @@ const SEO = ({ description, lang, meta = [], title }: Props) => {
 			property: `og:image:alt`,
 			content: site.siteMetadata.imageAlt,
 		},
-		{
-			name: `author`,
-			content: site.siteMetadata.author,
-		},
-		...meta,
 	];
 
 	return (
 		<>
-			<html lang={lang} />
 			<title>{`${site.siteMetadata.title} | ${title}`}</title>
 			{metaData.map((meta) => (
 				<meta name={meta.name} content={meta.content} key={meta.name}></meta>

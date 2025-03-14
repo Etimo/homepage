@@ -61,13 +61,13 @@ const ServicesPage = () => {
 	);
 };
 
-export function Head() {
+export const Head = () => {
 	return (
 		<SEO
 			title="Våra tjänster"
 			description="Vi erbjuder erfarna utvecklare, utvecklingsteam och ledare inom både produktutveckling och förändringsarbete."
 		/>
 	);
-}
+};
 
 export default ServicesPage;
