@@ -22,73 +22,73 @@ export const FunAtWork = (props: FunAtWorkProps) => {
 	const { sectionHeight } = props;
 	const data = useStaticQuery(graphql`
 		query {
-			cloud: file(relativePath: { eq: "funatwork/new/danielochsaga.jpg" }) {
+			cloud: file(relativePath: { eq: "funatwork/danielandsaga.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			boardgame: file(relativePath: { eq: "funatwork/new/bradspelsgang.jpg" }) {
+			boardgame: file(relativePath: { eq: "funatwork/boardgame.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			afterski: file(relativePath: { eq: "funatwork/new/afterski.jpg" }) {
+			afterski: file(relativePath: { eq: "funatwork/afterski.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			jassyr: file(relativePath: { eq: "funatwork/new/jassyr.jpg" }) {
+			jassyr: file(relativePath: { eq: "funatwork/jassyr.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			andre: file(relativePath: { eq: "funatwork/new/andre.jpg" }) {
+			andre: file(relativePath: { eq: "funatwork/andre.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			budapest: file(relativePath: { eq: "funatwork/new/budapest.png" }) {
+			budapest: file(relativePath: { eq: "funatwork/budapest.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			rickard: file(relativePath: { eq: "funatwork/new/rickardny.jpg" }) {
+			rickard: file(relativePath: { eq: "funatwork/rickardny.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
 
-			moon: file(relativePath: { eq: "funatwork/new/joakimochbjorn.jpeg" }) {
+			moon: file(relativePath: { eq: "funatwork/joakimandbjorn.jpeg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			dolceaqua: file(relativePath: { eq: "funatwork/new/italien.JPG" }) {
+			dolceaqua: file(relativePath: { eq: "funatwork/italien.JPG" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
+			rest: file(relativePath: { eq: "funatwork/johan.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
+			disco: file(relativePath: { eq: "funatwork/jeanette.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			rest: file(relativePath: { eq: "funatwork/new/johan.jpg" }) {
+			rest: file(relativePath: { eq: "funatwork/johan.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			disco: file(relativePath: { eq: "funatwork/new/jeanette.jpg" }) {
+			disco: file(relativePath: { eq: "funatwork/jeanette.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}
 			}
-			italy: file(relativePath: { eq: "funatwork/new/danielochhenrik.png" }) {
+			italy: file(relativePath: { eq: "funatwork/danielandhenrik.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
 				}

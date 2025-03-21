@@ -24,7 +24,7 @@ const SEO = ({ description, title }: Props) => {
 						imageType
 					}
 				}
-				logo: file(relativePath: { eq: "etimo-logo-sharing.png" }) {
+				logo: file(relativePath: { eq: "logos/etimo-logo-sharing.png" }) {
 					childImageSharp {
 						gatsbyImageData(layout: CONSTRAINED, width: 1200)
 					}

@@ -39,7 +39,7 @@ type Props = {
 const WorkAtEtimo = ({ sectionHeight }: Props) => {
 	const data = useStaticQuery(graphql`
 		query {
-			image: file(relativePath: { eq: "bollhavny.jpg" }) {
+			image: file(relativePath: { eq: "funatwork/bollhavny.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 360, quality: 90)
 				}

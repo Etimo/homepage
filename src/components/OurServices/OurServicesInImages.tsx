@@ -30,7 +30,7 @@ export const OurServicesInImages = () => {
 
 	const data = useStaticQuery(graphql`
 		query {
-			developer: file(relativePath: { eq: "services/developerv2.jpeg" }) {
+			developer: file(relativePath: { eq: "services/developer.jpeg" }) {
 				childImageSharp {
 					gatsbyImageData(
 						layout: CONSTRAINED
