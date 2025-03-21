@@ -3,99 +3,97 @@ import { graphql, useStaticQuery } from 'gatsby';
 export const useProfileImages = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			henrik: file(relativePath: { eq: "someofus/new-images/henrik.jpg" }) {
+			henrik: file(relativePath: { eq: "someofus/henrik.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			bjorn: file(relativePath: { eq: "someofus/new-images/bjorn.png" }) {
+			bjorn: file(relativePath: { eq: "someofus/bjorn.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			malinw: file(relativePath: { eq: "someofus/new-images/malinw.jpg" }) {
+			malinw: file(relativePath: { eq: "someofus/malinw.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			jeanette: file(
-				relativePath: { eq: "someofus/new-images/jeanette2.jpg" }
-			) {
+			jeanette: file(relativePath: { eq: "someofus/jeanette.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			lukas: file(relativePath: { eq: "someofus/new-images/lukas.png" }) {
+			lukas: file(relativePath: { eq: "someofus/lukas.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			rickard: file(relativePath: { eq: "someofus/new-images/rickard.jpg" }) {
+			rickard: file(relativePath: { eq: "someofus/rickard.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			saga: file(relativePath: { eq: "someofus/new-images/sagacitrus.jpg" }) {
+			saga: file(relativePath: { eq: "someofus/saga-yellow.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			joakim: file(relativePath: { eq: "someofus/new-images/joakim.png" }) {
+			joakim: file(relativePath: { eq: "someofus/joakim.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			erik: file(relativePath: { eq: "someofus/new-images/erik.jpg" }) {
+			erik: file(relativePath: { eq: "someofus/erik.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			axel: file(relativePath: { eq: "someofus/new-images/elmarsson.jpg" }) {
+			axel: file(relativePath: { eq: "someofus/elmarsson.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			daniel: file(relativePath: { eq: "someofus/new-images/danielw.jpg" }) {
+			daniel: file(relativePath: { eq: "someofus/daniel.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			philip: file(relativePath: { eq: "someofus/new-images/phille.jpg" }) {
+			philip: file(relativePath: { eq: "someofus/philip.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			morgan: file(relativePath: { eq: "someofus/new-images/morgan.jpg" }) {
+			morgan: file(relativePath: { eq: "someofus/morgan.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			etimo: file(relativePath: { eq: "someofus/new-images/etimologo.png" }) {
+			etimo: file(relativePath: { eq: "someofus/etimologo.png" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			johan: file(relativePath: { eq: "someofus/new-images/johan2.jpg" }) {
+			johan: file(relativePath: { eq: "someofus/johan.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			andre: file(relativePath: { eq: "someofus/new-images/andre.jpg" }) {
+			andre: file(relativePath: { eq: "someofus/andre.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			klara: file(relativePath: { eq: "someofus/new-images/klara.jpg" }) {
+			klara: file(relativePath: { eq: "someofus/klara.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			colan: file(relativePath: { eq: "someofus/new-images/colan.jpg" }) {
+			colan: file(relativePath: { eq: "someofus/colan-right.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
 			}
-			malinl: file(relativePath: { eq: "someofus/new-images/IMG_4564.jpg" }) {
+			malinl: file(relativePath: { eq: "someofus/malinl.jpg" }) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 500, quality: 90)
 				}
@@ -108,19 +106,15 @@ export const useProfileImages = () => {
 		bjorn: data.bjorn.childImageSharp.gatsbyImageData,
 		malinw: data.malinw.childImageSharp.gatsbyImageData,
 		jeanette: data.jeanette.childImageSharp.gatsbyImageData,
-		lukas: data.lukas.childImageSharp.gatsbyImageData,
-		rickard: data.rickard.childImageSharp.gatsbyImageData,
 		saga: data.saga.childImageSharp.gatsbyImageData,
 		joakim: data.joakim.childImageSharp.gatsbyImageData,
 		erik: data.erik.childImageSharp.gatsbyImageData,
-		axel: data.axel.childImageSharp.gatsbyImageData,
 		daniel: data.daniel.childImageSharp.gatsbyImageData,
 		philip: data.philip.childImageSharp.gatsbyImageData,
 		morgan: data.morgan.childImageSharp.gatsbyImageData,
 		etimo: data.etimo.childImageSharp.gatsbyImageData,
 		johan: data.johan.childImageSharp.gatsbyImageData,
 		andre: data.andre.childImageSharp.gatsbyImageData,
-		klara: data.klara.childImageSharp.gatsbyImageData,
 		colan: data.colan.childImageSharp.gatsbyImageData,
 		malinl: data.malinl.childImageSharp.gatsbyImageData,
 	};

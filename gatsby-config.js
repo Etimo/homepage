@@ -35,7 +35,7 @@ module.exports = {
 				background_color: `#663399`,
 				theme_color: `#663399`,
 				display: `browser`,
-				icon: `src/images/etimofavicon.png`, // This path is relative to the root of the site.
+				icon: `src/images/logos/etimofavicon.png`, // This path is relative to the root of the site.
 			},
 		},
 		`gatsby-plugin-remove-serviceworker`,

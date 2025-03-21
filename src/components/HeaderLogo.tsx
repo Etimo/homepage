@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
 const HeaderLogo = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			placeholderImage: file(relativePath: { eq: "etimo-logo.png" }) {
+			placeholderImage: file(relativePath: { eq: "logos/etimo-logo.png" }) {
 				childImageSharp {
 					gatsbyImageData(
 						layout: CONSTRAINED
