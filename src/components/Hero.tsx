@@ -1,56 +1,48 @@
 import React from 'react';
-import styled, { DefaultTheme, ThemeProps } from 'styled-components';
+import styled from 'styled-components';
 import tw from 'twin.macro';
-import { FloatInDir, FloatUp } from '../animations';
-import Carousel from './Carousel';
-import Section from './Section';
-
-const Hero = styled.div<ThemeProps<DefaultTheme>>`
-	max-width: 76rem;
-	align-self: center;
-	${tw`flex flex-col mx-auto overflow-hidden items-center h-25r lg:h-auto justify-center`};
-`;
-
-const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
-	color: ${(props) => props.theme.primary};
-	${tw`font-etimo mb-8 uppercase text-5xl mx-auto md:text-6xl lg:text-8xl md:mb-4 tracking-tight`};
-`;
-
-const HeroContent = styled.div`
-	font-size: 1rem;
-	color: ${(props) => props.theme.primary};
-
-	${tw`text-center w-4/5 md:w-full mx-auto`};
-	height: 200px;
-`;
-
-const items = [
-	'Bättre mjukvara för en bättre värld',
-	'Etimo är ett snabbväxande IT-konsultbolag som utvecklar skräddarsydda digitala lösningar.<br/>Vi hjälper ledande organisationer realisera affärskritiska utvecklingsprojekt.',
-	'På Etimo förenas vi av en passion för att utveckla digitala lösningar, använda modern teknik och en vilja att göra samhällsnytta.',
-];
+import DashedP from './DashedP';
+import { FloatUp } from '../animations';
+import { AnimatedH2, Caption, Span } from '../elements';
 
 type Props = {
 	sectionHeight: number;
 };
 
+const Container = styled.div`
+	${tw`flex justify-center`}
+	background-color: #f9f9f9;
+`;
+
+const Wrapper = styled.div`
+	${tw`flex my-auto flex-col mx-4 max-w-[700px] text-center -translate-y-[40%] md:-translate-y-[20%]`}
+`;
+
+const CyanText = styled.span`
+	${tw`text-cyan`}
+`;
+
 const Splash = ({ sectionHeight }: Props) => {
 	return (
-		<Section
-			sectionHeight={sectionHeight}
-			style={{ backgroundColor: '#F9F9F9' }}
-		>
-			<Hero>
-				<FloatInDir className="flex items-end h-heroFloatIn" direction="down">
-					<HeroTitle className="overflow-hidden">Etimo</HeroTitle>
-				</FloatInDir>
+		<Container style={{ height: sectionHeight }}>
+			<Wrapper>
 				<FloatUp>
-					<HeroContent>
-						<Carousel items={items} />
-					</HeroContent>
+					<Caption>Konsulter som levererar</Caption>
 				</FloatUp>
-			</Hero>
-		</Section>
+
+				<AnimatedH2 direction="left" className="text-4xl">
+					Bättre mjukvara
+				</AnimatedH2>
+				<AnimatedH2 direction="right" className="text-4xl">
+					<CyanText>för en bättre värld</CyanText>
+				</AnimatedH2>
+				<DashedP className="mt-10">
+					Etimo är konsultbolaget med handplockad expertis inom utveckling och
+					produkt som omvandlar komplexa tekniska utmaningar till hållbara
+					affärsresultat och som bidrar till att göra samhället bättre.
+				</DashedP>
+			</Wrapper>
+		</Container>
 	);
 };
 

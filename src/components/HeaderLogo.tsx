@@ -5,12 +5,16 @@ import styled from 'styled-components';
 
 const StyledDiv = styled.div`
 	margin: auto 0;
-	@media (max-width: 1023px) {
-		margin-top: 23px;
-	}
-	width: 20%;
+	width: 10%;
 	max-width: 180px;
-	min-width: 125px;
+	min-width: 100px;
+	@media (max-width: 1023px) {
+		margin-top: 30px;
+	}
+	@media (min-width: 1022px) {
+		margin-top: 52px;
+		width: 12%;
+	}
 `;
 
 const HeaderLogo = () => {
