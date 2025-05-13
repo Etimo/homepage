@@ -42,14 +42,6 @@ module.exports = {
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-sitemap`,
 		{
-			resolve: `gatsby-plugin-web-font-loader`,
-			options: {
-				google: {
-					families: ['Montserrat:300', 'Questrial'],
-				},
-			},
-		},
-		{
 			resolve: `gatsby-plugin-react-svg`,
 			options: {
 				rule: {
