@@ -1,8 +1,8 @@
 import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
-import { FloatUp } from '../animations';
-import { AnimatedH2, Caption, Span } from '../elements';
+import { FadeIn, FloatUp } from '../animations';
+import { Caption } from '../elements';
 
 type Props = {
 	sectionHeight: number;
@@ -10,7 +10,7 @@ type Props = {
 
 const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
 	color: ${(props) => props.theme.primary};
-	${tw`font-quest text-3xl lg:text-4xl xl:text-5xl xl:h-[3.2rem]`};
+	${tw`font-etimo text-3xl lg:text-4xl xl:text-5xl xl:h-[3.2rem]`};
 `;
 
 const Container = styled.div`
@@ -40,15 +40,17 @@ const Splash = ({ sectionHeight }: Props) => {
 					<Caption>Konsulter som levererar</Caption>
 				</FloatUp>
 
-				<HeroTitle className="text-4xl">Bättre mjukvara</HeroTitle>
-				<AnimatedH2 direction="right" className="text-4xl font-etimo">
-					<CyanText>för en bättre värld</CyanText>
-				</AnimatedH2>
-				<Paragraph className="mt-10">
-					Etimo är konsultbolaget med handplockad expertis inom utveckling och
-					produkt som omvandlar komplexa tekniska utmaningar till hållbara
-					affärsresultat och som bidrar till att göra samhället bättre.
-				</Paragraph>
+				<FadeIn direction="right">
+					<HeroTitle>Bättre mjukvara</HeroTitle>
+					<HeroTitle>
+						<CyanText>för en bättre värld</CyanText>
+					</HeroTitle>
+					<Paragraph className="mt-10">
+						Etimo är konsultbolaget med handplockad expertis inom utveckling och
+						produkt som omvandlar komplexa tekniska utmaningar till hållbara
+						affärsresultat och som bidrar till att göra samhället bättre.
+					</Paragraph>
+				</FadeIn>
 			</Wrapper>
 		</Container>
 	);
