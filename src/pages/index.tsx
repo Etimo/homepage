@@ -69,7 +69,7 @@ const IndexPage = () => {
 		<Layout>
 			{scrollbarEnabled && <Scroller sections={sections} />}
 
-			<Hero sectionHeight={height} />
+			<Hero />
 
 			<OurServicesSectionWithLink
 				sectionHeight={sectionWithoutHeaderHeightXl ?? height}

@@ -4,10 +4,6 @@ import tw from 'twin.macro';
 import { FadeIn, FloatUp } from '../animations';
 import { Caption } from '../elements';
 
-type Props = {
-	sectionHeight: number;
-};
-
 const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
 	color: ${(props) => props.theme.primary};
 	${tw`font-etimo text-3xl lg:text-4xl xl:text-5xl xl:h-[3.2rem]`};
@@ -19,7 +15,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-	${tw`flex my-auto flex-col mx-4 max-w-[700px] text-center -translate-y-[40%] md:-translate-y-[20%]`}
+	${tw`flex my-auto flex-col mx-4 max-w-[700px] text-center -translate-y-[40%] md:-translate-y-[30%] `}
 `;
 
 const Paragraph = styled.p<ThemeProps<DefaultTheme>>`
@@ -32,9 +28,9 @@ const CyanText = styled.span`
 	${tw`text-cyan`}
 `;
 
-const Splash = ({ sectionHeight }: Props) => {
+const Splash = () => {
 	return (
-		<Container style={{ height: sectionHeight }}>
+		<Container style={{ height: '100vh' }}>
 			<Wrapper>
 				<FloatUp>
 					<Caption>Konsulter som levererar</Caption>
