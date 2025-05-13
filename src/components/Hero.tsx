@@ -40,17 +40,17 @@ const Splash = ({ sectionHeight }: Props) => {
 					<Caption>Konsulter som levererar</Caption>
 				</FloatUp>
 
+				<HeroTitle>Bättre mjukvara</HeroTitle>
 				<FadeIn direction="right">
-					<HeroTitle>Bättre mjukvara</HeroTitle>
 					<HeroTitle>
 						<CyanText>för en bättre värld</CyanText>
 					</HeroTitle>
-					<Paragraph className="mt-10">
-						Etimo är konsultbolaget med handplockad expertis inom utveckling och
-						produkt som omvandlar komplexa tekniska utmaningar till hållbara
-						affärsresultat och som bidrar till att göra samhället bättre.
-					</Paragraph>
 				</FadeIn>
+				<Paragraph className="mt-10">
+					Etimo är konsultbolaget med handplockad expertis inom utveckling och
+					produkt som omvandlar komplexa tekniska utmaningar till hållbara
+					affärsresultat och som bidrar till att göra samhället bättre.
+				</Paragraph>
 			</Wrapper>
 		</Container>
 	);
