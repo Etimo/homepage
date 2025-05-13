@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
-import { FadeIn, FloatUp } from '../animations';
+import { FloatUp } from '../animations';
 import { Caption } from '../elements';
 
 const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
@@ -32,16 +32,16 @@ const Splash = () => {
 	return (
 		<Container style={{ height: '100vh' }}>
 			<Wrapper>
-				<FloatUp>
-					<Caption>Konsulter som levererar</Caption>
-				</FloatUp>
+				<Caption>Konsulter som levererar</Caption>
 
 				<HeroTitle>Bättre mjukvara</HeroTitle>
-				<FadeIn direction="right">
+
+				<FloatUp>
 					<HeroTitle>
 						<CyanText>för en bättre värld</CyanText>
 					</HeroTitle>
-				</FadeIn>
+				</FloatUp>
+
 				<Paragraph className="mt-10">
 					Etimo är konsultbolaget med handplockad expertis inom utveckling och
 					produkt som omvandlar komplexa tekniska utmaningar till hållbara
