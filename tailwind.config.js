@@ -15,8 +15,8 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				etimo: ['Quattrocento Sans', 'sans-serif'],
-				mont: ['Montserrat', ...defaultTheme.fontFamily.sans],
-				quest: ['Questrial', ...defaultTheme.fontFamily.sans],
+				mont: ['Montserrat', 'sans-serif', ...defaultTheme.fontFamily.sans],
+				quest: ['Questrial', 'sans-serif', ...defaultTheme.fontFamily.sans],
 			},
 			colors: {
 				cyan: '#42C8AD',

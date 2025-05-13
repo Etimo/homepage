@@ -1,13 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { DefaultTheme, ThemeProps } from 'styled-components';
 import tw from 'twin.macro';
-import DashedP from './DashedP';
-import { FloatUp } from '../animations';
-import { AnimatedH2, Caption, Span } from '../elements';
+import { FadeIn, FloatUp } from '../animations';
+import { Caption } from '../elements';
 
-type Props = {
-	sectionHeight: number;
-};
+const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
+	color: ${(props) => props.theme.primary};
+	${tw`font-etimo text-3xl lg:text-4xl xl:text-5xl xl:h-[3.2rem]`};
+`;
 
 const Container = styled.div`
 	${tw`flex justify-center`}
@@ -15,32 +15,38 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
-	${tw`flex my-auto flex-col mx-4 max-w-[700px] text-center -translate-y-[40%] md:-translate-y-[20%]`}
+	${tw`flex my-auto flex-col mx-4 max-w-[700px] text-center -translate-y-[40%] md:-translate-y-[30%] `}
+`;
+
+const Paragraph = styled.p<ThemeProps<DefaultTheme>>`
+	font-family: ${({ theme }) => theme.typography.paragraph.font};
+	letter-spacing: 0.05em;
+	${tw`text-blackGray leading-small lg:leading-large text-small md:text-sm`};
 `;
 
 const CyanText = styled.span`
 	${tw`text-cyan`}
 `;
 
-const Splash = ({ sectionHeight }: Props) => {
+const Splash = () => {
 	return (
-		<Container style={{ height: sectionHeight }}>
+		<Container style={{ height: '100vh' }}>
 			<Wrapper>
 				<FloatUp>
 					<Caption>Konsulter som levererar</Caption>
 				</FloatUp>
 
-				<AnimatedH2 direction="left" className="text-4xl">
-					Bättre mjukvara
-				</AnimatedH2>
-				<AnimatedH2 direction="right" className="text-4xl">
-					<CyanText>för en bättre värld</CyanText>
-				</AnimatedH2>
-				<DashedP className="mt-10">
+				<HeroTitle>Bättre mjukvara</HeroTitle>
+				<FadeIn direction="right">
+					<HeroTitle>
+						<CyanText>för en bättre värld</CyanText>
+					</HeroTitle>
+				</FadeIn>
+				<Paragraph className="mt-10">
 					Etimo är konsultbolaget med handplockad expertis inom utveckling och
 					produkt som omvandlar komplexa tekniska utmaningar till hållbara
 					affärsresultat och som bidrar till att göra samhället bättre.
-				</DashedP>
+				</Paragraph>
 			</Wrapper>
 		</Container>
 	);
