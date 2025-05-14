@@ -32,19 +32,24 @@ const Splash = () => {
 	return (
 		<Container style={{ height: '100vh' }}>
 			<Wrapper>
-				<Caption>Konsulter som levererar</Caption>
-
-				<HeroTitle>Bättre mjukvara</HeroTitle>
-				<FadeIn direction="right">
+				<FloatUp>
+					<Caption>Konsulter som levererar</Caption>
+				</FloatUp>
+				<FadeIn direction="left">
+					<HeroTitle>Bättre mjukvara</HeroTitle>
+				</FadeIn>
+				<FadeIn direction="left">
 					<HeroTitle>
 						<CyanText>för en bättre värld</CyanText>
 					</HeroTitle>
 				</FadeIn>
-				<Paragraph className="mt-10">
-					Etimo är konsultbolaget med handplockad expertis inom utveckling och
-					produkt som omvandlar komplexa tekniska utmaningar till hållbara
-					affärsresultat och som bidrar till att göra samhället bättre.
-				</Paragraph>
+				<FadeIn direction="right">
+					<Paragraph className="mt-10">
+						Etimo är konsultbolaget med handplockad expertis inom utveckling och
+						produkt som omvandlar komplexa tekniska utmaningar till hållbara
+						affärsresultat och som bidrar till att göra samhället bättre.
+					</Paragraph>
+				</FadeIn>
 			</Wrapper>
 		</Container>
 	);
