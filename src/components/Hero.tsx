@@ -6,7 +6,7 @@ import { Caption } from '../elements';
 
 const HeroTitle = styled.h1<ThemeProps<DefaultTheme>>`
 	color: ${(props) => props.theme.primary};
-	${tw`font-etimo text-3xl lg:text-4xl xl:text-5xl xl:h-[3.2rem]`};
+	${tw`font-etimo mt-4 text-4xl xl:text-5xl overflow-hidden`};
 `;
 
 const Container = styled.div`
@@ -35,14 +35,13 @@ const Splash = () => {
 				<FloatUp>
 					<Caption>Konsulter som levererar</Caption>
 				</FloatUp>
-				<FadeIn direction="left">
-					<HeroTitle>Bättre mjukvara</HeroTitle>
-				</FadeIn>
-				<FadeIn direction="left">
-					<HeroTitle>
+
+				<HeroTitle>
+					<FadeIn direction="left" className="overflow-hidden">
+						Bättre mjukvara <br />
 						<CyanText>för en bättre värld</CyanText>
-					</HeroTitle>
-				</FadeIn>
+					</FadeIn>
+				</HeroTitle>
 				<FadeIn direction="right">
 					<Paragraph className="mt-10">
 						Etimo är konsultbolaget med handplockad expertis inom utveckling och
