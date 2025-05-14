@@ -35,11 +35,11 @@ const Splash = () => {
 				<Caption>Konsulter som levererar</Caption>
 
 				<HeroTitle>Bättre mjukvara</HeroTitle>
-				<FloatUp>
+				<FadeIn direction="right">
 					<HeroTitle>
 						<CyanText>för en bättre värld</CyanText>
 					</HeroTitle>
-				</FloatUp>
+				</FadeIn>
 				<Paragraph className="mt-10">
 					Etimo är konsultbolaget med handplockad expertis inom utveckling och
 					produkt som omvandlar komplexa tekniska utmaningar till hållbara
