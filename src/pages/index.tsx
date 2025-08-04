@@ -11,6 +11,7 @@ import Customers from '../components/Customers';
 import { OurServicesSectionWithLink } from '../components/OurServices/OurServicesSectionWithLink';
 import CustomerTestimonials from '../components/CustomerTestimonials';
 import { EtimoVentures } from '../components/EtimoVentures/EtimoVentures';
+import AIExpertise from '../components/AIExpertise';
 
 const IndexPage = () => {
 	const [height, width] = useViewportSize();
@@ -35,31 +36,36 @@ const IndexPage = () => {
 		},
 		{
 			index: 1,
-			name: 'Våra tjänster',
+			name: 'AI-expertis',
 			height: sectionWithoutHeaderHeightXl ?? height,
 		},
 		{
 			index: 2,
+			name: 'Våra tjänster',
+			height: sectionWithoutHeaderHeightXl ?? height,
+		},
+		{
+			index: 3,
 			name: 'Investeringsstrategi',
 			height: sectionWithoutHeaderHeightLarge ?? height,
 		},
 		{
-			index: 3,
+			index: 4,
 			name: 'Våra kunder',
 			height: sectionWithoutHeaderHeightLarge ?? height,
 		},
 		{
-			index: 4,
+			index: 5,
 			name: 'Sagt om oss',
 			height: sectionWithoutHeaderHeightLarge ?? height,
 		},
 		{
-			index: 5,
+			index: 6,
 			name: 'Om oss',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
 		{
-			index: 6,
+			index: 7,
 			name: 'Karriär',
 			height: sectionWithoutHeaderHeight ?? height,
 		},
@@ -70,6 +76,10 @@ const IndexPage = () => {
 			{scrollbarEnabled && <Scroller sections={sections} />}
 
 			<Hero />
+
+			<AIExpertise
+				sectionHeight={sectionWithoutHeaderHeightXl ?? height}
+			/>
 
 			<OurServicesSectionWithLink
 				sectionHeight={sectionWithoutHeaderHeightXl ?? height}
