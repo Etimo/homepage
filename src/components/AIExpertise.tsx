@@ -49,12 +49,12 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 					<FadeIn direction="right">
 						<P>
 							I en tid av snabb AI-utveckling hjälper vi er att navigera och 
-							dra nytta av artificiell intelligens på ett värdefullt sätt. 
+							dra nytta av artificiell intelligens på bästa sätt. 
 							Våra erfarna AI-experter fokuserar på verklig affärsnytta istället för hype.
 						</P>
 						<P className="mt-4">
 							Vår mest seniora AI-expert började med AI redan år 2006 och vi kan stödja
-                            er på många sätt och oavsett om ni är nybörjare eller erfarna. Vi erbjuder 
+                            er oavsett om ni är nybörjare eller erfarna. Vi erbjuder 
 							rådgivningssamtal, skräddarsydda föreläsningar, Q&A-sessioner och utvecklare.
                             Vi kan hjälpa er komma igång, eller vara med till fullständig implementation.
 						</P>
