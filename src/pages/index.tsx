@@ -36,12 +36,12 @@ const IndexPage = () => {
 		},
 		{
 			index: 1,
-			name: 'AI-expertis',
+			name: 'Våra tjänster',
 			height: sectionWithoutHeaderHeightXl ?? height,
 		},
 		{
 			index: 2,
-			name: 'Våra tjänster',
+			name: 'AI-rådgivning',
 			height: sectionWithoutHeaderHeightXl ?? height,
 		},
 		{
@@ -77,11 +77,11 @@ const IndexPage = () => {
 
 			<Hero />
 
-			<AIExpertise
+			<OurServicesSectionWithLink
 				sectionHeight={sectionWithoutHeaderHeightXl ?? height}
 			/>
 
-			<OurServicesSectionWithLink
+			<AIExpertise
 				sectionHeight={sectionWithoutHeaderHeightXl ?? height}
 			/>
 
