@@ -17,7 +17,7 @@ type AIExpertiseProps = {
 
 const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 	return (
-		<Section sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<FloatUp>
 					<Caption>AI-rådgivning</Caption>

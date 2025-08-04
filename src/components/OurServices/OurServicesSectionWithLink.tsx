@@ -14,7 +14,7 @@ export const OurServicesSectionWithLink = (props: OurServicesProps) => {
 	const { sectionHeight } = props;
 
 	return (
-		<Section sectionHeight={sectionHeight} style={{ background: 'white' }}>
+		<Section sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<FloatUp>
