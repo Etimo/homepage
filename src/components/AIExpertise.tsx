@@ -122,8 +122,8 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 						controls={showControls}
 						muted={true}
 						playsInline={true}
-						autoPlay={false} // Manual control - plays after 5 seconds
-						loop={false} // Don't loop - show first frame when ended
+						autoPlay={false} // Manual control - plays after some time
+						loop={false}
 						preload="auto"
 						disablePictureInPicture={true} // Prevent PiP mode
 						onEnded={() => {
