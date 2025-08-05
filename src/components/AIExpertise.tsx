@@ -38,12 +38,16 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							if (video.readyState >= 2) { // HAVE_CURRENT_DATA or higher
 								video.play().catch((error) => {
 									console.log('Video autoplay prevented:', error);
+									// Show controls if autoplay fails
+									setShowControls(true);
 								});
 							} else {
 								// If not ready, wait for it to be ready
 								video.addEventListener('canplay', () => {
 									video.play().catch((error) => {
 										console.log('Video autoplay prevented:', error);
+										// Show controls if autoplay fails
+										setShowControls(true);
 									});
 								}, { once: true });
 							}
@@ -106,8 +110,9 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 						width="100%"
 						height="100%"
 						controls={showControls}
-						muted
-						playsInline
+						muted={true}
+						playsInline={true}
+						autoPlay={false} // We control autoplay via IntersectionObserver
 						preload="auto"
 						onMouseEnter={() => setShowControls(true)}
 						onMouseLeave={() => setShowControls(false)}
@@ -118,7 +123,7 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							objectFit: 'cover',
 							overflow: 'hidden',
 							display: 'block',
-							backgroundColor: 'black'
+							backgroundColor: '#f5f5f5' // Light gray instead of black
 						}}
 					>
 						<source src="/videos/ai.mp4" type="video/mp4" />
