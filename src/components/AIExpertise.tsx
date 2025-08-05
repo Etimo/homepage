@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import { FadeIn, FloatUp } from '../animations';
 import { AnimatedH2, Caption, H3, P, Span } from '../elements';
 import { HighlightButton } from './Button';
@@ -16,6 +16,68 @@ type AIExpertiseProps = {
 };
 
 const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
+	const videoRef = useRef<HTMLVideoElement>(null);
+	const [hasStartedVideo, setHasStartedVideo] = useState(false);
+	const [showControls, setShowControls] = useState(false);
+	const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+	useEffect(() => {
+		const video = videoRef.current;
+		if (!video) return;
+
+		// Create an IntersectionObserver to detect when the video becomes visible
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					// When the video becomes visible and we haven't already started it
+					if (entry.isIntersecting && !hasStartedVideo) {
+						setHasStartedVideo(true);
+						// Start the video after 1 second
+						setTimeout(() => {
+							video.play().catch((error) => {
+								console.log('Video autoplay prevented:', error);
+							});
+						}, 1000);
+					}
+				});
+			},
+			{
+				threshold: 0.5 // Start when at least 50% of the video is visible
+			}
+		);
+
+		observer.observe(video);
+
+		// Cleanup
+		return () => {
+			observer.disconnect();
+		};
+	}, [hasStartedVideo]);
+
+	// Cleanup touch timeout on unmount
+	useEffect(() => {
+		return () => {
+			if (touchTimeoutRef.current) {
+				clearTimeout(touchTimeoutRef.current);
+			}
+		};
+	}, []);
+
+	const handleTouch = () => {
+		// Show controls on touch
+		setShowControls(true);
+		
+		// Clear any existing timeout
+		if (touchTimeoutRef.current) {
+			clearTimeout(touchTimeoutRef.current);
+		}
+		
+		// Hide controls after 3 seconds
+		touchTimeoutRef.current = setTimeout(() => {
+			setShowControls(false);
+		}, 3000);
+	};
+
 	return (
 		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
@@ -31,12 +93,15 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 				<VideoWrapper>
 					<FloatUp>
 						<video
+							ref={videoRef}
 							width="100%"
 							height="100%"
-							controls
+							controls={showControls}
 							muted
-							autoPlay
 							playsInline
+							onMouseEnter={() => setShowControls(true)}
+							onMouseLeave={() => setShowControls(false)}
+							onTouchStart={handleTouch}
 							style={{ 
 								borderRadius: '8px', 
 								boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
@@ -61,14 +126,19 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							Vår mest seniora AI-expert började med AI redan år 2006 och vi kan stödja
                             er oavsett om ni är nybörjare eller erfarna. Vi erbjuder 
 							rådgivningssamtal, skräddarsydda föreläsningar, Q&A-sessioner och utvecklare.
-                            Vi kan hjälpa er komma igång, eller vara med till fullständig implementation.
+                            Vi kan hjälpa er komma igång, eller vara en långsiktig partner.
 						</P>
 					</FadeIn>
 
 					<div className="flex justify-center mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
-						<HighlightButton>
-							<P>Kontakta oss för AI-rådgivning</P>
-						</HighlightButton>
+						<a 
+							href="mailto:ai@etimo.se?subject=AI-rådgivning" 
+							style={{ textDecoration: 'none', cursor: 'pointer' }}
+						>
+							<HighlightButton>
+								<P>Kontakta oss för AI-rådgivning</P>
+							</HighlightButton>
+						</a>
 					</div>
 				</div>
 			</div>

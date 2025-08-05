@@ -74,7 +74,8 @@ export default ({ sections }: Props) => {
 				(accumulatedHeight, sectionHeight) => accumulatedHeight + sectionHeight,
 				0
 			);
-		animateScroll.scrollTo(scrollToHeight);
+		const scrollOffset = index === 0 ? 0 : 100;
+		animateScroll.scrollTo(scrollToHeight + scrollOffset);
 	};
 
 	return (

@@ -23,7 +23,7 @@ export const OurServicesSectionWithLink = (props: OurServicesProps) => {
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Etimo </AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span>&nbsp;erbjuder</Span>
+							<Span>&nbsp;erbjuder även</Span>
 						</AnimatedH2>
 					</div>
 					<OurServicesInImages />
