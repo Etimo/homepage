@@ -52,7 +52,7 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 				});
 			},
 			{
-				threshold: 0.5 // Start when at least 50% of the video is visible
+				threshold: 1.0 // Start only when 100% of the video is visible
 			}
 		);
 
