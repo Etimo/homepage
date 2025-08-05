@@ -17,56 +17,66 @@ type AIExpertiseProps = {
 
 const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 	const videoRef = useRef<HTMLVideoElement>(null);
-	const [hasStartedVideo, setHasStartedVideo] = useState(false);
 	const [showControls, setShowControls] = useState(false);
 	const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+	
+	// Video playback delay configuration (in milliseconds)
+	const VIDEO_START_DELAY = 1000; // 1 second
+	const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
+	// Detect when video becomes visible
 	useEffect(() => {
 		const video = videoRef.current;
 		if (!video) return;
 
-		// Create an IntersectionObserver to detect when the video becomes visible
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					// When the video becomes visible and we haven't already started it
-					if (entry.isIntersecting && !hasStartedVideo) {
-						setHasStartedVideo(true);
-						// Start the video after 1 second
-						setTimeout(() => {
-							// Ensure video is loaded before trying to play
-							if (video.readyState >= 2) { // HAVE_CURRENT_DATA or higher
-								video.play().catch((error) => {
-									console.log('Video autoplay prevented:', error);
-									// Show controls if autoplay fails
-									setShowControls(true);
-								});
-							} else {
-								// If not ready, wait for it to be ready
-								video.addEventListener('canplay', () => {
-									video.play().catch((error) => {
-										console.log('Video autoplay prevented:', error);
-										// Show controls if autoplay fails
-										setShowControls(true);
-									});
-								}, { once: true });
-							}
-						}, 1000);
+					if (entry.isIntersecting && !hasBeenVisible) {
+						setHasBeenVisible(true);
 					}
 				});
 			},
 			{
-				threshold: 1.0 // Start only when 100% of the video is visible
+				threshold: 1 // Trigger when 100% of video is visible
 			}
 		);
 
 		observer.observe(video);
 
-		// Cleanup
 		return () => {
 			observer.disconnect();
 		};
-	}, [hasStartedVideo]);
+	}, [hasBeenVisible]);
+
+	// Start video after delay once it becomes visible
+	useEffect(() => {
+		if (!hasBeenVisible) return;
+		
+		const video = videoRef.current;
+		if (!video) return;
+
+		// Start playing after configured delay
+		const playTimeout = setTimeout(() => {
+			video.play().catch((error) => {
+				console.log('Video autoplay prevented:', error);
+				// Show controls if autoplay fails
+				setShowControls(true);
+			});
+		}, VIDEO_START_DELAY);
+
+		// Show controls 2 seconds after expected start if video hasn't started
+		const checkAutoplay = setTimeout(() => {
+			if (video.paused) {
+				setShowControls(true);
+			}
+		}, VIDEO_START_DELAY + 2000);
+
+		return () => {
+			clearTimeout(playTimeout);
+			clearTimeout(checkAutoplay);
+		};
+	}, [hasBeenVisible]);
 
 	// Cleanup touch timeout on unmount
 	useEffect(() => {
@@ -112,8 +122,16 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 						controls={showControls}
 						muted={true}
 						playsInline={true}
-						autoPlay={false} // We control autoplay via IntersectionObserver
+						autoPlay={false} // Manual control - plays after 5 seconds
+						loop={false} // Don't loop - show first frame when ended
 						preload="auto"
+						disablePictureInPicture={true} // Prevent PiP mode
+						onEnded={() => {
+							// Reset to first frame when video ends
+							if (videoRef.current) {
+								videoRef.current.currentTime = 0;
+							}
+						}}
 						onMouseEnter={() => setShowControls(true)}
 						onMouseLeave={() => setShowControls(false)}
 						onTouchStart={handleTouch}
@@ -122,8 +140,7 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
 							objectFit: 'cover',
 							overflow: 'hidden',
-							display: 'block',
-							backgroundColor: '#f5f5f5' // Light gray instead of black
+							display: 'block'
 						}}
 					>
 						<source src="/videos/ai.mp4" type="video/mp4" />
