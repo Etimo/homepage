@@ -19,6 +19,7 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [hasStartedVideo, setHasStartedVideo] = useState(false);
 	const [showControls, setShowControls] = useState(false);
+	const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 	const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
 	useEffect(() => {
@@ -34,9 +35,19 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 						setHasStartedVideo(true);
 						// Start the video after 1 second
 						setTimeout(() => {
-							video.play().catch((error) => {
-								console.log('Video autoplay prevented:', error);
-							});
+							// Ensure video is loaded before trying to play
+							if (video.readyState >= 2) { // HAVE_CURRENT_DATA or higher
+								video.play().catch((error) => {
+									console.log('Video autoplay prevented:', error);
+								});
+							} else {
+								// If not ready, wait for it to be ready
+								video.addEventListener('canplay', () => {
+									video.play().catch((error) => {
+										console.log('Video autoplay prevented:', error);
+									});
+								}, { once: true });
+							}
 						}, 1000);
 					}
 				});
@@ -90,7 +101,10 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 					</AnimatedH2>
 				</div>
 
-				<VideoWrapper>
+				<VideoWrapper style={{ 
+					backgroundColor: '#f0f0f0',
+					minHeight: '300px'
+				}}>
 					<video
 						ref={videoRef}
 						width="100%"
@@ -99,6 +113,9 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 						muted
 						playsInline
 						preload="auto"
+						poster=""
+						onLoadedMetadata={() => setIsVideoLoaded(true)}
+						onCanPlay={() => setIsVideoLoaded(true)}
 						onMouseEnter={() => setShowControls(true)}
 						onMouseLeave={() => setShowControls(false)}
 						onTouchStart={handleTouch}
@@ -106,7 +123,10 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							borderRadius: '8px', 
 							boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
 							objectFit: 'cover',
-							overflow: 'hidden'
+							overflow: 'hidden',
+							opacity: isVideoLoaded ? 1 : 0,
+							transition: 'opacity 0.3s ease-in-out',
+							display: 'block'
 						}}
 					>
 						<source src="/videos/ai.mp4" type="video/mp4" />
