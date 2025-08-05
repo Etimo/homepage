@@ -44,7 +44,7 @@ const Splash = () => {
 				</HeroTitle>
 				<FadeIn direction="right">
 					<Paragraph className="mt-10">
-						Etimo är konsultbolaget med handplockad expertis inom AI, utveckling och
+						Etimo är konsultbolaget med handplockad expertis inom artificiell intelligens, utveckling och
 						produkt som omvandlar komplexa tekniska utmaningar till hållbara
 						affärsresultat och som bidrar till att göra samhället bättre.
 					</Paragraph>

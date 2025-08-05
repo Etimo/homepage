@@ -61,7 +61,7 @@ export const OurServices = () => {
 				className="flex flex-col border p-10 lg:m-4"
 				variants={BlurIn()}
 			>
-				<H3Title></H3Title>
+				<H3Title>Utvecklingsteam</H3Title>
 				{developingTeamTexts.map((cText) => {
 					return <DashedP key={cText}>{cText}</DashedP>;
 				})}

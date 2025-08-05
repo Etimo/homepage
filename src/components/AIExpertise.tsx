@@ -130,7 +130,7 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 						</P>
 					</FadeIn>
 
-					<div className="flex justify-center mx-auto mt-6 md:mt-10 lg:mt-12 xl:mt-20">
+					<div className="flex justify-center mx-auto mt-8">
 						<a 
 							href="mailto:ai@etimo.se?subject=AI-rådgivning" 
 							style={{ textDecoration: 'none', cursor: 'pointer' }}
