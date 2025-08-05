@@ -99,6 +99,7 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							controls={showControls}
 							muted
 							playsInline
+							preload="auto"
 							onMouseEnter={() => setShowControls(true)}
 							onMouseLeave={() => setShowControls(false)}
 							onTouchStart={handleTouch}
