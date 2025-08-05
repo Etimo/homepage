@@ -92,27 +92,38 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 
 				<VideoWrapper>
 					<FloatUp>
-						<video
-							ref={videoRef}
-							width="100%"
-							height="100%"
-							controls={showControls}
-							muted
-							playsInline
-							preload="auto"
-							onMouseEnter={() => setShowControls(true)}
-							onMouseLeave={() => setShowControls(false)}
-							onTouchStart={handleTouch}
-							style={{ 
-								borderRadius: '8px', 
-								boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-								objectFit: 'cover',
-								overflow: 'hidden'
-							}}
-						>
-							<source src="/videos/ai.mp4" type="video/mp4" />
-							Din webbläsare stöder inte videouppspelning.
-						</video>
+						{/* Container div fixes iOS animation issues with video elements */}
+						<div style={{ 
+							width: '100%', 
+							height: '100%',
+							WebkitTransform: 'translateZ(0)', // Force GPU acceleration on iOS
+							transform: 'translateZ(0)'
+						}}>
+							<video
+								ref={videoRef}
+								width="100%"
+								height="100%"
+								controls={showControls}
+								muted
+								playsInline
+								preload="auto"
+
+								onMouseEnter={() => setShowControls(true)}
+								onMouseLeave={() => setShowControls(false)}
+								onTouchStart={handleTouch}
+								style={{ 
+									borderRadius: '8px', 
+									boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+									objectFit: 'cover',
+									overflow: 'hidden',
+									WebkitBackfaceVisibility: 'hidden', // Prevent iOS rendering issues
+									backfaceVisibility: 'hidden'
+								}}
+							>
+								<source src="/videos/ai.mp4" type="video/mp4" />
+								Din webbläsare stöder inte videouppspelning.
+							</video>
+						</div>
 					</FloatUp>
 				</VideoWrapper>
 
