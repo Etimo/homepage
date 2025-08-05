@@ -19,7 +19,6 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 	const videoRef = useRef<HTMLVideoElement>(null);
 	const [hasStartedVideo, setHasStartedVideo] = useState(false);
 	const [showControls, setShowControls] = useState(false);
-	const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 	const touchTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
 	useEffect(() => {
@@ -101,10 +100,7 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 					</AnimatedH2>
 				</div>
 
-				<VideoWrapper style={{ 
-					backgroundColor: '#f0f0f0',
-					minHeight: '300px'
-				}}>
+				<VideoWrapper>
 					<video
 						ref={videoRef}
 						width="100%"
@@ -113,9 +109,6 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 						muted
 						playsInline
 						preload="auto"
-						poster=""
-						onLoadedMetadata={() => setIsVideoLoaded(true)}
-						onCanPlay={() => setIsVideoLoaded(true)}
 						onMouseEnter={() => setShowControls(true)}
 						onMouseLeave={() => setShowControls(false)}
 						onTouchStart={handleTouch}
@@ -124,9 +117,8 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
 							objectFit: 'cover',
 							overflow: 'hidden',
-							opacity: isVideoLoaded ? 1 : 0,
-							transition: 'opacity 0.3s ease-in-out',
-							display: 'block'
+							display: 'block',
+							backgroundColor: 'black'
 						}}
 					>
 						<source src="/videos/ai.mp4" type="video/mp4" />
