@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import tw from 'twin.macro';
 
 const VideoWrapper = styled.div`
-	${tw`relative w-full max-w-md mx-auto mt-8`}
+	${tw`relative w-full max-w-md mx-auto mt-8 overflow-hidden`}
 	aspect-ratio: 1 / 1;
 `;
 
@@ -37,7 +37,12 @@ const AIExpertise = ({ sectionHeight }: AIExpertiseProps) => {
 							muted
 							autoPlay
 							playsInline
-							style={{ borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.1)' }}
+							style={{ 
+								borderRadius: '8px', 
+								boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+								objectFit: 'cover',
+								overflow: 'hidden'
+							}}
 						>
 							<source src="/videos/ai.mp4" type="video/mp4" />
 							Din webbläsare stöder inte videouppspelning.
