@@ -26,6 +26,7 @@ export default ({ children, direction, ...props }: Props) => {
 			className="h-full w-full"
 			{...props}
 			ref={ref}
+			initial="exit"
 			animate={entered ? 'enter' : 'exit'}
 			variants={{
 				enter: {
