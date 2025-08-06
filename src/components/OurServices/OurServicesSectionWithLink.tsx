@@ -14,7 +14,7 @@ export const OurServicesSectionWithLink = (props: OurServicesProps) => {
 	const { sectionHeight } = props;
 
 	return (
-		<Section sectionHeight={sectionHeight} style={{ background: 'white' }}>
+		<Section sectionHeight={sectionHeight}>
 			<div className="container mx-auto xl:px-32">
 				<div className="flex flex-col mb-8 overflow-hidden">
 					<FloatUp>
@@ -23,7 +23,7 @@ export const OurServicesSectionWithLink = (props: OurServicesProps) => {
 					<div className="flex flex-row justify-center">
 						<AnimatedH2 direction="left">Etimo </AnimatedH2>
 						<AnimatedH2 direction="right">
-							<Span>&nbsp;erbjuder</Span>
+							<Span>&nbsp;erbjuder även</Span>
 						</AnimatedH2>
 					</div>
 					<OurServicesInImages />

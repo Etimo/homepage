@@ -12,7 +12,7 @@ type EtimoVenturesProps = {
 export const EtimoVentures = (props: EtimoVenturesProps) => {
 	const { sectionHeight } = props;
 	return (
-		<Section sectionHeight={sectionHeight}>
+		<Section sectionHeight={sectionHeight} style={{ backgroundColor: 'white' }}>
 			<div className="flex container flex-col px-8 lg:px-32 text-center">
 				<FloatUp>
 					<Caption>Vår investeringsstrategi</Caption>

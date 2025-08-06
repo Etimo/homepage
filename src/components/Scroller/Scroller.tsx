@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useViewportSize } from '../../hooks';
+import { sizes } from '../../helpers';
 import Section from './Section';
 
 import { animateScroll } from 'react-scroll';
@@ -74,7 +75,8 @@ export default ({ sections }: Props) => {
 				(accumulatedHeight, sectionHeight) => accumulatedHeight + sectionHeight,
 				0
 			);
-		animateScroll.scrollTo(scrollToHeight);
+		const scrollOffset = index === 0 ? 0 : sizes().headerHeight;
+		animateScroll.scrollTo(scrollToHeight + scrollOffset);
 	};
 
 	return (
