@@ -90,7 +90,7 @@ export const OurServicesInImages = () => {
 					className="opacity-100 aspect-4/3 object-bottom"
 				/>
 
-				<H3Title className="absolute w-full">Utvecklingsteam</H3Title>
+				<H3Title className="absolute w-full">Utvecklare och utvecklingsteam</H3Title>
 			</ServiceImageContainer>
 
 			<ServiceImageContainer>
@@ -105,25 +105,6 @@ export const OurServicesInImages = () => {
 				</H3Title>
 			</ServiceImageContainer>
 
-			<ServiceImageContainer>
-				<GatsbyImage
-					alt="två utvecklare framför en datorskärm"
-					image={data.developer.childImageSharp.gatsbyImageData}
-					className="opacity-100  aspect-4/3"
-				/>
-
-				<H3Title className="absolute w-full">Utvecklare</H3Title>
-			</ServiceImageContainer>
-
-			<ServiceImageContainer>
-				<GatsbyImage
-					alt="produktledning"
-					image={data.productManagement.childImageSharp.gatsbyImageData}
-					className="opacity-100  aspect-4/3"
-				/>
-
-				<H3Title className="absolute w-full">Produktledning</H3Title>
-			</ServiceImageContainer>
 		</motion.div>
 	);
 };

@@ -65,31 +65,11 @@ const AllPeople = (props: AllPeopleProps) => {
 			github: 'https://github.com/wadholm',
 		},
 		{
-			name: 'Johan',
-			title: 'Medgrundare',
-			image: <StyledImg image={images.johan} alt="Johan" />,
-			linkedin: 'https://www.linkedin.com/in/johan-hazelius-910b281a/',
-			github: 'https://github.com/JohanHazelius',
-		},
-
-		{
 			name: 'Philip',
 			title: 'Konsult',
 			image: <StyledImg image={images.philip} alt="Philip" />,
 			linkedin: 'https://www.linkedin.com/in/philip-forsberg-b815b6134/',
 			github: 'https://github.com/ForsbergPhilip',
-		},
-		{
-			name: 'André',
-			title: 'Konsult',
-			image: <StyledImg image={images.andre} alt="André" />,
-			linkedin: 'https://www.linkedin.com/in/andr%C3%A9-hansson-5b6418128/',
-			github: 'https://github.com/H4zze',
-		},
-		{
-			name: 'Colan',
-			title: 'Konsultens bästa vän',
-			image: <StyledImg image={images.colan} alt="dog" />,
 		},
 		{
 			name: 'Henrik',
@@ -99,7 +79,13 @@ const AllPeople = (props: AllPeopleProps) => {
 				'https://www.linkedin.com/in/henrik-west%C3%B6%C3%B6-66150419a/',
 			github: 'https://github.com/henrik-westoo',
 		},
-
+		{
+			name: 'André',
+			title: 'Konsult',
+			image: <StyledImg image={images.andre} alt="André" />,
+			linkedin: 'https://www.linkedin.com/in/andr%C3%A9-hansson-5b6418128/',
+			github: 'https://github.com/H4zze',
+		},
 		{
 			name: 'Daniel',
 			title: 'Partner',
@@ -107,13 +93,6 @@ const AllPeople = (props: AllPeopleProps) => {
 			linkedin: 'https://www.linkedin.com/in/daniel-winther-a098751b/',
 			github: 'https://github.com/indrif',
 		},
-		{
-			name: 'Malin Lindbom',
-			title: 'Produktledning',
-			image: <StyledImg image={images.malinl} alt="Malin" />,
-			linkedin: 'https://www.linkedin.com/in/malin-lindbom-60a13a65/',
-		},
-
 		{
 			name: 'Saga',
 			title: 'Konsult',
