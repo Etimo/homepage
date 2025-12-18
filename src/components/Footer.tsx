@@ -79,7 +79,7 @@ const Footer = () => {
 	const data = useStaticQuery(graphql`
 		query {
 			doctorsWithoutBorders: file(
-				relativePath: { eq: "donations/doctors-without-borders-supporter.png" }
+				relativePath: { eq: "donations/support_2026.png" }
 			) {
 				childImageSharp {
 					gatsbyImageData(layout: CONSTRAINED, width: 370, quality: 90)
@@ -144,6 +144,7 @@ const Footer = () => {
 						<GatsbyImage
 							image={data.doctorsWithoutBorders.childImageSharp.gatsbyImageData}
 							alt="Läkare utan gränsers logga"
+							className="w-[170px] mt-5"
 						/>
 					</FloatUp>
 				</div>
